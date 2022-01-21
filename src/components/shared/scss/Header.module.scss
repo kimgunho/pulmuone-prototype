@@ -1,0 +1,46 @@
+@import '../../../common.scss';
+
+.header {
+  @include flexCenterStyle;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+
+  > .limiter {
+    @include limiter;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > .logo {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      > a {
+        > img {
+          width: 100%;
+          max-width: 3rem;
+          padding-top: 8px;
+        }
+      }
+    }
+
+    > .gnb {
+      width: calc(50% - 4rem);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      > li {
+        > a {
+          color: #fff;
+          display: block;
+          padding: 1rem 0;
+        }
+      }
+    }
+  }
+}
