@@ -6,6 +6,7 @@ import sandBg from '../../assets/images/home/section02_bg.jpg';
 import stoneBg from '../../assets/images/home/stoneBg.jpg';
 import leaf_left from '../../assets/images/home/leaf_left.png';
 import leaf_right from '../../assets/images/home/leaf_right.png';
+import shape from '../../assets/images/home/shape.svg';
 
 const cx = classNames.bind(styles);
 
@@ -36,6 +37,7 @@ function S02() {
         <img draggable="false" className={cx(['leaf', 'right'])} src={leaf_right} alt="" />
       </div>
 
+      <img className={cx('shape')} src={shape} alt="" />
       <div style={{ backgroundImage: `url(${stoneBg})` }} className={cx(['background', 'stone'])} />
       <div style={{ backgroundImage: `url(${sandBg})` }} className={cx(['background', 'sand'])} />
     </div>
