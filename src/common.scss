@@ -12,6 +12,45 @@ $breakpoint-tablet: 1280px; // tablet
   background-size: cover;
 }
 
+@mixin mainLimiter {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 80vw;
+  padding: 0 1rem;
+  box-sizing: border-box;
+
+  > div {
+    width: fit-content;
+    display: flex;
+
+    &.left {
+      align-items: flex-start;
+
+      > p {
+        color: #fff;
+        font-size: 1.875rem;
+
+        > .point {
+          color: #bfd62f;
+          display: block;
+          font-size: 3.2rem;
+        }
+      }
+    }
+
+    &.right {
+      align-items: flex-end;
+
+      > p {
+        color: #fff;
+        font-size: 1.875rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
 @mixin limiter {
   width: 100%;
   max-width: 1160px;
