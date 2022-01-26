@@ -2,6 +2,10 @@
 $breakpoint-mobile: 740px; // mobile
 $breakpoint-tablet: 1280px; // tablet
 
+@mixin fontEn {
+  font-family: 'pulmuone-en', 'Noto Sans KR', sans-serif;
+}
+
 @mixin backgroundDefaultStyle {
   background-position: center center;
   background-repeat: no-repeat;
