@@ -1,10 +1,11 @@
+@import './fonts.scss';
 @import './common.scss';
 
 * {
   margin: 0;
   padding: 0;
   word-break: keep-all;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'pulmuone', 'Noto Sans KR', sans-serif;
 }
 
 html {

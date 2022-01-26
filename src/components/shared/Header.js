@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
-import styles from './scss/Header.module.scss';
+import styles from './Header.module.scss';
 import { links } from '../../assets/data/links';
 import { gnb_left, gnb_right } from '../../assets/data/gnb';
 
