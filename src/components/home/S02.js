@@ -79,7 +79,7 @@ function S02() {
     const containerTl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: '10px top',
+        start: 'top top',
         end: '300% top',
         scrub: true,
         markers: false,

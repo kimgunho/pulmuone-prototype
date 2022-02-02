@@ -22,7 +22,7 @@ function Home() {
   }, []);
 
   return (
-    <div ref={rangeRef} style={{ height: 99999, backgroundColor: 'black' }}>
+    <div ref={rangeRef}>
       <div className="waterDrop">
         <img ref={waterDropRef} src={waterDrop} alt="물방울" />
       </div>
