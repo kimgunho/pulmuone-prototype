@@ -6,10 +6,9 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
   position: relative;
 
-  > .title {
+  .title {
     position: relative;
     z-index: 5;
     padding-top: 6vw;
@@ -29,36 +28,114 @@
     height: 50%;
     position: relative;
     z-index: 5;
+    opacity: 0;
+
+    > div {
+      width: fit-content;
+      display: flex;
+
+      &.left {
+        align-items: flex-start;
+
+        > p {
+          color: #fff;
+          font-size: 1.8vw;
+
+          > .point {
+            color: #bfd62f;
+            display: block;
+            font-size: 2.5vw;
+          }
+        }
+      }
+
+      &.right {
+        align-items: flex-end;
+
+        > p {
+          color: #fff;
+          font-size: 1.8vw;
+          line-height: 1.5;
+        }
+      }
+    }
   }
 
-  > .leafs {
+  > .objects {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 5;
 
     > .leaf {
+      z-index: 8;
       &.left {
         position: absolute;
+        transform-origin: left bottom;
         left: -50px;
-        bottom: 10px;
+        bottom: 100px;
         width: 100%;
         max-width: 50vw;
       }
 
       &.right {
         position: absolute;
+        transform-origin: right bottom;
         right: -30px;
         top: 30px;
         width: 100%;
         max-width: 30vw;
       }
+
+      &.bottom {
+        position: absolute;
+        transform-origin: center bottom;
+        bottom: -1vw;
+        transform: rotate(-10deg);
+        right: 5vw;
+        width: 100%;
+        max-width: 20vw;
+      }
+    }
+
+    > .stone {
+      position: absolute;
+      width: 100%;
+      z-index: 7;
+
+      &.first {
+        bottom: -100px;
+        left: -70px;
+        max-width: 40vw;
+
+        &::after {
+          content: '';
+          background-color: #bfd62f;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 1000px;
+          height: 30000px;
+        }
+      }
+      &.second {
+        top: -10vw;
+        left: 1vw;
+        max-width: 30vw;
+        filter: blur(1px);
+      }
+      &.third {
+        top: 0;
+        filter: blur(3px);
+        right: -20vw;
+        max-width: 50vw;
+      }
     }
   }
 
   .shape {
+    opacity: 0;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -83,6 +160,7 @@
     }
 
     &.stone {
+      opacity: 0;
       z-index: 3;
       mask-image: url('../../assets/images/home/shape.svg');
       -webkit-mask-image: url('../../assets/images/home/shape.svg');
