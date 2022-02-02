@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 
 import S01 from '../../components/home/S01';
 import S02 from '../../components/home/S02';
+import S03 from '../../components/home/S03';
 
 import './index.scss';
 
@@ -27,6 +28,7 @@ function Home() {
       </div>
       <S01 />
       <S02 />
+      <S03 />
     </div>
   );
 }

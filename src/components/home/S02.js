@@ -5,15 +5,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import styles from './S02.module.scss';
 
-import sandBg from '../../assets/images/home/section02_bg.jpg';
-import stoneBg from '../../assets/images/home/stoneBg.jpg';
-import leaf_left from '../../assets/images/home/leaf_left.png';
-import leaf_right from '../../assets/images/home/leaf_right.png';
-import leaf_bottom from '../../assets/images/home/leaf_bottom.png';
-import stone01 from '../../assets/images/home/stone01.png';
-import stone02 from '../../assets/images/home/stone02.png';
-import stone03 from '../../assets/images/home/stone03.png';
-import shape from '../../assets/images/home/shape.svg';
+import sandBg from '../../assets/images/home/s02/section02_bg.jpg';
+import stoneBg from '../../assets/images/home/s02/stoneBg.jpg';
+import leaf_left from '../../assets/images/home/s02/leaf_left.png';
+import leaf_right from '../../assets/images/home/s02/leaf_right.png';
+import leaf_bottom from '../../assets/images/home/s02/leaf_bottom.png';
+import stone01 from '../../assets/images/home/s02/stone01.png';
+import stone02 from '../../assets/images/home/s02/stone02.png';
+import stone03 from '../../assets/images/home/s02/stone03.png';
+import shape from '../../assets/images/home/s02/shape.svg';
 
 const cx = classNames.bind(styles);
 

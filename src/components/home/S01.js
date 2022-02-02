@@ -5,8 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import styles from './S01.module.scss';
 
-import containerBg from '../../assets/images/home/section01_bg.jpg';
-import pulmuoneWater from '../../assets/images/home/pulmuoneWater.png';
+import containerBg from '../../assets/images/home/s01/section01_bg.jpg';
+import pulmuoneWater from '../../assets/images/home/s01/pulmuoneWater.png';
 
 const cx = classNames.bind(styles);
 
