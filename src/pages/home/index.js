@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import S01 from '../../components/home/S01';
 import S02 from '../../components/home/S02';
 import S03 from '../../components/home/S03';
+import S04 from '../../components/home/S04';
 
 import './index.scss';
 
@@ -37,7 +38,7 @@ function Home() {
         <S02 />
         <S03 />
       </div>
-      <div style={{ height: 1000 }}></div>
+      <S04 />
     </>
   );
 }
