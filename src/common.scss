@@ -7,7 +7,11 @@ $breakpoint-tablet: 1280px; // tablet
 }
 
 @mixin mainBtn {
-  display: block;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 1;
+  position: relative;
   font-size: 1.25vw;
   width: 100%;
   padding: 1rem 1.25rem;
@@ -15,7 +19,10 @@ $breakpoint-tablet: 1280px; // tablet
 
   &::after {
     content: '〉';
-    float: right;
+    font-size: 1.25vw;
+    right: 1rem;
+    line-height: 1;
+    position: absolute;
   }
 }
 
@@ -51,8 +58,8 @@ $breakpoint-tablet: 1280px; // tablet
 @mixin mainLimiter {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  max-width: 80vw;
+  width: 80vw;
+  max-width: 1920px;
   padding: 0 1rem;
   box-sizing: border-box;
 }

@@ -2,11 +2,7 @@ import { links } from './links';
 
 export const gnb_left = [
   {
-    title: '화강암반수',
-    link: links,
-  },
-  {
-    title: '브랜드',
+    title: '브랜드 스토리',
     link: links,
   },
   {

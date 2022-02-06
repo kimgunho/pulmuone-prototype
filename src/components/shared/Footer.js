@@ -23,14 +23,14 @@ function Footer() {
               <a className={cx('tel')} href="tel:0809067000">
                 080-906-7000
               </a>
-              <p className={cx('time')}>상담시간 : 월 ⁃ 금 09:00 ⁃ 18:00</p>
+              <p className={cx('time')}>상담시간 : 월 - 금 09:00 - 18:00</p>
             </li>
             <li>
               <p className={cx('title')}>가맹점 주문 문의</p>
               <a className={cx('tel')} href="tel:15888655">
                 1588-8655
               </a>
-              <p className={cx('time')}>상담시간 : 월 ⁃ 금 08:30 ⁃ 17:30</p>
+              <p className={cx('time')}>상담시간 : 월 - 금 08:30 - 17:30</p>
             </li>
           </ul>
 

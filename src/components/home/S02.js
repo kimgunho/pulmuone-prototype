@@ -182,6 +182,7 @@ function S02() {
         stoneFirstRef.current,
         {
           duration: 10,
+          delay: -2,
           yPercent: -100,
         },
         1,
@@ -190,6 +191,7 @@ function S02() {
         stoneThirdRef.current,
         {
           duration: 10,
+          delay: -2,
           yPercent: -50,
         },
         1,
