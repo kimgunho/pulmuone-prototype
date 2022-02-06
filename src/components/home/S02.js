@@ -50,7 +50,7 @@ function S02() {
       scrollTrigger: {
         trigger: titleRef.current,
         start: 'top bottom',
-        end: 'bottom top',
+        end: '300% top',
         scrub: true,
       },
     });
@@ -84,7 +84,7 @@ function S02() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top top',
-        end: 'bottom top',
+        end: '500% top',
         scrub: true,
         pin: true,
       },
@@ -112,7 +112,7 @@ function S02() {
       .to(
         leafLeftRef.current,
         {
-          duration: 2,
+          duration: 8,
           x: -window.innerWidth / 2,
         },
         3,
@@ -120,7 +120,7 @@ function S02() {
       .to(
         leafRightRef.current,
         {
-          duration: 2,
+          duration: 8,
           x: window.innerWidth / 2,
         },
         3,
@@ -128,7 +128,7 @@ function S02() {
       .to(
         leafBottomRef.current,
         {
-          duration: 2,
+          duration: 8,
           opacity: 0,
           y: window.innerWidth / 2,
         },
@@ -139,14 +139,15 @@ function S02() {
         {
           maskSize: '300vw',
           webkitMaskSize: '300vw',
-          duration: 5,
+          duration: 8,
+          ease: 'slow',
         },
         3,
       )
       .from(
         stoneFirstRef.current,
         {
-          duration: 5,
+          duration: 8,
           yPercent: window.innerHeight,
         },
         3,

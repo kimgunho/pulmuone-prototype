@@ -39,7 +39,7 @@ function S01() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top top',
-        end: 'bottom top',
+        end: '200% top',
         scrub: true,
         pin: true,
       },
