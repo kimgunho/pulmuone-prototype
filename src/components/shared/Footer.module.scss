@@ -1,1 +1,136 @@
 @import '../../common.scss';
+
+.footer {
+  @include flexCenterStyle;
+  padding: 8rem 0;
+
+  > .limiter {
+    @include mainLimiter;
+
+    > div {
+      &.left {
+        width: 60%;
+
+        > .inner {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          > li {
+            margin-right: 4rem;
+
+            > .title {
+              color: #7bcc12;
+              font-weight: bold;
+              font-size: 1.5rem;
+            }
+            > .tel {
+              white-space: nowrap;
+              font-size: 2.5rem;
+              font-weight: bold;
+              line-height: 1.5;
+              color: #004d1c;
+            }
+            > .time {
+              color: #000;
+              font-weight: bold;
+              font-size: 1.125rem;
+            }
+          }
+        }
+
+        > .info {
+          margin-top: 4rem;
+          display: flex;
+          align-items: flex-start;
+
+          > .title {
+            width: 10rem;
+
+            > img {
+              width: 100%;
+              max-width: 7.5rem;
+            }
+          }
+
+          > .inner {
+            width: calc(100% - 10rem);
+
+            > ul {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+
+              &.top {
+                > li {
+                  &:first-child {
+                    > a {
+                      padding-left: 0;
+                    }
+                  }
+
+                  > a {
+                    display: block;
+                    padding: 0 1rem 1rem 1rem;
+                    color: #666;
+                    font-weight: bold;
+                    font-size: 1rem;
+                  }
+                }
+              }
+
+              &.bottom {
+                flex-wrap: wrap;
+
+                > li {
+                  margin: 0 0.5rem 0.5rem 0;
+                  color: #666;
+                  font-size: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.right {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 20%;
+
+        > select {
+          @include selectIcon;
+          padding: 1rem;
+          background-color: #fff;
+          box-sizing: border-box;
+          font-size: 1rem;
+          color: #666;
+          border: 1px solid #999;
+          width: 100%;
+          max-width: 18rem;
+        }
+
+        > .sns {
+          display: flex;
+          align-items: center;
+          margin-bottom: 2rem;
+
+          > li {
+            margin-right: 2rem;
+
+            > a {
+              @include flexCenterStyle;
+
+              > img {
+                width: auto;
+                max-height: 3rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

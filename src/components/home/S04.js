@@ -8,7 +8,7 @@ import styles from './S04.module.scss';
 import { links } from '../../assets/data/links';
 
 import thinkGreenBg from '../../assets/images/home/s04/thinkGreenBg.jpg';
-import title from '../../assets/images/home/s04/title.png';
+import title from '../../assets/images/shared/pulmuone_title.png';
 import pulmuoneWater_true from '../../assets/images/home/s04/pulmuoneWater_label_true.png';
 import pulmuoneWater_false from '../../assets/images/home/s04/pulmuoneWater_label_false.png';
 import CarbonEmission from '../../assets/images/home/s04/CarbonEmission.png';
