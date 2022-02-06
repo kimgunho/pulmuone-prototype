@@ -1,26 +1,24 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import classNames from 'classnames/bind';
-
-import styles from './App.module.scss';
-import { links } from './assets/data/links';
-
-import Header from './components/shared/Header';
-import Footer from './components/shared/Footer';
-import Home from './pages/home';
-
-const cx = classNames.bind(styles);
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <div className={cx('wrapper')}>
-        <Routes>
-          <Route path={links.home} element={<Home />} />
-        </Routes>
-      </div>
-      <Footer />
-    </BrowserRouter>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
