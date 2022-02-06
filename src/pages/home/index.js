@@ -6,6 +6,8 @@ import S01 from '../../components/home/S01';
 import S02 from '../../components/home/S02';
 import S03 from '../../components/home/S03';
 import S04 from '../../components/home/S04';
+import S05 from '../../components/home/S05';
+import S06 from '../../components/home/S06';
 
 import './index.scss';
 
@@ -39,6 +41,8 @@ function Home() {
         <S03 />
       </div>
       <S04 />
+      <S05 />
+      <S06 />
     </>
   );
 }

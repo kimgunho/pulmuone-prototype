@@ -31,7 +31,6 @@ function S04() {
         start: 'top top',
         end: '200% top',
         scrub: true,
-        markers: true,
         pin: true,
       },
     });
