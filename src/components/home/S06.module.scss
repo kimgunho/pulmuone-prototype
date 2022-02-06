@@ -1,0 +1,50 @@
+@import '../../common.scss';
+
+.container {
+  @include backgroundDefaultStyle;
+  @include flexCenterStyle;
+  background-image: url('../../assets/images/home/s06/background.jpg');
+  width: 100%;
+  padding: 8rem 0;
+
+  > .limiter {
+    @include mainLimiter;
+    align-items: center;
+
+    > .info {
+      > h2 {
+        color: #fff;
+        font-size: 2.5vw;
+        line-height: 1.5;
+      }
+
+      > p {
+        font-size: 1.25vw;
+        line-height: 1.5;
+        color: #fff;
+        padding-top: 2rem;
+      }
+
+      > a {
+        @include mainBtn;
+        background-color: #fff;
+        color: #133550;
+        max-width: 18vw;
+        margin-top: 4rem;
+      }
+    }
+
+    > .logo {
+      @include flexCenterStyle;
+      background-color: #fff;
+      width: 18rem;
+      height: 18rem;
+      border-radius: 50%;
+
+      > img {
+        width: 100%;
+        max-width: 12rem;
+      }
+    }
+  }
+}
