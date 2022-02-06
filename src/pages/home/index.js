@@ -1,4 +1,6 @@
 import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import S01 from '../../components/home/S01';
 import S02 from '../../components/home/S02';
@@ -9,27 +11,34 @@ import './index.scss';
 import waterDrop from '../../assets/images/home/water.png';
 
 function Home() {
+  gsap.registerPlugin(ScrollTrigger);
   const rangeRef = useRef();
   const waterDropRef = useRef();
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      waterDropRef.current.classList.add('active');
-      setTimeout(() => {
-        waterDropRef.current.classList.remove('active');
-      }, 500);
+    gsap.to(waterDropRef.current, {
+      display: 'none',
+      scrollTrigger: {
+        trigger: rangeRef.current,
+        start: 'bottom center',
+        end: 'bottom center',
+        scrub: true,
+      },
     });
   }, []);
 
   return (
-    <div ref={rangeRef}>
-      <div className="waterDrop">
-        <img ref={waterDropRef} src={waterDrop} alt="물방울" />
+    <>
+      <div ref={rangeRef}>
+        <div className="waterDrop">
+          <img ref={waterDropRef} src={waterDrop} alt="물방울" />
+        </div>
+        <S01 />
+        <S02 />
+        <S03 />
       </div>
-      <S01 />
-      <S02 />
-      <S03 />
-    </div>
+      <div style={{ height: 1000 }}></div>
+    </>
   );
 }
 
