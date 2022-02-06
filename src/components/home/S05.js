@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 import styles from './S05.module.scss';
+import { links } from '../../assets/data/links';
 
 const cx = classNames.bind(styles);
 
@@ -21,7 +22,7 @@ function S05() {
             <br />
             풀무원의 바른 먹거리 철학으로 전합니다.
           </p>
-          <Link to="">제품 보러가기</Link>
+          <Link to={links.home}>제품 보러가기</Link>
         </div>
       </div>
     </div>

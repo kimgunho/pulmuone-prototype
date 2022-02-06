@@ -5,10 +5,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import styles from './S03.module.scss';
 
-import sandTopBg from '../../assets/images/home/s03/sandTop.png';
-import sandMiddleBg from '../../assets/images/home/s03/sandMiddle.png';
-import sandBottomBg from '../../assets/images/home/s03/sandBottom.png';
-import waterArticle from '../../assets/images/home/s03/waterActicle.png';
+import background_first from '../../assets/images/home/s03/sandTop.png';
+import background_second from '../../assets/images/home/s03/sandMiddle.png';
+import background_last from '../../assets/images/home/s03/sandBottom.png';
+import article from '../../assets/images/home/s03/waterActicle.png';
 
 const cx = classNames.bind(styles);
 
@@ -16,13 +16,13 @@ function S03() {
   gsap.registerPlugin(ScrollTrigger);
   const rangeRef = useRef();
   const limiterRef = useRef();
-  const topBgRef = useRef();
-  const middleBgRef = useRef();
-  const bottomBgRef = useRef();
-  const waterBubble = useRef([]);
+  const firstBgRef = useRef();
+  const secondBgRef = useRef();
+  const lastBgRef = useRef();
+  const waterArticles = useRef([]);
 
   useEffect(() => {
-    gsap.to(waterBubble.current, {
+    gsap.to(waterArticles.current, {
       webkitFilter: `blur(random(0,5)px)`,
       width: `random(10,50)px`,
       ease: 'none',
@@ -35,51 +35,47 @@ function S03() {
       y: `random(0, ${window.innerHeight})`,
     });
 
-    S03ScrollAnimation();
+    scrollAnimation();
   }, []);
 
-  const S03ScrollAnimation = () => {
+  const scrollAnimation = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: rangeRef.current,
-        start: 'top bottom',
-        end: 'top 70%',
+        start: '-5% bottom',
+        end: 'top top',
         scrub: true,
         pin: true,
       },
     });
 
     tl.to(
-      topBgRef.current,
+      firstBgRef.current,
       {
-        ease: 'slow',
-        duration: 1,
-        yPercent: -100,
+        ease: 'power4.out',
+        duration: 10,
+        yPercent: -120,
       },
       1,
-    ).to(
-      middleBgRef.current,
-      {
-        ease: 'slow',
-        duration: 1,
-        yPercent: -75,
-      },
-      1,
-    );
-
-    gsap.to(limiterRef.current, {
-      opacity: 1,
-      scrollTrigger: {
-        trigger: limiterRef.current,
-        start: 'top center',
-        end: 'bottom center',
-        scrub: true,
-      },
-    });
+    )
+      .to(
+        secondBgRef.current,
+        {
+          ease: 'power4.out',
+          duration: 10,
+          yPercent: -80,
+        },
+        1,
+      )
+      .to(limiterRef.current, {
+        opacity: 1,
+        duration: 5,
+        delay: 10,
+      });
   };
 
   return (
-    <div style={{ backgroundImage: `url(${bottomBgRef})` }} className={cx('container')}>
+    <div style={{ backgroundImage: `url(${lastBgRef})` }} className={cx('container')}>
       <div ref={rangeRef} className={cx('range')} />
       <div ref={limiterRef} className={cx('limiter')}>
         <div className={cx('left')}>
@@ -96,7 +92,7 @@ function S03() {
         </div>
       </div>
 
-      <div className={cx('waterArticles')}>
+      <div className={cx('articles')}>
         {Array.from({ length: 10 }).map((_, index) => {
           const randomX = Math.floor(Math.random() * window.innerWidth);
           const randomY = Math.floor(Math.random() * window.innerHeight);
@@ -105,17 +101,17 @@ function S03() {
             <img
               style={{ transform: `translate(${randomX}px, ${randomY}px)` }}
               key={index}
-              ref={(el) => waterBubble.current.push(el)}
-              src={waterArticle}
+              ref={(el) => waterArticles.current.push(el)}
+              src={article}
               alt=""
             />
           );
         })}
       </div>
 
-      <div ref={topBgRef} className={cx(['background', 'top'])} style={{ backgroundImage: `url(${sandTopBg})` }} />
-      <div ref={middleBgRef} className={cx(['background', 'middle'])} style={{ backgroundImage: `url(${sandMiddleBg})` }} />
-      <div ref={bottomBgRef} className={cx(['background', 'bottom'])} style={{ backgroundImage: `url(${sandBottomBg})` }} />
+      <div ref={firstBgRef} className={cx(['background', 'first'])} style={{ backgroundImage: `url(${background_first})` }} />
+      <div ref={secondBgRef} className={cx(['background', 'second'])} style={{ backgroundImage: `url(${background_second})` }} />
+      <div ref={lastBgRef} className={cx(['background', 'last'])} style={{ backgroundImage: `url(${background_last})` }} />
     </div>
   );
 }

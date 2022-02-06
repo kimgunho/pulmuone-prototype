@@ -5,14 +5,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import styles from './S02.module.scss';
 
-import sandBg from '../../assets/images/home/s02/section02_bg.jpg';
-import stoneBg from '../../assets/images/home/s02/stoneBg.jpg';
+import background_sand from '../../assets/images/home/s02/background_sand.jpg';
+import background_stone from '../../assets/images/home/s02/background_stone.jpg';
 import leaf_left from '../../assets/images/home/s02/leaf_left.png';
 import leaf_right from '../../assets/images/home/s02/leaf_right.png';
 import leaf_bottom from '../../assets/images/home/s02/leaf_bottom.png';
-import stone01 from '../../assets/images/home/s02/stone01.png';
-import stone02 from '../../assets/images/home/s02/stone02.png';
-import stone03 from '../../assets/images/home/s02/stone03.png';
+import stone_first from '../../assets/images/home/s02/stone01.png';
+import stone_second from '../../assets/images/home/s02/stone02.png';
+import stone_third from '../../assets/images/home/s02/stone03.png';
 import shape from '../../assets/images/home/s02/shape.svg';
 
 const cx = classNames.bind(styles);
@@ -32,11 +32,11 @@ function S02() {
   const stoneThirdRef = useRef();
 
   useEffect(() => {
-    S02RepeatAnimation();
-    S02ScrollAnimation();
+    repeatAnimation();
+    scrollAnimation();
   }, []);
 
-  const S02RepeatAnimation = () => {
+  const repeatAnimation = () => {
     gsap.fromTo(leafLeftRef.current, { rotate: 5 }, { rotate: 0, duration: 2, repeat: -1, yoyo: true });
     gsap.fromTo(leafRightRef.current, { rotate: 5 }, { rotate: 0, duration: 1, repeat: -1, yoyo: true });
     gsap.fromTo(leafBottomRef.current, { rotate: 5 }, { rotate: 0, duration: 3, repeat: -1, yoyo: true });
@@ -45,44 +45,47 @@ function S02() {
     gsap.fromTo(stoneThirdRef.current, { y: -20 }, { y: 10, duration: 3, repeat: -1, yoyo: true });
   };
 
-  const S02ScrollAnimation = () => {
+  const scrollAnimation = () => {
     const titleTl = gsap.timeline({
       scrollTrigger: {
         trigger: titleRef.current,
         start: 'top bottom',
         end: 'bottom top',
         scrub: true,
-        markers: false,
       },
     });
 
     titleTl
-      .to(
-        titleRef.current,
-        {
-          webkitFilter: 'blur(20px)',
-          opacity: 0,
-          y: 200,
-        },
-        3,
-      )
+      .to(titleRef.current, {
+        webkitFilter: 'blur(20px)',
+        opacity: 0,
+        y: 200,
+        delay: 2,
+      })
       .from(leafRightRef.current, {
         xPercent: 100,
       })
-      .from(leafLeftRef.current, {
-        xPercent: -100,
-      })
-      .from(leafBottomRef.current, {
-        yPercent: 100,
-      });
+      .from(
+        leafLeftRef.current,
+        {
+          xPercent: -100,
+        },
+        3,
+      )
+      .from(
+        leafBottomRef.current,
+        {
+          yPercent: 100,
+        },
+        3,
+      );
 
     const containerTl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top top',
-        end: '300% top',
+        end: 'bottom top',
         scrub: true,
-        markers: false,
         pin: true,
       },
     });
@@ -93,14 +96,14 @@ function S02() {
         {
           opacity: 1,
         },
-        1,
+        0.5,
       )
       .to(
         shapeRef.current,
         {
           opacity: 1,
         },
-        1,
+        0.5,
       )
       .to(limiterRef.current, {
         duration: 2,
@@ -164,6 +167,33 @@ function S02() {
         },
         3,
       );
+
+    const scrollEndTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'center 40%',
+        end: 'center top',
+        scrub: true,
+      },
+    });
+
+    scrollEndTl
+      .to(
+        stoneFirstRef.current,
+        {
+          duration: 10,
+          yPercent: -100,
+        },
+        1,
+      )
+      .to(
+        stoneThirdRef.current,
+        {
+          duration: 10,
+          yPercent: -50,
+        },
+        1,
+      );
   };
 
   return (
@@ -192,14 +222,14 @@ function S02() {
         <img ref={leafRightRef} draggable="false" className={cx(['leaf', 'right'])} src={leaf_right} alt="" />
         <img ref={leafBottomRef} draggable="false" className={cx(['leaf', 'bottom'])} src={leaf_bottom} alt="" />
 
-        <img ref={stoneFirstRef} draggable="false" className={cx(['stone', 'first'])} src={stone01} alt="" />
-        <img ref={stoneSecondRef} draggable="false" className={cx(['stone', 'second'])} src={stone02} alt="" />
-        <img ref={stoneThirdRef} draggable="false" className={cx(['stone', 'third'])} src={stone03} alt="" />
+        <img ref={stoneFirstRef} draggable="false" className={cx(['stone', 'first'])} src={stone_first} alt="" />
+        <img ref={stoneSecondRef} draggable="false" className={cx(['stone', 'second'])} src={stone_second} alt="" />
+        <img ref={stoneThirdRef} draggable="false" className={cx(['stone', 'third'])} src={stone_third} alt="" />
       </div>
 
       <img ref={shapeRef} className={cx('shape')} src={shape} alt="" />
-      <div ref={stoneBgRef} style={{ backgroundImage: `url(${stoneBg})` }} className={cx(['background', 'stone'])} />
-      <div style={{ backgroundImage: `url(${sandBg})` }} className={cx(['background', 'sand'])} />
+      <div ref={stoneBgRef} style={{ backgroundImage: `url(${background_stone})` }} className={cx(['background', 'stone'])} />
+      <div style={{ backgroundImage: `url(${background_sand})` }} className={cx(['background', 'sand'])} />
     </div>
   );
 }

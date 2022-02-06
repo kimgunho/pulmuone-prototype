@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
 import { links, sns } from '../../assets/data/links';
 
-import title from '../../assets/images/shared/pulmuone_title.png';
+import footer_logo from '../../assets/images/shared/pulmuone_title.png';
 import facebook_icon from '../../assets/images/shared/facebook.png';
 import insta_icon from '../../assets/images/shared/insta.png';
 import blog_icon from '../../assets/images/shared/blog.png';
@@ -36,7 +36,7 @@ function Footer() {
 
           <div className={cx('info')}>
             <h2 className={cx('title')}>
-              <img src={title} alt="" />
+              <img src={footer_logo} alt="" />
             </h2>
             <div className={cx('inner')}>
               <ul className={cx('top')}>

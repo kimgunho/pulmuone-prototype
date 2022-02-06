@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import styles from './S01.module.scss';
 
-import containerBg from '../../assets/images/home/s01/section01_bg.jpg';
+import background from '../../assets/images/home/s01/background.jpg';
 import pulmuoneWater from '../../assets/images/home/s01/pulmuoneWater.png';
 
 const cx = classNames.bind(styles);
@@ -17,28 +17,30 @@ function S01() {
   const pulmuoneWaterRef = useRef();
 
   useEffect(() => {
-    // first load
-    gsap.to(titleRef.current, {
-      opacity: 1,
-      duration: 1,
-    });
-
-    gsap.to(pulmuoneWaterRef.current, {
-      y: -50,
-      duration: 1,
-    });
-
-    S01Animation();
+    autoAnimation();
+    scrollAnimation();
   }, []);
 
-  const S01Animation = () => {
+  const autoAnimation = () => {
+    gsap.from(titleRef.current, {
+      opacity: 0,
+      ease: 'power4.in',
+      duration: 1,
+    });
+
+    gsap.from(pulmuoneWaterRef.current, {
+      y: -100,
+      duration: 1,
+    });
+  };
+
+  const scrollAnimation = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top top',
-        end: '250% top',
+        end: 'bottom top',
         scrub: true,
-        markers: false,
         pin: true,
       },
     });
@@ -46,15 +48,15 @@ function S01() {
     tl.to(
       titleRef.current,
       {
-        duration: 1,
-        y: -300,
+        duration: 2,
+        y: '-40vw',
       },
       1,
     )
       .to(
         pulmuoneWaterRef.current,
         {
-          duration: 1,
+          duration: 2,
           yPercent: -150,
         },
         1,
@@ -75,7 +77,7 @@ function S01() {
         </h2>
         <img ref={pulmuoneWaterRef} draggable="false" className={cx('pulmuoneWater')} src={pulmuoneWater} alt="풀무원 샘물" />
       </div>
-      <div style={{ backgroundImage: `url(${containerBg})` }} className={cx('background')}></div>
+      <div style={{ backgroundImage: `url(${background})` }} className={cx('background')} />
     </div>
   );
 }

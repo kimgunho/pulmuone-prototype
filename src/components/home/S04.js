@@ -7,10 +7,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './S04.module.scss';
 import { links } from '../../assets/data/links';
 
-import thinkGreenBg from '../../assets/images/home/s04/thinkGreenBg.jpg';
+import background from '../../assets/images/home/s04/background.jpg';
 import title from '../../assets/images/shared/pulmuone_title.png';
-import pulmuoneWater_true from '../../assets/images/home/s04/pulmuoneWater_label_true.png';
-import pulmuoneWater_false from '../../assets/images/home/s04/pulmuoneWater_label_false.png';
+import pulmuoneWater_label from '../../assets/images/home/s04/pulmuoneWater_label_true.png';
+import pulmuoneWater from '../../assets/images/home/s04/pulmuoneWater_label_false.png';
 import CarbonEmission from '../../assets/images/home/s04/CarbonEmission.png';
 
 const cx = classNames.bind(styles);
@@ -25,6 +25,10 @@ function S04() {
   const backgroundRef = useRef();
 
   useEffect(() => {
+    scrollAnimation();
+  }, []);
+
+  const scrollAnimation = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -77,7 +81,7 @@ function S04() {
         },
         2,
       );
-  }, []);
+  };
 
   return (
     <div ref={containerRef} className={cx('container')}>
@@ -106,12 +110,12 @@ function S04() {
         </div>
 
         <div className={cx('main')}>
-          <img ref={labelTrueRef} className={cx('water')} draggable="false" src={pulmuoneWater_true} alt="" />
-          <img ref={labelFalseRef} className={cx(['water', 'false'])} draggable="false" src={pulmuoneWater_false} alt="" />
+          <img ref={labelTrueRef} className={cx(['water'])} draggable="false" src={pulmuoneWater_label} alt="" />
+          <img ref={labelFalseRef} className={cx(['water', 'false'])} draggable="false" src={pulmuoneWater} alt="" />
         </div>
       </div>
 
-      <img ref={backgroundRef} className={cx('background')} draggable="false" src={thinkGreenBg} alt="" />
+      <img ref={backgroundRef} className={cx('background')} draggable="false" src={background} alt="" />
     </div>
   );
 }

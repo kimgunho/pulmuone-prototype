@@ -62,39 +62,32 @@
   }
 
   > .objects {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    @include absoluteFull;
 
     > .leaf {
       z-index: 8;
+      position: absolute;
+      width: 100%;
+
       &.left {
-        position: absolute;
         transform-origin: left bottom;
         left: -50px;
         bottom: 100px;
-        width: 100%;
         max-width: 50vw;
       }
 
       &.right {
-        position: absolute;
         transform-origin: right bottom;
         right: -30px;
         top: 30px;
-        width: 100%;
         max-width: 30vw;
       }
 
       &.bottom {
-        position: absolute;
         transform-origin: center bottom;
         bottom: -1vw;
         transform: rotate(-10deg);
         right: 5vw;
-        width: 100%;
         max-width: 20vw;
       }
     }

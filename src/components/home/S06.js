@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 import styles from './S06.module.scss';
+import { links } from '../../assets/data/links';
 
-import aswLogo from '../../assets/images/home/s06/asw.png';
+import aws from '../../assets/images/home/s06/asw.png';
 
 const cx = classNames.bind(styles);
 
@@ -22,10 +23,10 @@ function S06() {
             <br />
             국내 먹는샘물 업계 최초로 AWS certification 인증을 획득했습니다.{' '}
           </p>
-          <Link to="">제품 보러가기</Link>
+          <Link to={links.home}>제품 보러가기</Link>
         </div>
         <div className={cx('logo')}>
-          <img draggable="false" src={aswLogo} alt="" />
+          <img draggable="false" src={aws} alt="" />
         </div>
       </div>
     </div>
