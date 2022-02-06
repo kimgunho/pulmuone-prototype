@@ -5,6 +5,7 @@ import styles from './App.module.scss';
 import { links } from './assets/data/links';
 
 import Header from './components/shared/Header';
+import Footer from './components/shared/Footer';
 import Home from './pages/home';
 
 const cx = classNames.bind(styles);
@@ -18,6 +19,7 @@ function App() {
           <Route path={links.home} element={<Home />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

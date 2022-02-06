@@ -135,7 +135,7 @@ function S02() {
         stoneBgRef.current,
         {
           maskSize: '300vw',
-          scale: 1.5,
+          webkitMaskSize: '300vw',
           duration: 5,
         },
         3,
