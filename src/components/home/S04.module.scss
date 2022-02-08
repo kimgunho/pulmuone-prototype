@@ -102,7 +102,7 @@
         justify-content: flex-end;
 
         @include mobile {
-          justify-content: space-between;
+          justify-content: space-around;
         }
 
         @include mobile {
@@ -136,7 +136,7 @@
             align-items: center;
             color: #99ba10;
             font-size: 1.8vw;
-            margin-top: 2rem;
+            margin-top: 4rem;
 
             @include tablet {
               font-size: 3.6vw;

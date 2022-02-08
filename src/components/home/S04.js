@@ -13,6 +13,8 @@ import pulmuoneWater_label from '../../assets/images/home/s04/pulmuoneWater_labe
 import pulmuoneWater from '../../assets/images/home/s04/pulmuoneWater_label_false.png';
 import CarbonEmission from '../../assets/images/home/s04/CarbonEmission.png';
 
+import CarbonEmissionLogo from '../shared/CarbonEmissionLogo';
+
 const cx = classNames.bind(styles);
 
 function S04() {
@@ -94,7 +96,8 @@ function S04() {
         </div>
 
         <div ref={rightRef} className={cx('right')}>
-          <img src={CarbonEmission} alt="" />
+          {/* <img src={CarbonEmission} alt="" /> */}
+          <CarbonEmissionLogo />
           <div className={cx('inner')}>
             <h3>
               <span>1</span> 초경량 뚜껑
@@ -115,4 +118,5 @@ function S04() {
     </div>
   );
 }
+
 export default S04;

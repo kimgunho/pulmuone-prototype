@@ -1,0 +1,110 @@
+@import '../../common.scss';
+
+.circle {
+  width: 15vw;
+  height: 15vw;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  border: 3px solid transparent;
+
+  @include mobile {
+    width: 18vw;
+    height: 18vw;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    width: calc(100% + 2.5rem);
+    height: calc(100% + 2.5rem);
+    border-radius: 50%;
+    border: 1px solid #bed730;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    width: calc(100% + 1.25rem);
+    height: calc(100% + 1.25rem);
+    border-radius: 50%;
+    border: 3px solid #a3c41c;
+  }
+
+  > .title {
+    padding-top: 2vw;
+    font-size: 2vw;
+    color: #a3c41c;
+    text-align: center;
+    z-index: 3;
+    position: relative;
+
+    @include mobile {
+      font-size: 3vw;
+    }
+  }
+
+  > .box {
+    @include absoluteFull;
+    border-radius: 50%;
+    overflow: hidden;
+
+    > div {
+      @include absoluteFull;
+      width: 200%;
+      height: 200%;
+      left: 50%;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      mask-position: center center;
+      -webkit-mask-posigin: center center;
+      mask-image: url('../../assets/images/shared/wave.svg');
+      -webkit-mask-image: url('../../assets/images/shared/wave.svg');
+      mask-size: 100%;
+      -webkit-mask-size: 100%;
+      top: 120%;
+
+      &.wave1 {
+        background-color: rgba(190, 215, 48, 0.8);
+        z-index: 4;
+        animation: waveAnimation_first 8s linear infinite;
+        @keyframes waveAnimation_first {
+          0% {
+            transform: translate(-30%, -50%);
+          }
+          50% {
+            transform: translate(-70%, -35%);
+          }
+          100% {
+            transform: translate(-30%, -50%);
+          }
+        }
+      }
+
+      &.wave2 {
+        background-color: rgba(190, 215, 48, 0.75);
+        animation: waveAnimation_second 6s linear infinite;
+        z-index: 5;
+        @keyframes waveAnimation_second {
+          0% {
+            transform: translate(-70%, -55%) rotateY(180deg);
+          }
+          50% {
+            transform: translate(-30%, -35%) rotateY(180deg);
+          }
+          100% {
+            transform: translate(-70%, -55%) rotateY(180deg);
+          }
+        }
+      }
+    }
+  }
+}
