@@ -7,15 +7,50 @@
   width: 100%;
   padding: 8rem 0;
 
+  @include mobile {
+    height: 100vh;
+    padding: 0;
+  }
+
   > .limiter {
     @include mainLimiter;
     align-items: center;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
     > .info {
+      @include mobile {
+        width: 100%;
+      }
+
       > h2 {
         color: #fff;
         font-size: 2.5vw;
         line-height: 1.5;
+
+        @include mobile {
+          font-size: 7vw;
+          padding-bottom: 2rem;
+        }
+      }
+
+      > .logo {
+        @include flexCenterStyle;
+        background-color: #fff;
+        width: 45vw;
+        height: 45vw;
+        border-radius: 50%;
+        display: none;
+
+        @include mobile {
+          display: flex;
+        }
+
+        > img {
+          width: 70%;
+        }
       }
 
       > p {
@@ -23,13 +58,20 @@
         line-height: 1.5;
         color: #fff;
         padding-top: 2rem;
+
+        @include mobile {
+          font-size: 4vw;
+
+          > br {
+            display: none;
+          }
+        }
       }
 
       > a {
         @include mainBtn;
         background-color: #fff;
         color: #133550;
-        max-width: 18vw;
         margin-top: 4rem;
       }
     }
@@ -40,6 +82,10 @@
       width: 18rem;
       height: 18rem;
       border-radius: 50%;
+
+      @include mobile {
+        display: none;
+      }
 
       > img {
         width: 100%;

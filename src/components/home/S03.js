@@ -22,6 +22,11 @@ function S03() {
   const waterArticles = useRef([]);
 
   useEffect(() => {
+    repeatArticles();
+    scrollAnimation();
+  }, []);
+
+  const repeatArticles = () => {
     gsap.to(waterArticles.current, {
       webkitFilter: `blur(random(0,5)px)`,
       width: `random(10,50)px`,
@@ -34,9 +39,7 @@ function S03() {
       x: `random(0, ${window.innerWidth})`,
       y: `random(0, ${window.innerHeight})`,
     });
-
-    scrollAnimation();
-  }, []);
+  };
 
   const scrollAnimation = () => {
     const tl = gsap.timeline({

@@ -13,9 +13,17 @@ $breakpoint-tablet: 1280px; // tablet
   line-height: 1;
   position: relative;
   font-size: 1.25vw;
-  width: 100%;
-  padding: 1rem 1.25rem;
+  padding: 1rem 6rem 1rem 1.25rem;
+  width: fit-content;
   transition: all 0.2s ease-in-out;
+
+  @include tablet {
+    font-size: 2vw;
+  }
+
+  @include mobile {
+    font-size: 4vw;
+  }
 
   &::after {
     content: '〉';
@@ -23,6 +31,14 @@ $breakpoint-tablet: 1280px; // tablet
     right: 1rem;
     line-height: 1;
     position: absolute;
+
+    @include tablet {
+      font-size: 2vw;
+    }
+
+    @include mobile {
+      font-size: 4vw;
+    }
   }
 }
 
@@ -62,6 +78,11 @@ $breakpoint-tablet: 1280px; // tablet
   max-width: 1920px;
   padding: 0 1rem;
   box-sizing: border-box;
+
+  @include tablet {
+    width: 100%;
+    padding: 0 2rem;
+  }
 }
 
 @mixin limiter {

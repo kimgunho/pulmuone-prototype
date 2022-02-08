@@ -39,16 +39,10 @@ function S04() {
       },
     });
 
-    tl.fromTo(
-      backgroundRef.current,
-      {
-        yPercent: 100,
-      },
-      {
-        duration: 2,
-        yPercent: -100,
-      },
-    )
+    tl.to(backgroundRef.current, {
+      duration: 4,
+      top: '-100%',
+    })
       .to(
         labelTrueRef.current,
         {
@@ -101,12 +95,14 @@ function S04() {
 
         <div ref={rightRef} className={cx('right')}>
           <img src={CarbonEmission} alt="" />
-          <h3>
-            <span>1</span> 초경량 뚜껑
-          </h3>
-          <p>
-            기존 자사 제품대비 <br /> 플라스틱 사용량 40% 저감
-          </p>
+          <div className={cx('inner')}>
+            <h3>
+              <span>1</span> 초경량 뚜껑
+            </h3>
+            <p>
+              기존 자사 제품대비 <br /> 플라스틱 사용량 40% 저감
+            </p>
+          </div>
         </div>
 
         <div className={cx('main')}>

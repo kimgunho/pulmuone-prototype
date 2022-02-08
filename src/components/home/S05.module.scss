@@ -5,43 +5,81 @@
   width: 100%;
   height: 100vh;
 
-  > .background {
-    @include backgroundDefaultStyle;
-    background-position: left center;
-    background-image: url('../../assets/images/home/s05/background.jpg');
-    width: 50%;
-    height: 100%;
+  @include tablet {
+    flex-direction: column;
   }
-  > .detail {
-    @include flexCenterStyle;
+
+  > div {
     width: 50%;
     height: 100%;
-    background-color: #004d1c;
 
-    > .info {
-      > h2 {
-        color: #fff;
-        font-size: 2.5vw;
-        line-height: 1.5;
-      }
+    @include tablet {
+      width: 100%;
+      height: 50%;
+    }
 
-      > p {
-        font-size: 1.5vw;
-        line-height: 1.5;
-        color: #fff;
-        padding-top: 2rem;
-      }
+    &.background {
+      @include backgroundDefaultStyle;
+      background-position: left center;
+      background-image: url('../../assets/images/home/s05/background.jpg');
+    }
 
-      > a {
-        @include mainBtn;
-        max-width: 18vw;
-        color: #004d1c;
-        background-color: #fff;
-        margin-top: 5rem;
+    &.detail {
+      @include flexCenterStyle;
+      background-color: #004d1c;
 
-        &:hover {
-          background-color: #bfd62f;
+      > .info {
+        @include tablet {
+          width: 90%;
+        }
+
+        > h2 {
           color: #fff;
+          font-size: 2.5vw;
+          line-height: 1.5;
+
+          @include tablet {
+            font-size: 3.5vw;
+          }
+
+          @include mobile {
+            font-size: 5vw;
+          }
+        }
+
+        > p {
+          font-size: 1.5vw;
+          line-height: 1.5;
+          color: #fff;
+          padding-top: 2rem;
+
+          @include tablet {
+            font-size: 2.5vw;
+          }
+
+          @include mobile {
+            font-size: 4vw;
+          }
+        }
+
+        > a {
+          @include mainBtn;
+          color: #004d1c;
+          background-color: #fff;
+          margin-top: 5rem;
+
+          &:hover {
+            background-color: #bfd62f;
+            color: #fff;
+          }
+
+          @include tablet {
+            margin-top: 4rem;
+          }
+
+          @include mobile {
+            margin-top: 3rem;
+          }
         }
       }
     }

@@ -16,10 +16,28 @@
     font-size: 2vw;
     text-align: center;
 
+    @include tablet {
+      padding-top: 12vw;
+      font-size: 4vw;
+    }
+
+    @include mobile {
+      padding-top: 22vw;
+      font-size: 6vw;
+    }
+
     > .point {
       font-weight: bold;
       display: block;
       font-size: 4.5vw;
+
+      @include tablet {
+        font-size: 9vw;
+      }
+
+      @include mobile {
+        font-size: 13vw;
+      }
     }
   }
 
@@ -29,6 +47,10 @@
     position: relative;
     z-index: 15;
     opacity: 0;
+
+    @include tablet {
+      flex-direction: column;
+    }
 
     > div {
       width: fit-content;
@@ -41,10 +63,26 @@
           color: #fff;
           font-size: 2vw;
 
+          @include tablet {
+            font-size: 4vw;
+          }
+
+          @include mobile {
+            font-size: 6vw;
+          }
+
           > .point {
             color: #bfd62f;
             display: block;
             font-size: 3vw;
+
+            @include tablet {
+              font-size: 6vw;
+            }
+
+            @include mobile {
+              font-size: 9vw;
+            }
           }
         }
       }
@@ -56,6 +94,18 @@
           color: #fff;
           font-size: 1.6vw;
           line-height: 1.5;
+
+          @include tablet {
+            font-size: 3vw;
+          }
+
+          @include mobile {
+            font-size: 5vw;
+
+            > br {
+              display: none;
+            }
+          }
         }
       }
     }
@@ -81,6 +131,10 @@
         right: -30px;
         top: 30px;
         max-width: 30vw;
+
+        @include mobile {
+          right: 0;
+        }
       }
 
       &.bottom {
@@ -98,21 +152,33 @@
       z-index: 7;
 
       &.first {
-        bottom: -100px;
-        left: -70px;
+        bottom: 0;
+        left: -5%;
         max-width: 40vw;
+
+        @include mobile {
+          max-width: 60vw;
+        }
       }
       &.second {
-        top: -10vw;
+        top: -0;
         left: 1vw;
         max-width: 30vw;
         filter: blur(1px);
+
+        @include mobile {
+          max-width: 40vw;
+        }
       }
       &.third {
         top: 0;
         filter: blur(3px);
-        right: -20vw;
+        right: -20%;
         max-width: 50vw;
+
+        @include mobile {
+          max-width: 60vw;
+        }
       }
     }
   }
@@ -128,6 +194,11 @@
     height: calc(10vw + 20px);
     mix-blend-mode: luminosity;
     filter: blur(20px);
+
+    @include tablet {
+      width: calc(20vw + 20px);
+      height: calc(20vw + 20px);
+    }
   }
 
   > .background {
@@ -153,6 +224,11 @@
       -webkit-mask-posigin: center center;
       mask-size: 10vw;
       -webkit-mask-size: 10vw;
+
+      @include tablet {
+        mask-size: 20vw;
+        -webkit-mask-size: 20vw;
+      }
     }
   }
 }

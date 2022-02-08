@@ -20,6 +20,10 @@
     z-index: 5;
     opacity: 0;
 
+    @include tablet {
+      flex-direction: column;
+    }
+
     > div {
       width: fit-content;
       display: flex;
@@ -31,9 +35,24 @@
           color: #000;
           font-size: 2vw;
 
+          @include tablet {
+            font-size: 4vw;
+          }
+
+          @include mobile {
+            font-size: 6vw;
+          }
           > .point {
             display: block;
             font-size: 3vw;
+
+            @include tablet {
+              font-size: 6vw;
+            }
+
+            @include mobile {
+              font-size: 9vw;
+            }
           }
         }
       }
@@ -45,6 +64,18 @@
           color: #000;
           font-size: 1.6vw;
           line-height: 1.5;
+
+          @include tablet {
+            font-size: 3vw;
+          }
+
+          @include mobile {
+            font-size: 5vw;
+
+            > br {
+              display: none;
+            }
+          }
         }
       }
     }
@@ -52,6 +83,7 @@
 
   > .articles {
     @include absoluteFull;
+    overflow: hidden;
     z-index: 10;
   }
 

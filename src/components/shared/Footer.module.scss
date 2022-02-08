@@ -4,6 +4,10 @@
   @include flexCenterStyle;
   padding: 8rem 0;
 
+  @include tablet {
+    display: none;
+  }
+
   > .limiter {
     @include mainLimiter;
 
