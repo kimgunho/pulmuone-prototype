@@ -137,9 +137,9 @@ function S02() {
       .to(
         stoneBgRef.current,
         {
-          maskSize: '300vw',
-          webkitMaskSize: '300vw',
-          duration: 8,
+          maskSize: 'auto 300vh',
+          webkitMaskSize: 'auto 300vh',
+          duration: 5,
           ease: 'slow',
         },
         3,

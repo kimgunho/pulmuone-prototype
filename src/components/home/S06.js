@@ -18,6 +18,11 @@ function S06() {
             <br />
             AWS 인증
           </h2>
+
+          <div className={cx('logo')}>
+            <img draggable="false" src={aws} alt="" />
+          </div>
+
           <p>
             수자원의 지속 가능성에 관심을 가지고 이를 보존하기 위한 노력을 인정 받아
             <br />

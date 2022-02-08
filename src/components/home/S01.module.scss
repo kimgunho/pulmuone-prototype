@@ -19,12 +19,22 @@
     border-radius: 50%;
     box-shadow: inset 5px 5px 10px #000000ad;
 
+    @include tablet {
+      width: 80vw;
+      height: 80vw;
+    }
+
     > .title {
       @include fontEn;
       color: #fff;
       font-size: 4.5vw;
       text-align: center;
       padding-top: 4vw;
+
+      @include tablet {
+        font-size: 9vw;
+        padding-top: 9vw;
+      }
 
       &::selection {
         background-color: #bfd62f;
@@ -38,6 +48,11 @@
       transform: translate(-50%, 0);
       width: 100%;
       max-width: 18vw;
+
+      @include tablet {
+        max-width: 36vw;
+        top: 28vw;
+      }
     }
   }
 
