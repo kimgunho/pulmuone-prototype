@@ -12,8 +12,8 @@ import background from '../../assets/images/home/s04/background.jpg';
 import title from '../../assets/images/shared/pulmuone_title.png';
 import pulmuoneWater_label from '../../assets/images/home/s04/pulmuoneWater_label_true.png';
 import pulmuoneWater from '../../assets/images/home/s04/pulmuoneWater_label_false.png';
-import pulmuoneWater_second from '../../assets/images/home/s04/pulmuoneWater_label_false_2.png';
-import pulmuoneWater_last from '../../assets/images/home/s04/pulmuoneWater_label_false_3.png';
+// import pulmuoneWater_second from '../../assets/images/home/s04/pulmuoneWater_label_false_2.png';
+// import pulmuoneWater_last from '../../assets/images/home/s04/pulmuoneWater_label_false_3.png';
 import CarbonEmissionLogo from '../shared/CarbonEmissionLogo';
 
 const cx = classNames.bind(styles);
@@ -86,23 +86,23 @@ function S04() {
           opacity: 0,
         },
         2,
-      )
-      .set(labelFalseRef.current, { attr: { src: pulmuoneWater_second }, width: '160%' })
-      .to(descRef.current, {
-        duration: 5,
-        text: {
-          speed: 2,
-          value: '<h3><span>2</span> 중간 타이틀</h3><p>222222 <br /> 222222222</p>',
-        },
-      })
-      .set(labelFalseRef.current, { attr: { src: pulmuoneWater_last } })
-      .to(descRef.current, {
-        duration: 5,
-        text: {
-          speed: 2,
-          value: '<h3><span>3</span> 라스트 타이틀</h3><p>333333 <br /> 3333333333</p>',
-        },
-      });
+      );
+    // .set(labelFalseRef.current, { attr: { src: pulmuoneWater_second }, width: '160%' })
+    // .to(descRef.current, {
+    //   duration: 5,
+    //   text: {
+    //     speed: 2,
+    //     value: '<h3><span>2</span> 중간 타이틀</h3><p>222222 <br /> 222222222</p>',
+    //   },
+    // })
+    // .set(labelFalseRef.current, { attr: { src: pulmuoneWater_last } })
+    // .to(descRef.current, {
+    //   duration: 5,
+    //   text: {
+    //     speed: 2,
+    //     value: '<h3><span>3</span> 라스트 타이틀</h3><p>333333 <br /> 3333333333</p>',
+    //   },
+    // });
   };
 
   return (
