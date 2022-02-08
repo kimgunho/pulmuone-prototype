@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TextPlugin } from 'gsap/TextPlugin';
 
 import styles from './S04.module.scss';
 import { links } from '../../assets/data/links';
@@ -11,20 +12,29 @@ import background from '../../assets/images/home/s04/background.jpg';
 import title from '../../assets/images/shared/pulmuone_title.png';
 import pulmuoneWater_label from '../../assets/images/home/s04/pulmuoneWater_label_true.png';
 import pulmuoneWater from '../../assets/images/home/s04/pulmuoneWater_label_false.png';
-import CarbonEmission from '../../assets/images/home/s04/CarbonEmission.png';
-
+import pulmuoneWater_second from '../../assets/images/home/s04/pulmuoneWater_label_false_2.png';
+import pulmuoneWater_last from '../../assets/images/home/s04/pulmuoneWater_label_false_3.png';
 import CarbonEmissionLogo from '../shared/CarbonEmissionLogo';
 
 const cx = classNames.bind(styles);
 
 function S04() {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, TextPlugin);
+  // gsap.registerEffect({
+  //   name: 'fade',
+  //   effect: (target) => {
+  //     return gsap.from(target, { opacity: 0, y: -20 });
+  //   },
+  //   extendTimeline: true,
+  // });
+
   const containerRef = useRef();
   const leftRef = useRef();
   const rightRef = useRef();
   const labelTrueRef = useRef();
   const labelFalseRef = useRef();
   const backgroundRef = useRef();
+  const descRef = useRef();
 
   useEffect(() => {
     scrollAnimation();
@@ -35,7 +45,7 @@ function S04() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top top',
-        end: '200% top',
+        end: '300% top',
         scrub: true,
         pin: true,
       },
@@ -76,7 +86,23 @@ function S04() {
           opacity: 0,
         },
         2,
-      );
+      )
+      .set(labelFalseRef.current, { attr: { src: pulmuoneWater_second }, width: '160%' })
+      .to(descRef.current, {
+        duration: 5,
+        text: {
+          speed: 2,
+          value: '<h3><span>2</span> 중간 타이틀</h3><p>222222 <br /> 222222222</p>',
+        },
+      })
+      .set(labelFalseRef.current, { attr: { src: pulmuoneWater_last } })
+      .to(descRef.current, {
+        duration: 5,
+        text: {
+          speed: 2,
+          value: '<h3><span>3</span> 라스트 타이틀</h3><p>333333 <br /> 3333333333</p>',
+        },
+      });
   };
 
   return (
@@ -96,9 +122,8 @@ function S04() {
         </div>
 
         <div ref={rightRef} className={cx('right')}>
-          {/* <img src={CarbonEmission} alt="" /> */}
           <CarbonEmissionLogo />
-          <div className={cx('inner')}>
+          <div ref={descRef} className={cx('inner')}>
             <h3>
               <span>1</span> 초경량 뚜껑
             </h3>
