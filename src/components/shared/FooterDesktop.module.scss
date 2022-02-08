@@ -4,10 +4,6 @@
   @include flexCenterStyle;
   padding: 8rem 0;
 
-  @include tablet {
-    display: none;
-  }
-
   > .limiter {
     @include mainLimiter;
 
@@ -103,6 +99,10 @@
         align-items: flex-start;
         flex-direction: column;
         width: 20%;
+
+        @include tablet {
+          width: 30%;
+        }
 
         > select {
           @include selectIcon;

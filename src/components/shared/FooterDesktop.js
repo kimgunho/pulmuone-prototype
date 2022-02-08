@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
-import styles from './Footer.module.scss';
+import styles from './FooterDesktop.module.scss';
 import { links, sns } from '../../assets/data/links';
 
 import footer_logo from '../../assets/images/shared/pulmuone_title.png';

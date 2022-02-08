@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useRecoilValue } from 'recoil';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 import styles from './Header.module.scss';
+import { viewportWidthState } from '../../recoil/state';
 import { links } from '../../assets/data/links';
 import { gnb_left, gnb_right } from '../../assets/data/gnb';
 
@@ -16,12 +18,7 @@ const cx = classNames.bind(styles);
 
 function Header() {
   const [clicked, setClick] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
-  const breakPoint = 740;
-
-  useEffect(() => {
-    window.addEventListener('resize', () => setWidth(window.innerWidth));
-  }, []);
+  const width = useRecoilValue(viewportWidthState);
 
   const handleCloseNav = () => {
     setClick(false);
@@ -33,7 +30,7 @@ function Header() {
         <div className={cx('limiter')}>
           <h1 className={cx('logo')}>
             <NavLink to={links.home}>
-              <img src={width > breakPoint ? desktop_logo : mobile_logo} alt="풀무원 샘물" />
+              <img src={width.currentWidth > width.breakPoint ? desktop_logo : mobile_logo} alt="풀무원 샘물" />
             </NavLink>
           </h1>
 
