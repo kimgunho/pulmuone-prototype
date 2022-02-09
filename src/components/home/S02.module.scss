@@ -1,43 +1,28 @@
 @import '../../common.scss';
 
 .container {
-  display: flex;
-  align-items: center;
+  @include flexCenterStyle;
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  max-height: 100vh;
   position: relative;
 
   .title {
-    position: relative;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, 0);
     z-index: 5;
-    padding-top: 6vw;
+    padding-top: 8.75rem;
     color: #fff;
-    font-size: 2vw;
+    font-size: 3.125rem;
     text-align: center;
-
-    @include tablet {
-      padding-top: 12vw;
-      font-size: 4vw;
-    }
-
-    @include mobile {
-      padding-top: 22vw;
-      font-size: 6vw;
-    }
 
     > .point {
       font-weight: bold;
       display: block;
-      font-size: 4.5vw;
-
-      @include tablet {
-        font-size: 9vw;
-      }
-
-      @include mobile {
-        font-size: 13vw;
-      }
+      font-size: 5rem;
     }
   }
 
@@ -46,7 +31,6 @@
     height: 50%;
     position: relative;
     z-index: 15;
-    opacity: 0;
 
     @include tablet {
       flex-direction: column;
@@ -61,27 +45,17 @@
 
         > p {
           color: #fff;
-          font-size: 2vw;
-
-          @include tablet {
-            font-size: 4vw;
-          }
-
-          @include mobile {
-            font-size: 6vw;
-          }
+          font-size: 2.625rem;
 
           > .point {
-            color: #bfd62f;
             display: block;
-            font-size: 3vw;
+            font-size: 3.5rem;
+            color: #fff;
+            transition: all 0.1s ease;
 
-            @include tablet {
-              font-size: 6vw;
-            }
-
-            @include mobile {
-              font-size: 9vw;
+            &:hover {
+              color: #bfd62f;
+              border-bottom: 1px solid #bfd62f;
             }
           }
         }
@@ -89,19 +63,19 @@
 
       &.right {
         align-items: flex-end;
+        position: relative;
+        width: 100%;
+        max-width: 23rem;
 
         > p {
+          position: absolute;
+          bottom: 0;
+          left: 0;
           color: #fff;
-          font-size: 1.6vw;
+          font-size: 1.625rem;
           line-height: 1.5;
 
-          @include tablet {
-            font-size: 3vw;
-          }
-
           @include mobile {
-            font-size: 5vw;
-
             > br {
               display: none;
             }
@@ -122,7 +96,7 @@
       &.left {
         transform-origin: left bottom;
         left: -50px;
-        bottom: 100px;
+        bottom: -100px;
         max-width: 50vw;
       }
 
@@ -139,7 +113,7 @@
 
       &.bottom {
         transform-origin: center bottom;
-        bottom: -1vw;
+        top: -10vw;
         transform: rotate(-10deg);
         right: 5vw;
         max-width: 20vw;
@@ -152,7 +126,7 @@
       z-index: 7;
 
       &.first {
-        bottom: 0;
+        bottom: -10vw;
         left: -5%;
         max-width: 40vw;
 
@@ -161,7 +135,7 @@
         }
       }
       &.second {
-        top: -0;
+        top: -10vw;
         left: 1vw;
         max-width: 30vw;
         filter: blur(1px);
@@ -171,10 +145,11 @@
         }
       }
       &.third {
-        top: 0;
+        top: -10vw;
         filter: blur(3px);
         right: -20%;
         max-width: 50vw;
+        z-index: 9;
 
         @include mobile {
           max-width: 60vw;
@@ -190,15 +165,9 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
-    width: calc(10vw + 20px);
-    height: calc(10vw + 20px);
-    mix-blend-mode: luminosity;
-    filter: blur(20px);
-
-    @include tablet {
-      width: calc(20vw + 20px);
-      height: calc(20vw + 20px);
-    }
+    width: auto;
+    // height: 15rem;
+    height: 16vh;
   }
 
   > .background {
@@ -222,13 +191,8 @@
       -webkit-mask-repeat: no-repeat;
       mask-position: center center;
       -webkit-mask-posigin: center center;
-      mask-size: 10vw;
-      -webkit-mask-size: 10vw;
-
-      @include tablet {
-        mask-size: 20vw;
-        -webkit-mask-size: 20vw;
-      }
+      mask-size: 20vh;
+      -webkit-mask-size: 20vh;
     }
   }
 }

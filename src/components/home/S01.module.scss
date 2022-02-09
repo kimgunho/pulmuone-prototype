@@ -14,26 +14,34 @@
     z-index: 10;
     background-color: #004217;
     overflow: hidden;
-    width: 40vw;
-    height: 40vw;
+    width: 70vh;
+    height: 70vh;
     border-radius: 50%;
     box-shadow: inset 5px 5px 10px #000000ad;
 
     @include tablet {
-      width: 80vw;
-      height: 80vw;
+      width: 50vh;
+      height: 50vh;
+    }
+
+    @include mobile {
+      width: 35vh;
+      height: 35vh;
     }
 
     > .title {
       @include fontEn;
       color: #fff;
-      font-size: 4.5vw;
+      font-size: 6.5vh;
+      padding-top: 20%;
       text-align: center;
-      padding-top: 4vw;
+      white-space: nowrap;
 
       @include tablet {
-        font-size: 9vw;
-        padding-top: 9vw;
+      }
+
+      @include mobile {
+        font-size: 5vh;
       }
 
       &::selection {
@@ -44,14 +52,12 @@
     > .pulmuoneWater {
       position: absolute;
       left: 50%;
-      top: 14vw;
+      top: 40%;
       transform: translate(-50%, 0);
-      width: 100%;
-      max-width: 18vw;
+      width: 40%;
 
       @include tablet {
-        max-width: 36vw;
-        top: 28vw;
+        top: 50%;
       }
     }
   }

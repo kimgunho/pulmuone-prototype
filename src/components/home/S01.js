@@ -49,7 +49,7 @@ function S01() {
       titleRef.current,
       {
         duration: 2,
-        y: '-40vw',
+        yPercent: -500,
       },
       1,
     )
@@ -61,10 +61,13 @@ function S01() {
         },
         1,
       )
-      .to('.waterDrop', {
-        duration: 1,
-        opacity: 1,
-      });
+      .to(
+        '.waterDrop',
+        {
+          display: 'block',
+        },
+        1.7,
+      );
   };
 
   return (

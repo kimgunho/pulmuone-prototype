@@ -27,20 +27,15 @@
 
       > h2 {
         color: #fff;
-        font-size: 2.5vw;
+        font-size: 3.25rem;
         line-height: 1.5;
-
-        @include mobile {
-          font-size: 7vw;
-          padding-bottom: 2rem;
-        }
       }
 
       > .logo {
         @include flexCenterStyle;
         background-color: #fff;
-        width: 45vw;
-        height: 45vw;
+        width: 18rem;
+        height: 18rem;
         border-radius: 50%;
         display: none;
 
@@ -54,14 +49,12 @@
       }
 
       > p {
-        font-size: 1.25vw;
+        font-size: 1.625rem;
         line-height: 1.5;
         color: #fff;
         padding-top: 2rem;
 
         @include mobile {
-          font-size: 4vw;
-
           > br {
             display: none;
           }
@@ -72,7 +65,7 @@
         @include mainBtn;
         background-color: #fff;
         color: #133550;
-        margin-top: 4rem;
+        margin-top: 3.75rem;
       }
     }
 
