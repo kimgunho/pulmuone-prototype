@@ -12,33 +12,17 @@ $breakpoint-tablet: 1280px; // tablet
   align-items: center;
   line-height: 1;
   position: relative;
-  font-size: 1.25vw;
-  padding: 1rem 6rem 1rem 1.25rem;
+  font-size: 1.75rem;
+  padding: 1.5rem 8rem 1.5rem 1.875rem;
   width: fit-content;
   transition: all 0.2s ease-in-out;
 
-  @include tablet {
-    font-size: 2vw;
-  }
-
-  @include mobile {
-    font-size: 4vw;
-  }
-
   &::after {
     content: '〉';
-    font-size: 1.25vw;
-    right: 1rem;
+    font-size: 1.75rem;
+    right: 1.875rem;
     line-height: 1;
     position: absolute;
-
-    @include tablet {
-      font-size: 2vw;
-    }
-
-    @include mobile {
-      font-size: 4vw;
-    }
   }
 }
 
@@ -63,6 +47,10 @@ $breakpoint-tablet: 1280px; // tablet
   &::-ms-expand {
     display: none;
   }
+
+  @include mobile {
+    background-position: calc(100% - 20px) calc(1em + 4px), calc(100% - 15px) calc(1em + 4px), 100% 0;
+  }
 }
 
 @mixin backgroundDefaultStyle {
@@ -74,13 +62,16 @@ $breakpoint-tablet: 1280px; // tablet
 @mixin mainLimiter {
   display: flex;
   justify-content: space-between;
-  width: 80vw;
-  max-width: 1920px;
-  padding: 0 1rem;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 10rem;
   box-sizing: border-box;
 
   @include tablet {
-    width: 100%;
+    padding: 0 5rem;
+  }
+
+  @include mobile {
     padding: 0 2rem;
   }
 }
@@ -99,14 +90,27 @@ $breakpoint-tablet: 1280px; // tablet
 }
 
 // responsive size
-@mixin mobile {
-  @media screen and (max-width: #{$breakpoint-mobile}) {
+
+@mixin vertical_tablet {
+  @media screen and (max-height: $breakpoint-tablet) {
     @content;
   }
 }
 
 @mixin tablet {
   @media screen and (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin mobileIphoneSe {
+  @media screen and (max-width: 320px) {
     @content;
   }
 }

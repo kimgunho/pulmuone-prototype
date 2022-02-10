@@ -1,16 +1,16 @@
 @import '../../common.scss';
 
 .circle {
-  width: 15vw;
-  height: 15vw;
+  width: 16rem;
+  height: 16rem;
   background-color: #fff;
   border-radius: 50%;
   position: relative;
   border: 3px solid transparent;
 
   @include mobile {
-    width: 18vw;
-    height: 18vw;
+    width: 20vw;
+    height: 20vw;
   }
 
   &::before {
@@ -40,8 +40,8 @@
   }
 
   > .title {
-    padding-top: 2vw;
-    font-size: 2vw;
+    padding-top: 1.5rem;
+    font-size: 1.75rem;
     color: #a3c41c;
     text-align: center;
     z-index: 3;
@@ -75,7 +75,7 @@
       &.wave1 {
         background-color: rgba(190, 215, 48, 0.8);
         z-index: 4;
-        animation: waveAnimation_first 8s linear infinite;
+        animation: waveAnimation_first 25s linear infinite;
         @keyframes waveAnimation_first {
           0% {
             transform: translate(-30%, -50%);
@@ -91,7 +91,7 @@
 
       &.wave2 {
         background-color: rgba(190, 215, 48, 0.75);
-        animation: waveAnimation_second 6s linear infinite;
+        animation: waveAnimation_second 30s linear infinite;
         z-index: 5;
         @keyframes waveAnimation_second {
           0% {

@@ -15,24 +15,24 @@ import waterDrop from '../../assets/images/home/water.png';
 
 function Home() {
   gsap.registerPlugin(ScrollTrigger);
-  const scrollerRef = useRef();
   const rangeRef = useRef();
   const waterDropRef = useRef();
 
   useEffect(() => {
     gsap.to(waterDropRef.current, {
+      duration: 10,
       opacity: 0,
       scrollTrigger: {
         trigger: rangeRef.current,
         start: 'bottom center',
-        end: 'bottom center',
+        end: 'bottom+=300px center',
         scrub: true,
       },
     });
   }, []);
 
   return (
-    <div ref={scrollerRef} className="scroller">
+    <>
       <div ref={rangeRef}>
         <div className="waterDrop">
           <img ref={waterDropRef} src={waterDrop} alt="물방울" />
@@ -44,7 +44,7 @@ function Home() {
       <S04 />
       <S05 />
       <S06 />
-    </div>
+    </>
   );
 }
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useRef, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import gsap from 'gsap';
@@ -13,7 +14,7 @@ import leaf_bottom from '../../assets/images/home/s02/leaf_bottom.png';
 import stone_first from '../../assets/images/home/s02/stone01.png';
 import stone_second from '../../assets/images/home/s02/stone02.png';
 import stone_third from '../../assets/images/home/s02/stone03.png';
-import shape from '../../assets/images/home/s02/shape.svg';
+import shape from '../../assets/images/home/s02/shape.png';
 
 const cx = classNames.bind(styles);
 
@@ -23,6 +24,8 @@ function S02() {
   const stoneBgRef = useRef();
   const titleRef = useRef();
   const limiterRef = useRef();
+  const limiterRight_firstRef = useRef();
+  const limiterRight_secondRef = useRef();
   const leafLeftRef = useRef();
   const leafRightRef = useRef();
   const leafBottomRef = useRef();
@@ -37,52 +40,19 @@ function S02() {
   }, []);
 
   const repeatAnimation = () => {
-    gsap.fromTo(leafLeftRef.current, { rotate: 5 }, { rotate: 0, duration: 2, repeat: -1, yoyo: true });
-    gsap.fromTo(leafRightRef.current, { rotate: 5 }, { rotate: 0, duration: 1, repeat: -1, yoyo: true });
-    gsap.fromTo(leafBottomRef.current, { rotate: 5 }, { rotate: 0, duration: 3, repeat: -1, yoyo: true });
-    gsap.fromTo(stoneFirstRef.current, { y: -10 }, { y: 10, duration: 1, repeat: -1, yoyo: true });
-    gsap.fromTo(stoneSecondRef.current, { y: 30 }, { y: -5, duration: 4, repeat: -1, yoyo: true });
-    gsap.fromTo(stoneThirdRef.current, { y: -20 }, { y: 10, duration: 3, repeat: -1, yoyo: true });
+    gsap.fromTo(leafLeftRef.current, { rotateY: 5 }, { rotateY: 20, duration: 5, repeat: -1, yoyo: true });
+    gsap.fromTo(leafRightRef.current, { rotateY: 2 }, { rotateY: 10, duration: 4, repeat: -1, yoyo: true });
+    gsap.fromTo(leafBottomRef.current, { rotateX: 2 }, { rotateX: 20, duration: 6, repeat: -1, yoyo: true });
+    gsap.fromTo(stoneFirstRef.current, { y: -2 }, { y: 4, duration: 3, repeat: -1, yoyo: true });
+    gsap.fromTo(stoneSecondRef.current, { y: 1 }, { y: -3, duration: 4, repeat: -1, yoyo: true });
+    gsap.fromTo(stoneThirdRef.current, { y: -2 }, { y: 5, duration: 3, repeat: -1, yoyo: true });
   };
 
   const scrollAnimation = () => {
-    const titleTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: titleRef.current,
-        start: 'top bottom',
-        end: '300% top',
-        scrub: true,
-      },
-    });
-
-    titleTl
-      .to(titleRef.current, {
-        webkitFilter: 'blur(20px)',
-        opacity: 0,
-        y: 200,
-        delay: 2,
-      })
-      .from(leafRightRef.current, {
-        xPercent: 100,
-      })
-      .from(
-        leafLeftRef.current,
-        {
-          xPercent: -100,
-        },
-        3,
-      )
-      .from(
-        leafBottomRef.current,
-        {
-          yPercent: 100,
-        },
-        3,
-      );
-
-    const containerTl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
+        invalidateOnResize: true,
         start: 'top top',
         end: '500% top',
         scrub: true,
@@ -90,112 +60,137 @@ function S02() {
       },
     });
 
-    containerTl
+    tl.to(shapeRef.current, {
+      opacity: 1,
+    })
+      .to(
+        titleRef.current,
+        {
+          webkitFilter: 'blur(20px)',
+          opacity: 0,
+        },
+        1,
+      )
+      .to(
+        shapeRef.current,
+        {
+          opacity: 0,
+        },
+        1,
+      )
+      .from(
+        limiterRef.current,
+        {
+          duration: 2,
+          opacity: 0,
+        },
+        1,
+      )
       .to(
         stoneBgRef.current,
         {
           opacity: 1,
         },
-        0.5,
+        1,
       )
-      .to(
-        shapeRef.current,
-        {
-          opacity: 1,
-        },
-        0.5,
-      )
-      .to(limiterRef.current, {
-        duration: 2,
-        opacity: 1,
-      })
-      .to(
-        leafLeftRef.current,
-        {
-          duration: 8,
-          x: -window.innerWidth / 2,
-        },
-        3,
-      )
-      .to(
+      .from(
         leafRightRef.current,
         {
-          duration: 8,
-          x: window.innerWidth / 2,
+          duration: 2,
+          right: '-50%',
+          rotate: -225,
         },
-        3,
+        1.5,
       )
-      .to(
-        leafBottomRef.current,
+      .from(
+        leafLeftRef.current,
         {
-          duration: 8,
-          opacity: 0,
-          y: window.innerWidth / 2,
+          duration: 2,
+          left: '-50%',
+          rotate: 175,
+          delay: 0.5,
         },
-        3,
+        1.5,
       )
       .to(
         stoneBgRef.current,
         {
           maskSize: 'auto 300vh',
           webkitMaskSize: 'auto 300vh',
-          duration: 5,
-          ease: 'slow',
+          scale: 1.5,
+          rotationZ: 0.01,
+          duration: 10,
+        },
+        6,
+      )
+      .to(
+        limiterRight_firstRef.current,
+        {
+          duration: 4,
+          opacity: 0,
         },
         3,
       )
       .from(
-        stoneFirstRef.current,
+        limiterRight_secondRef.current,
         {
-          duration: 8,
-          yPercent: window.innerHeight,
+          opacity: 0,
+          duration: 4,
         },
-        3,
+        6,
+      )
+      .to(
+        leafRightRef.current,
+        {
+          duration: 3,
+          top: '-50%',
+        },
+        6,
+      )
+      .to(
+        leafLeftRef.current,
+        {
+          duration: 3,
+          bottom: '100%',
+          delay: 0.5,
+        },
+        6,
+      )
+      .from(
+        leafBottomRef.current,
+        {
+          duration: 3,
+          top: '100%',
+          delay: 1,
+        },
+        5.8,
+      )
+      .from(
+        stoneThirdRef.current,
+        {
+          top: '100%',
+          duration: 3,
+          delay: 1,
+        },
+        6,
       )
       .from(
         stoneSecondRef.current,
         {
-          duration: 6,
-          yPercent: window.innerHeight,
+          top: '100%',
+          duration: 3,
+          delay: 1.5,
         },
-        3,
+        6,
       )
       .from(
-        stoneThirdRef.current,
-        {
-          duration: 4,
-          yPercent: window.innerHeight,
-        },
-        3,
-      );
-
-    const scrollEndTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'center 40%',
-        end: 'center top',
-        scrub: true,
-      },
-    });
-
-    scrollEndTl
-      .to(
         stoneFirstRef.current,
         {
-          duration: 10,
-          delay: -2,
-          yPercent: -100,
+          bottom: '-50%',
+          duration: 4,
+          delay: 1.5,
         },
-        1,
-      )
-      .to(
-        stoneThirdRef.current,
-        {
-          duration: 10,
-          delay: -2,
-          yPercent: -50,
-        },
-        1,
+        6,
       );
   };
 
@@ -208,14 +203,20 @@ function S02() {
       <div ref={limiterRef} className={cx('limiter')}>
         <div className={cx('left')}>
           <p>
-            풍부한 미네랄 <span className={cx('point')}>대보 화강암</span>
+            풍부한 미네랄{' '}
+            <Link to="" className={cx('point')}>
+              대보 화강암
+            </Link>
           </p>
         </div>
         <div className={cx('right')}>
-          <p>
+          <p ref={limiterRight_firstRef}>
             빈틈없이 촘촘한 대보 화강암이
             <br />
             2억년 동안 골라 모은 미네랄 물방울
+          </p>
+          <p ref={limiterRight_secondRef}>
+            마지막 한 방울까지 빠져나갈 틈 없이 <br />꽉 잡아 풀무원샘물로 채웠습니다
           </p>
         </div>
       </div>

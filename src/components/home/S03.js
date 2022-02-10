@@ -19,6 +19,7 @@ function S03() {
   const firstBgRef = useRef();
   const secondBgRef = useRef();
   const lastBgRef = useRef();
+  const articlesRef = useRef();
   const waterArticles = useRef([]);
 
   useEffect(() => {
@@ -26,18 +27,33 @@ function S03() {
     scrollAnimation();
   }, []);
 
+  // 선택 고려
   const repeatArticles = () => {
+    // gsap.to(waterArticles.current, {
+    //   webkitFilter: `blur(random(0,5)px)`,
+    //   width: `random(10,30)px`,
+    //   ease: 'none',
+    //   duration: 80,
+    //   repeat: -1,
+    //   skewX: `random(-10,20)px`,
+    //   x: `random(0, ${window.innerWidth})px`,
+    //   y: -10,
+    // });
+
     gsap.to(waterArticles.current, {
       webkitFilter: `blur(random(0,5)px)`,
-      width: `random(10,50)px`,
+      width: `random(10,30)px`,
       ease: 'none',
-      duration: 10,
-      repeat: -1,
-      repeatRefresh: true,
-      repeatDelay: 0,
-      skewX: `random(-30,30)px`,
-      x: `random(0, ${window.innerWidth})`,
-      y: `random(0, ${window.innerHeight})`,
+      skewX: `random(-10,20)px`,
+      x: `random(0, ${window.innerWidth})px`,
+      y: 0,
+
+      scrollTrigger: {
+        trigger: limiterRef.current,
+        start: '20% bottom',
+        end: 'bottom+=100% center',
+        scrub: true,
+      },
     });
   };
 
@@ -45,30 +61,32 @@ function S03() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: rangeRef.current,
-        start: '-5% bottom',
+        start: '-3% bottom',
         end: 'top top',
         scrub: true,
         pin: true,
       },
     });
 
-    tl.to(
-      firstBgRef.current,
-      {
-        ease: 'power4.out',
-        duration: 10,
-        yPercent: -120,
-      },
-      1,
-    )
+    tl.to(articlesRef.current, {
+      duration: 10,
+    })
+      .to(
+        firstBgRef.current,
+        {
+          duration: 8,
+          yPercent: -100,
+        },
+        1,
+      )
       .to(
         secondBgRef.current,
         {
-          ease: 'power4.out',
-          duration: 10,
+          duration: 8,
           yPercent: -80,
+          delay: 2,
         },
-        1,
+        2,
       )
       .to(limiterRef.current, {
         opacity: 1,
@@ -95,14 +113,14 @@ function S03() {
         </div>
       </div>
 
-      <div className={cx('articles')}>
-        {Array.from({ length: 10 }).map((_, index) => {
-          const randomX = Math.floor(Math.random() * window.innerWidth);
-          const randomY = Math.floor(Math.random() * window.innerHeight);
+      <div ref={articlesRef} className={cx('articles')}>
+        {Array.from({ length: 20 }).map((_, index) => {
+          const x = Math.floor(Math.random() * window.innerWidth);
+          const y = Math.floor(Math.random() * window.innerHeight + window.innerHeight);
 
           return (
             <img
-              style={{ transform: `translate(${randomX}px, ${randomY}px)` }}
+              style={{ transform: `translate(${x}px, ${y}px)` }}
               key={index}
               ref={(el) => waterArticles.current.push(el)}
               src={article}
