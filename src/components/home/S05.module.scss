@@ -29,12 +29,16 @@
       background-color: #004d1c;
 
       > .info {
-        padding: 10rem 0;
+        padding: 10rem 2rem;
         box-sizing: border-box;
+
+        @include tablet {
+          width: 100%;
+          padding: 5rem;
+        }
 
         @include mobile {
           padding: 5rem 2rem;
-          width: 100%;
         }
 
         > h2 {

@@ -141,7 +141,7 @@ function S02() {
         leafRightRef.current,
         {
           duration: 3,
-          top: '-50%',
+          top: '-100%',
         },
         6,
       )
@@ -175,7 +175,7 @@ function S02() {
       .from(
         stoneFirstRef.current,
         {
-          bottom: '-50%',
+          bottom: '-80%',
           duration: 4,
           delay: 1.5,
         },

@@ -99,7 +99,7 @@
         transform-origin: left bottom;
         left: -5em;
         bottom: -10em;
-        max-width: 100em;
+        max-width: 80em;
 
         @include tablet {
           bottom: 0;
@@ -116,7 +116,7 @@
         transform-origin: right bottom;
         right: -3em;
         top: -10em;
-        max-width: 70em;
+        max-width: 60em;
 
         @include tablet {
           top: 10em;
