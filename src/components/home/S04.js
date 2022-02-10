@@ -9,13 +9,14 @@ import { links } from '../../assets/data/links';
 
 import background from '../../assets/images/home/s04/background.jpg';
 import title from '../../assets/images/shared/pulmuone_title.png';
-import pulmuoneWater01 from '../../assets/images/home/s04/pulmuoneWater01.png';
-import pulmuoneWater02 from '../../assets/images/home/s04/pulmuoneWater02.png';
-import pulmuoneWater03 from '../../assets/images/home/s04/pulmuoneWater03.png';
-import pulmuoneWater04 from '../../assets/images/home/s04/pulmuoneWater04.png';
-import pulmuoneWater05 from '../../assets/images/home/s04/pulmuoneWater05.png';
-
-import CarbonEmissionLogo from '../shared/CarbonEmissionLogo';
+import pulmuoneWater_label from '../../assets/images/home/s04/pulmuoneWater_label.png';
+import pulmuoneWater from '../../assets/images/home/s04/pulmuoneWater.png';
+import labelMark01 from '../../assets/images/home/s04/labelMark01.png';
+import labelMark02 from '../../assets/images/home/s04/labelMark02.png';
+import labelMark03 from '../../assets/images/home/s04/labelMark03.png';
+import watermark01 from '../../assets/images/home/s04/CarbonEmission1.png';
+import watermark02 from '../../assets/images/home/s04/CarbonEmission2.png';
+import watermark03 from '../../assets/images/home/s04/CarbonEmission3.png';
 
 const cx = classNames.bind(styles);
 
@@ -23,210 +24,173 @@ function S04() {
   gsap.registerPlugin(ScrollTrigger);
 
   const containerRef = useRef();
-  const leftRef = useRef();
-  const rightRef = useRef();
-  const pulmuoneWater01Ref = useRef();
-  const pulmuoneWater02Ref = useRef();
-  const pulmuoneWater03Ref = useRef();
-  const pulmuoneWater04Ref = useRef();
-  const pulmuoneWater05Ref = useRef();
   const backgroundRef = useRef();
   const mainRef = useRef();
-  const innerFirstRef = useRef();
-  const innerSecondRef = useRef();
-  const innerLastRef = useRef();
-  const pagerFirstRef = useRef();
-  const pagerSecondRef = useRef();
-  const pagerLastRef = useRef();
+  const leftRef = useRef();
+  const centerRef = useRef();
+  const rightRef = useRef();
+  const centerImg01Ref = useRef();
+  const centerImg02Ref = useRef();
+  const desc01Ref = useRef();
+  const desc02Ref = useRef();
+  const desc03Ref = useRef();
+  const labelMark01Ref = useRef();
+  const labelMark02Ref = useRef();
+  const labelMark03Ref = useRef();
 
   useEffect(() => {
     scrollAnimation();
+    window.addEventListener('resize', ScrollTrigger.refresh);
   }, []);
 
   const scrollAnimation = () => {
-    gsap.fromTo(
-      pulmuoneWater01Ref.current,
-      {
-        yPercent: 0,
-        top: '0%',
+    ScrollTrigger.matchMedia({
+      '(min-width: 740px)': () => {
+        gsap.from(mainRef.current, {
+          yPercent: -40,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top center',
+            end: 'center center',
+            scrub: true,
+          },
+        });
       },
-      {
-        yPercent: -50,
-        top: window.innerWidth > 740 ? '50%' : '40%',
-        scrollTrigger: {
-          invalidateOnResize: true,
-          trigger: mainRef.current,
-          start: 'top center',
-          end: 'bottom center',
-          scrub: true,
-        },
-      },
-    );
+    });
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top top',
-        end: '500% top',
+        end: '300% top',
         scrub: true,
         pin: true,
+        pinSpacing: 'margin',
       },
     });
 
     tl.to(backgroundRef.current, {
-      duration: 4,
-      top: '-100%',
+      top: '-300%',
+      duration: 25,
     })
+      .to(centerImg01Ref.current, {
+        delay: -20,
+        opacity: 0,
+      })
+      .to(centerImg02Ref.current, {
+        delay: -20,
+        position: 'absolute',
+        duration: 5,
+        display: 'block',
+        opacity: 1,
+      })
+      .to(leftRef.current, {
+        opacity: 1,
+        duration: 5,
+      })
+      // first desc fade in
       .to(
-        pulmuoneWater01Ref.current,
-        {
-          duration: 4,
-          opacity: 0,
-        },
-        2,
-      )
-      .to(
-        pulmuoneWater02Ref.current,
-        {
-          duration: 4,
-          opacity: 1,
-        },
-        2,
-      )
-      .from(
-        leftRef.current,
-        {
-          duration: 5,
-          opacity: 0,
-        },
-        6,
-      )
-      .from(
         rightRef.current,
         {
+          opacity: 1,
           duration: 5,
-          opacity: 0,
-          delay: 0.5,
         },
-        6,
+        35,
       )
       .to(
-        pulmuoneWater02Ref.current,
+        labelMark01Ref.current,
         {
-          opacity: 0,
-          duration: 3,
-        },
-        6,
-      )
-      .to(
-        pulmuoneWater03Ref.current,
-        {
+          display: 'block',
           opacity: 1,
-          duration: 3,
+          duration: 5,
         },
-        6,
+        35,
       )
+      // first desc fade out
       .to(
-        pulmuoneWater03Ref.current,
+        desc01Ref.current,
         {
           opacity: 0,
-          duration: 3,
+          display: 'none',
+          duration: 5,
         },
-        9,
+        40,
       )
       .to(
-        innerFirstRef.current,
+        labelMark01Ref.current,
         {
           opacity: 0,
-          duration: 3,
+          display: 'none',
+          duration: 5,
         },
-        9,
+        40,
       )
+      // second desc fade in
       .to(
-        innerSecondRef.current,
+        desc02Ref.current,
         {
+          display: 'flex',
           opacity: 1,
-          duration: 3,
+          duration: 5,
         },
-        9,
+        45,
       )
       .to(
-        pagerFirstRef.current,
+        labelMark02Ref.current,
         {
-          opacity: 0.3,
-        },
-        9,
-      )
-      .to(
-        pagerSecondRef.current,
-        {
+          display: 'block',
           opacity: 1,
+          duration: 5,
         },
-        9,
+        45,
       )
+      // second desc fade out
       .to(
-        pulmuoneWater04Ref.current,
-        {
-          opacity: 1,
-          duration: 3,
-        },
-        9,
-      )
-      .to(
-        pulmuoneWater04Ref.current,
+        desc02Ref.current,
         {
           opacity: 0,
-          duration: 3,
+          display: 'none',
+          duration: 5,
         },
-        12,
+        50,
       )
       .to(
-        innerSecondRef.current,
+        labelMark02Ref.current,
         {
           opacity: 0,
-          duration: 3,
+          display: 'none',
+          duration: 5,
         },
-        12,
+        50,
       )
+      // last desc fade in
       .to(
-        innerLastRef.current,
+        desc03Ref.current,
         {
+          display: 'flex',
           opacity: 1,
-          duration: 3,
+          duration: 5,
         },
-        12,
+        55,
       )
       .to(
-        pagerSecondRef.current,
+        labelMark03Ref.current,
         {
-          opacity: 0.3,
-        },
-        12,
-      )
-      .to(
-        pagerLastRef.current,
-        {
+          display: 'block',
           opacity: 1,
+          duration: 5,
         },
-        12,
-      )
-      .to(
-        pulmuoneWater05Ref.current,
-        {
-          opacity: 1,
-          duration: 3,
-        },
-        12,
+        55,
       );
   };
 
   return (
     <div ref={containerRef} className={cx('container')}>
-      <div className={cx('pulmuoneWater')}>
-        <div ref={leftRef} className={cx('left')}>
+      <div ref={mainRef} className={cx('pulmuoneWater')}>
+        <div className={cx('left')} ref={leftRef}>
           <h2>
             환경까지 생각한
-            <img src={title} alt="풀무원 샘물" />
+            <img draggable="false" src={title} alt="풀무원 샘물" />
           </h2>
           <p>
             풀무원샘물은
@@ -236,49 +200,68 @@ function S04() {
           <Link to={links.home}>자세히 보기</Link>
         </div>
 
-        <div ref={rightRef} className={cx('right')}>
-          <div className={cx('box')}>
-            <CarbonEmissionLogo />
-          </div>
-          <ul className={cx('pager')}>
-            <li ref={pagerFirstRef}></li>
-            <li ref={pagerSecondRef}></li>
-            <li ref={pagerLastRef}></li>
-          </ul>
-          <div className={cx(['inner', 'first'])} ref={innerFirstRef}>
-            <h3>
-              <span>1</span> 초경량 뚜껑
-            </h3>
-            <p>
-              기존 자사 제품대비 <br /> 플라스틱 사용량 40% 저감
-            </p>
-          </div>
-
-          <div className={cx('inner')} ref={innerSecondRef}>
-            <h3>
-              <span>2</span> 2번째 타이틀
-            </h3>
-            <p>
-              22222222 <br /> 222222222
-            </p>
-          </div>
-
-          <div className={cx('inner')} ref={innerLastRef}>
-            <h3>
-              <span>3</span> 3번째 타이틀
-            </h3>
-            <p>
-              33333333 <br /> 333333333333
-            </p>
-          </div>
+        <div className={cx('center')} ref={centerRef}>
+          <img ref={centerImg01Ref} className={cx('first')} draggable="false" src={pulmuoneWater_label} alt="" />
+          <img ref={centerImg02Ref} draggable="false" src={pulmuoneWater} alt="" />
+          <img ref={labelMark01Ref} className={cx(['absolute', 'mark01'])} draggable="false" src={labelMark01} alt="" />
+          <img ref={labelMark02Ref} className={cx(['absolute', 'mark02'])} draggable="false" src={labelMark02} alt="" />
+          <img ref={labelMark03Ref} className={cx(['absolute', 'mark03'])} draggable="false" src={labelMark03} alt="" />
         </div>
 
-        <div ref={mainRef} className={cx('main')}>
-          <img ref={pulmuoneWater01Ref} className={cx(['water', 'first'])} draggable="false" src={pulmuoneWater01} alt="" />
-          <img ref={pulmuoneWater02Ref} className={cx('water')} draggable="false" src={pulmuoneWater02} alt="" />
-          <img ref={pulmuoneWater03Ref} className={cx('water')} draggable="false" src={pulmuoneWater03} alt="" />
-          <img ref={pulmuoneWater04Ref} className={cx('water')} draggable="false" src={pulmuoneWater04} alt="" />
-          <img ref={pulmuoneWater05Ref} className={cx('water')} draggable="false" src={pulmuoneWater05} alt="" />
+        <div className={cx('right')} ref={rightRef}>
+          <div className={cx('first')} ref={desc01Ref}>
+            <div className={cx('inner')}>
+              <img draggable="false" src={watermark01} alt="" />
+              <h3>
+                <span>1</span> 초경량 뚜껑
+              </h3>
+              <p>
+                기존 자사 제품대비 <br /> 플라스틱 사용량 40% 저감
+              </p>
+            </div>
+
+            <ul className={cx('pager')}>
+              <li className={cx('active')}></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+
+          <div className={cx('second')} ref={desc02Ref}>
+            <div className={cx('inner')}>
+              <img draggable="false" src={watermark02} alt="" />
+              <h3>
+                <span>2</span> 메론맛 바베큐
+              </h3>
+              <p>
+                기존 자사 제품대비 <br /> 플라스틱 사용량 40% 저감
+              </p>
+            </div>
+
+            <ul className={cx('pager')}>
+              <li></li>
+              <li className={cx('active')}></li>
+              <li></li>
+            </ul>
+          </div>
+
+          <div className={cx('third')} ref={desc03Ref}>
+            <div className={cx('inner')}>
+              <img draggable="false" src={watermark03} alt="" />
+              <h3>
+                <span>3</span> 상어맛 라면
+              </h3>
+              <p>
+                기존 자사 제품대비 <br /> 플라스틱 사용량 40% 저감
+              </p>
+            </div>
+
+            <ul className={cx('pager')}>
+              <li></li>
+              <li></li>
+              <li className={cx('active')}></li>
+            </ul>
+          </div>
         </div>
       </div>
 
