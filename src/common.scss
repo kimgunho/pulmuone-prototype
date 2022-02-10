@@ -47,6 +47,10 @@ $breakpoint-tablet: 1280px; // tablet
   &::-ms-expand {
     display: none;
   }
+
+  @include mobile {
+    background-position: calc(100% - 20px) calc(1em + 4px), calc(100% - 15px) calc(1em + 4px), 100% 0;
+  }
 }
 
 @mixin backgroundDefaultStyle {
@@ -69,10 +73,6 @@ $breakpoint-tablet: 1280px; // tablet
 
   @include mobile {
     padding: 0 2rem;
-  }
-
-  @include vertical_tablet {
-    height: 80%;
   }
 }
 
@@ -97,14 +97,20 @@ $breakpoint-tablet: 1280px; // tablet
   }
 }
 
+@mixin tablet {
+  @media screen and (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media screen and (max-width: #{$breakpoint-mobile}) {
     @content;
   }
 }
 
-@mixin tablet {
-  @media screen and (max-width: $breakpoint-tablet) {
+@mixin mobileIphoneSe {
+  @media screen and (max-width: 320px) {
     @content;
   }
 }

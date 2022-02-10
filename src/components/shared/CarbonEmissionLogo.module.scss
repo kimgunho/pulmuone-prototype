@@ -9,8 +9,8 @@
   border: 3px solid transparent;
 
   @include mobile {
-    width: 18rem;
-    height: 18rem;
+    width: 20vw;
+    height: 20vw;
   }
 
   &::before {

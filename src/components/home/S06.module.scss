@@ -33,13 +33,14 @@
 
       > .logo {
         @include flexCenterStyle;
-        background-color: #fff;
-        width: 18rem;
-        height: 18rem;
-        border-radius: 50%;
         display: none;
 
         @include mobile {
+          background-color: #fff;
+          border-radius: 50%;
+          width: 14rem;
+          margin-top: 2rem;
+          height: 14rem;
           display: flex;
         }
 
@@ -50,7 +51,7 @@
 
       > p {
         font-size: 1.625rem;
-        line-height: 1.5;
+        line-height: 2;
         color: #fff;
         padding-top: 2rem;
 

@@ -35,6 +35,9 @@ function S04() {
   const innerFirstRef = useRef();
   const innerSecondRef = useRef();
   const innerLastRef = useRef();
+  const pagerFirstRef = useRef();
+  const pagerSecondRef = useRef();
+  const pagerLastRef = useRef();
 
   useEffect(() => {
     scrollAnimation();
@@ -49,8 +52,9 @@ function S04() {
       },
       {
         yPercent: -50,
-        top: '50%',
+        top: window.innerWidth > 740 ? '50%' : '40%',
         scrollTrigger: {
+          invalidateOnResize: true,
           trigger: mainRef.current,
           start: 'top center',
           end: 'bottom center',
@@ -147,6 +151,20 @@ function S04() {
         9,
       )
       .to(
+        pagerFirstRef.current,
+        {
+          opacity: 0.3,
+        },
+        9,
+      )
+      .to(
+        pagerSecondRef.current,
+        {
+          opacity: 1,
+        },
+        9,
+      )
+      .to(
         pulmuoneWater04Ref.current,
         {
           opacity: 1,
@@ -179,6 +197,20 @@ function S04() {
         12,
       )
       .to(
+        pagerSecondRef.current,
+        {
+          opacity: 0.3,
+        },
+        12,
+      )
+      .to(
+        pagerLastRef.current,
+        {
+          opacity: 1,
+        },
+        12,
+      )
+      .to(
         pulmuoneWater05Ref.current,
         {
           opacity: 1,
@@ -205,7 +237,14 @@ function S04() {
         </div>
 
         <div ref={rightRef} className={cx('right')}>
-          <CarbonEmissionLogo />
+          <div className={cx('box')}>
+            <CarbonEmissionLogo />
+          </div>
+          <ul className={cx('pager')}>
+            <li ref={pagerFirstRef}></li>
+            <li ref={pagerSecondRef}></li>
+            <li ref={pagerLastRef}></li>
+          </ul>
           <div className={cx(['inner', 'first'])} ref={innerFirstRef}>
             <h3>
               <span>1</span> 초경량 뚜껑
