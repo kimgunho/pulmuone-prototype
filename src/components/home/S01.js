@@ -42,6 +42,7 @@ function S01() {
         end: '200% top',
         scrub: true,
         pin: true,
+        pinSpacing: 'margin',
       },
     });
 

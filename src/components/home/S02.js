@@ -10,10 +10,9 @@ import background_sand from '../../assets/images/home/s02/background_sand.jpg';
 import background_stone from '../../assets/images/home/s02/background_stone.jpg';
 import leaf_left from '../../assets/images/home/s02/leaf_left.png';
 import leaf_right from '../../assets/images/home/s02/leaf_right.png';
-import leaf_bottom from '../../assets/images/home/s02/leaf_bottom.png';
 import stone_first from '../../assets/images/home/s02/stone01.png';
 import stone_second from '../../assets/images/home/s02/stone02.png';
-import stone_third from '../../assets/images/home/s02/stone03.png';
+import stone_third from '../../assets/images/home/s02/stone03_2.png';
 import shape from '../../assets/images/home/s02/shape.png';
 
 const cx = classNames.bind(styles);
@@ -28,7 +27,6 @@ function S02() {
   const limiterRight_secondRef = useRef();
   const leafLeftRef = useRef();
   const leafRightRef = useRef();
-  const leafBottomRef = useRef();
   const shapeRef = useRef();
   const stoneFirstRef = useRef();
   const stoneSecondRef = useRef();
@@ -37,12 +35,12 @@ function S02() {
   useEffect(() => {
     repeatAnimation();
     scrollAnimation();
+    window.addEventListener('resize', ScrollTrigger.refresh);
   }, []);
 
   const repeatAnimation = () => {
     gsap.fromTo(leafLeftRef.current, { rotateY: 5 }, { rotateY: 20, duration: 5, repeat: -1, yoyo: true });
     gsap.fromTo(leafRightRef.current, { rotateY: 2 }, { rotateY: 10, duration: 4, repeat: -1, yoyo: true });
-    gsap.fromTo(leafBottomRef.current, { rotateX: 2 }, { rotateX: 20, duration: 6, repeat: -1, yoyo: true });
     gsap.fromTo(stoneFirstRef.current, { y: -2 }, { y: 4, duration: 3, repeat: -1, yoyo: true });
     gsap.fromTo(stoneSecondRef.current, { y: 1 }, { y: -3, duration: 4, repeat: -1, yoyo: true });
     gsap.fromTo(stoneThirdRef.current, { y: -2 }, { y: 5, duration: 3, repeat: -1, yoyo: true });
@@ -52,11 +50,11 @@ function S02() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        invalidateOnResize: true,
         start: 'top top',
         end: '500% top',
         scrub: true,
         pin: true,
+        pinSpacing: 'margin',
       },
     });
 
@@ -86,10 +84,10 @@ function S02() {
         },
         1,
       )
-      .to(
+      .from(
         stoneBgRef.current,
         {
-          opacity: 1,
+          opacity: 0,
         },
         1,
       )
@@ -112,12 +110,12 @@ function S02() {
         },
         1.5,
       )
-      .to(
+      .from(
         stoneBgRef.current,
         {
-          maskSize: 'auto 300vh',
-          webkitMaskSize: 'auto 300vh',
-          scale: 1.5,
+          maskSize: '20vh',
+          webkitMaskSize: '20vh',
+          scale: 1,
           rotationZ: 0.01,
           duration: 10,
         },
@@ -126,7 +124,7 @@ function S02() {
       .to(
         limiterRight_firstRef.current,
         {
-          duration: 4,
+          duration: 7,
           opacity: 0,
         },
         3,
@@ -143,7 +141,7 @@ function S02() {
         leafRightRef.current,
         {
           duration: 3,
-          top: '-50%',
+          top: '-100%',
         },
         6,
       )
@@ -155,15 +153,6 @@ function S02() {
           delay: 0.5,
         },
         6,
-      )
-      .from(
-        leafBottomRef.current,
-        {
-          duration: 3,
-          top: '100%',
-          delay: 1,
-        },
-        5.8,
       )
       .from(
         stoneThirdRef.current,
@@ -186,7 +175,7 @@ function S02() {
       .from(
         stoneFirstRef.current,
         {
-          bottom: '-50%',
+          bottom: '-80%',
           duration: 4,
           delay: 1.5,
         },
@@ -224,7 +213,6 @@ function S02() {
       <div className={cx('objects')}>
         <img ref={leafLeftRef} draggable="false" className={cx(['leaf', 'left'])} src={leaf_left} alt="" />
         <img ref={leafRightRef} draggable="false" className={cx(['leaf', 'right'])} src={leaf_right} alt="" />
-        <img ref={leafBottomRef} draggable="false" className={cx(['leaf', 'bottom'])} src={leaf_bottom} alt="" />
 
         <img ref={stoneFirstRef} draggable="false" className={cx(['stone', 'first'])} src={stone_first} alt="" />
         <img ref={stoneSecondRef} draggable="false" className={cx(['stone', 'second'])} src={stone_second} alt="" />

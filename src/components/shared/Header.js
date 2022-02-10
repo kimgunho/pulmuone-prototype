@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 import styles from './Header.module.scss';
@@ -29,9 +29,9 @@ function Header() {
       <header className={cx('header')}>
         <div className={cx('limiter')}>
           <h1 className={cx('logo')}>
-            <NavLink to={links.home}>
+            <Link to={links.home}>
               <img src={width.currentWidth > width.breakPoint ? desktop_logo : mobile_logo} alt="풀무원 샘물" />
-            </NavLink>
+            </Link>
           </h1>
 
           <MobileBtn clicked={clicked} setClick={setClick} />
@@ -40,7 +40,7 @@ function Header() {
             <ul className={cx('gnb')}>
               {gnb_left.map(({ title, link }, index) => (
                 <li onClick={handleCloseNav} key={index}>
-                  <NavLink to={link}>{title}</NavLink>
+                  <Link to={link}>{title}</Link>
                 </li>
               ))}
             </ul>
@@ -48,7 +48,7 @@ function Header() {
             <ul className={cx('gnb')}>
               {gnb_right.map(({ title, link }, index) => (
                 <li onClick={handleCloseNav} key={index}>
-                  <NavLink to={link}>{title}</NavLink>
+                  <Link to={link}>{title}</Link>
                 </li>
               ))}
             </ul>

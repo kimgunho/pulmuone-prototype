@@ -11,6 +11,7 @@ import Header from './components/shared/Header';
 import FooterDesktop from './components/shared/FooterDesktop';
 import FooterMobile from './components/shared/FooterMobile';
 import Home from './pages/home';
+import BrandStory from './pages/brandStory';
 
 const cx = classNames.bind(styles);
 
@@ -27,15 +28,19 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Header />
-      <div className={cx('wrapper')}>
-        <Routes>
-          <Route path={links.home} element={<Home />} />
-        </Routes>
-      </div>
-      {width.currentWidth > width.breakPoint ? <FooterDesktop /> : <FooterMobile />}
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Header />
+        <div className={cx('wrapper')}>
+          <Routes>
+            <Route path={links.home} element={<Home />} />
+            <Route path={links.brand} element={<BrandStory />} />
+            <Route path={links.notPage} element={<div>not...</div>} />
+          </Routes>
+        </div>
+        {width.currentWidth > width.breakPoint ? <FooterDesktop /> : <FooterMobile />}
+      </BrowserRouter>
+    </>
   );
 }
 
