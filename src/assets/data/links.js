@@ -1,5 +1,6 @@
 export const links = {
   home: '/',
+  brand: '/',
   notPage: '*',
   privacyPolicy: '', // 개인정보처리방침
   emailCollection: '', // 이메일무단수집금지

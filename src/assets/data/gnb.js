@@ -3,7 +3,7 @@ import { links } from './links';
 export const gnb_left = [
   {
     title: '브랜드 스토리',
-    link: links,
+    link: links.brand,
   },
   {
     title: '제품안내',
