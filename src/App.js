@@ -36,8 +36,8 @@ function App() {
           <Route path={links.brand} element={<Brand />} />
           <Route path="*" element={<div>not...</div>} />
         </Routes>
+        {width.currentWidth > width.breakPoint ? <FooterDesktop /> : <FooterMobile />}
       </div>
-      {width.currentWidth > width.breakPoint ? <FooterDesktop /> : <FooterMobile />}
     </BrowserRouter>
   );
 }

@@ -1,1 +1,224 @@
 @import '../../../common.scss';
+
+.container {
+  > .section {
+    @include flexCenterStyle;
+    flex-direction: column;
+    padding: 5.8rem 0;
+
+    &.first {
+      background-color: #bed730;
+
+      > .limiter {
+        @include limiter;
+
+        > h3 {
+          color: #fff;
+          font-size: 2.75rem;
+          line-height: 1.5;
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        > .center {
+          width: 100%;
+          height: 55vh;
+          position: relative;
+
+          > img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            width: auto;
+          }
+
+          > .desc {
+            position: absolute;
+            transform: translate(0, 0);
+            z-index: 3;
+
+            &::before {
+              content: '';
+              border-top: 4px dotted #a3c41c;
+              height: 1px;
+              position: absolute;
+              top: 15%;
+            }
+
+            &::after {
+              content: '';
+              width: 3rem;
+              height: 3rem;
+              background-color: #fff;
+              border: 5px solid rgba(152, 185, 15, 0.5);
+              border-radius: 50%;
+              position: absolute;
+              top: 0;
+              box-sizing: border-box;
+            }
+
+            &.first {
+              left: 0;
+              top: 40%;
+              width: 40%;
+
+              &::before {
+                width: 50%;
+                right: 0;
+              }
+
+              &::after {
+                right: 0;
+              }
+            }
+
+            &.second {
+              top: 0;
+              right: 0;
+
+              &::before {
+                width: 150%;
+                left: -150%;
+              }
+
+              &::after {
+                left: -150%;
+              }
+            }
+
+            &.last {
+              right: 0;
+              top: 50%;
+
+              &::before {
+                width: 130%;
+                left: -130%;
+              }
+
+              &::after {
+                left: -130%;
+              }
+            }
+
+            > h4 {
+              color: #fff;
+              font-size: 2rem;
+
+              > span {
+                font-size: 1.5rem;
+                display: inline-block;
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                line-height: 2.5rem;
+                text-align: center;
+                color: #bed730;
+                background-color: #fff;
+              }
+            }
+
+            > p {
+              color: #121212;
+              font-size: 1.5rem;
+              line-height: 1.5;
+              padding-top: 1rem;
+            }
+          }
+        }
+        > .text {
+          width: 100%;
+          border-right: 4px solid #004d1c;
+          border-left: 4px solid #004d1c;
+          background-color: #fff;
+          padding: 5rem 0;
+          text-align: center;
+          margin-top: -5rem;
+
+          > p {
+            color: #121212;
+            font-size: 1.5rem;
+            line-height: 2;
+            padding-bottom: 1rem;
+          }
+        }
+      }
+    }
+
+    &.second {
+      > .limiter {
+        @include limiter;
+        text-align: center;
+
+        > h3 {
+          color: #121212;
+          font-size: 2.75rem;
+          margin-bottom: 4rem;
+          font-weight: bold;
+        }
+
+        > .list {
+          display: flex;
+          justify-content: space-evenly;
+
+          > li {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            > img {
+              width: auto;
+            }
+
+            > .info {
+              margin-top: 1rem;
+              > h4 {
+                font-size: 1.5rem;
+                color: #121212;
+                font-weight: bold;
+                padding-bottom: 1rem;
+              }
+
+              > p {
+                font-size: 1.25rem;
+                color: #121212;
+                font-weight: lighter;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.last {
+      background-color: #edf5f9;
+
+      > .limiter {
+        @include limiter;
+        text-align: center;
+
+        > h3 {
+          font-size: 2.75rem;
+          font-weight: bold;
+          color: #121212;
+          line-height: 1.5;
+          margin-bottom: 2rem;
+        }
+
+        > img {
+          width: 100%;
+          max-width: 20rem;
+        }
+
+        > p {
+          color: #221e1f;
+          font-weight: bold;
+          font-size: 1.5rem;
+          line-height: 1.8;
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}
