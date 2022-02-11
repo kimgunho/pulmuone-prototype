@@ -196,10 +196,6 @@
     @include mobile {
       top: calc(50% + 23px);
     }
-
-    @include vertical_tablet {
-      top: calc(50% + 32px);
-    }
   }
 
   > .background {
@@ -231,11 +227,6 @@
       @include mobile {
         mask-position: center calc(50% + 23px);
         -webkit-mask-posigin: center calc(50% + 23px);
-      }
-
-      @include vertical_tablet {
-        mask-position: center calc(50% + 32px);
-        -webkit-mask-posigin: center calc(50% + 32px);
       }
     }
   }

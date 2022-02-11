@@ -41,13 +41,13 @@ function Footer() {
             <div className={cx('inner')}>
               <ul className={cx('top')}>
                 <li>
-                  <Link to={links.privacyPolicy}>개인정보처리방침</Link>
+                  <Link to={links.privacy_policy}>개인정보처리방침</Link>
                 </li>
                 <li>
-                  <Link to={links.emailCollection}>이메일무단수집거부</Link>
+                  <Link to={links.privacy_email}>이메일무단수집거부</Link>
                 </li>
                 <li>
-                  <Link to={links.location}>찾아오시는길</Link>
+                  <Link to={links.gree_location}>찾아오시는길</Link>
                 </li>
               </ul>
 

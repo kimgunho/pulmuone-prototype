@@ -31,10 +31,6 @@
       height: 35vh;
     }
 
-    @include vertical_tablet {
-      top: calc(50% + 27px);
-    }
-
     > .title {
       @include fontEn;
       color: #fff;

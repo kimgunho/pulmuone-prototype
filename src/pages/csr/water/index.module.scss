@@ -1,0 +1,69 @@
+@import '../../../common.scss';
+
+.container {
+  @include subContainer;
+  background-color: #f5f3ef;
+
+  > .logo {
+    background-color: #fff;
+    padding: 1.875rem 0;
+    text-align: center;
+    width: 100%;
+
+    > img {
+      width: 100%;
+      max-width: 13.75rem;
+    }
+  }
+
+  > .limiter {
+    @include limiter;
+
+    > h3 {
+      font-size: 2.625rem;
+      color: #06542c;
+      font-weight: bold;
+      padding: 3.875rem;
+      text-align: center;
+    }
+
+    > p {
+      font-size: 1.5rem;
+      color: #121212;
+      font-weight: bold;
+      line-height: 1.8;
+      text-align: center;
+      padding: 0 15rem;
+    }
+
+    > .list {
+      margin-top: 5.3rem;
+      display: flex;
+      justify-content: space-between;
+
+      > li {
+        width: 24%;
+        min-height: 25rem;
+        background-color: #06542c;
+        padding: 2rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        > h4 {
+          font-size: 1.875rem;
+          font-weight: bold;
+          line-height: 1.5;
+          color: #fff;
+        }
+
+        > .icon {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+}

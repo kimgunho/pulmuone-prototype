@@ -1,0 +1,61 @@
+@import '../../../common.scss';
+
+.container {
+  @include subContainer;
+  padding-bottom: 0;
+
+  > .section {
+    @include flexCenterStyle;
+    width: 100%;
+    flex-direction: column;
+    padding: 6.25rem 0;
+
+    &:nth-child(2) {
+      padding-top: 0;
+    }
+
+    &:nth-child(even) {
+      background-color: #f5f3ef;
+    }
+
+    > .limiter {
+      @include limiter;
+
+      > .text {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 4rem;
+
+        > h3 {
+          white-space: nowrap;
+          font-size: 2.625rem;
+          font-weight: bold;
+          color: #06542c;
+          width: 25%;
+        }
+
+        > p {
+          width: 65%;
+          font-size: 1.5rem;
+          color: #121212;
+          line-height: 1.5;
+        }
+      }
+
+      > .image {
+        @include flexCenterStyle;
+        > img {
+          width: 100%;
+        }
+      }
+
+      > .images {
+        @include flexCenterStyle;
+        > img {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

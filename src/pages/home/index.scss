@@ -16,10 +16,6 @@
     top: calc(50% + 23px);
   }
 
-  @include vertical_tablet {
-    top: calc(50% + 32px);
-  }
-
   > img {
     width: 100%;
     max-width: 3rem;

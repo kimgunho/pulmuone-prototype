@@ -32,7 +32,7 @@ function Home() {
   }, []);
 
   return (
-    <>
+    <div>
       <div ref={rangeRef}>
         <div className="waterDrop">
           <img ref={waterDropRef} src={waterDrop} alt="물방울" />
@@ -44,7 +44,7 @@ function Home() {
       <S04 />
       <S05 />
       <S06 />
-    </>
+    </div>
   );
 }
 
