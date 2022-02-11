@@ -1,10 +1,18 @@
+import classNames from 'classnames/bind';
 import { useParams } from 'react-router-dom';
 import { links } from '../../assets/data/links';
 
+import styles from './index.module.scss';
+
 import Jumbotron from '../../components/shared/Jumbotron';
 import Nav from '../../components/shared/Nav';
+import Granite from './granite';
+import Quality from './quality';
+import Think from './think';
 
 import background from '../../assets/images/brand/background.jpg';
+
+const cx = classNames.bind(styles);
 
 const navItems = [
   {
@@ -45,11 +53,13 @@ const Brand = () => {
 
   return (
     <div>
-      <Jumbotron title="브랜드 스토리" sub="Brand Story" background={background} />
-      <Nav items={navItems} activeIndex={navIndex} />
-      {navIndex === 0 && <div>1111111</div>}
-      {navIndex === 1 && <div>2222222</div>}
-      {navIndex === 2 && <div>3333333</div>}
+      <div className={cx('wrapper_contents')}>
+        <Jumbotron title="브랜드 스토리" sub="Brand Story" background={background} />
+        <Nav items={navItems} activeIndex={navIndex} />
+      </div>
+      {navIndex === 0 && <Granite />}
+      {navIndex === 1 && <Quality />}
+      {navIndex === 2 && <Think />}
       {navIndex === 3 && <div>not....</div>}
     </div>
   );
