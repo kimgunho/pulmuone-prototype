@@ -1,35 +1,18 @@
 // break resize
 $breakpoint-mobile: 740px; // mobile
 $breakpoint-tablet: 1280px; // tablet
+$breakpoint-wide-desktop: 1480px; // wide desktop
 
-@mixin subContainer {
-  @include flexCenterStyle;
-  flex-direction: column;
-  padding-bottom: 9.375rem;
-}
-
+// font
 @mixin fontEn {
   font-family: 'pulmuone-en', 'Noto Sans KR', sans-serif;
 }
 
-@mixin mainBtn {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  line-height: 1;
-  position: relative;
-  font-size: 1.75rem;
-  padding: 1.5rem 8rem 1.5rem 1.875rem;
-  width: fit-content;
-  transition: all 0.2s ease-in-out;
-
-  &::after {
-    content: '〉';
-    font-size: 1.75rem;
-    right: 1.875rem;
-    line-height: 1;
-    position: absolute;
-  }
+// layout mixin
+@mixin subContainer {
+  @include flexCenterStyle;
+  flex-direction: column;
+  padding-bottom: 9.375rem;
 }
 
 @mixin absoluteFull {
@@ -38,25 +21,6 @@ $breakpoint-tablet: 1280px; // tablet
   top: 0;
   width: 100%;
   height: 100%;
-}
-
-@mixin selectIcon {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  background-image: linear-gradient(45deg, transparent 50%, #999 50%), linear-gradient(135deg, #999 50%, transparent 50%),
-    linear-gradient(to right, #fff, #fff);
-  background-position: calc(100% - 20px) calc(1em + 8px), calc(100% - 15px) calc(1em + 8px), 100% 0;
-  background-size: 5px 5px, 5px 5px, 100% 100%;
-  background-repeat: no-repeat;
-
-  &::-ms-expand {
-    display: none;
-  }
-
-  @include mobile {
-    background-position: calc(100% - 20px) calc(1em + 4px), calc(100% - 15px) calc(1em + 4px), 100% 0;
-  }
 }
 
 @mixin backgroundDefaultStyle {
@@ -80,23 +44,56 @@ $breakpoint-tablet: 1280px; // tablet
   }
 }
 
-@mixin limiterSub {
-  width: 100%;
-  max-width: 1440px;
-  box-sizing: border-box;
-  transition: all 0.2s ease;
-}
-
 @mixin flexCenterStyle {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+// design mixin
+@mixin mainBtn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 1;
+  position: relative;
+  font-size: 1.75rem;
+  padding: 1.5rem 8rem 1.5rem 1.875rem;
+  width: fit-content;
+  transition: all 0.2s ease-in-out;
+
+  &::after {
+    content: '〉';
+    font-size: 1.75rem;
+    right: 1.875rem;
+    line-height: 1;
+    position: absolute;
+  }
+}
+
+@mixin selectIcon {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: linear-gradient(45deg, transparent 50%, #999 50%), linear-gradient(135deg, #999 50%, transparent 50%),
+    linear-gradient(to right, #fff, #fff);
+  background-position: calc(100% - 20px) calc(1em + 8px), calc(100% - 15px) calc(1em + 8px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 100% 100%;
+  background-repeat: no-repeat;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  @include mobile {
+    background-position: calc(100% - 20px) calc(1em + 4px), calc(100% - 15px) calc(1em + 4px), 100% 0;
+  }
+}
+
 // responsive size
 
 @mixin desktop {
-  @media screen and (max-width: 1480px) {
+  @media screen and (max-width: $breakpoint-wide-desktop) {
     @content;
   }
 }
