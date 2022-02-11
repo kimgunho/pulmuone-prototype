@@ -20,7 +20,7 @@ const cx = classNames.bind(styles);
 function Quality() {
   return (
     <div className={cx('container')}>
-      <PageTitle title="철저한 품질관리" color="#F5F3EF" />
+      <PageTitle title="철저한 품질관리" />
 
       <div className={cx(['section', 'first'])}>
         <div className={cx('limiter')}>

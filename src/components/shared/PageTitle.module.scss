@@ -3,7 +3,8 @@
 .container {
   @include flexCenterStyle;
   flex-direction: column;
-  padding: 8rem 0;
+  padding: 8rem 0 4.5rem 0;
+  background-color: #f5f3ef;
 
   > p {
     color: #221e1f;

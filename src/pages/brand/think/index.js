@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 function Think() {
   return (
     <div className={cx('container')}>
-      <PageTitle title="환경을 생각한 포장" sub="Think Green" color="#F5F3EF" />
+      <PageTitle title="환경을 생각한 포장" sub="Think Green" />
       <div className={cx(['section', 'first'])}>
         <div className={cx('limiter')}>
           <h3>
