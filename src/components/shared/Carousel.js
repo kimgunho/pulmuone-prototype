@@ -1,5 +1,5 @@
-import classNames from 'classnames/bind';
 import { useState, useRef, useEffect } from 'react';
+import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
 
@@ -12,12 +12,13 @@ import arrow_right_icon from '../../assets/images/shared/arrow-next.svg';
 
 const cx = classNames.bind(styles);
 
-function Carousel({ images, slidesPerView }) {
+function Carousel({ images, slidesPerView, section }) {
   const [pager, setPager] = useState(null);
   const paginationRef = useRef();
 
   useEffect(() => {
-    setPager(paginationRef.current.className);
+    const classes = paginationRef.current.className.split(' ');
+    setPager(classes[1]);
   }, []);
 
   return (
@@ -31,24 +32,24 @@ function Carousel({ images, slidesPerView }) {
           bulletActiveClass: cx('bulletsActive'),
         }}
         navigation={{
-          nextEl: '.next',
-          prevEl: '.prev',
+          nextEl: `.next${section}`,
+          prevEl: `.prev${section}`,
         }}
         modules={[Pagination, Navigation]}>
         {images.map((image, index) => (
-          <SwiperSlide>
-            <img key={index} src={image} alt="" />
+          <SwiperSlide key={index}>
+            <img src={image} alt="" />
           </SwiperSlide>
         ))}
       </Swiper>
 
       <div className={cx('controls')}>
-        <div ref={paginationRef} className={cx('pager')}></div>
+        <div ref={paginationRef} className={cx(['pager', `pager${section}`])}></div>
         <div className={cx('nav')}>
-          <button className={cx('prev')}>
+          <button className={cx(['prev', `prev${section}`])}>
             <img src={arrow_left_icon} alt="" />
           </button>
-          <button className={cx('next')}>
+          <button className={cx(['next', `next${section}`])}>
             <img src={arrow_right_icon} alt="" />
           </button>
         </div>

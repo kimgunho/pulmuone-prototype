@@ -8,7 +8,6 @@ import Carousel from '../../../components/shared/Carousel';
 import section_01_01 from '../../../assets/images/csr/share/section_01_01.jpg';
 import section_01_02 from '../../../assets/images/csr/share/section_01_02.jpg';
 import section_02_01 from '../../../assets/images/csr/share/section_02_01.jpg';
-
 import section_03_01 from '../../../assets/images/csr/share/section_03_01.jpg';
 import section_03_02 from '../../../assets/images/csr/share/section_03_02.jpg';
 import section_03_03 from '../../../assets/images/csr/share/section_03_03.jpg';
@@ -68,7 +67,7 @@ function Share() {
               활용하고 교육 대상을 확대하는 등 물 교육 활성화를 통해 국내 수자원을 보호하기 위한 인식을 개선하기 위한 노력을 해왔습니다.
             </p>
           </div>
-          <Carousel images={images} slidesPerView={2} />
+          <Carousel images={images} slidesPerView={2} section={'3'} />
         </div>
       </div>
     </div>
