@@ -14,7 +14,7 @@ const cx = classNames.bind(styles);
 
 function FooterMobile() {
   return (
-    <header className={cx('header')}>
+    <footer className={cx('footer')}>
       <div className={cx('top')}>
         <h2 className={cx('title')}>
           <img src={footer_logo} alt="" />
@@ -88,7 +88,7 @@ function FooterMobile() {
           <li>통신판매업 신고 제2011-서울송파-1283호</li>
         </ul>
       </div>
-    </header>
+    </footer>
   );
 }
 

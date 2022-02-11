@@ -5,7 +5,9 @@
   padding: 8rem 0;
 
   > .limiter {
-    @include mainLimiter;
+    @include limiter;
+    display: flex;
+    justify-content: space-between;
 
     > div {
       &.left {

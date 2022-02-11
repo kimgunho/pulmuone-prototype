@@ -7,7 +7,9 @@
   position: relative;
 
   > .limiter {
-    @include mainLimiter;
+    @include limiter;
+    display: flex;
+    justify-content: space-between;
     height: 50%;
     z-index: 5;
     opacity: 0;

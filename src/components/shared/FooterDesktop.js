@@ -14,7 +14,7 @@ const cx = classNames.bind(styles);
 
 function Footer() {
   return (
-    <div className={cx('footer')}>
+    <footer className={cx('footer')}>
       <div className={cx('limiter')}>
         <div className={cx('left')}>
           <ul className={cx('inner')}>
@@ -91,7 +91,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 export default Footer;
