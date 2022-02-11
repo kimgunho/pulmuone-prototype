@@ -2,6 +2,12 @@
 $breakpoint-mobile: 740px; // mobile
 $breakpoint-tablet: 1280px; // tablet
 
+@mixin subContainer {
+  @include flexCenterStyle;
+  flex-direction: column;
+  padding-bottom: 9.375rem;
+}
+
 @mixin fontEn {
   font-family: 'pulmuone-en', 'Noto Sans KR', sans-serif;
 }
