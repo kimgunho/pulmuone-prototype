@@ -72,10 +72,6 @@ $breakpoint-tablet: 1280px; // tablet
   transition: all 0.2s ease;
 
   @include desktop {
-    padding: 0 10rem;
-  }
-
-  @include tablet {
     padding: 0 5rem;
   }
 
@@ -99,14 +95,8 @@ $breakpoint-tablet: 1280px; // tablet
 
 // responsive size
 
-@mixin vertical_tablet {
-  @media screen and (max-height: 840px) {
-    @content;
-  }
-}
-
 @mixin desktop {
-  @media screen and (max-width: 1920px) {
+  @media screen and (max-width: 1480px) {
     @content;
   }
 }
