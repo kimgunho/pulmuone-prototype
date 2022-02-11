@@ -14,12 +14,14 @@
   }
 
   > .pulmuoneWater {
-    @include mainLimiter;
+    @include limiter;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
     position: relative;
     z-index: 3;
 
     > div {
-      width: fit-content;
       display: flex;
       flex-direction: column;
 
@@ -63,7 +65,7 @@
         width: 40%;
 
         > img {
-          height: 120%;
+          height: 130%;
           width: auto;
           display: none;
           opacity: 0;

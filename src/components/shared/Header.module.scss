@@ -16,14 +16,18 @@
   }
 
   > .limiter {
-    @include limiter;
+    width: 100%;
+    max-width: 62.5rem;
+    padding: 0 20px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
 
     > .logo {
       position: absolute;
       left: 50%;
-      transform: translate(-50%, 0);
+      top: 50%;
+      transform: translate(-50%, -50%);
 
       > a {
         > img {
@@ -32,7 +36,7 @@
           padding-top: 8px;
 
           @include mobile {
-            max-width: 6rem;
+            max-width: 7rem;
           }
         }
       }

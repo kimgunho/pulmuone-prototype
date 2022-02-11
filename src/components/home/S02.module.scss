@@ -2,7 +2,6 @@
 
 .container {
   @include flexCenterStyle;
-  flex-direction: column;
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -26,8 +25,11 @@
   }
 
   > .limiter {
-    @include mainLimiter;
+    @include limiter;
+    display: flex;
+    justify-content: space-between;
     position: relative;
+    height: 50%;
     z-index: 15;
 
     @include tablet {
@@ -202,11 +204,7 @@
 
   > .background {
     @include backgroundDefaultStyle;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    @include absoluteFull;
 
     &.sand {
       z-index: 2;

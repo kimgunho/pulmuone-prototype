@@ -59,14 +59,11 @@ $breakpoint-tablet: 1280px; // tablet
   background-size: cover;
 }
 
-@mixin mainLimiter {
-  display: flex;
-  justify-content: space-between;
+@mixin limiter {
   width: 100%;
   max-width: 1440px;
   box-sizing: border-box;
   transition: all 0.2s ease;
-  height: 50%;
 
   @include desktop {
     padding: 0 10rem;
@@ -79,13 +76,6 @@ $breakpoint-tablet: 1280px; // tablet
   @include mobile {
     padding: 0 2rem;
   }
-}
-
-@mixin limiter {
-  width: 100%;
-  max-width: 1160px;
-  padding: 0 1rem;
-  box-sizing: border-box;
 }
 
 @mixin flexCenterStyle {
