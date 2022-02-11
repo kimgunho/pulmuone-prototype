@@ -18,6 +18,7 @@ import Service from './pages/service';
 import Product from './pages/product';
 import Privacy from './pages/privacy';
 import NotPage from './components/shared/NotPage';
+import ScrollTop from './components/shared/ScrollTop';
 
 const cx = classNames.bind(styles);
 
@@ -49,6 +50,7 @@ function App() {
         </Routes>
         {width.currentWidth > width.breakPoint ? <FooterDesktop /> : <FooterMobile />}
       </div>
+      <ScrollTop />
     </BrowserRouter>
   );
 }
