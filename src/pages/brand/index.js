@@ -9,6 +9,7 @@ import Nav from '../../components/shared/Nav';
 import Granite from './granite';
 import Quality from './quality';
 import Think from './think';
+import NotPage from '../../components/shared/NotPage';
 
 import background from '../../assets/images/brand/background.jpg';
 
@@ -60,7 +61,7 @@ const Brand = () => {
       {navIndex === 0 && <Granite />}
       {navIndex === 1 && <Quality />}
       {navIndex === 2 && <Think />}
-      {navIndex === 3 && <div>not....</div>}
+      {navIndex === 3 && <NotPage />}
     </div>
   );
 };

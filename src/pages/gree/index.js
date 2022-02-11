@@ -9,6 +9,7 @@ import Nav from '../../components/shared/Nav';
 import Pulmuone from './pulmuone';
 import ElectronicDisclosure from './electronicDisclosure';
 import Location from './location';
+import NotPage from '../../components/shared/NotPage';
 
 import background from '../../assets/images/gree/background.jpg';
 
@@ -60,7 +61,7 @@ const CSR = () => {
       {navIndex === 0 && <Pulmuone />}
       {navIndex === 1 && <ElectronicDisclosure />}
       {navIndex === 2 && <Location />}
-      {navIndex === 3 && <div>not....</div>}
+      {navIndex === 3 && <NotPage />}
     </div>
   );
 };

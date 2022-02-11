@@ -10,6 +10,7 @@ import SpringWater from './springWater';
 import Bodyful from './bodyful';
 import DrinkingFountain from './drinkingFountain';
 import WaterRoutine from './waterRoutine';
+import NotPage from '../../components/shared/NotPage';
 
 import background from '../../assets/images/product/background.jpg';
 
@@ -70,7 +71,7 @@ const CSR = () => {
       {navIndex === 1 && <Bodyful />}
       {navIndex === 2 && <DrinkingFountain />}
       {navIndex === 3 && <WaterRoutine />}
-      {navIndex === 4 && <div>not....</div>}
+      {navIndex === 4 && <NotPage />}
     </div>
   );
 };

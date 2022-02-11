@@ -9,6 +9,7 @@ import Nav from '../../components/shared/Nav';
 import WaterResources from './water';
 import ShareCampaign from './share';
 import EcoCampaign from './eco';
+import NotPage from '../../components/shared/NotPage';
 
 import background from '../../assets/images/csr/background.jpg';
 
@@ -60,7 +61,7 @@ const CSR = () => {
       {navIndex === 0 && <WaterResources />}
       {navIndex === 1 && <ShareCampaign />}
       {navIndex === 2 && <EcoCampaign />}
-      {navIndex === 3 && <div>not....</div>}
+      {navIndex === 3 && <NotPage />}
     </div>
   );
 };

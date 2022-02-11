@@ -8,6 +8,7 @@ import Jumbotron from '../../components/shared/Jumbotron';
 import Nav from '../../components/shared/Nav';
 import FNQ from './fnq';
 import QNA from './qna';
+import NotPage from '../../components/shared/NotPage';
 
 import background from '../../assets/images/service/background.jpg';
 
@@ -50,7 +51,7 @@ const CSR = () => {
       </div>
       {navIndex === 0 && <FNQ />}
       {navIndex === 1 && <QNA />}
-      {navIndex === 2 && <div>not....</div>}
+      {navIndex === 2 && <NotPage />}
     </div>
   );
 };

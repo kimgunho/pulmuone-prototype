@@ -8,6 +8,7 @@ import Jumbotron from '../../components/shared/Jumbotron';
 import Nav from '../../components/shared/Nav';
 import Policy from './policy';
 import Email from './email';
+import NotPage from '../../components/shared/NotPage';
 
 import background from '../../assets/images/privacy/background.jpg';
 
@@ -50,7 +51,7 @@ const CSR = () => {
       </div>
       {navIndex === 0 && <Policy />}
       {navIndex === 1 && <Email />}
-      {navIndex === 2 && <div>not....</div>}
+      {navIndex === 2 && <NotPage />}
     </div>
   );
 };
