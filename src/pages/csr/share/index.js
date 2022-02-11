@@ -1,32 +1,22 @@
-import { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames/bind';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
 import styles from './index.module.scss';
 
 import PageTitle from '../../../components/shared/PageTitle';
+import Carousel from '../../../components/shared/Carousel';
 
 import section_01_01 from '../../../assets/images/csr/share/section_01_01.jpg';
 import section_01_02 from '../../../assets/images/csr/share/section_01_02.jpg';
 import section_02_01 from '../../../assets/images/csr/share/section_02_01.jpg';
+
 import section_03_01 from '../../../assets/images/csr/share/section_03_01.jpg';
 import section_03_02 from '../../../assets/images/csr/share/section_03_02.jpg';
 import section_03_03 from '../../../assets/images/csr/share/section_03_03.jpg';
-import arrow_left from '../../../assets/images/csr/share/arrow-back.svg';
-import arrow_right from '../../../assets/images/csr/share/arrow-next.svg';
 
 const cx = classNames.bind(styles);
 
 function Share() {
-  const [pager, setPager] = useState(null);
-  const paginationRef = useRef();
-
-  useEffect(() => {
-    setPager(paginationRef.current.className);
-  }, []);
+  const images = [section_03_01, section_03_02, section_03_03];
 
   return (
     <div className={cx('container')}>
@@ -78,43 +68,7 @@ function Share() {
               활용하고 교육 대상을 확대하는 등 물 교육 활성화를 통해 국내 수자원을 보호하기 위한 인식을 개선하기 위한 노력을 해왔습니다.
             </p>
           </div>
-          <div className={cx('slide')}>
-            <Swiper
-              loop={true}
-              slidesPerView={2}
-              pagination={{
-                el: `.${pager}`,
-                clickable: true,
-                bulletActiveClass: cx('bulletsActive'),
-              }}
-              navigation={{
-                nextEl: '.next',
-                prevEl: '.prev',
-              }}
-              modules={[Pagination, Navigation]}>
-              <SwiperSlide>
-                <img src={section_03_01} alt="" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={section_03_02} alt="" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={section_03_03} alt="" />
-              </SwiperSlide>
-            </Swiper>
-
-            <div className={cx('controls')}>
-              <div ref={paginationRef} className={cx('pager')}></div>
-              <div className={cx('nav')}>
-                <button className={cx('prev')}>
-                  <img src={arrow_left} alt="" />
-                </button>
-                <button className={cx('next')}>
-                  <img src={arrow_right} alt="" />
-                </button>
-              </div>
-            </div>
-          </div>
+          <Carousel images={images} slidesPerView={2} />
         </div>
       </div>
     </div>
