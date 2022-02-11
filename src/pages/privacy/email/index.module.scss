@@ -5,25 +5,27 @@
   background-color: #f5f3ef;
 
   > .limiter {
-    @include limiterSub;
+    @include limiter;
     @include flexCenterStyle;
-    flex-direction: column;
-    background-color: #06542c;
-    padding: 4.875rem 10rem;
-    text-align: center;
-    box-sizing: border-box;
 
-    > h3 {
-      color: #fff;
-      font-size: 2.75rem;
-      font-weight: bold;
-      padding-bottom: 2.5rem;
-    }
+    > .content {
+      background-color: #06542c;
+      padding: 4.875rem 10rem;
+      text-align: center;
+      box-sizing: border-box;
 
-    > p {
-      color: #fff;
-      font-size: 1.5rem;
-      line-height: 1.8;
+      > h3 {
+        color: #fff;
+        font-size: 2.75rem;
+        font-weight: bold;
+        padding-bottom: 2.5rem;
+      }
+
+      > p {
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 1.8;
+      }
     }
   }
 }

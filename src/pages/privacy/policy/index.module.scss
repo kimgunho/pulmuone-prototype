@@ -5,11 +5,12 @@
   background-color: #f5f3ef;
 
   > .limiter {
-    @include limiterSub;
-    padding: 4rem;
-    background-color: #fff;
+    @include limiter;
 
     > .content {
+      background-color: #fff;
+      padding: 4rem;
+
       > div {
         margin-bottom: 3.125rem;
 
