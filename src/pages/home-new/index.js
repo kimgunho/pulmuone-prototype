@@ -4,6 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import './index.scss';
 import S01 from '../../components/home-new/S01';
+import S02 from '../../components/home-new/S02';
+import S05 from '../../components/home/S05';
+import S06 from '../../components/home/S06';
 import waterDrop from '../../assets/images/home/water.png';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -15,6 +18,9 @@ const Home = () => {
         <img src={waterDrop} alt="물방울" />
       </div>
       <S01 />
+      <S02 />
+      <S05 />
+      <S06 />
     </>
   );
 };
