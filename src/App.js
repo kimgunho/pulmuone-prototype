@@ -11,6 +11,7 @@ import Header from './components/shared/Header';
 import FooterDesktop from './components/shared/FooterDesktop';
 import FooterMobile from './components/shared/FooterMobile';
 import Home from './pages/home';
+import HomeNew from './pages/home-new';
 import BrandStory from './pages/brandStory';
 
 const cx = classNames.bind(styles);
@@ -34,6 +35,7 @@ function App() {
         <div className={cx('wrapper')}>
           <Routes>
             <Route path={links.home} element={<Home />} />
+            <Route path="/home-new" element={<HomeNew />} />
             <Route path={links.brand} element={<BrandStory />} />
             <Route path={links.notPage} element={<div>not...</div>} />
           </Routes>
