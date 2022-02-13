@@ -28,13 +28,23 @@ const S04 = () => {
 
   useEffect(() => {
     gsap.from(wrapperRef.current, {
-      yPercent: -40,
+      yPercent: -32,
       scrollTrigger: {
         trigger: containerRef.current,
         scrub: true,
         start: 'top center',
         end: 'bottom bottom',
-        markers: true,
+      },
+    });
+
+    gsap.to('.dew', {
+      opacity: 0,
+      scale: 0,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        scrub: true,
+        start: 'top 56%',
+        end: 'bottom bottom',
       },
     });
 
@@ -46,7 +56,6 @@ const S04 = () => {
           pin: true,
           start: 'top top',
           end: '300% bottom',
-          markers: true,
         },
       })
       .to(backgroundRef.current, { top: '-100%' })

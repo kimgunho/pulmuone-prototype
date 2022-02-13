@@ -1,15 +1,16 @@
 @import '../../common.scss';
 
+$dew-size: 110px * 0.5;
+
 .dew {
   position: fixed;
   z-index: 100;
-  left: 50%;
-  top: calc(50% + 36px);
-  transform: translate(-50%, -50%);
+  width: $dew-size;
+  height: $dew-size;
+  left: calc(50% - ($dew-size / 2));
+  top: calc(50% + ($dew-size / 3));
   display: none;
-
-  > img {
-    width: 100%;
-    max-width: 3rem;
-  }
+  background-position: center;
+  background-size: cover;
+  background-image: url('../../assets/images/home/water.png');
 }

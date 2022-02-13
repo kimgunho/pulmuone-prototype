@@ -9,16 +9,13 @@ import S03 from '../../components/home-new/S03';
 import S04 from '../../components/home-new/S04';
 import S05 from '../../components/home/S05';
 import S06 from '../../components/home/S06';
-import waterDrop from '../../assets/images/home/water.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   return (
     <>
-      <div className="dew">
-        <img src={waterDrop} alt="물방울" />
-      </div>
+      <div className="dew" />
       <S01 />
       <S02 />
       <S03 />

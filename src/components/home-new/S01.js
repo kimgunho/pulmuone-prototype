@@ -40,7 +40,7 @@ const S01 = () => {
           scrub: true,
           pin: true,
           start: 'top top',
-          end: '200% center',
+          end: 'bottom center',
         },
       })
       .to(circleInnerRef.current, { y: -window.innerHeight })
