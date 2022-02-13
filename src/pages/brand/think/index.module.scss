@@ -166,9 +166,14 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            width: 30%;
 
-            > img {
-              width: auto;
+            > .image {
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center center;
+              width: 100%;
+              min-height: 18.125rem;
             }
 
             > .info {

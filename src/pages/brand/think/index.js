@@ -82,21 +82,21 @@ function Think() {
           <h3>무라벨 제품 정보 표기</h3>
           <ul className={cx('list')}>
             <li>
-              <img src={label_item01} alt="" />
+              <div className={cx('image')} style={{ backgroundImage: `url(${label_item01})` }}></div>
               <div className={cx('info')}>
                 <h4>낱병</h4>
                 <p>제품명, 수원지, 제조일, 고객센터 번호</p>
               </div>
             </li>
             <li>
-              <img src={label_item02} alt="" />
+              <div className={cx('image')} style={{ backgroundImage: `url(${label_item02})` }}></div>
               <div className={cx('info')}>
                 <h4>팩 전면</h4>
                 <p>수원지 정보</p>
               </div>
             </li>
             <li>
-              <img src={label_item03} alt="" />
+              <div className={cx('image')} style={{ backgroundImage: `url(${label_item03})` }}></div>
               <div className={cx('info')}>
                 <h4>팩 후면</h4>
                 <p>무기물질함량, 제품 상세 정보</p>
