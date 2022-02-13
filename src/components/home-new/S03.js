@@ -24,7 +24,6 @@ const S03 = () => {
           scrub: true,
           start: 'top bottom',
           end: '75% bottom',
-          markers: true,
         },
       })
       .to(sand1Ref.current, { top: '-360px' }, 0.1)
