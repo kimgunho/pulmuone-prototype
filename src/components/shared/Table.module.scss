@@ -1,0 +1,95 @@
+@import '../../common.scss';
+
+.table {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  width: 100%;
+  max-width: 72.5rem;
+
+  &.green {
+    > .head {
+      > li {
+        background-color: #bed730;
+      }
+    }
+    > .body {
+      .point {
+        background-color: #bed730;
+      }
+    }
+  }
+
+  &.blue {
+    > .head {
+      > li {
+        background-color: #64bae8;
+      }
+    }
+    > .body {
+      .point {
+        background-color: #64bae8;
+      }
+    }
+  }
+
+  > .title {
+    font-size: 1.5rem;
+    color: #212121;
+    font-weight: bold;
+    padding-bottom: 1rem;
+  }
+
+  > .head {
+    @include flexCenterStyle;
+    border-bottom: 2px solid #fff;
+
+    > li {
+      border-right: 2px solid #fff;
+      color: #212121;
+      font-size: 1.25rem;
+      font-weight: bold;
+      padding: 0.75rem 0;
+      width: 100%;
+
+      &.side {
+        text-indent: -9999px;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  > .body {
+    > li {
+      border-bottom: 2px solid #fff;
+      box-sizing: border-box;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      > ul {
+        @include flexCenterStyle;
+        width: 100%;
+
+        > li {
+          border-right: 2px solid #fff;
+          background-color: #f4f4f4;
+          color: #212121;
+          line-height: 1;
+          box-sizing: border-box;
+          font-size: 1.25rem;
+          width: 100%;
+          font-weight: bold;
+          padding: 1rem 0;
+
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

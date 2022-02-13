@@ -1,0 +1,71 @@
+@import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  flex-direction: column;
+  padding: 6.25rem 0;
+  background-color: #f5f3ef;
+
+  > .limiter {
+    @include flexCenterStyle;
+    @include limiter;
+    flex-direction: column;
+
+    > .title {
+      font-size: 2.75rem;
+      color: #121212;
+      padding-bottom: 2.8rem;
+      font-weight: bold;
+    }
+
+    > p {
+      font-size: 1.5rem;
+      color: #121212;
+      line-height: 1.5;
+      text-align: center;
+      margin-bottom: 5.5rem;
+    }
+
+    > .list {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 80rem;
+
+      > li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 32%;
+        text-align: center;
+        height: 100%;
+
+        > .image {
+          @include backgroundDefaultStyle;
+          @include flexCenterStyle;
+          width: 100%;
+          min-height: 15rem;
+
+          > p {
+            color: #fff;
+            font-size: 1.75rem;
+          }
+        }
+
+        > .text {
+          @include flexCenterStyle;
+          background-color: #fff;
+          min-height: 12rem;
+
+          > p {
+            color: #121212;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            padding: 1rem;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+  }
+}
