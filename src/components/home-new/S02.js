@@ -37,7 +37,6 @@ const S02 = () => {
           pin: true,
           start: 'top top',
           end: '400% top',
-          markers: true,
         },
       })
       .fromTo(shapeRef.current, { opacity: 0 }, { opacity: 1 }, 0.1)
