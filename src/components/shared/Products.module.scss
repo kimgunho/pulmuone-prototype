@@ -2,6 +2,7 @@
 
 .container {
   @include flexCenterStyle;
+  width: 100%;
   flex-direction: column;
 
   > .title {
@@ -46,7 +47,6 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      width: 25%;
       border-right: 1px solid #d5d5d5;
       text-align: center;
       padding: 0 4rem;
