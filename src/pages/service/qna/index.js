@@ -41,22 +41,31 @@ function QNA() {
               <span>개인정보 처리 방침에 동의합니다.</span>
             </p>
 
-            <div className={cx(['basic', 'formList'])}>
+            <div className={cx('kind')}>
+              <p className={cx('required')}>문의사항 분류</p>
+              <div className={cx('box')}>
+                <select>
+                  <option>1. 제품문의, 배송 문의, 기타 문의</option>
+                </select>
+              </div>
+            </div>
+
+            <div className={cx('formList')}>
               <h3 className={cx('title')}>기본정보</h3>
               <div className={cx('inner')}>
                 <ul className={cx('list')}>
                   <li>
                     <p className={cx('required')}>이름</p>
                     <div className={cx('box')}>
-                      <input type={'text'} />
+                      <input type={'text'} placeholder="이름을 입력해주세요" />
                     </div>
                   </li>
                   <li>
                     <p className={cx('required')}>이메일</p>
                     <div className={cx('box')}>
-                      <input type={'text'} />
+                      <input type={'text'} placeholder="이메일을 입력해 주세요" />
                       <span>@</span>
-                      <input type={'text'} />
+                      <input type={'text'} placeholder="직접입력" />
                     </div>
                   </li>
                   <li>
@@ -88,18 +97,9 @@ function QNA() {
               </div>
             </div>
 
-            <div className={cx(['qnaData', 'formList'])}>
-              <h3 className={cx('title')}>문의내용</h3>
+            <div className={cx('formList')}>
               <div className={cx('inner')}>
                 <ul className={cx('list')}>
-                  <li>
-                    <p className={cx('required')}>문의사항 분류</p>
-                    <div className={cx('box')}>
-                      <select>
-                        <option>1. 제품문의, 배송 문의, 기타 문의</option>
-                      </select>
-                    </div>
-                  </li>
                   <li>
                     <p className={cx('required')}>주문제품</p>
                     <div className={cx('box')}>
@@ -119,8 +119,11 @@ function QNA() {
                   <li>
                     <p>첨부파일</p>
                     <div className={cx('box')}>
-                      <input placeholder="파일을 선택해 주세요" type={'text'} />
-                      <button className={cx('btn')}>업로드 하기</button>
+                      <input id="file" placeholder="파일을 선택해 주세요" type={'file'} />
+                      <p className={cx('check_file')}>파일을 선택해주세요.</p>
+                      <label htmlFor="file" className={cx('btn')}>
+                        업로드 하기
+                      </label>
                     </div>
                   </li>
                   <li>

@@ -87,6 +87,49 @@
           }
         }
 
+        > .kind {
+          width: 100%;
+          margin-bottom: 5.3rem;
+
+          > p {
+            color: #212121;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 1rem 0;
+
+            &.required {
+              &::after {
+                content: '*';
+                color: #8dc63e;
+                font-weight: normal;
+                padding-left: 0.5rem;
+              }
+            }
+          }
+
+          > .box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+
+            > select {
+              @include selectIconDown;
+              width: 100%;
+              max-width: 43.625rem;
+              background-color: #fff;
+              border: 0;
+              padding: 0.875rem;
+              box-sizing: border-box;
+              color: #aaa;
+              font-size: 1.25rem;
+              min-height: 3.75rem;
+              letter-spacing: 1px;
+              box-sizing: border-box;
+            }
+          }
+        }
+
         > .formList {
           width: 100%;
           margin-bottom: 4.8rem;
@@ -140,7 +183,6 @@
                     background-color: #fff;
                     border: 0;
                     padding: 0.875rem;
-                    box-sizing: border-box;
                     font-size: 1.25rem;
                     min-height: 3.75rem;
                     letter-spacing: 1px;
@@ -157,6 +199,7 @@
                   }
 
                   > select {
+                    @include selectIconDown;
                     width: 100%;
                     background-color: #fff;
                     border: 0;
@@ -166,11 +209,6 @@
                     min-height: 3.75rem;
                     letter-spacing: 1px;
                     box-sizing: border-box;
-
-                    &:focus {
-                      border: 1px solid #8dc63e;
-                      color: #8dc63e;
-                    }
                   }
 
                   > span {
@@ -186,7 +224,7 @@
                     background-color: #8dc63e;
                     color: #fff;
                     width: fit-content;
-                    padding: 0.8rem 3.75rem;
+                    padding: 0 3.75rem;
                     min-height: 3.75rem;
                     font-weight: bold;
                     cursor: pointer;
@@ -194,6 +232,20 @@
                     margin-left: 1.5rem;
                     white-space: nowrap;
                     font-size: 1.25rem;
+                  }
+
+                  > .check_file {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+                    background-color: #fff;
+                    padding: 0.875rem;
+                    font-size: 1.25rem;
+                    min-height: 3.75rem;
+                    letter-spacing: 1px;
+                    box-sizing: border-box;
+                    color: #aaa;
                   }
 
                   > textarea {

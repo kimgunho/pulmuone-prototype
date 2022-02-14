@@ -108,6 +108,18 @@ $breakpoint-wide-desktop: 1480px; // wide desktop
   }
 }
 
+@mixin selectIconDown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background: url('./assets//images/shared/select_down_icon.svg') no-repeat 97% 50%/15px auto;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
 // responsive size
 
 @mixin desktop {
