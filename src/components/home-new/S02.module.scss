@@ -1,0 +1,151 @@
+@import '../../common.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 880px;
+  background-image: url('../../assets/images/home/s02/background_sand.jpg');
+
+  > .title {
+    position: absolute;
+    color: #fff;
+    font-size: 3.125rem;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 24rem;
+    transition: all 1s ease;
+
+    &:global.active {
+      filter: blur(24px);
+      opacity: 0;
+    }
+    > .accent {
+      font-weight: bold;
+      display: block;
+      font-size: 5rem;
+    }
+  }
+  > .shape {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 36px);
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 16vh;
+  }
+  > .stoneBg {
+    @include backgroundDefaultStyle;
+    @include absoluteFull;
+    mask-image: url('../../assets/images/home/s02/shape.svg');
+    mask-repeat: no-repeat;
+    mask-position: center calc(50% + 36px);
+    mask-size: auto 16vh;
+    background-image: url('../../assets/images/home/s02/background_stone.jpg');
+    transition: mask-size 1s ease;
+
+    &:global.active {
+      mask-size: auto 400vh;
+    }
+  }
+  > .limiter {
+    width: 100%;
+    max-width: 1024px;
+    margin-top: 72px;
+    display: flex;
+    height: 48vh;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    &:global.active {
+      opacity: 1;
+    }
+    > div {
+      flex: 1;
+      display: flex;
+
+      &.left {
+        > p {
+          color: #fff;
+          font-size: 2.625rem;
+
+          > .accent {
+            display: block;
+            font-size: 3.5rem;
+            color: #fff;
+            transition: all 0.1s ease;
+
+            &:hover {
+              color: #bfd62f;
+              border-bottom: 1px solid #bfd62f;
+            }
+          }
+        }
+      }
+      &.right {
+        position: relative;
+
+        > p {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          color: #fff;
+          font-size: 1.625rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  > .objects {
+    > .leafLeft {
+      z-index: 20;
+      position: absolute;
+      width: 40rem;
+      left: -80rem;
+      bottom: 4%;
+      transition: left 1s ease;
+
+      &:global.active {
+        left: -1rem;
+      }
+    }
+    > .leafRight {
+      z-index: 20;
+      position: absolute;
+      width: 36rem;
+      top: 8%;
+      right: -80rem;
+      transition: right 0.5s ease;
+
+      &:global.active {
+        right: -1rem;
+      }
+    }
+    > .stone {
+      position: absolute;
+
+      &.first {
+        z-index: 20;
+        top: 100vh;
+        left: -12rem;
+        width: 48rem;
+      }
+      &.second {
+        z-index: 10;
+        top: 100vh;
+        left: -4rem;
+        width: 64rem;
+        filter: blur(2px);
+      }
+      &.third {
+        z-index: 10;
+        top: 100vh;
+        right: -32rem;
+        width: 64rem;
+      }
+    }
+  }
+}
