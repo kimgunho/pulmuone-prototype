@@ -10,13 +10,11 @@ import leafRight from '../../assets/images/home/s02/leaf_right.png';
 import stone1 from '../../assets/images/home/s02/stone01.png';
 import stone2 from '../../assets/images/home/s02/stone02.png';
 import stone3 from '../../assets/images/home/s02/stone03_2.png';
-import shape from '../../assets/images/home/s02/shape.png';
 
 const cx = classNames.bind(styles);
 
 const S02 = () => {
   const containerRef = useRef();
-  const shapeRef = useRef();
   const titleRef = useRef();
   const stoneBgRef = useRef();
   const limiterRef = useRef();
@@ -39,8 +37,7 @@ const S02 = () => {
           end: '400% top',
         },
       })
-      .fromTo(shapeRef.current, { opacity: 0 }, { opacity: 1 }, 0.1)
-      .fromTo(stoneBgRef.current, { opacity: 0 }, { opacity: 1 }, 0.2)
+      .fromTo(stoneBgRef.current, { opacity: 0 }, { opacity: 1 }, 0.1)
       .to(titleRef.current, { className: `+=${cx('title')} active` }, 0.3)
       .to(limiterRef.current, { className: `+=${cx('limiter')} active` }, 0.3)
       .to(leafLeftRef.current, { className: `+=${cx('leafLeft')} active` }, 0.4)
@@ -60,7 +57,6 @@ const S02 = () => {
       <h2 ref={titleRef} className={cx('title')}>
         2억년 화강암이<span className={cx('accent')}>꽉 잡은 미네랄</span>
       </h2>
-      <img ref={shapeRef} className={cx('shape')} src={shape} alt="" />
       <div ref={stoneBgRef} className={cx('stoneBg')} />
       <div ref={limiterRef} className={cx('limiter')}>
         <div className={cx('left')}>

@@ -16,6 +16,7 @@
     text-align: center;
     white-space: nowrap;
     margin-bottom: 24rem;
+    text-shadow: 0 0 24px black;
     transition: all 1s ease;
 
     &:global.active {
@@ -28,26 +29,20 @@
       font-size: 5rem;
     }
   }
-  > .shape {
-    position: absolute;
-    left: 50%;
-    top: calc(50% + 36px);
-    transform: translate(-50%, -50%);
-    width: auto;
-    height: 16vh;
-  }
   > .stoneBg {
     @include backgroundDefaultStyle;
     @include absoluteFull;
+    background-image: url('../../assets/images/home/s02/background_stone.jpg');
     mask-image: url('../../assets/images/home/s02/shape.svg');
     mask-repeat: no-repeat;
     mask-position: center calc(50% + 36px);
     mask-size: auto 16vh;
-    background-image: url('../../assets/images/home/s02/background_stone.jpg');
-    transition: mask-size 1s ease;
+    transition: mask-size 0.5s;
+    animation-timing-function: linear;
 
     &:global.active {
       mask-size: auto 400vh;
+      transition: mask-size 2s;
     }
   }
   > .limiter {
@@ -56,7 +51,7 @@
     margin-top: 72px;
     display: flex;
     height: 48vh;
-    z-index: 20;
+    z-index: 50;
     opacity: 0;
     transition: opacity 1s ease;
 
@@ -71,6 +66,7 @@
         > p {
           color: #fff;
           font-size: 2.625rem;
+          text-shadow: 0 0 16px black;
 
           > .accent {
             display: block;
@@ -95,6 +91,7 @@
           color: #fff;
           font-size: 1.625rem;
           line-height: 1.5;
+          text-shadow: 0 0 16px black;
         }
       }
     }

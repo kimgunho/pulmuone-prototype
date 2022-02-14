@@ -7,6 +7,8 @@
   width: 100%;
   height: 100vh;
   min-height: 880px;
+  background-position: center;
+  background-size: cover;
   background-image: url('../../assets/images/home/s01/background.jpg');
 
   > .circle {
@@ -31,6 +33,7 @@
         color: #fff;
         font-size: 4rem;
         text-align: center;
+        text-shadow: 0 0 24px black;
       }
       > .bottle {
         width: 40%;

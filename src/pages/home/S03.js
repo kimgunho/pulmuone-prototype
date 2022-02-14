@@ -13,7 +13,6 @@ const S03 = () => {
   const limiterRef = useRef();
   const sand1Ref = useRef();
   const sand2Ref = useRef();
-  const sand3Ref = useRef();
   const dewsRef = useRef();
 
   useEffect(() => {
@@ -22,12 +21,12 @@ const S03 = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           scrub: true,
-          start: 'top bottom',
-          end: '75% bottom',
+          start: '-160px bottom',
+          end: 'bottom bottom',
         },
       })
-      .to(sand1Ref.current, { top: '-360px' }, 0.1)
-      .to(sand2Ref.current, { top: '-200px' }, 0.1)
+      .to(sand1Ref.current, { top: '-480px' }, 0.1)
+      .to(sand2Ref.current, { top: '-240px' }, 0.1)
       .fromTo(limiterRef.current, { opacity: 0 }, { opacity: 1 }, 0.4);
 
     gsap.to(dewsRef.current, {
@@ -36,7 +35,7 @@ const S03 = () => {
         trigger: dewsRef.current,
         scrub: true,
         start: 'center bottom',
-        end: 'center top',
+        end: 'bottom top',
       },
     });
   }, []);
@@ -45,7 +44,7 @@ const S03 = () => {
     <div ref={containerRef} className={cx('container')}>
       <div ref={sand1Ref} className={cx(['background', 'sand1'])} />
       <div ref={sand2Ref} className={cx(['background', 'sand2'])} />
-      <div ref={sand3Ref} className={cx(['background', 'sand3'])} />
+      <div className={cx(['background', 'sand3'])} />
       <div ref={limiterRef} className={cx('limiter')}>
         <div className={cx('left')}>
           <p>
