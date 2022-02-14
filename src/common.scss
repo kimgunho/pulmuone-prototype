@@ -51,6 +51,13 @@ $breakpoint-wide-desktop: 1480px; // wide desktop
 }
 
 // design mixin
+@mixin subTitle {
+  font-size: 2.75rem;
+  font-weight: bold;
+  color: #212121;
+  padding-bottom: 3.75rem;
+}
+
 @mixin mainBtn {
   display: flex;
   justify-content: flex-start;
