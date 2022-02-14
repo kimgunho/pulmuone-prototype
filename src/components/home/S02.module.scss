@@ -1,53 +1,78 @@
 @import '../../common.scss';
 
 .container {
-  @include flexCenterStyle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  min-height: 100vh;
-  position: relative;
+  height: 100vh;
+  min-height: 880px;
+  background-image: url('../../assets/images/home/s02/background_sand.jpg');
 
-  .title {
+  > .title {
     position: absolute;
-    left: 50%;
-    top: 10vh;
-    transform: translate(-50%, 0);
-    z-index: 5;
     color: #fff;
     font-size: 3.125rem;
     text-align: center;
     white-space: nowrap;
+    margin-bottom: 24rem;
+    transition: all 1s ease;
 
-    > .point {
+    &:global.active {
+      filter: blur(24px);
+      opacity: 0;
+    }
+    > .accent {
       font-weight: bold;
       display: block;
       font-size: 5rem;
     }
   }
+  > .shape {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 36px);
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 16vh;
+  }
+  > .stoneBg {
+    @include backgroundDefaultStyle;
+    @include absoluteFull;
+    mask-image: url('../../assets/images/home/s02/shape.svg');
+    mask-repeat: no-repeat;
+    mask-position: center calc(50% + 36px);
+    mask-size: auto 16vh;
+    background-image: url('../../assets/images/home/s02/background_stone.jpg');
+    transition: mask-size 1s ease;
 
-  > .limiter {
-    @include limiter;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    height: 50%;
-    z-index: 15;
-
-    @include tablet {
-      flex-direction: column;
+    &:global.active {
+      mask-size: auto 400vh;
     }
+  }
+  > .limiter {
+    width: 100%;
+    max-width: 1024px;
+    margin-top: 72px;
+    display: flex;
+    height: 48vh;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 1s ease;
 
+    &:global.active {
+      opacity: 1;
+    }
     > div {
-      width: fit-content;
+      flex: 1;
       display: flex;
 
       &.left {
-        align-items: flex-start;
-
         > p {
           color: #fff;
           font-size: 2.625rem;
 
-          > .point {
+          > .accent {
             display: block;
             font-size: 3.5rem;
             color: #fff;
@@ -60,17 +85,13 @@
           }
         }
       }
-
       &.right {
-        align-items: flex-end;
         position: relative;
-        width: 100%;
-        max-width: 23rem;
 
         > p {
           position: absolute;
           bottom: 0;
-          left: 0;
+          right: 0;
           color: #fff;
           font-size: 1.625rem;
           line-height: 1.5;
@@ -78,155 +99,52 @@
       }
     }
   }
-
   > .objects {
-    @include absoluteFull;
-    font-size: 10px;
-
-    @include tablet {
-      font-size: 8px;
-    }
-
-    @include mobile {
-      font-size: 6px;
-    }
-
-    > .leaf {
-      z-index: 8;
+    > .leafLeft {
+      z-index: 20;
       position: absolute;
-      width: 100%;
-      transition: all 0.2s ease;
+      width: 40rem;
+      left: -80rem;
+      bottom: 4%;
+      transition: left 1s ease;
 
-      &.left {
-        transform-origin: left bottom;
-        left: -5em;
-        bottom: -10em;
-        max-width: 80em;
-
-        @include tablet {
-          bottom: 0;
-          left: -10em;
-          max-width: 80em;
-        }
-
-        @include mobile {
-          max-width: 50em;
-        }
-      }
-
-      &.right {
-        transform-origin: right bottom;
-        right: -3em;
-        top: -10em;
-        max-width: 60em;
-
-        @include tablet {
-          top: 10em;
-        }
-
-        @include mobile {
-          max-width: 40em;
-        }
+      &:global.active {
+        left: -1rem;
       }
     }
+    > .leafRight {
+      z-index: 20;
+      position: absolute;
+      width: 36rem;
+      top: 8%;
+      right: -80rem;
+      transition: right 0.5s ease;
 
+      &:global.active {
+        right: -1rem;
+      }
+    }
     > .stone {
       position: absolute;
-      width: 100%;
-      transition: all 0.2s ease;
-      z-index: 7;
 
       &.first {
-        bottom: 0;
-        left: -10em;
-        max-width: 72em;
-
-        @include mobile {
-          bottom: -20em;
-          max-width: 50em;
-        }
+        z-index: 20;
+        top: 100vh;
+        left: -12rem;
+        width: 48rem;
       }
       &.second {
-        top: -30em;
-        left: 0;
-        max-width: 64em;
-        filter: blur(1px);
-
-        @include tablet {
-          left: -20em;
-        }
-
-        @include mobile {
-          left: -30em;
-          top: -20em;
-        }
+        z-index: 10;
+        top: 100vh;
+        left: -4rem;
+        width: 64rem;
+        filter: blur(2px);
       }
       &.third {
-        top: -42em;
-        right: -44em;
-        max-width: 100em;
-
-        @include tablet {
-          right: -50em;
-        }
-
-        @include mobile {
-          max-width: 80em;
-          right: -30em;
-          top: -30em;
-        }
-      }
-    }
-  }
-
-  .shape {
-    opacity: 0;
-    position: absolute;
-    left: 50%;
-    top: calc(50% + 36px);
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    width: auto;
-    height: 16vh;
-
-    @include tablet {
-      top: calc(50% + 27.5px);
-    }
-
-    @include mobile {
-      top: calc(50% + 23px);
-    }
-  }
-
-  > .background {
-    @include backgroundDefaultStyle;
-    @include absoluteFull;
-
-    &.sand {
-      z-index: 2;
-    }
-
-    &.stone {
-      z-index: 3;
-      opacity: 1;
-      mask-image: url('../../assets/images/home/s02/shape.svg');
-      -webkit-mask-image: url('../../assets/images/home/s02/shape.svg');
-      mask-repeat: no-repeat;
-      -webkit-mask-repeat: no-repeat;
-      mask-position: center calc(50% + 36px);
-      -webkit-mask-posigin: center calc(50% + 36px);
-      mask-size: auto 300vh;
-      -webkit-mask-size: auto 300vh;
-      transform: scale(1.5);
-
-      @include tablet {
-        mask-position: center calc(50% + 27.5px);
-        -webkit-mask-posigin: center calc(50% + 27.5px);
-      }
-
-      @include mobile {
-        mask-position: center calc(50% + 23px);
-        -webkit-mask-posigin: center calc(50% + 23px);
+        z-index: 10;
+        top: 100vh;
+        right: -32rem;
+        width: 64rem;
       }
     }
   }

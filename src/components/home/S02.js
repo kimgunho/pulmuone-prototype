@@ -1,229 +1,97 @@
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useRef, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import styles from './S02.module.scss';
 
-import background_sand from '../../assets/images/home/s02/background_sand.jpg';
-import background_stone from '../../assets/images/home/s02/background_stone.jpg';
-import leaf_left from '../../assets/images/home/s02/leaf_left.png';
-import leaf_right from '../../assets/images/home/s02/leaf_right.png';
-import stone_first from '../../assets/images/home/s02/stone01.png';
-import stone_second from '../../assets/images/home/s02/stone02.png';
-import stone_third from '../../assets/images/home/s02/stone03_2.png';
+import leafLeft from '../../assets/images/home/s02/leaf_left.png';
+import leafRight from '../../assets/images/home/s02/leaf_right.png';
+import stone1 from '../../assets/images/home/s02/stone01.png';
+import stone2 from '../../assets/images/home/s02/stone02.png';
+import stone3 from '../../assets/images/home/s02/stone03_2.png';
 import shape from '../../assets/images/home/s02/shape.png';
 
 const cx = classNames.bind(styles);
 
-function S02() {
-  gsap.registerPlugin(ScrollTrigger);
+const S02 = () => {
   const containerRef = useRef();
-  const stoneBgRef = useRef();
+  const shapeRef = useRef();
   const titleRef = useRef();
+  const stoneBgRef = useRef();
   const limiterRef = useRef();
-  const limiterRight_firstRef = useRef();
-  const limiterRight_secondRef = useRef();
+  const desc1Ref = useRef();
+  const desc2Ref = useRef();
   const leafLeftRef = useRef();
   const leafRightRef = useRef();
-  const shapeRef = useRef();
-  const stoneFirstRef = useRef();
-  const stoneSecondRef = useRef();
-  const stoneThirdRef = useRef();
+  const stone1Ref = useRef();
+  const stone2Ref = useRef();
+  const stone3Ref = useRef();
 
   useEffect(() => {
-    repeatAnimation();
-    scrollAnimation();
-    window.addEventListener('resize', ScrollTrigger.refresh);
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          scrub: true,
+          pin: true,
+          start: 'top top',
+          end: '400% top',
+        },
+      })
+      .fromTo(shapeRef.current, { opacity: 0 }, { opacity: 1 }, 0.1)
+      .fromTo(stoneBgRef.current, { opacity: 0 }, { opacity: 1 }, 0.2)
+      .to(titleRef.current, { className: `+=${cx('title')} active` }, 0.3)
+      .to(limiterRef.current, { className: `+=${cx('limiter')} active` }, 0.3)
+      .to(leafLeftRef.current, { className: `+=${cx('leafLeft')} active` }, 0.4)
+      .to(leafRightRef.current, { className: `+=${cx('leafRight')} active` }, 0.4)
+      .to(leafLeftRef.current, { bottom: '200%' }, 0.7)
+      .to(leafRightRef.current, { top: '-80%' }, 0.7)
+      .to(stoneBgRef.current, { className: `+=${cx('stoneBg')} active` }, 0.6)
+      .to(desc1Ref.current, { opacity: 0 }, 0.7)
+      .from(desc2Ref.current, { opacity: 0 }, 0.8)
+      .to(stone1Ref.current, { top: '64%' }, 0.8)
+      .to(stone2Ref.current, { top: '-40%' }, 0.9)
+      .to(stone3Ref.current, { top: '-40%' }, 0.7);
   }, []);
-
-  const repeatAnimation = () => {
-    gsap.fromTo(leafLeftRef.current, { rotateY: 5 }, { rotateY: 20, duration: 5, repeat: -1, yoyo: true });
-    gsap.fromTo(leafRightRef.current, { rotateY: 2 }, { rotateY: 10, duration: 4, repeat: -1, yoyo: true });
-    gsap.fromTo(stoneFirstRef.current, { y: -2 }, { y: 4, duration: 3, repeat: -1, yoyo: true });
-    gsap.fromTo(stoneSecondRef.current, { y: 1 }, { y: -3, duration: 4, repeat: -1, yoyo: true });
-    gsap.fromTo(stoneThirdRef.current, { y: -2 }, { y: 5, duration: 3, repeat: -1, yoyo: true });
-  };
-
-  const scrollAnimation = () => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top top',
-        end: '500% top',
-        scrub: true,
-        pin: true,
-        pinSpacing: 'margin',
-      },
-    });
-
-    tl.to(shapeRef.current, {
-      opacity: 1,
-    })
-      .to(
-        titleRef.current,
-        {
-          webkitFilter: 'blur(20px)',
-          opacity: 0,
-        },
-        1,
-      )
-      .to(
-        shapeRef.current,
-        {
-          opacity: 0,
-        },
-        1,
-      )
-      .from(
-        limiterRef.current,
-        {
-          duration: 2,
-          opacity: 0,
-        },
-        1,
-      )
-      .from(
-        stoneBgRef.current,
-        {
-          opacity: 0,
-        },
-        1,
-      )
-      .from(
-        leafRightRef.current,
-        {
-          duration: 2,
-          right: '-50%',
-          rotate: -225,
-        },
-        1.5,
-      )
-      .from(
-        leafLeftRef.current,
-        {
-          duration: 2,
-          left: '-50%',
-          rotate: 175,
-          delay: 0.5,
-        },
-        1.5,
-      )
-      .from(
-        stoneBgRef.current,
-        {
-          maskSize: '20vh',
-          webkitMaskSize: '20vh',
-          scale: 1,
-          rotationZ: 0.01,
-          duration: 10,
-        },
-        6,
-      )
-      .to(
-        limiterRight_firstRef.current,
-        {
-          duration: 7,
-          opacity: 0,
-        },
-        3,
-      )
-      .from(
-        limiterRight_secondRef.current,
-        {
-          opacity: 0,
-          duration: 4,
-        },
-        6,
-      )
-      .to(
-        leafRightRef.current,
-        {
-          duration: 3,
-          top: '-100%',
-        },
-        6,
-      )
-      .to(
-        leafLeftRef.current,
-        {
-          duration: 3,
-          bottom: '100%',
-          delay: 0.5,
-        },
-        6,
-      )
-      .from(
-        stoneThirdRef.current,
-        {
-          top: '100%',
-          duration: 3,
-          delay: 1,
-        },
-        6,
-      )
-      .from(
-        stoneSecondRef.current,
-        {
-          top: '100%',
-          duration: 3,
-          delay: 1.5,
-        },
-        6,
-      )
-      .from(
-        stoneFirstRef.current,
-        {
-          bottom: '-80%',
-          duration: 4,
-          delay: 1.5,
-        },
-        6,
-      );
-  };
 
   return (
     <div ref={containerRef} className={cx('container')}>
       <h2 ref={titleRef} className={cx('title')}>
-        2억년 화강암이<span className={cx('point')}>꽉 잡은 미네랄</span>
+        2억년 화강암이<span className={cx('accent')}>꽉 잡은 미네랄</span>
       </h2>
-
+      <img ref={shapeRef} className={cx('shape')} src={shape} alt="" />
+      <div ref={stoneBgRef} className={cx('stoneBg')} />
       <div ref={limiterRef} className={cx('limiter')}>
         <div className={cx('left')}>
           <p>
             풍부한 미네랄{' '}
-            <Link to="" className={cx('point')}>
+            <Link to="" className={cx('accent')}>
               대보 화강암
             </Link>
           </p>
         </div>
         <div className={cx('right')}>
-          <p ref={limiterRight_firstRef}>
+          <p ref={desc1Ref}>
             빈틈없이 촘촘한 대보 화강암이
             <br />
             2억년 동안 골라 모은 미네랄 물방울
           </p>
-          <p ref={limiterRight_secondRef}>
-            마지막 한 방울까지 빠져나갈 틈 없이 <br />꽉 잡아 풀무원샘물로 채웠습니다
+          <p ref={desc2Ref}>
+            마지막 한 방울까지 빠져나갈 틈 없이
+            <br />꽉 잡아 풀무원샘물로 채웠습니다
           </p>
         </div>
       </div>
-
       <div className={cx('objects')}>
-        <img ref={leafLeftRef} draggable="false" className={cx(['leaf', 'left'])} src={leaf_left} alt="" />
-        <img ref={leafRightRef} draggable="false" className={cx(['leaf', 'right'])} src={leaf_right} alt="" />
-
-        <img ref={stoneFirstRef} draggable="false" className={cx(['stone', 'first'])} src={stone_first} alt="" />
-        <img ref={stoneSecondRef} draggable="false" className={cx(['stone', 'second'])} src={stone_second} alt="" />
-        <img ref={stoneThirdRef} draggable="false" className={cx(['stone', 'third'])} src={stone_third} alt="" />
+        <img ref={leafLeftRef} draggable="false" className={cx('leafLeft')} src={leafLeft} alt="" />
+        <img ref={leafRightRef} draggable="false" className={cx('leafRight')} src={leafRight} alt="" />
+        <img ref={stone1Ref} draggable="false" className={cx(['stone', 'first'])} src={stone1} alt="" />
+        <img ref={stone2Ref} draggable="false" className={cx(['stone', 'second'])} src={stone2} alt="" />
+        <img ref={stone3Ref} draggable="false" className={cx(['stone', 'third'])} src={stone3} alt="" />
       </div>
-
-      <img ref={shapeRef} className={cx('shape')} src={shape} alt="" />
-      <div ref={stoneBgRef} style={{ backgroundImage: `url(${background_stone})` }} className={cx(['background', 'stone'])} />
-      <div style={{ backgroundImage: `url(${background_sand})` }} className={cx(['background', 'sand'])} />
     </div>
   );
-}
+};
 
 export default S02;

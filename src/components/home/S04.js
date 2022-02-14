@@ -2,191 +2,73 @@ import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import styles from './S04.module.scss';
 import { links } from '../../assets/data/links';
 
 import background from '../../assets/images/home/s04/background.jpg';
 import title from '../../assets/images/shared/pulmuone_title.png';
-import pulmuoneWater_label from '../../assets/images/home/s04/pulmuoneWater_label.png';
-import pulmuoneWater from '../../assets/images/home/s04/pulmuoneWater.png';
-import labelMark01 from '../../assets/images/home/s04/labelMark01.png';
-import labelMark02 from '../../assets/images/home/s04/labelMark02.png';
-import labelMark03 from '../../assets/images/home/s04/labelMark03.png';
-import watermark01 from '../../assets/images/home/s04/CarbonEmission1.png';
-import watermark02 from '../../assets/images/home/s04/CarbonEmission2.png';
-import watermark03 from '../../assets/images/home/s04/CarbonEmission3.png';
+import bottleLabel from '../../assets/images/home/s04/pulmuoneWater_label.png';
+import bottleNoLabel from '../../assets/images/home/s04/pulmuoneWater.png';
+import shape1 from '../../assets/images/home/s04/labelMark01.png';
+import shape2 from '../../assets/images/home/s04/labelMark02.png';
+import shape3 from '../../assets/images/home/s04/labelMark03.png';
+import mark1 from '../../assets/images/home/s04/CarbonEmission1.png';
+import mark2 from '../../assets/images/home/s04/CarbonEmission2.png';
+import mark3 from '../../assets/images/home/s04/CarbonEmission3.png';
 
 const cx = classNames.bind(styles);
 
-function S04() {
-  gsap.registerPlugin(ScrollTrigger);
-
+const S04 = () => {
   const containerRef = useRef();
   const backgroundRef = useRef();
-  const mainRef = useRef();
+  const wrapperRef = useRef();
+  const bottleRef = useRef();
   const leftRef = useRef();
-  const centerRef = useRef();
-  const rightRef = useRef();
-  const centerImg01Ref = useRef();
-  const centerImg02Ref = useRef();
-  const desc01Ref = useRef();
-  const desc02Ref = useRef();
-  const desc03Ref = useRef();
-  const labelMark01Ref = useRef();
-  const labelMark02Ref = useRef();
-  const labelMark03Ref = useRef();
 
   useEffect(() => {
-    scrollAnimation();
-    window.addEventListener('resize', ScrollTrigger.refresh);
-  }, []);
-
-  const scrollAnimation = () => {
-    ScrollTrigger.matchMedia({
-      '(min-width: 740px)': () => {
-        gsap.from(mainRef.current, {
-          yPercent: -40,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top center',
-            end: 'center center',
-            scrub: true,
-          },
-        });
-      },
-    });
-
-    const tl = gsap.timeline({
+    gsap.from(wrapperRef.current, {
+      yPercent: -32,
       scrollTrigger: {
         trigger: containerRef.current,
-        start: 'top top',
-        end: '300% top',
         scrub: true,
-        pin: true,
-        pinSpacing: 'margin',
+        start: 'top center',
+        end: 'bottom bottom',
       },
     });
 
-    tl.to(backgroundRef.current, {
-      top: '-300%',
-      duration: 25,
-    })
-      .to(centerImg01Ref.current, {
-        delay: -20,
-        opacity: 0,
+    gsap.to('.dew', {
+      opacity: 0,
+      scale: 0,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        scrub: true,
+        start: 'top 56%',
+        end: 'bottom bottom',
+      },
+    });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          scrub: true,
+          pin: true,
+          start: 'top top',
+          end: '300% bottom',
+        },
       })
-      .to(centerImg02Ref.current, {
-        delay: -20,
-        position: 'absolute',
-        duration: 5,
-        display: 'block',
-        opacity: 1,
-      })
-      .to(leftRef.current, {
-        opacity: 1,
-        duration: 5,
-      })
-      // first desc fade in
-      .to(
-        rightRef.current,
-        {
-          opacity: 1,
-          duration: 5,
-        },
-        35,
-      )
-      .to(
-        labelMark01Ref.current,
-        {
-          display: 'block',
-          opacity: 1,
-          duration: 5,
-        },
-        35,
-      )
-      // first desc fade out
-      .to(
-        desc01Ref.current,
-        {
-          opacity: 0,
-          display: 'none',
-          duration: 5,
-        },
-        40,
-      )
-      .to(
-        labelMark01Ref.current,
-        {
-          opacity: 0,
-          display: 'none',
-          duration: 5,
-        },
-        40,
-      )
-      // second desc fade in
-      .to(
-        desc02Ref.current,
-        {
-          display: 'flex',
-          opacity: 1,
-          duration: 5,
-        },
-        45,
-      )
-      .to(
-        labelMark02Ref.current,
-        {
-          display: 'block',
-          opacity: 1,
-          duration: 5,
-        },
-        45,
-      )
-      // second desc fade out
-      .to(
-        desc02Ref.current,
-        {
-          opacity: 0,
-          display: 'none',
-          duration: 5,
-        },
-        50,
-      )
-      .to(
-        labelMark02Ref.current,
-        {
-          opacity: 0,
-          display: 'none',
-          duration: 5,
-        },
-        50,
-      )
-      // last desc fade in
-      .to(
-        desc03Ref.current,
-        {
-          display: 'flex',
-          opacity: 1,
-          duration: 5,
-        },
-        55,
-      )
-      .to(
-        labelMark03Ref.current,
-        {
-          display: 'block',
-          opacity: 1,
-          duration: 5,
-        },
-        55,
-      );
-  };
+      .to(backgroundRef.current, { top: '-100%' })
+      .to(bottleRef.current, { className: `+=${cx('bottle')} hide` }, 0.4)
+      .to(leftRef.current, { className: `+=${cx('left')} show` }, 0.4)
+      .to(wrapperRef.current, { className: `+=${cx('wrapper')} featureA` }, 0.6)
+      .to(wrapperRef.current, { className: `+=${cx('wrapper')} featureB` }, 0.8)
+      .to(wrapperRef.current, { className: `+=${cx('wrapper')} featureC` }, 1.0);
+  }, []);
 
   return (
     <div ref={containerRef} className={cx('container')}>
-      <div ref={mainRef} className={cx('pulmuoneWater')}>
+      <div ref={wrapperRef} className={cx('wrapper')}>
         <div className={cx('left')} ref={leftRef}>
           <h2>
             환경까지 생각한
@@ -194,80 +76,59 @@ function S04() {
           </h2>
           <p>
             풀무원샘물은
-            <br /> 탄소 배출량을 줄이기 위해
-            <br /> 지속적으로 노력합니다.
+            <br />
+            탄소 배출량을 줄이기 위해
+            <br />
+            지속적으로 노력합니다.
           </p>
           <Link to={links.home}>자세히 보기</Link>
         </div>
-
-        <div className={cx('center')} ref={centerRef}>
-          <img ref={centerImg01Ref} className={cx('first')} draggable="false" src={pulmuoneWater_label} alt="" />
-          <img ref={centerImg02Ref} draggable="false" src={pulmuoneWater} alt="" />
-          <img ref={labelMark01Ref} className={cx(['absolute', 'mark01'])} draggable="false" src={labelMark01} alt="" />
-          <img ref={labelMark02Ref} className={cx(['absolute', 'mark02'])} draggable="false" src={labelMark02} alt="" />
-          <img ref={labelMark03Ref} className={cx(['absolute', 'mark03'])} draggable="false" src={labelMark03} alt="" />
+        <div className={cx('bottleWrapper')}>
+          <img draggable="false" className={cx('bottle')} src={bottleNoLabel} alt="" />
+          <img ref={bottleRef} draggable="false" className={cx('bottle')} src={bottleLabel} alt="" />
+          <img draggable="false" className={cx(['shape', 'shape1'])} src={shape1} alt="" />
+          <img draggable="false" className={cx(['shape', 'shape2'])} src={shape2} alt="" />
+          <img draggable="false" className={cx(['shape', 'shape3'])} src={shape3} alt="" />
         </div>
-
-        <div className={cx('right')} ref={rightRef}>
-          <div className={cx('first')} ref={desc01Ref}>
-            <div className={cx('inner')}>
-              <img draggable="false" src={watermark01} alt="" />
-              <h3>
-                <span>1</span> 초경량 뚜껑
-              </h3>
-              <p>
-                기존 자사 제품대비 <br /> 플라스틱 사용량 40% 저감
-              </p>
-            </div>
-
-            <ul className={cx('pager')}>
-              <li className={cx('active')}></li>
-              <li></li>
-              <li></li>
-            </ul>
+        <div className={cx('right')}>
+          <div className={cx(['feature', 'feat1'])}>
+            <img draggable="false" src={mark1} alt="" />
+            <h3>
+              <span>1</span> 초경량 뚜껑
+            </h3>
+            <p>
+              기존 자사 제품대비
+              <br />
+              플라스틱 사용량 40% 저감
+            </p>
           </div>
-
-          <div className={cx('second')} ref={desc02Ref}>
-            <div className={cx('inner')}>
-              <img draggable="false" src={watermark02} alt="" />
-              <h3>
-                <span>2</span> 메론맛 바베큐
-              </h3>
-              <p>
-                기존 자사 제품대비 <br /> 플라스틱 사용량 40% 저감
-              </p>
-            </div>
-
-            <ul className={cx('pager')}>
-              <li></li>
-              <li className={cx('active')}></li>
-              <li></li>
-            </ul>
+          <div className={cx(['feature', 'feat2'])}>
+            <img draggable="false" src={mark2} alt="" />
+            <h3>
+              <span>2</span> 메론맛 바베큐
+            </h3>
+            <p>
+              기존 자사 제품대비
+              <br />
+              플라스틱 사용량 40% 저감
+            </p>
           </div>
-
-          <div className={cx('third')} ref={desc03Ref}>
-            <div className={cx('inner')}>
-              <img draggable="false" src={watermark03} alt="" />
-              <h3>
-                <span>3</span> 상어맛 라면
-              </h3>
-              <p>
-                기존 자사 제품대비 <br /> 플라스틱 사용량 40% 저감
-              </p>
-            </div>
-
-            <ul className={cx('pager')}>
-              <li></li>
-              <li></li>
-              <li className={cx('active')}></li>
-            </ul>
+          <div className={cx(['feature', 'feat3'])}>
+            <img draggable="false" src={mark3} alt="" />
+            <h3>
+              <span>3</span> 상어맛 라면
+            </h3>
+            <p>
+              기존 자사 제품대비
+              <br />
+              플라스틱 사용량 40% 저감
+            </p>
           </div>
         </div>
       </div>
-
       <img ref={backgroundRef} className={cx('background')} draggable="false" src={background} alt="" />
     </div>
   );
-}
+};
 
 export default S04;
