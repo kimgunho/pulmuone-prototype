@@ -19,7 +19,6 @@ import Product from './pages/product';
 import Privacy from './pages/privacy';
 import NotPage from './components/shared/NotPage';
 import ScrollTop from './components/shared/ScrollTop';
-import HomeNew from './pages/home-new';
 
 const cx = classNames.bind(styles);
 
@@ -48,8 +47,7 @@ function App() {
           <Route path={links.product} element={<Product />} />
           <Route path={links.privacy} element={<Privacy />} />
           <Route path={links.notPage} element={<NotPage />} />
-            <Route path="/home-new" element={<HomeNew />} />
-          </Routes>
+        </Routes>
         {width.currentWidth > width.breakPoint ? <FooterDesktop /> : <FooterMobile />}
       </div>
       <ScrollTop />

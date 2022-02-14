@@ -55,7 +55,7 @@ const S04 = () => {
           scrub: true,
           pin: true,
           start: 'top top',
-          end: '300% bottom',
+          end: '400% bottom',
         },
       })
       .to(backgroundRef.current, { top: '-100%' })

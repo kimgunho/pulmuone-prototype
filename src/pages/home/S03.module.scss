@@ -2,7 +2,6 @@
 
 .container {
   @include flexCenterStyle;
-  margin-top: -40px;
   width: 100%;
   height: 100vh;
   position: relative;
@@ -13,30 +12,33 @@
     position: absolute;
     width: 100%;
     left: 0;
-    top: 0;
 
     &.sand1 {
+      top: -160px;
       z-index: 10;
       height: 64vh;
       background-image: url('../../assets/images/home/s03/sandTop.png');
     }
     &.sand2 {
+      top: -80px;
       z-index: 20;
       height: 48vh;
       background-image: url('../../assets/images/home/s03/sandMiddle.png');
     }
     &.sand3 {
+      top: 0;
       z-index: 30;
       height: 100%;
       background-image: url('../../assets/images/home/s03/sandBottom.png');
     }
   }
   > .limiter {
-    @include limiter;
+    width: 100%;
+    max-width: 1024px;
     display: flex;
-    justify-content: space-between;
     height: 48vh;
     z-index: 40;
+    justify-content: space-between;
 
     > div {
       width: fit-content;
