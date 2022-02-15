@@ -2,9 +2,9 @@ import classNames from 'classnames/bind';
 
 import styles from './S03.module.scss';
 
-import list01_background from '../../../assets/images/product/springWater/s03_list01_bg.jpg';
-import list02_background from '../../../assets/images/product/springWater/s03_list02_bg.jpg';
-import list03_background from '../../../assets/images/product/springWater/s03_list03_bg.jpg';
+import background01 from '../../../assets/images/product/springWater/background01.jpg';
+import background02 from '../../../assets/images/product/springWater/background02.jpg';
+import background03 from '../../../assets/images/product/springWater/background03.jpg';
 
 const cx = classNames.bind(styles);
 
@@ -22,7 +22,7 @@ function S03() {
         <h3 className={cx('title')}>풀무원샘물 이렇게 드셔 보세요!</h3>
         <ul className={cx('list')}>
           <li>
-            <div className={cx('image')} style={{ backgroundImage: `url(${list01_background})` }}>
+            <div className={cx('image')} style={{ backgroundImage: `url(${background01})` }}>
               <p>채소를 곁들인 가벼운 요리</p>
             </div>
             <div className={cx('text')}>
@@ -30,7 +30,7 @@ function S03() {
             </div>
           </li>
           <li>
-            <div className={cx('image')} style={{ backgroundImage: `url(${list02_background})` }}>
+            <div className={cx('image')} style={{ backgroundImage: `url(${background02})` }}>
               <p>샐러드 &amp; 드레싱</p>
             </div>
             <div className={cx('text')}>
@@ -38,7 +38,7 @@ function S03() {
             </div>
           </li>
           <li>
-            <div className={cx('image')} style={{ backgroundImage: `url(${list03_background})` }}>
+            <div className={cx('image')} style={{ backgroundImage: `url(${background03})` }}>
               <p>해산물 요리</p>
             </div>
             <div className={cx('text')}>

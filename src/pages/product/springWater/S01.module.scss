@@ -12,9 +12,22 @@
 
   > .limiter {
     @include limiter;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+
+    > .title {
+      color: #fff;
+      font-size: 2.75rem;
+      padding-top: 6.25rem;
+      font-weight: bold;
+    }
 
     > .text {
-      padding-top: 10rem;
+      padding-top: 1.25rem;
       font-size: 1.5rem;
       color: #fff;
       text-align: center;
@@ -46,10 +59,22 @@
         top: 50%;
         max-width: 50rem;
       }
+
+      &.bubble_left {
+        max-width: 6.25rem;
+        left: 20%;
+        top: 50%;
+      }
+
+      &.bubble_right {
+        right: 20%;
+        top: 60%;
+        max-width: 9rem;
+      }
     }
   }
 
-  > .water {
+  > .bottle {
     position: absolute;
     bottom: 0;
     left: 50%;

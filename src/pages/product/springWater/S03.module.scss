@@ -33,11 +33,9 @@
       max-width: 80rem;
 
       > li {
-        display: flex;
+        @include flexCenterStyle;
         flex-direction: column;
-        justify-content: center;
         width: 32%;
-        text-align: center;
         height: 100%;
 
         > .image {
