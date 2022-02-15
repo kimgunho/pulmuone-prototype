@@ -7,9 +7,9 @@ import product02 from '../../../assets/images/product/springWater/product02.jpg'
 import product03 from '../../../assets/images/product/springWater/product03.jpg';
 import product04 from '../../../assets/images/product/springWater/product04.jpg';
 
-import Download from '../../shared/Download';
-import Table from '../../shared/Table';
-import Products from '../../shared/Products';
+import Download from '../../../components/shared/Download';
+import Table from '../../../components/shared/Table';
+import Products from '../../../components/shared/Products';
 
 const cx = classNames.bind(styles);
 

@@ -3,12 +3,12 @@ import classNames from 'classnames/bind';
 import styles from './index.module.scss';
 
 import PageTitle from '../../../components/shared/PageTitle';
-import S01 from '../../../components/product/drinkingFountain/S01';
-import S02 from '../../../components/product/drinkingFountain/S02';
-import S03 from '../../../components/product/drinkingFountain/S03';
-import S04 from '../../../components/product/drinkingFountain/S04';
-import S05 from '../../../components/product/drinkingFountain/S05';
-import S06 from '../../../components/product/drinkingFountain/S06';
+import S01 from './S01';
+import S02 from './S02';
+import S03 from './S03';
+import S04 from './S04';
+import S05 from './S05';
+import S06 from './S06';
 import Outro from '../../../components/shared/Outro';
 
 const cx = classNames.bind(styles);

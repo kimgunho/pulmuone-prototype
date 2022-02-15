@@ -10,7 +10,7 @@ import slide_img04 from '../../../assets/images/product/drinking/s06/list04.jpg'
 import slide_img05 from '../../../assets/images/product/drinking/s06/list05.jpg';
 import slide_img06 from '../../../assets/images/product/drinking/s06/list06.jpg';
 
-import CarouselMulti from '../../shared/CarouselMulti';
+import CarouselMulti from '../../../components/shared/CarouselMulti';
 
 const cx = classNames.bind(styles);
 

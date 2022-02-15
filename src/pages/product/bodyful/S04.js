@@ -5,8 +5,8 @@ import styles from './S04.module.scss';
 import product_ca from '../../../assets/images/product/bodyful/s04/product_ca.png';
 import product_ma from '../../../assets/images/product/bodyful/s04/product_ma.png';
 
-import Download from '../../shared/Download';
-import Table from '../../shared/Table';
+import Download from '../../../components/shared/Download';
+import Table from '../../../components/shared/Table';
 
 const cx = classNames.bind(styles);
 

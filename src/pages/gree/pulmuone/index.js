@@ -3,8 +3,8 @@ import classNames from 'classnames/bind';
 import styles from './index.module.scss';
 
 import PageTitle from '../../../components/shared/PageTitle';
-import S01 from '../../../components/gree/pulmuone/S01';
-import S02 from '../../../components/gree/pulmuone/S02';
+import S01 from './S01';
+import S02 from './S02';
 
 const cx = classNames.bind(styles);
 

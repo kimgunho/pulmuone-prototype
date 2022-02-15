@@ -6,9 +6,9 @@ import product01 from '../../../assets/images/product/routine/s02/product01.jpg'
 import product02 from '../../../assets/images/product/routine/s02/product02.jpg';
 import product03 from '../../../assets/images/product/routine/s02/product03.jpg';
 
-import Download from '../../shared/Download';
-import Table from '../../shared/Table';
-import Products from '../../shared/Products';
+import Download from '../../../components/shared/Download';
+import Table from '../../../components/shared/Table';
+import Products from '../../../components/shared/Products';
 
 const cx = classNames.bind(styles);
 
