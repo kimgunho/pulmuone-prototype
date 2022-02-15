@@ -213,4 +213,48 @@
       margin-top: 4.375rem;
     }
   }
+
+  > .section {
+    @include flexCenterStyle;
+    flex-direction: column;
+    margin-top: 10rem;
+    border-top: 4px solid #77b71d;
+    background-color: #fff;
+    padding: 3.75rem 0;
+
+    > .title {
+      font-size: 2.5rem;
+      color: #77b71d;
+      padding-bottom: 3.75rem;
+    }
+
+    > p {
+      color: #212121;
+      font-size: 1.5rem;
+      padding-bottom: 3.75rem;
+    }
+
+    > .inner {
+      @include flexCenterStyle;
+      width: 100%;
+      flex-direction: column;
+      background-color: rgba(175, 212, 122, 0.2);
+      text-align: center;
+      padding: 3.75rem;
+      box-sizing: border-box;
+
+      > h4 {
+        color: #212121;
+        font-size: 2rem;
+        line-height: 2;
+        margin-bottom: 3.75rem;
+      }
+
+      > p {
+        color: #212121;
+        font-size: 1.5rem;
+        line-height: 2;
+      }
+    }
+  }
 }
