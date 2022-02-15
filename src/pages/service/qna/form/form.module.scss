@@ -201,16 +201,16 @@
 
     > .btn {
       @include flexCenterStyle;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       background-color: #06542c;
       color: #fff;
       border: 0;
-      margin-top: 4.75rem;
-      width: fit-content;
-      min-height: 3.75rem;
       white-space: nowrap;
-      padding: 0 6.25rem;
       cursor: pointer;
+      min-height: 5rem;
+      width: 100%;
+      max-width: 25rem;
+      margin-top: 4.375rem;
     }
   }
 }
