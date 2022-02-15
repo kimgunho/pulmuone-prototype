@@ -10,7 +10,7 @@ export const links = {
   csr_eco_campaign: '/csr/eco-campaign',
   gree: '/gree/:sub',
   gree_pulmuone: '/gree/pulmuone',
-  gree_electronic_disclosure: '/gree/electronic-disclosure',
+  gree_electronic_disclosure: '/gree/finance',
   gree_location: '/gree/location',
   service: '/service/:sub',
   service_fnq: '/service/fnq',

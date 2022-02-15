@@ -39,7 +39,7 @@ const CSR = () => {
       navIndex = 0;
       break;
 
-    case 'electronic-disclosure':
+    case 'finance':
       navIndex = 1;
       break;
 

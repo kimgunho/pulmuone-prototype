@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './S01.module.scss';
 
 import background from '../../../assets/images/gree/pulmuone/s01/background.jpg';
-import pulmuone from '../../../assets/images/gree/pulmuone/s01/item.png';
+import bottle from '../../../assets/images/gree/pulmuone/s01/bottle.png';
 import bubble_left from '../../../assets/images/gree/pulmuone/s01/bubble_left.png';
 import bubble_right from '../../../assets/images/gree/pulmuone/s01/bubble_right.png';
 
@@ -17,7 +17,7 @@ function S01() {
         <img className={cx('right')} src={bubble_right} alt="" />
 
         <div className={cx('grid')}>
-          <img src={pulmuone} alt="" />
+          <img className={cx('bottle')} src={bottle} alt="" />
           <div className={cx('text')}>
             <h3>
               풀무원의 바른먹거리 정신과
