@@ -1,14 +1,12 @@
 import { useState } from 'react';
-import { useRecoilValue } from 'recoil';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 import styles from './Header.module.scss';
-import { viewportWidthState } from '../../recoil/state';
 import { links } from '../../assets/data/links';
 import { gnb_left, gnb_right } from '../../assets/data/gnb';
 
-import desktop_logo from '../../assets/images/shared/logo.svg';
+import desktop_logo from '../../assets/images/shared/desktop_logo.svg';
 import mobile_logo from '../../assets/images/shared/pulmuone_title.png';
 
 import MobileBtn from './MobileBtn';
@@ -16,9 +14,8 @@ import Dimmed from './Dimmed';
 
 const cx = classNames.bind(styles);
 
-function Header() {
+function Header({ width }) {
   const [clicked, setClick] = useState(false);
-  const width = useRecoilValue(viewportWidthState);
 
   const handleCloseNav = () => {
     setClick(false);
@@ -30,7 +27,7 @@ function Header() {
         <div className={cx('limiter')}>
           <h1 className={cx('logo')}>
             <Link to={links.home}>
-              <img src={width.currentWidth > width.breakPoint ? desktop_logo : mobile_logo} alt="풀무원 샘물" />
+              <img src={width > 740 ? desktop_logo : mobile_logo} alt="풀무원 샘물" />
             </Link>
           </h1>
 

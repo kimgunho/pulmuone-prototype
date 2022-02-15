@@ -1,11 +1,9 @@
-import { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 import styles from './App.module.scss';
 import { links } from './assets/data/links';
-import { viewportWidthState } from './recoil/state';
 
 import Header from './components/shared/Header';
 import FooterDesktop from './components/shared/FooterDesktop';
@@ -23,20 +21,17 @@ import ScrollTop from './components/shared/ScrollTop';
 const cx = classNames.bind(styles);
 
 function App() {
-  const [width, setWidth] = useRecoilState(viewportWidthState);
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    window.addEventListener('resize', () =>
-      setWidth((prev) => ({
-        ...prev,
-        currentWidth: window.innerWidth,
-      })),
-    );
+    window.addEventListener('resize', () => {
+      setWidth(window.innerWidth);
+    });
   }, []);
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header width={width} />
       <div className={cx('wrapper')}>
         <Routes>
           <Route path={links.home} element={<Home />} />
@@ -48,7 +43,7 @@ function App() {
           <Route path={links.privacy} element={<Privacy />} />
           <Route path={links.notPage} element={<NotPage />} />
         </Routes>
-        {width.currentWidth > width.breakPoint ? <FooterDesktop /> : <FooterMobile />}
+        {width > 740 ? <FooterDesktop /> : <FooterMobile />}
       </div>
       <ScrollTop />
     </BrowserRouter>
