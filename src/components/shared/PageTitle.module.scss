@@ -12,6 +12,12 @@
     font-size: 2.625rem;
     line-height: 1.5;
     font-weight: lighter;
+    text-align: center;
+
+    &.reverse {
+      order: 2;
+      font-size: 1.5rem;
+    }
   }
 
   > h2 {

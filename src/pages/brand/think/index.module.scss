@@ -4,9 +4,9 @@
   > .section {
     @include flexCenterStyle;
     flex-direction: column;
-    padding: 5.8rem 0;
+    padding: 6.25rem 0;
 
-    &.first {
+    &.top {
       background-color: #bed730;
 
       > .limiter {
@@ -59,7 +59,7 @@
               box-sizing: border-box;
             }
 
-            &.first {
+            &.top {
               left: 0;
               top: 40%;
               width: 40%;
@@ -74,7 +74,7 @@
               }
             }
 
-            &.second {
+            &.center {
               top: 0;
               right: 0;
 
@@ -88,7 +88,7 @@
               }
             }
 
-            &.last {
+            &.bottom {
               right: 0;
               top: 50%;
 
@@ -146,7 +146,7 @@
       }
     }
 
-    &.second {
+    &.center {
       > .limiter {
         @include limiter;
         text-align: center;
@@ -166,9 +166,14 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            width: 30%;
 
-            > img {
-              width: auto;
+            > .image {
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center center;
+              width: 100%;
+              min-height: 18.125rem;
             }
 
             > .info {
@@ -191,7 +196,7 @@
       }
     }
 
-    &.last {
+    &.bottom {
       background-color: #edf5f9;
 
       > .limiter {

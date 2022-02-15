@@ -6,46 +6,5 @@
 
   > .limiter {
     @include limiter;
-
-    > .content {
-      background-color: #fff;
-      padding: 4rem;
-
-      > div {
-        margin-bottom: 3.125rem;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        > h3 {
-          font-size: 2rem;
-          color: #121212;
-          font-weight: bold;
-          padding-bottom: 3.125rem;
-        }
-
-        > ul {
-          > li {
-            font-size: 1.5rem;
-            color: #121212;
-            line-height: 1.5;
-            padding-bottom: 1rem;
-
-            > span {
-              display: block;
-              padding: 0.5rem 0;
-            }
-          }
-        }
-
-        > p {
-          font-size: 1.5rem;
-          color: #121212;
-          line-height: 1.5;
-          padding-bottom: 1rem;
-        }
-      }
-    }
   }
 }

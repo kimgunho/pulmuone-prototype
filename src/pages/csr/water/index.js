@@ -6,10 +6,10 @@ import PageTitle from '../../../components/shared/PageTitle';
 
 import logo from '../../../assets/images/csr/water/logo.png';
 import right_arrow from '../../../assets/images/csr/water/right_arrow.png';
-import aws_icon01 from '../../../assets/images/csr/water/aws_icon01.png';
-import aws_icon02 from '../../../assets/images/csr/water/aws_icon02.png';
-import aws_icon03 from '../../../assets/images/csr/water/aws_icon03.png';
-import aws_icon04 from '../../../assets/images/csr/water/aws_icon04.png';
+import icon01 from '../../../assets/images/csr/water/icon01.png';
+import icon02 from '../../../assets/images/csr/water/icon02.png';
+import icon03 from '../../../assets/images/csr/water/icon03.png';
+import icon04 from '../../../assets/images/csr/water/icon04.png';
 
 const cx = classNames.bind(styles);
 
@@ -36,7 +36,7 @@ function Water() {
           <li>
             <h4>AWS 조직도</h4>
             <div className={cx('icon')}>
-              <img src={aws_icon01} alt="" />
+              <img src={icon01} alt="" />
               <img src={right_arrow} alt="" />
             </div>
           </li>
@@ -47,7 +47,7 @@ function Water() {
               계획 및 실적{' '}
             </h4>
             <div className={cx('icon')}>
-              <img src={aws_icon02} alt="" />
+              <img src={icon02} alt="" />
               <img src={right_arrow} alt="" />
             </div>
           </li>
@@ -57,14 +57,14 @@ function Water() {
               잠재적인 이슈
             </h4>
             <div className={cx('icon')}>
-              <img src={aws_icon03} alt="" />
+              <img src={icon03} alt="" />
               <img src={right_arrow} alt="" />
             </div>
           </li>
           <li>
             <h4>AWS 인증서</h4>
             <div className={cx('icon')}>
-              <img src={aws_icon04} alt="" />
+              <img src={icon04} alt="" />
               <img src={right_arrow} alt="" />
             </div>
           </li>

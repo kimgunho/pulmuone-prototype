@@ -1,0 +1,160 @@
+@import '../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  background-color: #edf5f9;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  > .wrapper {
+    @include limiter;
+    margin-top: 72px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+
+    &:global {
+      &.featureA {
+        .shape1 {
+          opacity: 1 !important;
+        }
+        .feat1 {
+          opacity: 1 !important;
+        }
+      }
+      &.featureB {
+        .shape2 {
+          opacity: 1 !important;
+        }
+        .feat2 {
+          opacity: 1 !important;
+        }
+      }
+      &.featureC {
+        .shape3 {
+          opacity: 1 !important;
+        }
+        .feat3 {
+          opacity: 1 !important;
+        }
+      }
+    }
+    > div {
+      display: flex;
+      flex-direction: column;
+
+      &.left {
+        width: 30%;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+
+        &:global.show {
+          opacity: 1;
+        }
+        > h2 {
+          font-size: 2.625rem;
+          color: #000;
+
+          > img {
+            display: block;
+            padding: 2rem 0;
+            width: 100%;
+            max-width: 17.5rem;
+          }
+        }
+        > p {
+          font-size: 2rem;
+          line-height: 1.5;
+        }
+        > a {
+          @include mainBtn;
+          color: #004d1c;
+          background-color: #fff;
+          margin-top: 4rem;
+
+          &:hover {
+            background-color: #004d1c;
+            color: #fff;
+          }
+        }
+      }
+      &.bottleWrapper {
+        @include flexCenterStyle;
+        width: 40%;
+
+        > img {
+          height: 130%;
+          width: auto;
+
+          &.bottle {
+            position: absolute;
+            display: block;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+
+            &:global.hide {
+              opacity: 0;
+            }
+          }
+          &.shape {
+            opacity: 0;
+            position: absolute;
+            transition: opacity 0.5s ease;
+          }
+        }
+      }
+      &.right {
+        width: 30%;
+        justify-content: flex-end;
+        position: relative;
+
+        > .feature {
+          position: absolute;
+          width: 100%;
+          opacity: 0;
+          transition: opacity 0.5s ease;
+
+          > img {
+            width: 100%;
+            max-width: 15rem;
+            margin-bottom: 2rem;
+          }
+          > h3 {
+            display: flex;
+            align-items: center;
+            color: #99ba10;
+            font-size: 2.25rem;
+
+            > span {
+              background-color: #99ba10;
+              color: #fff;
+              width: 2.5rem;
+              height: 2.5rem;
+              font-size: 1.5rem;
+              margin-right: 0.5rem;
+              display: inline-block;
+              border-radius: 50%;
+              line-height: 2.5rem;
+              text-align: center;
+            }
+          }
+          > p {
+            color: #000;
+            font-size: 1.75rem;
+            line-height: 1.5;
+            padding-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+  > .background {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+  }
+}

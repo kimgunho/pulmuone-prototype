@@ -1,0 +1,40 @@
+@import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  padding: 6.25rem 0;
+  background-color: #f5f3ef;
+
+  > .limiter {
+    @include limiter;
+    @include flexCenterStyle;
+    flex-direction: column;
+
+    > .sub {
+      font-size: 2rem;
+      color: #212121;
+      padding-bottom: 1rem;
+    }
+
+    > .title {
+      font-size: 2.75rem;
+      font-weight: bold;
+      color: #212121;
+      padding-bottom: 2.8rem;
+    }
+
+    > .text {
+      text-align: center;
+      font-size: 1.75rem;
+      line-height: 1.5;
+      color: #212121;
+    }
+
+    > .linkBtn {
+      @include flexCenterStyle;
+      @include btn;
+      color: #fff;
+      background-color: #c3b59b;
+    }
+  }
+}

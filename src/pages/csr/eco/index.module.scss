@@ -1,7 +1,8 @@
 @import '../../../common.scss';
 
 .container {
-  @include subContainer;
+  @include flexCenterStyle;
+  flex-direction: column;
   padding-bottom: 0;
 
   > .section {
@@ -40,20 +41,6 @@
           font-size: 1.5rem;
           color: #121212;
           line-height: 1.5;
-        }
-      }
-
-      > .image {
-        @include flexCenterStyle;
-        > img {
-          width: 100%;
-        }
-      }
-
-      > .images {
-        @include flexCenterStyle;
-        > img {
-          width: 50%;
         }
       }
     }
