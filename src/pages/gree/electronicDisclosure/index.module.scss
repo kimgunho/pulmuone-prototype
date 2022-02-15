@@ -1,1 +1,204 @@
 @import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  flex-direction: column;
+
+  > .selectInner {
+    @include flexCenterStyle;
+    width: 100%;
+    background-color: #f5f3ef;
+    padding-bottom: 5rem;
+
+    > .select {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 53.75rem;
+
+      > select {
+        @include selectIconDown;
+        border: 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #212121;
+        background-color: #fff;
+        padding: 1rem;
+        box-sizing: border-box;
+        min-height: 80px;
+        width: 100%;
+      }
+
+      > button {
+        @include btn;
+        cursor: pointer;
+        background-color: #06542c;
+        color: #fff;
+        margin: 0 0 0 1rem;
+        border: 0;
+      }
+    }
+  }
+
+  > .section {
+    @include flexCenterStyle;
+    padding: 6.25rem 0;
+    width: 100%;
+
+    > .limiter {
+      @include limiter;
+      @include flexCenterStyle;
+      flex-direction: column;
+
+      > .table {
+        width: 100%;
+
+        > .sub {
+          color: #06542c;
+          font-size: 2rem;
+          padding-bottom: 1rem;
+          font-weight: bold;
+          text-align: center;
+        }
+
+        > .title {
+          color: #212121;
+          font-size: 2.75rem;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 4.75rem;
+        }
+
+        > .date {
+          text-align: right;
+          font-size: 1.25rem;
+          color: #212121;
+        }
+
+        > .head {
+          border-top: 4px solid #06542c;
+          margin-top: 1rem;
+
+          > ul {
+            @include flexCenterStyle;
+
+            > li {
+              width: 20%;
+              font-size: 1.5rem;
+              color: #06542c;
+              padding: 1rem 0;
+              font-weight: bold;
+
+              &:not(:first-child) {
+                width: 40%;
+                text-align: center;
+              }
+            }
+          }
+        }
+
+        > .body {
+          border-bottom: 1px solid #06542c;
+
+          > ul {
+            > li {
+              border-top: 1px solid rgba(6, 84, 44, 0.4);
+
+              &:first-child {
+                li {
+                  &:first-child {
+                    color: #06542c;
+                  }
+                }
+              }
+
+              &:nth-child(2) {
+                li {
+                  &:first-child {
+                    color: #06542c;
+                  }
+                }
+              }
+
+              > ul {
+                display: flex;
+
+                > li {
+                  width: 100%;
+                  padding: 1rem 0;
+                  font-size: 1.25rem;
+                  color: #212121;
+                  border-right: 10px solid #fff;
+                  box-sizing: border-box;
+                  background-color: #f4faef;
+                  font-weight: bold;
+
+                  &:first-child {
+                    background-color: #fff;
+                  }
+
+                  &:last-child {
+                    border-right: 0;
+                  }
+
+                  &:not(:first-child) {
+                    text-align: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      > .inner {
+        width: 100%;
+        padding: 2rem 0;
+
+        > .ann {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+
+          > p {
+            font-size: 1.25rem;
+            color: #212121;
+          }
+
+          > ul {
+            > li {
+              font-size: 1.25rem;
+              padding-bottom: 0.5rem;
+              color: #212121;
+              text-align: right;
+
+              &:last-child {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+
+        > .text {
+          border-top: 1px solid #06542c;
+          margin-top: 2rem;
+
+          > p {
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 2;
+            color: #212121;
+
+            > span {
+              display: block;
+              font-weight: bold;
+              padding-top: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
