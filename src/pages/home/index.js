@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   return (
-    <>
+    <div>
       <div className="dew" />
       <S01 />
       <S02 />
@@ -22,7 +22,7 @@ const Home = () => {
       <S04 />
       <S05 />
       <S06 />
-    </>
+    </div>
   );
 };
 
