@@ -7,7 +7,7 @@ import styles from './index.module.scss';
 import Jumbotron from '../../components/shared/Jumbotron';
 import Nav from '../../components/shared/Nav';
 import Pulmuone from './pulmuone';
-import ElectronicDisclosure from './electronicDisclosure';
+import Finance from './finance';
 import Location from './location';
 import NotPage from '../../components/shared/NotPage';
 
@@ -59,7 +59,7 @@ const CSR = () => {
         <Nav items={navItems} activeIndex={navIndex} />
       </div>
       {navIndex === 0 && <Pulmuone />}
-      {navIndex === 1 && <ElectronicDisclosure />}
+      {navIndex === 1 && <Finance />}
       {navIndex === 2 && <Location />}
       {navIndex === 3 && <NotPage />}
     </div>

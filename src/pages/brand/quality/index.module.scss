@@ -4,10 +4,10 @@
   > .section {
     @include flexCenterStyle;
     flex-direction: column;
-    padding: 5.8rem 0;
+    padding: 6.25rem 0;
     text-align: center;
 
-    &.first {
+    &.top {
       background-color: #bed734;
 
       > .limiter {
@@ -86,7 +86,7 @@
       }
     }
 
-    &.second {
+    &.bottom {
       background-color: #f5f3ef;
 
       > .limiter {
@@ -112,7 +112,12 @@
             background-image: linear-gradient(to bottom, #7bcc2f 0% 30%, #fff 30% 70%);
             padding: 1rem 2rem;
             box-sizing: border-box;
-            width: 23%;
+            width: 100%;
+            margin-right: 1.25rem;
+
+            &:last-child {
+              margin-right: 0;
+            }
 
             > h4 {
               color: #fff;

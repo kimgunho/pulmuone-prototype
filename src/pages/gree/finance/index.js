@@ -8,7 +8,7 @@ import PageTitle from '../../../components/shared/PageTitle';
 
 const cx = classNames.bind(styles);
 
-function ElectronicDisclosure() {
+function Finance() {
   const numberWithCommas = (string) => {
     return string.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
@@ -83,4 +83,4 @@ function ElectronicDisclosure() {
   );
 }
 
-export default ElectronicDisclosure;
+export default Finance;

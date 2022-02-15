@@ -4,10 +4,10 @@ import styles from './index.module.scss';
 
 import PageTitle from '../../../components/shared/PageTitle';
 
-import pulmuoneWater from '../../../assets/images/brand/think/pulmuoneWater.png';
-import label_item01 from '../../../assets/images/brand/think/label_item01.png';
-import label_item02 from '../../../assets/images/brand/think/label_item02.png';
-import label_item03 from '../../../assets/images/brand/think/label_item03.png';
+import bottle from '../../../assets/images/brand/think/bottle.png';
+import mark_img01 from '../../../assets/images/brand/think/mark_img01.png';
+import mark_img02 from '../../../assets/images/brand/think/mark_img02.png';
+import mark_img03 from '../../../assets/images/brand/think/mark_img03.png';
 import reCycle from '../../../assets/images/brand/think/re_cycle.png';
 
 const cx = classNames.bind(styles);
@@ -16,7 +16,7 @@ function Think() {
   return (
     <div className={cx('container')}>
       <PageTitle title="환경을 생각한 포장" sub="Think Green" />
-      <div className={cx(['section', 'first'])}>
+      <div className={cx(['section', 'top'])}>
         <div className={cx('limiter')}>
           <h3>
             탄소 배출량을 줄여
@@ -25,7 +25,7 @@ function Think() {
           </h3>
 
           <div className={cx('center')}>
-            <div className={cx(['desc', 'first'])}>
+            <div className={cx(['desc', 'top'])}>
               <h4>
                 <span>1</span> 상표띠 제거
               </h4>
@@ -36,7 +36,7 @@ function Think() {
               </p>
             </div>
 
-            <div className={cx(['desc', 'second'])}>
+            <div className={cx(['desc', 'center'])}>
               <h4>
                 <span>2</span> 초경량 뚜껑
               </h4>
@@ -46,7 +46,7 @@ function Think() {
               </p>
             </div>
 
-            <div className={cx(['desc', 'last'])}>
+            <div className={cx(['desc', 'bottom'])}>
               <h4>
                 <span>3</span> 초경량 용기
               </h4>
@@ -57,7 +57,7 @@ function Think() {
               </p>
             </div>
 
-            <img draggable="false" src={pulmuoneWater} alt="" />
+            <img draggable="false" src={bottle} alt="" />
           </div>
 
           <div className={cx('text')}>
@@ -77,26 +77,26 @@ function Think() {
         </div>
       </div>
 
-      <div className={cx(['section', 'second'])}>
+      <div className={cx(['section', 'center'])}>
         <div className={cx('limiter')}>
           <h3>무라벨 제품 정보 표기</h3>
           <ul className={cx('list')}>
             <li>
-              <div className={cx('image')} style={{ backgroundImage: `url(${label_item01})` }}></div>
+              <div className={cx('image')} style={{ backgroundImage: `url(${mark_img01})` }}></div>
               <div className={cx('info')}>
                 <h4>낱병</h4>
                 <p>제품명, 수원지, 제조일, 고객센터 번호</p>
               </div>
             </li>
             <li>
-              <div className={cx('image')} style={{ backgroundImage: `url(${label_item02})` }}></div>
+              <div className={cx('image')} style={{ backgroundImage: `url(${mark_img02})` }}></div>
               <div className={cx('info')}>
                 <h4>팩 전면</h4>
                 <p>수원지 정보</p>
               </div>
             </li>
             <li>
-              <div className={cx('image')} style={{ backgroundImage: `url(${label_item03})` }}></div>
+              <div className={cx('image')} style={{ backgroundImage: `url(${mark_img03})` }}></div>
               <div className={cx('info')}>
                 <h4>팩 후면</h4>
                 <p>무기물질함량, 제품 상세 정보</p>
@@ -106,7 +106,7 @@ function Think() {
         </div>
       </div>
 
-      <div className={cx(['section', 'last'])}>
+      <div className={cx(['section', 'bottom'])}>
         <div className={cx('limiter')}>
           <h3>
             생산부터 재활용까지 모든 단계에서
