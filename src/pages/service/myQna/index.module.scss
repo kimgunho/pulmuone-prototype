@@ -1,0 +1,88 @@
+@import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  flex-direction: column;
+  padding-bottom: 6.25rem;
+  background-color: #f5f3ef;
+
+  > .limiter {
+    @include limiter;
+    @include flexCenterStyle;
+
+    > form {
+      @include flexCenterStyle;
+      flex-direction: column;
+      width: 100%;
+      max-width: 41.875rem;
+
+      > .inner {
+        width: 100%;
+
+        > .title {
+          font-size: 1.5rem;
+          color: #212121;
+          font-weight: bold;
+          line-height: 3;
+
+          &.required {
+            &:after {
+              content: '*';
+              color: #8dc63e;
+              padding-left: 0.5rem;
+            }
+          }
+        }
+
+        > .box {
+          @include flexCenterStyle;
+          margin-bottom: 1rem;
+
+          > input {
+            width: 100%;
+
+            &.text {
+              min-height: 3.75rem;
+              background-color: #fff;
+              padding: 1.25rem;
+              box-sizing: border-box;
+              font-size: 1.25rem;
+              color: #aaa;
+              border: 0;
+
+              &:focus {
+                color: #8dc63e;
+              }
+            }
+
+            &.center {
+              text-align: center;
+            }
+          }
+
+          > .connect {
+            font-weight: bold;
+            padding: 0 1.25rem;
+            width: fit-content;
+            font-size: 1.25rem;
+            color: #212121;
+          }
+        }
+      }
+
+      > .btn {
+        @include flexCenterStyle;
+        font-size: 1.5rem;
+        background-color: #06542c;
+        color: #fff;
+        border: 0;
+        min-height: 5rem;
+        white-space: nowrap;
+        width: 100%;
+        max-width: 25rem;
+        cursor: pointer;
+        margin-top: 4.375rem;
+      }
+    }
+  }
+}

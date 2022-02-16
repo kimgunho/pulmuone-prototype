@@ -8,6 +8,7 @@ import Jumbotron from '../../components/shared/Jumbotron';
 import Nav from '../../components/shared/Nav';
 import FNQ from './fnq';
 import QNA from './qna';
+import MyQna from './myQna';
 import NotPage from '../../components/shared/NotPage';
 
 import background from '../../assets/images/service/background.jpg';
@@ -22,6 +23,10 @@ const navItems = [
   {
     title: '문의하기',
     link: links.service_qna,
+  },
+  {
+    title: '내 문의사항',
+    link: links.service_my_qna,
   },
 ];
 
@@ -38,8 +43,12 @@ const CSR = () => {
       navIndex = 1;
       break;
 
-    default:
+    case 'myqna':
       navIndex = 2;
+      break;
+
+    default:
+      navIndex = 3;
       break;
   }
 
@@ -51,7 +60,8 @@ const CSR = () => {
       </div>
       {navIndex === 0 && <FNQ />}
       {navIndex === 1 && <QNA />}
-      {navIndex === 2 && <NotPage />}
+      {navIndex === 2 && <MyQna />}
+      {navIndex === 3 && <NotPage />}
     </div>
   );
 };
