@@ -1,42 +1,158 @@
-// POST 가맹점 사업 신청
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Business() {
+function Business({ agree }) {
+  const navigate = useNavigate();
+  const [raw, setRaw] = useState({
+    name: '',
+    emailId: '',
+    emailDetail: '',
+    location: '',
+    title: '',
+    content: '',
+    mobile1: '',
+    mobile2: '',
+    mobile3: '',
+    phone1: '',
+    phone2: '',
+    phone3: '',
+  });
+
+  const onClick = () => {
+    const { name, emailId, emailDetail, location, title, content, mobile1, mobile2, mobile3 } = raw;
+
+    if (!agree) {
+      alert('개인정보 처리방침에 동의해주세요.');
+      return;
+    }
+
+    if (name === '') {
+      alert('이름을 작성해주세요.');
+      return;
+    }
+
+    if (emailId === '') {
+      alert('이메일 아이디를 작성해주세요.');
+      return;
+    }
+
+    if (emailDetail === '') {
+      alert('이메일 뒷자리를 작성해주세요.');
+      return;
+    }
+
+    if (location === '') {
+      alert('개설희망지역을 선택해주세요.');
+      return;
+    }
+
+    if (title === '') {
+      alert('제목을 작성해주세요.');
+      return;
+    }
+
+    if (mobile1 === '' || mobile2 === '' || mobile3 === '') {
+      alert('휴대전화를 작성해주세요.');
+      return;
+    }
+
+    if (content === '') {
+      alert('내용을 작성해주세요.');
+      return;
+    }
+
+    postAxios();
+  };
+
+  const postAxios = () => {
+    axios
+      .post(
+        'https://pulmuone.console.flyground.co.kr/api/qna/business',
+        JSON.stringify({
+          name: raw.name,
+          email: `${raw.emailId}@${raw.emailDetail}`,
+          mobile: raw.mobile1 + raw.mobile2 + raw.mobile3,
+          phone: raw.phone1 + raw.phone2 + raw.phone3,
+          location: raw.location,
+          title: raw.title,
+          content: raw.content,
+        }),
+        {
+          headers: {
+            Accept: 'application/json',
+            'Content-type': 'Application/json',
+            'Access-Control-Allow-Origin': '*',
+          },
+        },
+      )
+      .then(() => {
+        alert('가맹점 사업 신청이 완료되었습니다.');
+        navigate('/');
+      })
+      .catch((err) => console.error(err));
+  };
+
+  const onChange = (event) => {
+    const { value, name } = event.target;
+    setRaw((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   return (
     <div className={cx('container')}>
-      <form>
+      <div className={cx('form')}>
         <div className={cx('inner')}>
           <ul className={cx('left')}>
             <li>
               <h4 className={cx(['title', 'required'])}>이름</h4>
               <div className={cx('box')}>
-                <input className={cx('text')} type="text" placeholder="이름을 작성해주세요" />
+                <input onChange={onChange} name={'name'} className={cx('text')} type="text" placeholder="이름을 작성해주세요" />
               </div>
             </li>
             <li>
               <h4 className={cx(['title', 'required'])}>이메일</h4>
               <div className={cx('box')}>
-                <input className={cx('text')} type="text" placeholder="이메일을 작성해주세요" />
+                <input onChange={onChange} name={'emailId'} className={cx('text')} type="text" placeholder="이메일을 작성해주세요" />
                 <p className={cx('connect')}>@</p>
-                <input className={cx('text')} type="text" placeholder="직접 입력" />
+                <input onChange={onChange} name={'emailDetail'} className={cx('text')} type="text" placeholder="직접 입력" />
               </div>
             </li>
             <li>
               <h4 className={cx(['title', 'required'])}>개설희망지역</h4>
               <div className={cx('box')}>
-                <select>
+                <select onChange={onChange} name={'location'}>
                   <option value={''}>선택</option>
+                  <option value={'서울특별시'}>서울특별시</option>
+                  <option value={'인천광역시'}>인천광역시</option>
+                  <option value={'경기도'}>경기도</option>
+                  <option value={'강원도'}>강원도</option>
+                  <option value={'대전광역시'}>대전광역시</option>
+                  <option value={'세종특별시'}>세종특별시</option>
+                  <option value={'충청북도'}>충청북도</option>
+                  <option value={'충청남도'}>충청남도</option>
+                  <option value={'대구광역시'}>대구광역시</option>
+                  <option value={'울산광역시'}>울산광역시</option>
+                  <option value={'경상남도'}>경상남도</option>
+                  <option value={'경상북도'}>경상북도</option>
+                  <option value={'광주광역시'}>광주광역시</option>
+                  <option value={'전라북도'}>전라북도</option>
+                  <option value={'전라남도'}>전라남도</option>
+                  <option value={'제주특별시'}>제주특별시</option>
                 </select>
               </div>
             </li>
             <li>
               <h4 className={cx(['title', 'required'])}>제목</h4>
               <div className={cx('box')}>
-                <input className={cx('text')} type="text" placeholder="제목을 작성해주세요" />
+                <input onChange={onChange} name={'title'} className={cx('text')} type="text" placeholder="제목을 작성해주세요" />
               </div>
             </li>
           </ul>
@@ -45,43 +161,68 @@ function Business() {
             <li>
               <h4 className={cx(['title', 'required'])}>휴대전화</h4>
               <div className={cx(['box', 'background'])}>
-                <input className={cx(['text', 'center'])} type="text" placeholder="010" maxLength={3} />
+                <input
+                  name={'mobile1'}
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="010"
+                  maxLength={3}
+                />
                 <p className={cx('connect')}>-</p>
-                <input className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
+                <input
+                  name={'mobile2'}
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="0000"
+                  maxLength={4}
+                />
                 <p className={cx('connect')}>-</p>
-                <input className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
+                <input
+                  name={'mobile3'}
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="0000"
+                  maxLength={4}
+                />
               </div>
             </li>
             <li>
-              <h4 className={cx(['title', 'required'])}>일반전화</h4>
+              <h4 className={cx('title')}>일반전화</h4>
               <div className={cx(['box', 'background'])}>
-                <input className={cx(['text', 'center'])} type="text" placeholder="010" maxLength={3} />
+                <input name={'phone1'} onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="010" maxLength={3} />
                 <p className={cx('connect')}>-</p>
-                <input className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
+                <input
+                  name={'phone2'}
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="0000"
+                  maxLength={4}
+                />
                 <p className={cx('connect')}>-</p>
-                <input className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
-                <ul className={cx(['side', 'radio'])}>
-                  <li>
-                    <input id="phone_home" className={cx('radio')} type="radio" value={'home'} name="phone_area" />
-                    <label htmlFor="phone_home">집</label>
-                  </li>
-                  <li>
-                    <input id="phone_office" className={cx('radio')} type="radio" value={'office'} name="phone_area" />
-                    <label htmlFor="phone_office">회사</label>
-                  </li>
-                </ul>
+                <input
+                  name={'phone3'}
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="0000"
+                  maxLength={4}
+                />
               </div>
             </li>
             <li>
               <h4 className={cx(['title', 'required'])}>상세내용</h4>
               <div className={cx('box')}>
-                <textarea></textarea>
+                <textarea name={'content'} onChange={onChange}></textarea>
               </div>
             </li>
           </ul>
         </div>
-        <input type={'submit'} value={'접수하기'} className={cx('btn')} />
-      </form>
+        <input onClick={onClick} type={'submit'} value={'접수하기'} className={cx('btn')} />
+      </div>
 
       <div className={cx('section')}>
         <h3 className={cx('title')}>풀무원샘물은 여러분의 든든한 파트너가 되겠습니다.</h3>
