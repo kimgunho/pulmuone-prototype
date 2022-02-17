@@ -87,11 +87,11 @@ function QNA() {
 
           <div className={cx('form')}>
             <h3 className={cx('title')}>문의내용</h3>
-            {formIndex === 0 && <General />}
-            {formIndex === 1 && <Order />}
-            {formIndex === 2 && <Cleaning />}
-            {formIndex === 3 && <Business />}
-            {formIndex === 4 && <Report />}
+            {formIndex === 0 && <General agree={agree} />}
+            {formIndex === 1 && <Order agree={agree} />}
+            {formIndex === 2 && <Cleaning agree={agree} />}
+            {formIndex === 3 && <Business agree={agree} />}
+            {formIndex === 4 && <Report agree={agree} />}
           </div>
         </div>
       </div>

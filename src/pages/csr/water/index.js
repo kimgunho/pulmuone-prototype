@@ -10,6 +10,10 @@ import icon01 from '../../../assets/images/csr/water/icon01.png';
 import icon02 from '../../../assets/images/csr/water/icon02.png';
 import icon03 from '../../../assets/images/csr/water/icon03.png';
 import icon04 from '../../../assets/images/csr/water/icon04.png';
+import pdf1 from './Web1_AWS-committee_team.pdf';
+import pdf2 from './Web2_AWS-Water_Stewardship_Plan.pdf';
+import pdf3 from './AWS_CERTIFICATE.pdf';
+import img_sorce from './Web3_AWS-Water_balance_Stewardship_Challenges.jpeg';
 
 const cx = classNames.bind(styles);
 
@@ -34,39 +38,47 @@ function Water() {
 
         <ul className={cx('list')}>
           <li>
-            <h4>AWS 조직도</h4>
-            <div className={cx('icon')}>
-              <img src={icon01} alt="" />
-              <img src={right_arrow} alt="" />
-            </div>
+            <a href={pdf1} target="_blank" rel="noreferrer">
+              <h4>AWS 조직도</h4>
+              <div className={cx('icon')}>
+                <img src={icon01} alt="" />
+                <img src={right_arrow} alt="" />
+              </div>
+            </a>
           </li>
           <li>
-            <h4>
-              AWS 목표 및 단계
-              <br />
-              계획 및 실적{' '}
-            </h4>
-            <div className={cx('icon')}>
-              <img src={icon02} alt="" />
-              <img src={right_arrow} alt="" />
-            </div>
+            <a href={pdf2} target="_blank" rel="noreferrer">
+              <h4>
+                AWS 목표 및 단계
+                <br />
+                계획 및 실적{' '}
+              </h4>
+              <div className={cx('icon')}>
+                <img src={icon02} alt="" />
+                <img src={right_arrow} alt="" />
+              </div>
+            </a>
           </li>
           <li>
-            <h4>
-              수자원 현황 및<br />
-              잠재적인 이슈
-            </h4>
-            <div className={cx('icon')}>
-              <img src={icon03} alt="" />
-              <img src={right_arrow} alt="" />
-            </div>
+            <a href={img_sorce} target="_blank" rel="noreferrer">
+              <h4>
+                수자원 현황 및<br />
+                잠재적인 이슈
+              </h4>
+              <div className={cx('icon')}>
+                <img src={icon03} alt="" />
+                <img src={right_arrow} alt="" />
+              </div>
+            </a>
           </li>
           <li>
-            <h4>AWS 인증서</h4>
-            <div className={cx('icon')}>
-              <img src={icon04} alt="" />
-              <img src={right_arrow} alt="" />
-            </div>
+            <a href={pdf3} target="_blank" rel="noreferrer">
+              <h4>AWS 인증서</h4>
+              <div className={cx('icon')}>
+                <img src={icon04} alt="" />
+                <img src={right_arrow} alt="" />
+              </div>
+            </a>
           </li>
         </ul>
       </div>

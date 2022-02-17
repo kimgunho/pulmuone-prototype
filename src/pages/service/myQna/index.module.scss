@@ -19,21 +19,6 @@
       > .inner {
         width: 100%;
 
-        > .title {
-          font-size: 1.5rem;
-          color: #212121;
-          font-weight: bold;
-          line-height: 3;
-
-          &.required {
-            &:after {
-              content: '*';
-              color: #8dc63e;
-              padding-left: 0.5rem;
-            }
-          }
-        }
-
         > .box {
           @include flexCenterStyle;
           margin-bottom: 1rem;

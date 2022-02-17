@@ -1,7 +1,7 @@
 @import '../../../../common.scss';
 
 .container {
-  > form {
+  > .form {
     @include flexCenterStyle;
     flex-direction: column;
 
@@ -45,7 +45,7 @@
               width: 100%;
 
               &.text {
-                min-height: 3.75rem;
+                height: 3.75rem;
                 background-color: #fff;
                 padding: 1.25rem;
                 box-sizing: border-box;
@@ -78,7 +78,7 @@
             > select {
               @include selectIconDown;
               width: 100%;
-              min-height: 3.75rem;
+              height: 3.75rem;
               background-color: #fff;
               padding: 1.25rem;
               box-sizing: border-box;
@@ -107,7 +107,7 @@
               color: #fff;
               border: 0;
               width: fit-content;
-              min-height: 3.75rem;
+              height: 3.75rem;
               white-space: nowrap;
               padding: 0 3rem;
               cursor: pointer;
@@ -118,7 +118,7 @@
               display: flex;
               justify-content: flex-start;
               align-items: center;
-              min-height: 3.75rem;
+              height: 3.75rem;
               background-color: #fff;
               padding: 1.25rem;
               box-sizing: border-box;
@@ -148,9 +148,11 @@
                     appearance: none;
 
                     background: url('../../../../assets/images/shared/radio_background.svg') no-repeat;
+                    background-size: cover;
 
                     &:checked {
                       background: url('../../../../assets/images/shared/radio_checked_background.svg') no-repeat;
+                      background-size: cover;
                     }
                   }
                 }
