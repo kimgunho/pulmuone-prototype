@@ -26,13 +26,14 @@
     > .text {
       text-align: center;
       font-size: 1.75rem;
-      line-height: 1.5;
+      line-height: 1.8;
       color: #212121;
     }
 
     > .linkBtn {
       @include flexCenterStyle;
       @include btn;
+      margin-bottom: 5rem;
       color: #fff;
       background-color: #c3b59b;
     }

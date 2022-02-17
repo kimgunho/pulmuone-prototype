@@ -44,20 +44,8 @@
             > input {
               width: 100%;
 
-              // &[type='number'] {
-              //   -moz-appearance: textfield;
-              //   -webkit-appearance: textfield;
-              //   appearance: textfield;
-
-              //   &::-webkit-outer-spin-button,
-              //   &::-webkit-inner-spin-button {
-              //     -webkit-appearance: none;
-              //     margin: 0;
-              //   }
-              // }
-
               &.text {
-                min-height: 3.75rem;
+                height: 3.75rem;
                 background-color: #fff;
                 padding: 1.25rem;
                 box-sizing: border-box;
@@ -90,7 +78,7 @@
             > select {
               @include selectIconDown;
               width: 100%;
-              min-height: 3.75rem;
+              height: 3.75rem;
               background-color: #fff;
               padding: 1.25rem;
               box-sizing: border-box;
@@ -119,7 +107,7 @@
               color: #fff;
               border: 0;
               width: fit-content;
-              min-height: 3.75rem;
+              height: 3.75rem;
               white-space: nowrap;
               padding: 0 3rem;
               cursor: pointer;
@@ -130,7 +118,7 @@
               display: flex;
               justify-content: flex-start;
               align-items: center;
-              min-height: 3.75rem;
+              height: 3.75rem;
               background-color: #fff;
               padding: 1.25rem;
               box-sizing: border-box;

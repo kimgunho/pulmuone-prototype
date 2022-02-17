@@ -13,7 +13,6 @@ function MyQna() {
       <div className={cx('limiter')}>
         <form>
           <div className={cx('inner')}>
-            <h4 className={cx(['title', 'required'])}>이메일</h4>
             <div className={cx('box')}>
               <input className={cx('text')} type="text" placeholder="이메일을 작성해주세요" />
               <p className={cx('connect')}>@</p>

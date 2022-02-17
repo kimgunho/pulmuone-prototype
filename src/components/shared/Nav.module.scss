@@ -15,13 +15,16 @@
 
     > li {
       position: relative;
+      text-align: center;
+      width: 15%;
 
       &.active {
         &::after {
           position: absolute;
           bottom: 0;
-          left: 0;
-          width: 100%;
+          left: 50%;
+          transform: translate(-50%, 0);
+          width: 60%;
           height: 5px;
           background-color: #06542c;
           content: '';
@@ -30,7 +33,8 @@
       > a {
         display: block;
         font-weight: bold;
-        padding: 2rem 4rem;
+        padding: 2rem 1rem;
+        white-space: nowrap;
         color: #06542c;
         box-sizing: border-box;
         font-size: 1.5rem;
