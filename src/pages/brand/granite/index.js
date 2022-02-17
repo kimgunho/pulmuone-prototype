@@ -27,7 +27,7 @@ function Granite() {
           end: 'bottom center',
         },
       })
-      .to(maskRef.current, { maskSize: '100% 100%' });
+      .to(maskRef.current, { maskSize: '100% 100%', delay: 0.1 });
   }, []);
 
   return (
