@@ -23,10 +23,12 @@
           font-size: 1.5rem;
           text-align: center;
           padding: 1.25rem 0;
+          line-height: 1;
 
           &.active {
             font-weight: bold;
             color: #06542c;
+            background-color: #f0ede7;
           }
         }
       }
@@ -80,6 +82,7 @@
             > p {
               font-size: 1.25rem;
               line-height: 2;
+              font-weight: lighter;
             }
           }
         }
