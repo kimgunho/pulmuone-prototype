@@ -7,8 +7,10 @@ import background_blue from '../../assets/images/shared/outro_background_blue.jp
 import background_green from '../../assets/images/shared/outro_background_green.jpg';
 import buy_icon_green from '../../assets/images/shared/buy_icon_green.svg';
 import buy_icon_blue from '../../assets/images/shared/buy_icon_blue.svg';
+import buy_icon_white from '../../assets/images/shared/buy_icon_white.svg';
 import order_icon_green from '../../assets/images/shared/order_icon_green.svg';
 import order_icon_blue from '../../assets/images/shared/order_icon_blue.svg';
+import order_icon_white from '../../assets/images/shared/order_icon_white.svg';
 
 const cx = classNames.bind(styles);
 
@@ -24,16 +26,16 @@ function Outro({ color = 'green', title, buy = true }) {
           ))}
         </h2>
         <ul className={cx(['list'])}>
-          <li>
-            <Link to="/">
-              <img src={color === 'green' ? order_icon_green : order_icon_blue} alt="" />
+          <li className={cx(['order', color === 'green' ? 'green' : 'blue'])}>
+            <Link to="/" className={cx(color === 'green' ? 'green' : 'blue')}>
+              <div className={cx('icon')} />
               <p className={cx(color === 'green' ? 'green' : 'blue')}>주문상담 신청하기</p>
             </Link>
           </li>
           {buy ? (
-            <li>
-              <Link to="/">
-                <img src={color === 'green' ? buy_icon_green : buy_icon_blue} alt="" />
+            <li className={cx(['buy', color === 'green' ? 'green' : 'blue'])}>
+              <Link to="/" className={cx(color === 'green' ? 'green' : 'blue')}>
+                <div className={cx('icon')} />
                 <p className={cx(color === 'green' ? 'green' : 'blue')}>바로 구매하기</p>
               </Link>
             </li>
