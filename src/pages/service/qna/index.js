@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import styles from './index.module.scss';
 
 import PageTitle from '../../../components/shared/PageTitle';
-import PolicyContent from '../../../components/shared/PolicyContent';
+import PolicyContent from '../../../components/privacy/PolicyContent';
 import Business from './form/Business';
 import Cleaning from './form/Cleaning';
 import General from './form/General';

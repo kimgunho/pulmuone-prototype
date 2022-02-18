@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './index.module.scss';
 
 import PageTitle from '../../../components/shared/PageTitle';
-import Carousel from '../../../components/shared/Carousel';
+import Carousel from '../../../components/csr/Carousel';
 
 import section_01_01 from '../../../assets/images/csr/share/section_01_01.jpg';
 import section_01_02 from '../../../assets/images/csr/share/section_01_02.jpg';

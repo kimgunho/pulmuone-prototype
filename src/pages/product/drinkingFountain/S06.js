@@ -10,7 +10,7 @@ import slide_img04 from '../../../assets/images/product/drinking/s06/list04.jpg'
 import slide_img05 from '../../../assets/images/product/drinking/s06/list05.jpg';
 import slide_img06 from '../../../assets/images/product/drinking/s06/list06.jpg';
 
-import CarouselMulti from '../../../components/shared/CarouselMulti';
+import Carousel from '../../../components/product/Carousel';
 
 const cx = classNames.bind(styles);
 
@@ -54,7 +54,7 @@ function S06() {
         <Link className={cx('linkBtn')} to="/">
           냉온수기 세척 온라인 신청
         </Link>
-        <CarouselMulti slides={slides} section={1} slidesPerView={5} />
+        <Carousel slides={slides} section={1} slidesPerView={5} />
       </div>
     </div>
   );

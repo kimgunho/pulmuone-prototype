@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './index.module.scss';
 
 import PageTitle from '../../../components/shared/PageTitle';
-import PolicyContent from '../../../components/shared/PolicyContent';
+import PolicyContent from '../../../components/privacy/PolicyContent';
 
 const cx = classNames.bind(styles);
 

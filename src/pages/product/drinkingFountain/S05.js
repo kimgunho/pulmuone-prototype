@@ -8,9 +8,9 @@ import waterHeater_product02 from '../../../assets/images/product/drinking/s05/h
 import waterHeater_product03 from '../../../assets/images/product/drinking/s05/heater_product03.png';
 import waterHeater_product04 from '../../../assets/images/product/drinking/s05/heater_product04.png';
 
-import Products from '../../../components/shared/Products';
-import Table from '../../../components/shared/Table';
-import Download from '../../../components/shared/Download';
+import Products from '../../../components/product/Products';
+import Table from '../../../components/product/Table';
+import Download from '../../../components/product/Download';
 
 const cx = classNames.bind(styles);
 

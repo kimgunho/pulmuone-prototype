@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
 
-import styles from './CarouselMulti.module.scss';
+import styles from './Carousel.module.scss';
 import 'swiper/css';
 import 'swiper/css/pagination';
 

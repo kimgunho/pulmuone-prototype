@@ -11,9 +11,9 @@ import detail_info02 from '../../../assets/images/product/drinking/s02/detail_in
 import detail_info03 from '../../../assets/images/product/drinking/s02/detail_info03.jpg';
 import detail_info04 from '../../../assets/images/product/drinking/s02/detail_info04.jpg';
 
-import Products from '../../../components/shared/Products';
-import Table from '../../../components/shared/Table';
-import Download from '../../../components/shared/Download';
+import Products from '../../../components/product/Products';
+import Table from '../../../components/product/Table';
+import Download from '../../../components/product/Download';
 
 const cx = classNames.bind(styles);
 
