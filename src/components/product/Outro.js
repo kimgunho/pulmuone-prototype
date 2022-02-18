@@ -5,12 +5,6 @@ import styles from './Outro.module.scss';
 
 import background_blue from '../../assets/images/shared/outro_background_blue.jpg';
 import background_green from '../../assets/images/shared/outro_background_green.jpg';
-import buy_icon_green from '../../assets/images/shared/buy_icon_green.svg';
-import buy_icon_blue from '../../assets/images/shared/buy_icon_blue.svg';
-import buy_icon_white from '../../assets/images/shared/buy_icon_white.svg';
-import order_icon_green from '../../assets/images/shared/order_icon_green.svg';
-import order_icon_blue from '../../assets/images/shared/order_icon_blue.svg';
-import order_icon_white from '../../assets/images/shared/order_icon_white.svg';
 
 const cx = classNames.bind(styles);
 

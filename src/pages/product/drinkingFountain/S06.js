@@ -3,12 +3,12 @@ import classNames from 'classnames/bind';
 
 import styles from './S06.module.scss';
 
-import slide_img01 from '../../../assets/images/product/drinking/s06/list01.jpg';
-import slide_img02 from '../../../assets/images/product/drinking/s06/list02.jpg';
-import slide_img03 from '../../../assets/images/product/drinking/s06/list03.jpg';
-import slide_img04 from '../../../assets/images/product/drinking/s06/list04.jpg';
-import slide_img05 from '../../../assets/images/product/drinking/s06/list05.jpg';
-import slide_img06 from '../../../assets/images/product/drinking/s06/list06.jpg';
+import img01 from '../../../assets/images/product/drinking/s06/img01.jpg';
+import img02 from '../../../assets/images/product/drinking/s06/img02.jpg';
+import img03 from '../../../assets/images/product/drinking/s06/img03.jpg';
+import img04 from '../../../assets/images/product/drinking/s06/img04.jpg';
+import img05 from '../../../assets/images/product/drinking/s06/img05.jpg';
+import img06 from '../../../assets/images/product/drinking/s06/img06.jpg';
 
 import Carousel from '../../../components/product/Carousel';
 
@@ -18,27 +18,27 @@ function S06() {
   const slides = [
     {
       title: '전원분리',
-      image: slide_img01,
+      image: img01,
     },
     {
       title: '상판분리',
-      image: slide_img02,
+      image: img02,
     },
     {
       title: '저수조 물 제거',
-      image: slide_img03,
+      image: img03,
     },
     {
       title: '온수 제거',
-      image: slide_img04,
+      image: img04,
     },
     {
       title: '꼭지분리',
-      image: slide_img05,
+      image: img05,
     },
     {
       title: '물받이 분리',
-      image: slide_img06,
+      image: img06,
     },
   ];
   return (

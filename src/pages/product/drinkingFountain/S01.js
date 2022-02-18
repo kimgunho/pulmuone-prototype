@@ -7,7 +7,7 @@ import bubble_left from '../../../assets/images/product/drinking/s01/bubble_left
 import bubble_right from '../../../assets/images/product/drinking/s01/bubble_right.png';
 import leaf_left from '../../../assets/images/product/drinking/s01/leaf_left.png';
 import leaf_right from '../../../assets/images/product/drinking/s01/leaf_right.png';
-import drinkingFountain from '../../../assets/images/product/drinking/s01/drinkingFountain.png';
+import bigbottle from '../../../assets/images/product/drinking/s01/bigbottle.png';
 
 const cx = classNames.bind(styles);
 
@@ -30,7 +30,7 @@ function S01() {
         <img className={cx('bubbleRight')} src={bubble_right} alt="" />
       </div>
 
-      <img draggable="false" className={cx('routine')} src={drinkingFountain} alt="" />
+      <img draggable="false" className={cx('bigbottle')} src={bigbottle} alt="" />
     </div>
   );
 }

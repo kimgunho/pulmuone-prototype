@@ -17,9 +17,7 @@
     }
 
     > .title {
-      font-size: 2.75rem;
-      font-weight: bold;
-      color: #212121;
+      @include subTitle;
       padding-bottom: 2.8rem;
     }
 

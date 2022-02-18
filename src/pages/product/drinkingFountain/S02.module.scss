@@ -17,10 +17,8 @@
       max-width: 72.5rem;
 
       > .title {
-        color: #121212;
-        font-size: 2.75rem;
+        @include subTitle;
         padding-bottom: 4.75rem;
-        font-weight: bold;
       }
 
       > .info {
@@ -74,7 +72,6 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
       padding: 2rem;
       box-sizing: border-box;
       background-color: #f4f4f4;

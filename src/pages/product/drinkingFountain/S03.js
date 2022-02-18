@@ -2,8 +2,8 @@ import classNames from 'classnames/bind';
 
 import styles from './S03.module.scss';
 
-import heater_icon01 from '../../../assets/images/product/drinking/s03/heater_icon01.svg';
-import heater_icon02 from '../../../assets/images/product/drinking/s03/heater_icon02.svg';
+import icon01 from '../../../assets/images/product/drinking/s03/icon01.svg';
+import icon02 from '../../../assets/images/product/drinking/s03/icon02.svg';
 import filter from '../../../assets/images/product/drinking/s03/filter.png';
 
 const cx = classNames.bind(styles);
@@ -15,14 +15,14 @@ function S03() {
         <h2 className={cx('title')}> ‘안전하고 경제적으로’ 풀무원샘물 냉온수기만의 차별화</h2>
         <ul className={cx('list')}>
           <li>
-            <img src={heater_icon01} alt="" />
+            <img src={icon01} alt="" />
             <p>
               국내 업계 최초로 <span className={cx('point')}>*헤파필터</span> 장착으로 미생물과 세균을 걸러주는 필터링 효과{' '}
               <span className={cx('sub')}>(크로버 제조 냉온수기에에 한함)</span>
             </p>
           </li>
           <li>
-            <img src={heater_icon02} alt="" />
+            <img src={icon02} alt="" />
             <p>기존 냉온수기 대비 20% 전기료 절감 및 소음 개선</p>
           </li>
         </ul>
