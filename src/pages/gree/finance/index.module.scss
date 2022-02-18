@@ -106,22 +106,6 @@
             > li {
               border-top: 1px solid rgba(6, 84, 44, 0.4);
 
-              &:first-child {
-                li {
-                  &:first-child {
-                    color: #06542c;
-                  }
-                }
-              }
-
-              &:nth-child(2) {
-                li {
-                  &:first-child {
-                    color: #06542c;
-                  }
-                }
-              }
-
               > ul {
                 display: flex;
 
@@ -133,7 +117,11 @@
                   border-right: 10px solid #fff;
                   box-sizing: border-box;
                   background-color: #f4faef;
-                  font-weight: bold;
+
+                  &.point {
+                    color: #06542c;
+                    font-weight: bold;
+                  }
 
                   &:first-child {
                     background-color: #fff;
