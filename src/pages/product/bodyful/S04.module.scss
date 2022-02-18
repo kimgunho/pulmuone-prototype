@@ -41,6 +41,13 @@
                 background-color: #6eb92a;
               }
             }
+
+            > .desc {
+              > .point {
+                color: #6eb92a;
+                border-bottom: 5px solid rgba(110, 185, 42, 0.3);
+              }
+            }
           }
         }
 
@@ -53,6 +60,13 @@
             > .image {
               > p {
                 background-color: #00a7f0;
+              }
+            }
+
+            > .desc {
+              > .point {
+                color: #00a7f0;
+                border-bottom: 5px solid rgba(0, 167, 240, 0.3);
               }
             }
           }
@@ -78,8 +92,8 @@
             line-height: 1.5;
 
             > .point {
-              background-color: #fff;
               font-weight: bold;
+              padding-bottom: 5px;
             }
           }
 
