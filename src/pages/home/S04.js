@@ -81,7 +81,7 @@ const S04 = () => {
             <br />
             지속적으로 노력합니다.
           </p>
-          <Link to={links.home}>자세히 보기</Link>
+          <Link to={links.brand_think}>자세히 보기</Link>
         </div>
         <div className={cx('bottleWrapper')}>
           <img draggable="false" className={cx('bottle')} src={bottleNoLabel} alt="" />

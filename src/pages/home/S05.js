@@ -22,7 +22,7 @@ function S05() {
             <br />
             풀무원의 바른 먹거리 철학으로 전합니다.
           </p>
-          <Link to={links.home}>제품 보러가기</Link>
+          <Link to={links.product_spring_water}>제품 보러가기</Link>
         </div>
       </div>
     </div>

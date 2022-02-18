@@ -29,8 +29,8 @@ export const links = {
 };
 
 export const sns = {
-  facebook: '',
-  insta: '',
-  blog: '',
-  nestle: '',
+  facebook: 'https://www.facebook.com/pulsaem/',
+  insta: 'https://www.instagram.com/pulsaem/',
+  blog: 'https://blog.naver.com/pul_saem',
+  nestle: 'http://www.nestlepurelife.co.kr/htm/main/main.php',
 };
