@@ -1,0 +1,87 @@
+@import '../../../common.scss';
+
+.container {
+  @include backgroundDefaultStyle;
+  @include flexCenterStyle;
+  height: 50rem;
+  position: relative;
+  overflow: hidden;
+
+  > .limiter {
+    @include limiter;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+
+    > .title {
+      @include subTitle;
+      color: #fff;
+      padding-top: 6.25rem;
+    }
+
+    > .text {
+      padding-top: 1.25rem;
+      font-size: 1.5rem;
+      color: #fff;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    > .objects {
+      @include absoluteFull;
+
+      > img {
+        position: absolute;
+
+        &.left {
+          width: 100%;
+          max-width: 14rem;
+          left: 0;
+          top: 30%;
+        }
+
+        &.right {
+          width: 100%;
+          max-width: 18.75rem;
+          right: 0;
+          top: 50%;
+        }
+
+        &.ca {
+          left: 24%;
+          top: 38%;
+        }
+
+        &.mg {
+          right: 28%;
+          top: 65%;
+          z-index: 3;
+        }
+      }
+    }
+  }
+
+  > .bottle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+.inner {
+  @include flexCenterStyle;
+  flex-direction: column;
+  background-color: #003665;
+  padding: 5rem 0;
+
+  > p {
+    padding-bottom: 0.5rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.8;
+  }
+}

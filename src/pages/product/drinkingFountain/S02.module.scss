@@ -1,0 +1,95 @@
+@import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  padding: 6.25rem 0;
+
+  > .limiter {
+    @include limiter;
+    @include flexCenterStyle;
+    flex-direction: column;
+
+    > .detail {
+      @include flexCenterStyle;
+      flex-direction: column;
+      padding: 6.25rem;
+      width: 100%;
+      max-width: 72.5rem;
+
+      > .title {
+        @include subTitle;
+        padding-bottom: 4.75rem;
+      }
+
+      > .info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        > .image {
+          width: 20%;
+
+          > img {
+            height: 100%;
+          }
+        }
+
+        > .inner {
+          width: 50%;
+
+          > ul {
+            > li {
+              display: flex;
+              align-items: center;
+              margin-bottom: 1.875rem;
+
+              > img {
+                width: 100%;
+                max-width: 11.25rem;
+                margin-right: 2.125rem;
+              }
+
+              > .content {
+                > h3 {
+                  font-size: 1.875rem;
+                  color: #121212;
+                  font-weight: bold;
+                  padding-bottom: 1rem;
+                }
+                > p {
+                  font-size: 1.5rem;
+                  color: #121212;
+                  line-height: 1.5;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > .precautions {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+      border-radius: 1rem;
+
+      > h3 {
+        font-size: 1.5rem;
+        color: #121212;
+        padding-right: 2rem;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      > p {
+        font-size: 1.25rem;
+        color: #121212;
+        line-height: 1.8;
+      }
+    }
+  }
+}

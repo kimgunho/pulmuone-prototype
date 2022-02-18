@@ -1,0 +1,29 @@
+@import '../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  flex-direction: column;
+  padding: 8rem 0 4.5rem 0;
+  width: 100%;
+  background-color: #f5f3ef;
+
+  > p {
+    color: #221e1f;
+    font-size: 2.625rem;
+    line-height: 1.5;
+    font-weight: lighter;
+    text-align: center;
+
+    &.reverse {
+      order: 2;
+      font-size: 1.5rem;
+    }
+  }
+
+  > h2 {
+    color: #221e1f;
+    font-size: 4rem;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+}

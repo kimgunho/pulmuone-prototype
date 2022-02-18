@@ -7,7 +7,7 @@
   left: 0;
   width: 100%;
   background-color: rgba(41, 41, 41, 0.4);
-  z-index: 20;
+  z-index: 100;
 
   @include mobile {
     background-color: #fff;
@@ -65,7 +65,7 @@
         width: calc(50% - 4rem);
         display: flex;
         justify-content: space-evenly;
-        align-items: center;
+        align-items: flex-end;
 
         @include mobile {
           flex-direction: column;

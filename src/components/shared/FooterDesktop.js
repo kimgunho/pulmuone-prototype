@@ -13,6 +13,11 @@ import nestle_icon from '../../assets/images/shared/nestle.png';
 const cx = classNames.bind(styles);
 
 function Footer() {
+  const onChange = (event) => {
+    const { value } = event.target;
+    window.open(value, '_blank');
+  };
+
   return (
     <footer className={cx('footer')}>
       <div className={cx('limiter')}>
@@ -41,13 +46,13 @@ function Footer() {
             <div className={cx('inner')}>
               <ul className={cx('top')}>
                 <li>
-                  <Link to={links.privacyPolicy}>개인정보처리방침</Link>
+                  <Link to={links.privacy_policy}>개인정보처리방침</Link>
                 </li>
                 <li>
-                  <Link to={links.emailCollection}>이메일무단수집거부</Link>
+                  <Link to={links.privacy_email}>이메일무단수집거부</Link>
                 </li>
                 <li>
-                  <Link to={links.location}>찾아오시는길</Link>
+                  <Link to={links.gree_location}>찾아오시는길</Link>
                 </li>
               </ul>
 
@@ -63,8 +68,22 @@ function Footer() {
         </div>
 
         <div className={cx('right')}>
-          <select>
-            <option value="">패밀리 사이트</option>
+          <select onChange={onChange}>
+            <option>패밀리 사이트</option>
+            <option value="https://www.pulmuone.co.kr/pulmuone/main/Index.do">풀무원</option>
+            <option value="https://shop.pulmuone.co.kr/">#풀무원</option>
+            <option value="https://www.pulmuone-lohas.com/pc/brand/index.do">풀무원건강생활</option>
+            <option value="https://www.pulmuone-lohas.com/pc/brand/index.do">풀무원로하스</option>
+            <option value="http://greenjuice.pulmuone.com/">풀무원녹즙</option>
+            <option value="http://www.kimchimuseum.co.kr/">풀무원김치박물관</option>
+            <option value="https://www.orga.co.kr/w/grandOpen.orga">올가홀푸드</option>
+            <option value="https://pulstory.pulmuone.com/">푸드머스</option>
+            <option value="https://www.pulmuonefnc.com/main/main_contents.do">이씨엠디</option>
+            <option value="http://www.exofresh.co.kr/main/">엑소후래쉬</option>
+            <option value="https://www.facebook.com/pulmuone.imreal/app_120834951458503">풀무원아임리얼</option>
+            <option value="https://www.nestle.com/">네슬레</option>
+            <option value="https://www.nestle.co.kr/">네슬레 코리아</option>
+            <option value="https://fis.pulmuonewater.com/">풀무원샘물FIS</option>
           </select>
 
           <ul className={cx('sns')}>

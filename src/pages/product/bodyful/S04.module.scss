@@ -1,0 +1,152 @@
+@import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  padding: 6.25rem 0;
+
+  > .limiter {
+    @include limiter;
+    @include flexCenterStyle;
+    flex-direction: column;
+
+    > .title {
+      @include subTitle;
+      color: #00325d;
+      padding-bottom: 5rem;
+    }
+
+    > .list {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 72.5rem;
+
+      > li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 48%;
+        border-top: 4px solid;
+
+        &.ca {
+          border-color: #6eb92a;
+
+          > .product {
+            background-color: #f0f8e9;
+
+            > .image {
+              > p {
+                background-color: #6eb92a;
+              }
+            }
+
+            > .desc {
+              > .point {
+                color: #6eb92a;
+                border-bottom: 5px solid rgba(110, 185, 42, 0.3);
+              }
+            }
+          }
+        }
+
+        &.ma {
+          border-color: #00a7f0;
+
+          > .product {
+            background-color: #e5f6fe;
+
+            > .image {
+              > p {
+                background-color: #00a7f0;
+              }
+            }
+
+            > .desc {
+              > .point {
+                color: #00a7f0;
+                border-bottom: 5px solid rgba(0, 167, 240, 0.3);
+              }
+            }
+          }
+        }
+
+        > .product {
+          @include flexCenterStyle;
+          flex-direction: column;
+          width: 100%;
+          padding: 3.4rem 0;
+          margin-bottom: 3.125rem;
+
+          > .title {
+            font-size: 2.25rem;
+            font-weight: bold;
+            padding-bottom: 1rem;
+          }
+
+          > .desc {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #121212;
+            line-height: 1.5;
+
+            > .point {
+              font-weight: bold;
+              padding-bottom: 5px;
+            }
+          }
+
+          > .name {
+            font-size: 2rem;
+            color: #003665;
+            font-weight: bold;
+            padding: 3.75rem 0 1.75rem 0;
+          }
+
+          > .image {
+            @include backgroundDefaultStyle;
+            position: relative;
+            width: 100%;
+            max-width: 12.5rem;
+            height: 10rem;
+
+            > p {
+              @include flexCenterStyle;
+              flex-direction: column;
+              border-radius: 50%;
+              position: absolute;
+              right: -25%;
+              top: -15%;
+              width: 6.25rem;
+              height: 6.25rem;
+              font-size: 1.25rem;
+              color: #fff;
+
+              > span {
+                display: block;
+                font-size: 2.25rem;
+                font-weight: bold;
+              }
+            }
+          }
+
+          > .price {
+            @include flexCenterStyle;
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: #003665;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: bold;
+            margin: 2.125rem 0 1.25rem 0;
+          }
+
+          > .text {
+            color: #121212;
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+}

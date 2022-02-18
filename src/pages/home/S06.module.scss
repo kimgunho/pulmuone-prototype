@@ -1,0 +1,93 @@
+@import '../../common.scss';
+
+.container {
+  @include backgroundDefaultStyle;
+  @include flexCenterStyle;
+  background-image: url('../../assets/images/home/s06/background.jpg');
+  width: 100%;
+  padding: 8rem 0;
+
+  > .limiter {
+    @include limiter;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    > .info {
+      @include mobile {
+        width: 100%;
+      }
+
+      > h2 {
+        color: #fff;
+        font-size: 3.25rem;
+        line-height: 1.5;
+      }
+
+      > .logo {
+        @include flexCenterStyle;
+        display: none;
+
+        @include mobile {
+          background-color: #fff;
+          border-radius: 50%;
+          width: 14rem;
+          margin-top: 2rem;
+          height: 14rem;
+          display: flex;
+        }
+
+        > img {
+          width: 70%;
+        }
+      }
+
+      > p {
+        font-size: 1.625rem;
+        line-height: 2;
+        color: #fff;
+        padding-top: 2rem;
+
+        @include mobile {
+          > br {
+            display: none;
+          }
+        }
+      }
+
+      > a {
+        @include homeBtn;
+        background-color: #fff;
+        color: #133550;
+        margin-top: 3.75rem;
+
+        &:hover {
+          background-color: #133550;
+          color: #fff;
+        }
+      }
+    }
+
+    > .logo {
+      @include flexCenterStyle;
+      background-color: #fff;
+      width: 18rem;
+      height: 18rem;
+      border-radius: 50%;
+
+      @include mobile {
+        display: none;
+      }
+
+      > img {
+        width: 100%;
+        max-width: 12rem;
+      }
+    }
+  }
+}

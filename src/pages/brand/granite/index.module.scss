@@ -1,0 +1,77 @@
+@import '../../../common.scss';
+
+.container {
+  .section {
+    @include flexCenterStyle;
+    padding: 6.25rem 0;
+
+    > .limiter {
+      @include limiter;
+      display: flex;
+      justify-content: flex-start;
+
+      > div {
+        width: 50%;
+
+        &.info {
+          > .text {
+            border-left: 2px solid #bfd62f;
+            padding: 0 2.25rem;
+            margin-bottom: 7.5rem;
+
+            &:last-child {
+              margin-bottom: 0;
+
+              > h3 {
+                padding-bottom: 0;
+              }
+            }
+
+            > h3 {
+              font-size: 2.75rem;
+              color: #7bcc2f;
+              padding-bottom: 3.625rem;
+              font-weight: bold;
+              line-height: 1.5;
+            }
+
+            > p {
+              color: #212121;
+              font-size: 1.875rem;
+              line-height: 1.8;
+              padding-bottom: 3.5rem;
+
+              &.light {
+                font-weight: lighter;
+              }
+
+              &:last-child {
+                padding-bottom: 0;
+              }
+            }
+          }
+        }
+
+        &.image {
+          position: relative;
+
+          > div {
+            @include absoluteFull;
+            @include backgroundDefaultStyle;
+
+            &.draw {
+              z-index: 2;
+              mask-image: url('../../../assets/images/brand/granite/mask.jpg');
+              mask-repeat: no-repeat;
+              mask-position: center top;
+              mask-size: 100% 0;
+            }
+            &.background {
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

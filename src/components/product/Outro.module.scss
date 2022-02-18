@@ -1,0 +1,147 @@
+@import '../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  @include backgroundDefaultStyle;
+  padding: 6.25rem 0;
+
+  > .limiter {
+    @include limiter;
+    @include flexCenterStyle;
+    flex-direction: column;
+    text-align: center;
+
+    > .title {
+      color: #fff;
+      font-size: 2.5rem;
+
+      > span {
+        display: block;
+        line-height: 1.5;
+      }
+    }
+
+    > .list {
+      margin-top: 3.75rem;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 51.25rem;
+
+      > li {
+        @include flexCenterStyle;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        max-width: 25rem;
+
+        &:not(:first-child) {
+          margin-left: 1rem;
+        }
+
+        &.buy {
+          &.green {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/buy_icon_green.svg');
+              }
+            }
+          }
+
+          &.blue {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/buy_icon_blue.svg');
+              }
+            }
+          }
+
+          &:hover {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/buy_icon_white.svg');
+              }
+            }
+          }
+        }
+
+        &.order {
+          &.green {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/order_icon_green.svg');
+              }
+            }
+          }
+
+          &.blue {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/order_icon_blue.svg');
+              }
+            }
+          }
+
+          &:hover {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/order_icon_white.svg');
+              }
+            }
+          }
+        }
+
+        > a {
+          width: 100%;
+          display: block;
+          padding: 2.5rem 0;
+          transition: all 0.5s ease;
+
+          &.green {
+            &:hover {
+              background-color: #99c454;
+
+              > p {
+                color: #fff;
+              }
+            }
+          }
+
+          &.blue {
+            &:hover {
+              background-color: #64bae8;
+
+              > p {
+                color: #fff;
+              }
+            }
+          }
+
+          > .icon {
+            @include backgroundDefaultStyle;
+            background-size: contain;
+            width: 3.125rem;
+            height: 3.125rem;
+            margin: auto;
+            transition: all 0.5s ease;
+          }
+
+          > p {
+            padding-top: 0.5rem;
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: all 0.5s ease;
+
+            &.green {
+              color: #004d1c;
+            }
+
+            &.blue {
+              color: #005f9a;
+            }
+          }
+        }
+      }
+    }
+  }
+}
