@@ -10,10 +10,10 @@ import icon01 from '../../../assets/images/csr/water/icon01.png';
 import icon02 from '../../../assets/images/csr/water/icon02.png';
 import icon03 from '../../../assets/images/csr/water/icon03.png';
 import icon04 from '../../../assets/images/csr/water/icon04.png';
-import pdf1 from './Web1_AWS-committee_team.pdf';
-import pdf2 from './Web2_AWS-Water_Stewardship_Plan.pdf';
-import pdf3 from './AWS_CERTIFICATE.pdf';
-import img_sorce from './Web3_AWS-Water_balance_Stewardship_Challenges.jpeg';
+import pdf1 from '../../../assets/files/csr/Web1_AWS-committee_team.pdf';
+import pdf2 from '../../../assets/files/csr/Web2_AWS-Water_Stewardship_Plan.pdf';
+import pdf3 from '../../../assets/files/csr/AWS_CERTIFICATE.pdf';
+import img_sorce from '../../../assets/files/csr/Web3_AWS-Water_balance_Stewardship_Challenges.jpeg';
 
 const cx = classNames.bind(styles);
 
@@ -25,6 +25,7 @@ function Water() {
       <div className={cx('logo')}>
         <img src={logo} alt="" />
       </div>
+
       <div className={cx('limiter')}>
         <h3>Alliance for Water Stewardship</h3>
         <p>
