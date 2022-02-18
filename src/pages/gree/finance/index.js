@@ -1,17 +1,18 @@
+import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './index.module.scss';
 
-import { finance } from '../../../assets/data/finance';
+import { finance, finances } from '../../../assets/data/finance';
 
 import PageTitle from '../../../components/shared/PageTitle';
 
 const cx = classNames.bind(styles);
 
 function Finance() {
-  const numberWithCommas = (string) => {
-    return string.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
+  const [data, setData] = useState(finances);
+
+  const handleChange = (event) => {};
 
   return (
     <div className={cx('container')}>
@@ -19,7 +20,9 @@ function Finance() {
       <div className={cx('selectInner')}>
         <div className={cx('select')}>
           <select>
-            <option>2021 전자공시</option>
+            <option value={2020}>2020 전자공시</option>
+            <option value={2019}>2019 전자공시</option>
+            <option value={2018}>2018 전자공시</option>
           </select>
           <button>확인하기</button>
         </div>
@@ -45,12 +48,12 @@ function Finance() {
                 {finance.map((item, index) => (
                   <li key={index}>
                     <ul>
-                      <li>{item.subject}</li>
+                      <li className={cx({ point: item.point })}>{item.subject}</li>
                       {item.cardinalAfter.map((cardinal, index) => (
-                        <li key={index}>{numberWithCommas(cardinal)}</li>
+                        <li key={index}>{cardinal}</li>
                       ))}
                       {item.cardinalBefore.map((cardinal, index) => (
-                        <li key={index}>{numberWithCommas(cardinal)}</li>
+                        <li key={index}>{cardinal}</li>
                       ))}
                     </ul>
                   </li>

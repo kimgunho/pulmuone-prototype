@@ -42,3 +42,19 @@ ol {
   padding: 0;
   margin: 0;
 }
+
+input {
+  &:focus {
+    outline: 3px solid #8dc63e;
+  }
+}
+textarea {
+  &:focus {
+    outline: 3px solid #8dc63e;
+  }
+}
+select {
+  &:focus {
+    outline: 3px solid #8dc63e;
+  }
+}

@@ -97,31 +97,31 @@ const S04 = () => {
               <span>1</span> 초경량 뚜껑
             </h3>
             <p>
-              기존 자사 제품대비
-              <br />
               플라스틱 사용량 40% 저감
+              <br />
+              (기존 자사 제품 대비)
             </p>
           </div>
           <div className={cx(['feature', 'feat2'])}>
             <img draggable="false" src={mark2} alt="" />
             <h3>
-              <span>2</span> 메론맛 바베큐
+              <span>2</span> 상표띠 제거
             </h3>
             <p>
-              기존 자사 제품대비
+              비닐 사용량 15% 저감
               <br />
-              플라스틱 사용량 40% 저감
+              (기존 제품 1팩 기준)
             </p>
           </div>
           <div className={cx(['feature', 'feat3'])}>
             <img draggable="false" src={mark3} alt="" />
             <h3>
-              <span>3</span> 상어맛 라면
+              <span>3</span> 초경량 용기
             </h3>
             <p>
-              기존 자사 제품대비
+              2L-32.6g / 500mL-11.1g
               <br />
-              플라스틱 사용량 40% 저감
+              (1병 기준)
             </p>
           </div>
         </div>
