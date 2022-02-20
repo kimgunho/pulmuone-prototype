@@ -5,15 +5,15 @@ import styles from './S02.module.scss';
 import water_product01 from '../../../assets/images/product/drinking/s02/water_product01.png';
 import waterHeater_product01 from '../../../assets/images/product/drinking/s02/waterHeater_product01.png';
 import waterHeater_product02 from '../../../assets/images/product/drinking/s02/waterHeater_product02.png';
-import water_detail from '../../../assets/images/product/drinking/s02/detail_image.png';
-import detail_info01 from '../../../assets/images/product/drinking/s02/detail_info01.jpg';
-import detail_info02 from '../../../assets/images/product/drinking/s02/detail_info02.jpg';
-import detail_info03 from '../../../assets/images/product/drinking/s02/detail_info03.jpg';
-import detail_info04 from '../../../assets/images/product/drinking/s02/detail_info04.jpg';
+import bigbottle from '../../../assets/images/product/drinking/s02/bigbottle.png';
+import detail_img01 from '../../../assets/images/product/drinking/s02/detail_img01.jpg';
+import detail_img02 from '../../../assets/images/product/drinking/s02/detail_img02.jpg';
+import detail_img03 from '../../../assets/images/product/drinking/s02/detail_img03.jpg';
+import detail_img04 from '../../../assets/images/product/drinking/s02/detail_img04.jpg';
 
-import Products from '../../../components/shared/Products';
-import Table from '../../../components/shared/Table';
-import Download from '../../../components/shared/Download';
+import Products from '../../../components/product/Products';
+import Table from '../../../components/product/Table';
+import Download from '../../../components/product/Download';
 
 const cx = classNames.bind(styles);
 
@@ -71,33 +71,33 @@ function S02() {
           <h2 className={cx('title')}>‘신선하게, 편리하게’ 풀무원샘물 15L 만의 차별화</h2>
           <div className={cx('info')}>
             <div className={cx('image')}>
-              <img src={water_detail} alt="" />
+              <img src={bigbottle} alt="" />
             </div>
             <div className={cx('inner')}>
               <ul>
                 <li>
-                  <img src={detail_info01} alt="" />
+                  <img src={detail_img01} alt="" />
                   <div className={cx('content')}>
                     <h3>낙수방지캡</h3>
                     <p>물흘림 방지 및 유통과정에서의 외부 오염을 원천 차단하였습니다.</p>
                   </div>
                 </li>
                 <li>
-                  <img src={detail_info02} alt="" />
+                  <img src={detail_img02} alt="" />
                   <div className={cx('content')}>
                     <h3>신선캡</h3>
                     <p>공기 중 미생물을 여과하고 외부 공기를 차단하는 신선캡 적용하여 세균 오염의 걱정이 없습니다.</p>
                   </div>
                 </li>
                 <li>
-                  <img src={detail_info03} alt="" />
+                  <img src={detail_img03} alt="" />
                   <div className={cx('content')}>
                     <h3>병목랩</h3>
                     <p>병목 부분까지 랩으로 감싸 2차 오염을 방지합니다.</p>
                   </div>
                 </li>
                 <li>
-                  <img src={detail_info04} alt="" />
+                  <img src={detail_img04} alt="" />
                   <div className={cx('content')}>
                     <h3>손잡이</h3>
                     <p>편리한 손잡이가 부착된 용기를 개발, 운반 시 편리성과 병목 부분의 위생을 한층 높입니다.</p>

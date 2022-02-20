@@ -8,7 +8,7 @@ import S02 from './S02';
 import S03 from './S03';
 import S04 from './S04';
 import S05 from './S05';
-import Outro from '../../../components/shared/Outro';
+import Outro from '../../../components/product/Outro';
 
 const cx = classNames.bind(styles);
 

@@ -32,6 +32,7 @@
           font-size: 2.25rem;
           line-height: 2;
           position: relative;
+          margin-bottom: 2rem;
 
           &::before {
             content: '';
@@ -55,7 +56,6 @@
         }
 
         > .list {
-          margin-top: 2rem;
           display: flex;
           justify-content: space-between;
 
@@ -65,19 +65,25 @@
             align-items: center;
             justify-content: space-between;
             background-color: #fff;
-            width: 15%;
+            width: 100%;
+            margin-right: 1rem;
             padding: 2.5rem 0;
             border-radius: 1rem;
+
+            &:last-child {
+              margin-right: 0;
+            }
 
             > img {
               height: 100%;
               width: auto;
             }
+
             > p {
               color: #000;
               font-size: 1.125rem;
               font-weight: bold;
-              line-height: 1.5;
+              line-height: 1.8;
               padding-top: 2rem;
             }
           }
@@ -92,14 +98,13 @@
         @include limiter;
 
         > h3 {
-          color: #121212;
-          font-size: 2.75rem;
-          font-weight: bold;
+          @include subTitle;
         }
+
         > p {
           color: #121212;
           font-size: 1.5rem;
-          padding: 3rem;
+          padding: 3rem 0;
         }
 
         > .list {
@@ -130,6 +135,7 @@
             > img {
               height: 21.25rem;
             }
+
             > p {
               color: #121212;
               font-size: 1.25rem;

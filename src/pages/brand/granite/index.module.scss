@@ -20,6 +20,8 @@
             margin-bottom: 7.5rem;
 
             &:last-child {
+              margin-bottom: 0;
+
               > h3 {
                 padding-bottom: 0;
               }
@@ -52,7 +54,6 @@
 
         &.image {
           position: relative;
-          //   height: 137.5rem;
 
           > div {
             @include absoluteFull;

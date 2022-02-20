@@ -11,11 +11,9 @@
     flex-direction: column;
 
     > .title {
-      color: #121212;
-      font-size: 2.75rem;
+      @include subTitle;
       padding-bottom: 3.75rem;
       text-align: center;
-      font-weight: bold;
     }
 
     > video {

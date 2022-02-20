@@ -3,18 +3,12 @@ $breakpoint-mobile: 740px; // mobile
 $breakpoint-tablet: 1280px; // tablet
 $breakpoint-wide-desktop: 1480px; // wide desktop
 
-// font
+// en font
 @mixin fontEn {
   font-family: 'pulmuone-en', 'Noto Sans KR', sans-serif;
 }
 
 // layout mixin
-@mixin subContainer {
-  @include flexCenterStyle;
-  flex-direction: column;
-  padding-bottom: 9.375rem;
-}
-
 @mixin absoluteFull {
   position: absolute;
   left: 0;
@@ -33,15 +27,7 @@ $breakpoint-wide-desktop: 1480px; // wide desktop
   width: 100%;
   max-width: 1440px;
   box-sizing: border-box;
-  transition: all 0.2s ease;
-
-  @include desktop {
-    padding: 0 5rem;
-  }
-
-  @include mobile {
-    padding: 0 2rem;
-  }
+  transition: padding 0.2s ease;
 }
 
 @mixin flexCenterStyle {
@@ -51,25 +37,7 @@ $breakpoint-wide-desktop: 1480px; // wide desktop
 }
 
 // design mixin
-
-@mixin btn {
-  @include flexCenterStyle;
-  padding: 1.625rem 6.25rem;
-  box-sizing: border-box;
-  font-size: 1.5rem;
-  font-weight: bold;
-  width: fit-content;
-  margin: 3.125rem 0;
-}
-
-@mixin subTitle {
-  font-size: 2.75rem;
-  font-weight: bold;
-  color: #212121;
-  padding-bottom: 3.75rem;
-}
-
-@mixin mainBtn {
+@mixin homeBtn {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -89,10 +57,25 @@ $breakpoint-wide-desktop: 1480px; // wide desktop
   }
 }
 
-@mixin selectIcon {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+@mixin btn {
+  @include flexCenterStyle;
+  padding: 1.625rem 6.25rem;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: fit-content;
+  margin: 3.125rem 0;
+}
 
+@mixin subTitle {
+  font-size: 2.75rem;
+  font-weight: bold;
+  color: #212121;
+  line-height: 1.5;
+}
+
+@mixin selectIcon {
+  appearance: none;
   background-image: linear-gradient(45deg, transparent 50%, #999 50%), linear-gradient(135deg, #999 50%, transparent 50%),
     linear-gradient(to right, #fff, #fff);
   background-position: calc(100% - 20px) calc(1em + 8px), calc(100% - 15px) calc(1em + 8px), 100% 0;
@@ -102,18 +85,11 @@ $breakpoint-wide-desktop: 1480px; // wide desktop
   &::-ms-expand {
     display: none;
   }
-
-  @include mobile {
-    background-position: calc(100% - 20px) calc(1em + 4px), calc(100% - 15px) calc(1em + 4px), 100% 0;
-  }
 }
 
 @mixin selectIconDown {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
-
-  background: url('./assets//images/shared/select_down_icon.svg') no-repeat 97% 50%/15px auto;
+  background: url('./assets/images/shared/select_down_icon.svg') no-repeat 97% 50%/15px auto;
 
   &::-ms-expand {
     display: none;
@@ -121,7 +97,6 @@ $breakpoint-wide-desktop: 1480px; // wide desktop
 }
 
 // responsive size
-
 @mixin desktop {
   @media screen and (max-width: $breakpoint-wide-desktop) {
     @content;
@@ -136,12 +111,6 @@ $breakpoint-wide-desktop: 1480px; // wide desktop
 
 @mixin mobile {
   @media screen and (max-width: #{$breakpoint-mobile}) {
-    @content;
-  }
-}
-
-@mixin mobileIphoneSe {
-  @media screen and (max-width: 320px) {
     @content;
   }
 }

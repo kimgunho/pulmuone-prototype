@@ -4,6 +4,7 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
+import { onEmailCheck, onlyNumberKeyPress } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
@@ -42,6 +43,10 @@ function General({ agree }) {
 
     if (emailId === '' || emailDetail === '') {
       alert('이메일을 작성해주세요.');
+      return;
+    }
+
+    if (onEmailCheck(emailDetail)) {
       return;
     }
 
@@ -88,7 +93,9 @@ function General({ agree }) {
     data.append('product', formData.product);
     data.append('store', formData.store);
     data.append('content', formData.content);
-    data.append('file', formData.file);
+    if (formData.file !== null) {
+      data.append('file', formData.file);
+    }
     axios
       .post('https://pulmuone.console.flyground.co.kr/api/qna/general', data, {
         headers: {
@@ -115,6 +122,7 @@ function General({ agree }) {
 
   const onChangeFile = (event) => {
     const { files } = event.target;
+
     fileNameRef.current.innerText = files[0].name;
 
     setFormdata((prev) => ({
@@ -145,11 +153,35 @@ function General({ agree }) {
             <li>
               <h4 className={cx(['title', 'required'])}>휴대전화</h4>
               <div className={cx(['box', 'background'])}>
-                <input name="mobile1" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="010" maxLength={3} />
+                <input
+                  name="mobile1"
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="010"
+                  maxLength={3}
+                  onKeyPress={onlyNumberKeyPress}
+                />
                 <p className={cx('connect')}>-</p>
-                <input name="mobile2" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
+                <input
+                  name="mobile2"
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="0000"
+                  maxLength={4}
+                  onKeyPress={onlyNumberKeyPress}
+                />
                 <p className={cx('connect')}>-</p>
-                <input name="mobile3" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
+                <input
+                  name="mobile3"
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="0000"
+                  maxLength={4}
+                  onKeyPress={onlyNumberKeyPress}
+                />
               </div>
             </li>
             <li>

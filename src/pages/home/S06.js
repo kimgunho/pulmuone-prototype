@@ -28,7 +28,7 @@ function S06() {
             <br />
             국내 먹는샘물 업계 최초로 AWS certification 인증을 획득했습니다.{' '}
           </p>
-          <Link to={links.home}>제품 보러가기</Link>
+          <Link to={links.brand_quality}>제품 보러가기</Link>
         </div>
         <div className={cx('logo')}>
           <img draggable="false" src={aws} alt="" />

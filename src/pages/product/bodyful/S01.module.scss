@@ -2,10 +2,7 @@
 
 .container {
   @include backgroundDefaultStyle;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
+  @include flexCenterStyle;
   height: 50rem;
   position: relative;
   overflow: hidden;
@@ -13,17 +10,15 @@
   > .limiter {
     @include limiter;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     position: relative;
     height: 100%;
 
     > .title {
+      @include subTitle;
       color: #fff;
-      font-size: 2.75rem;
       padding-top: 6.25rem;
-      font-weight: bold;
     }
 
     > .text {
@@ -39,37 +34,36 @@
 
       > img {
         position: absolute;
-        transform: translate(0, -50%);
 
         &.left {
           width: 100%;
           max-width: 14rem;
           left: 0;
-          top: 50%;
+          top: 30%;
         }
 
         &.right {
           width: 100%;
           max-width: 18.75rem;
           right: 0;
-          top: 70%;
+          top: 50%;
         }
 
         &.ca {
           left: 24%;
-          top: 62%;
+          top: 38%;
         }
 
         &.mg {
           right: 28%;
-          top: 80%;
+          top: 65%;
           z-index: 3;
         }
       }
     }
   }
 
-  > .bodyful {
+  > .bottle {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -81,7 +75,7 @@
   @include flexCenterStyle;
   flex-direction: column;
   background-color: #003665;
-  padding: 4.68rem 0;
+  padding: 5rem 0;
 
   > p {
     padding-bottom: 0.5rem;

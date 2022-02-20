@@ -8,10 +8,9 @@
   > .limiter {
     @include limiter;
     @include flexCenterStyle;
-    flex-direction: column;
-    background-position: center center;
-    background-repeat: no-repeat;
+    @include backgroundDefaultStyle;
     background-size: contain;
+    flex-direction: column;
 
     > .title {
       padding-top: 2rem;
@@ -59,9 +58,8 @@
         flex-direction: column;
 
         > .rank {
+          @include backgroundDefaultStyle;
           background-image: url('../../../assets/images/product/bodyful/s03/prize_background.png');
-          background-position: center center;
-          background-repeat: no-repeat;
           background-size: contain;
           width: 6.25rem;
           height: 6.25rem;

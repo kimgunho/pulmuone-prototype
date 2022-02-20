@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import styles from './index.module.scss';
 
@@ -11,7 +10,6 @@ import background from '../../../assets/images/brand/granite/background.jpg';
 import draw from '../../../assets/images/brand/granite/draw.png';
 
 const cx = classNames.bind(styles);
-gsap.registerPlugin(ScrollTrigger);
 
 function Granite() {
   const imageRef = useRef();

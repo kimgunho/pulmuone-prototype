@@ -6,7 +6,7 @@ import styles from './CheckMyEmail.module.scss';
 
 const cx = classNames.bind(styles);
 
-function CheckMyEmail({ setData }) {
+function CheckMyEmail({ setData, setEmail }) {
   const [mail, setMail] = useState({
     mailId: '',
     mailDetail: '',
@@ -44,6 +44,7 @@ function CheckMyEmail({ setData }) {
           return;
         } else {
           sessionStorage.setItem('email', `${mail.mailId}@${mail.mailDetail}`);
+          setEmail(sessionStorage.getItem('email'));
           setData(res.data.data);
         }
       })

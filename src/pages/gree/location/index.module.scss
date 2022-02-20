@@ -3,13 +3,15 @@
 .container {
   > .section {
     @include flexCenterStyle;
-    width: 100%;
     padding: 6.25rem 0;
 
     > .limiter {
+      @include flexCenterStyle;
       @include limiter;
+      flex-direction: column;
 
       > .map {
+        width: 100%;
         height: 36.25rem;
 
         > iframe {
@@ -20,9 +22,8 @@
       }
 
       > .info {
+        width: 100%;
         display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
         padding-top: 3.125rem;
 
         > div {
@@ -36,7 +37,6 @@
             .flex {
               display: flex;
               justify-content: space-between;
-              align-items: flex-start;
 
               > div {
                 &.left {
@@ -71,6 +71,7 @@
                 font-size: 1.5rem;
                 padding-bottom: 0.5rem;
               }
+
               p {
                 font-size: 1.5rem;
                 color: #212121;

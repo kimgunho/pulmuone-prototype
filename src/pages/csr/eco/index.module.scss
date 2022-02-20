@@ -3,12 +3,10 @@
 .container {
   @include flexCenterStyle;
   flex-direction: column;
-  padding-bottom: 0;
 
   > .section {
     @include flexCenterStyle;
     width: 100%;
-    flex-direction: column;
     padding: 6.25rem 0;
 
     &:nth-child(2) {

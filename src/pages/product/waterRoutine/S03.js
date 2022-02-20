@@ -2,14 +2,14 @@ import classNames from 'classnames/bind';
 
 import styles from './S03.module.scss';
 
-import time_icon01 from '../../../assets/images/product/routine/s03/time_icon01.svg';
-import time_icon02 from '../../../assets/images/product/routine/s03/time_icon02.svg';
-import time_icon03 from '../../../assets/images/product/routine/s03/time_icon03.svg';
-import time_icon04 from '../../../assets/images/product/routine/s03/time_icon04.svg';
-import time_icon05 from '../../../assets/images/product/routine/s03/time_icon05.svg';
-import time_icon06 from '../../../assets/images/product/routine/s03/time_icon06.svg';
-import time_icon07 from '../../../assets/images/product/routine/s03/time_icon07.svg';
-import time_icon08 from '../../../assets/images/product/routine/s03/time_icon08.svg';
+import icon01 from '../../../assets/images/product/routine/s03/time_icon01.svg';
+import icon02 from '../../../assets/images/product/routine/s03/time_icon02.svg';
+import icon03 from '../../../assets/images/product/routine/s03/time_icon03.svg';
+import icon04 from '../../../assets/images/product/routine/s03/time_icon04.svg';
+import icon05 from '../../../assets/images/product/routine/s03/time_icon05.svg';
+import icon06 from '../../../assets/images/product/routine/s03/time_icon06.svg';
+import icon07 from '../../../assets/images/product/routine/s03/time_icon07.svg';
+import icon08 from '../../../assets/images/product/routine/s03/time_icon08.svg';
 
 const cx = classNames.bind(styles);
 
@@ -18,46 +18,46 @@ function S03() {
     <div className={cx('container')}>
       <div className={cx('limiter')}>
         <h2 className={cx('title')}>건강한 수분 습관, 왜 중요할까요?</h2>
-        <div className={cx('timeline')}>
+        <div className={cx('row')}>
           <ul>
             <li>
               <p className={cx('time')}>AM 07:00</p>
-              <img src={time_icon01} alt="" />
+              <img src={icon01} alt="" />
               <p className={cx('text')}>기상시</p>
             </li>
             <li>
               <p className={cx('time')}>AM 10:00</p>
-              <img src={time_icon02} alt="" />
+              <img src={icon02} alt="" />
               <p className={cx('text')}>아침 휴식 중</p>
             </li>
             <li>
               <p className={cx('time')}>AM 12:00</p>
-              <img src={time_icon03} alt="" />
+              <img src={icon03} alt="" />
               <p className={cx('text')}>점심시간에</p>
             </li>
             <li>
               <p className={cx('time')}>PM 02:00</p>
-              <img src={time_icon04} alt="" />
+              <img src={icon04} alt="" />
               <p className={cx('text')}>커피 마시면서</p>
             </li>
             <li>
               <p className={cx('time')}>PM 04:00</p>
-              <img src={time_icon05} alt="" />
+              <img src={icon05} alt="" />
               <p className={cx('text')}>오후에</p>
             </li>
             <li>
               <p className={cx('time')}>PM 07:00</p>
-              <img src={time_icon06} alt="" />
+              <img src={icon06} alt="" />
               <p className={cx('text')}>집에도착</p>
             </li>
             <li>
               <p className={cx('time')}>PM 09:00</p>
-              <img src={time_icon07} alt="" />
+              <img src={icon07} alt="" />
               <p className={cx('text')}>저녁</p>
             </li>
             <li>
               <p className={cx('time')}>PM 11:00</p>
-              <img src={time_icon08} alt="" />
+              <img src={icon08} alt="" />
               <p className={cx('text')}>잠자기 전</p>
             </li>
           </ul>

@@ -7,7 +7,7 @@ import leaf_left from '../../../assets/images/product/routine/s01/leaf_left.png'
 import leaf_right from '../../../assets/images/product/routine/s01/leaf_right.png';
 import bubble_left from '../../../assets/images/product/routine/s01/bubble_left.png';
 import bubble_right from '../../../assets/images/product/routine/s01/bubble_right.png';
-import routine from '../../../assets/images/product/routine/s01/routine.png';
+import bottle from '../../../assets/images/product/routine/s01/bottle.png';
 
 const cx = classNames.bind(styles);
 
@@ -31,7 +31,7 @@ function S01() {
           <img className={cx('bubbleRight')} src={bubble_right} alt="" />
         </div>
 
-        <img draggable="false" className={cx('routine')} src={routine} alt="" />
+        <img draggable="false" className={cx('bottle')} src={bottle} alt="" />
       </div>
       <div className={cx('inner')}>
         <p>물은 우리 몸의 절반 이상을 구성하고 인체에서 가장 중요한 역할을 하는 만큼 건강한 수분 섭취 또한 매우 중요합니다.</p>

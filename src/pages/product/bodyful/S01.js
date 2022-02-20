@@ -3,11 +3,11 @@ import classNames from 'classnames/bind';
 import styles from './S01.module.scss';
 
 import background from '../../../assets/images/product/bodyful/s01/background.jpg';
-import ca_text from '../../../assets/images/product/bodyful/s01/ca.png';
-import mg_text from '../../../assets/images/product/bodyful/s01/mg.png';
+import ca from '../../../assets/images/product/bodyful/s01/ca.png';
+import mg from '../../../assets/images/product/bodyful/s01/mg.png';
 import bubble_left from '../../../assets/images/product/bodyful/s01/bubble_left.png';
 import bubble_right from '../../../assets/images/product/bodyful/s01/bubble_right.png';
-import bodyful from '../../../assets/images/product/bodyful/s01/bodyful.png';
+import bottle from '../../../assets/images/product/bodyful/s01/bodyful.png';
 
 const cx = classNames.bind(styles);
 
@@ -25,12 +25,12 @@ function S01() {
           <div className={cx('objects')}>
             <img className={cx('left')} src={bubble_left} alt="" />
             <img className={cx('right')} src={bubble_right} alt="" />
-            <img className={cx('ca')} src={ca_text} alt="" />
-            <img className={cx('mg')} src={mg_text} alt="" />
+            <img className={cx('ca')} src={ca} alt="" />
+            <img className={cx('mg')} src={mg} alt="" />
           </div>
         </div>
 
-        <img draggable="false" className={cx('bodyful')} src={bodyful} alt="" />
+        <img draggable="false" className={cx('bottle')} src={bottle} alt="" />
       </div>
       <div className={cx('inner')}>
         <p>바디풀은 인공 성분을 첨가하지 않고 천연 미네랄 함량만을 조절한 미네랄 밸런스 워터입니다.</p>

@@ -6,7 +6,7 @@ import PageTitle from '../../../components/shared/PageTitle';
 import S01 from './S01';
 import S02 from './S02';
 import S03 from './S03';
-import Outro from '../../../components/shared/Outro';
+import Outro from '../../../components/product/Outro';
 
 const cx = classNames.bind(styles);
 
