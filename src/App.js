@@ -13,6 +13,7 @@ import Brand from './pages/brand';
 import CSR from './pages/csr';
 import Gree from './pages/gree';
 import Service from './pages/service';
+import MyQnaDetail from './pages/service/myQna/View';
 import Product from './pages/product';
 import Privacy from './pages/privacy';
 import NotPage from './components/shared/NotPage';
@@ -39,6 +40,7 @@ function App() {
           <Route path={links.csr} element={<CSR />} />
           <Route path={links.gree} element={<Gree />} />
           <Route path={links.service} element={<Service />} />
+          <Route path={links.service_my_qna_Detail} element={<MyQnaDetail />} />
           <Route path={links.product} element={<Product />} />
           <Route path={links.privacy} element={<Privacy />} />
           <Route path={links.notPage} element={<NotPage />} />

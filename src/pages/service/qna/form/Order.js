@@ -4,6 +4,7 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
+import { onEmailCheck, onlyNumberKeyPress } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
@@ -36,13 +37,12 @@ function Order({ agree }) {
       return;
     }
 
-    if (emailId === '') {
-      alert('이메일 아이디를 작성해주세요.');
+    if (emailId === '' || emailDetail === '') {
+      alert('이메일을 작성해주세요.');
       return;
     }
 
-    if (emailDetail === '') {
-      alert('이메일 뒷자리를 작성해주세요.');
+    if (onEmailCheck(emailDetail)) {
       return;
     }
 
@@ -127,11 +127,35 @@ function Order({ agree }) {
             <li>
               <h4 className={cx(['title', 'required'])}>휴대전화</h4>
               <div className={cx(['box', 'background'])}>
-                <input name="mobile1" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="010" maxLength={3} />
+                <input
+                  name="mobile1"
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="010"
+                  maxLength={3}
+                  onKeyPress={onlyNumberKeyPress}
+                />
                 <p className={cx('connect')}>-</p>
-                <input name="mobile2" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
+                <input
+                  name="mobile2"
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="0000"
+                  maxLength={4}
+                  onKeyPress={onlyNumberKeyPress}
+                />
                 <p className={cx('connect')}>-</p>
-                <input name="mobile3" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
+                <input
+                  name="mobile3"
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="0000"
+                  maxLength={4}
+                  onKeyPress={onlyNumberKeyPress}
+                />
               </div>
             </li>
             <li>

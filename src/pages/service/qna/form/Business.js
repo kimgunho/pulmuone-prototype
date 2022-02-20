@@ -4,6 +4,7 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
+import { onEmailCheck, onlyNumberKeyPress } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
@@ -37,13 +38,12 @@ function Business({ agree }) {
       return;
     }
 
-    if (emailId === '') {
-      alert('이메일 아이디를 작성해주세요.');
+    if (emailId === '' || emailDetail === '') {
+      alert('이메일을 작성해주세요.');
       return;
     }
 
-    if (emailDetail === '') {
-      alert('이메일 뒷자리를 작성해주세요.');
+    if (onEmailCheck(emailDetail)) {
       return;
     }
 
@@ -168,6 +168,7 @@ function Business({ agree }) {
                   type="text"
                   placeholder="010"
                   maxLength={3}
+                  onKeyPress={onlyNumberKeyPress}
                 />
                 <p className={cx('connect')}>-</p>
                 <input
@@ -177,6 +178,7 @@ function Business({ agree }) {
                   type="text"
                   placeholder="0000"
                   maxLength={4}
+                  onKeyPress={onlyNumberKeyPress}
                 />
                 <p className={cx('connect')}>-</p>
                 <input
@@ -186,13 +188,22 @@ function Business({ agree }) {
                   type="text"
                   placeholder="0000"
                   maxLength={4}
+                  onKeyPress={onlyNumberKeyPress}
                 />
               </div>
             </li>
             <li>
               <h4 className={cx('title')}>일반전화</h4>
               <div className={cx(['box', 'background'])}>
-                <input name={'phone1'} onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="010" maxLength={3} />
+                <input
+                  name={'phone1'}
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="010"
+                  maxLength={3}
+                  onKeyPress={onlyNumberKeyPress}
+                />
                 <p className={cx('connect')}>-</p>
                 <input
                   name={'phone2'}
@@ -201,6 +212,7 @@ function Business({ agree }) {
                   type="text"
                   placeholder="0000"
                   maxLength={4}
+                  onKeyPress={onlyNumberKeyPress}
                 />
                 <p className={cx('connect')}>-</p>
                 <input
@@ -210,6 +222,7 @@ function Business({ agree }) {
                   type="text"
                   placeholder="0000"
                   maxLength={4}
+                  onKeyPress={onlyNumberKeyPress}
                 />
               </div>
             </li>
