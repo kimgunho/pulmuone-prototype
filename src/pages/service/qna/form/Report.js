@@ -95,14 +95,6 @@ function Report({ agree }) {
               <h4 className={cx(['title', 'required'])}>이름</h4>
               <div className={cx('box')}>
                 <input name="name" onChange={onChange} className={cx('text')} type="text" placeholder="이름을 작성해주세요" />
-                {/* 사용성이 애매해서 혹시몰라 주석처리 */}
-                {/* <div className={cx('anonymous')}>
-                  <input type="checkbox" id="anonymous" />
-                  <label onClick={onClick} htmlFor="anonymous" className={cx(['anonymousLabel', { active: anonymous }])}>
-                    <span></span>
-                    <p>익명 제보</p>
-                  </label>
-                </div> */}
               </div>
             </li>
             <li>

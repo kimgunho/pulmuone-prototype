@@ -10,3 +10,9 @@ export const onEmailCheck = (email) => {
     return true;
   }
 };
+
+export const onlyNumberKeyPress = (event) => {
+  if (!/[0-9]/.test(event.key)) {
+    event.preventDefault();
+  }
+};

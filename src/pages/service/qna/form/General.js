@@ -4,7 +4,7 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
-import { onEmailCheck } from '../../../../util/regular';
+import { onEmailCheck, onlyNumberKeyPress } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
@@ -153,11 +153,35 @@ function General({ agree }) {
             <li>
               <h4 className={cx(['title', 'required'])}>휴대전화</h4>
               <div className={cx(['box', 'background'])}>
-                <input name="mobile1" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="010" maxLength={3} />
+                <input
+                  name="mobile1"
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="010"
+                  maxLength={3}
+                  onKeyPress={onlyNumberKeyPress}
+                />
                 <p className={cx('connect')}>-</p>
-                <input name="mobile2" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
+                <input
+                  name="mobile2"
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="0000"
+                  maxLength={4}
+                  onKeyPress={onlyNumberKeyPress}
+                />
                 <p className={cx('connect')}>-</p>
-                <input name="mobile3" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
+                <input
+                  name="mobile3"
+                  onChange={onChange}
+                  className={cx(['text', 'center'])}
+                  type="text"
+                  placeholder="0000"
+                  maxLength={4}
+                  onKeyPress={onlyNumberKeyPress}
+                />
               </div>
             </li>
             <li>
