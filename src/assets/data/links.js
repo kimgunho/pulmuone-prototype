@@ -16,7 +16,7 @@ export const links = {
   service_fnq: '/service/fnq',
   service_qna: '/service/qna',
   service_my_qna: '/service/myqna',
-  service_my_qna_Detail: '/service/myqna/:id',
+  service_my_qna_Detail: '/service/myqna/:type/:id',
   product: '/product/:sub',
   product_spring_water: '/product/spring-water',
   product_bodyful: '/product/bodyful',
