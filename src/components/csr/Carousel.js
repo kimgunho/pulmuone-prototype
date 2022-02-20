@@ -12,7 +12,7 @@ import arrow_right_icon from '../../assets/images/shared/arrow-next.svg';
 
 const cx = classNames.bind(styles);
 
-function Carousel({ images, slidesPerView, section }) {
+const Carousel = ({ images, slidesPerView, section }) => {
   const [pager, setPager] = useState(null);
   const paginationRef = useRef();
 
@@ -56,6 +56,6 @@ function Carousel({ images, slidesPerView, section }) {
       </div>
     </div>
   );
-}
+};
 
 export default Carousel;

@@ -1,0 +1,82 @@
+@import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  background-image: radial-gradient(#1d5585, #00325d);
+  padding: 6.25rem 0;
+
+  > .limiter {
+    @include limiter;
+    @include flexCenterStyle;
+    @include backgroundDefaultStyle;
+    background-size: contain;
+    flex-direction: column;
+
+    > .title {
+      padding-top: 2rem;
+      text-align: center;
+      color: white;
+      font-size: 2.75rem;
+      font-weight: bold;
+
+      > span {
+        display: block;
+        font-weight: normal;
+
+        &.sub {
+          font-size: 2rem;
+          padding-bottom: 0.5rem;
+        }
+        &.from {
+          font-size: 1.25rem;
+          padding-top: 1rem;
+        }
+      }
+    }
+    > .sector {
+      @include flexCenterStyle;
+      width: fit-content;
+      padding: 0.375rem 7.5rem;
+      color: #f2cc63;
+      font-size: 2.125rem;
+      border-radius: 2rem;
+      background-color: #003665;
+      margin: 4.375rem 0 3.75rem 0;
+      font-weight: bold;
+    }
+    > .prize {
+      @include flexCenterStyle;
+      width: 100%;
+      max-width: 48.75rem;
+      margin-bottom: 2rem;
+
+      > li {
+        @include flexCenterStyle;
+        flex-direction: column;
+
+        > .rank {
+          @include backgroundDefaultStyle;
+          background-image: url('../../../assets/images/products/bodyful/s03/prize_background.png');
+          background-size: contain;
+          width: 6.25rem;
+          height: 6.25rem;
+          font-size: 2.25rem;
+          font-weight: bold;
+          color: #f2cc63;
+          text-align: center;
+          line-height: 6.25rem;
+        }
+        > .text {
+          color: #f2cc63;
+          font-size: 1.875rem;
+          font-weight: bold;
+          margin: 0.5rem 0 1.875rem 0;
+        }
+        > img {
+          width: 100%;
+          transform: translate(8%, 0);
+        }
+      }
+    }
+  }
+}

@@ -1,60 +1,44 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 import styles from './Header.module.scss';
-import { links } from '../../assets/data/links';
-import { gnb_left, gnb_right } from '../../assets/data/gnb';
-
-import desktop_logo from '../../assets/images/shared/desktop_logo.svg';
-import mobile_logo from '../../assets/images/shared/pulmuone_title.png';
-
-import MobileBtn from './MobileBtn';
-import Dimmed from './Dimmed';
+import desktopLogo from '../../assets/images/shared/desktop_logo.svg';
 
 const cx = classNames.bind(styles);
 
-function Header({ width }) {
-  const [clicked, setClick] = useState(false);
-
-  const handleCloseNav = () => {
-    setClick(false);
-  };
-
+const Header = () => {
   return (
-    <>
-      <header className={cx('header')}>
-        <div className={cx('limiter')}>
-          <h1 className={cx('logo')}>
-            <Link to={links.home}>
-              <img src={width > 740 ? desktop_logo : mobile_logo} alt="풀무원 샘물" />
-            </Link>
-          </h1>
-
-          <MobileBtn clicked={clicked} setClick={setClick} />
-
-          <div className={cx(['inner', { active: clicked }])}>
-            <ul className={cx('gnb')}>
-              {gnb_left.map(({ title, link }, index) => (
-                <li onClick={handleCloseNav} key={index}>
-                  <Link to={link}>{title}</Link>
-                </li>
-              ))}
-            </ul>
-
-            <ul className={cx('gnb')}>
-              {gnb_right.map(({ title, link }, index) => (
-                <li onClick={handleCloseNav} key={index}>
-                  <Link to={link}>{title}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <header className={cx('container')}>
+      <div className={cx('wrapper')}>
+        <h1 className={cx('logo')}>
+          <Link to="/">
+            <img src={desktopLogo} alt="풀무원샘물" />
+          </Link>
+        </h1>
+        <div className={cx('inner')}>
+          <ul className={cx('menus')}>
+            <li>
+              <Link to="/브랜드-스토리/대보-화강암">브랜드 스토리</Link>
+            </li>
+            <li>
+              <Link to="/제품안내/풀무원샘물">제품안내</Link>
+            </li>
+          </ul>
+          <ul className={cx('menus')}>
+            <li>
+              <Link to="/CSR/수자원-보호">CSR</Link>
+            </li>
+            <li>
+              <Link to="/고객센터/자주묻는질문">고객센터</Link>
+            </li>
+            <li>
+              <Link to="/회사소개/풀무원샘물">회사소개</Link>
+            </li>
+          </ul>
         </div>
-      </header>
-      <Dimmed clicked={clicked} />
-    </>
+      </div>
+    </header>
   );
-}
+};
 
 export default Header;

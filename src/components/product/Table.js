@@ -4,7 +4,7 @@ import styles from './Table.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Table({ table }) {
+const Table = ({ table }) => {
   return (
     <div className={cx(['table', table.color === 'green' ? 'green' : 'blue'])}>
       <h3 className={cx('title')}>{table.title}</h3>
@@ -34,6 +34,6 @@ function Table({ table }) {
       </ul>
     </div>
   );
-}
+};
 
 export default Table;
