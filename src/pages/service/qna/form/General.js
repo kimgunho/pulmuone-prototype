@@ -4,6 +4,7 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
+import { onEmailCheck } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
@@ -42,6 +43,10 @@ function General({ agree }) {
 
     if (emailId === '' || emailDetail === '') {
       alert('이메일을 작성해주세요.');
+      return;
+    }
+
+    if (onEmailCheck(emailDetail)) {
       return;
     }
 
@@ -88,7 +93,9 @@ function General({ agree }) {
     data.append('product', formData.product);
     data.append('store', formData.store);
     data.append('content', formData.content);
-    data.append('file', formData.file);
+    if (formData.file !== null) {
+      data.append('file', formData.file);
+    }
     axios
       .post('https://pulmuone.console.flyground.co.kr/api/qna/general', data, {
         headers: {
@@ -115,6 +122,7 @@ function General({ agree }) {
 
   const onChangeFile = (event) => {
     const { files } = event.target;
+
     fileNameRef.current.innerText = files[0].name;
 
     setFormdata((prev) => ({

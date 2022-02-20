@@ -4,6 +4,7 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
+import { onEmailCheck } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
@@ -37,13 +38,12 @@ function Business({ agree }) {
       return;
     }
 
-    if (emailId === '') {
-      alert('이메일 아이디를 작성해주세요.');
+    if (emailId === '' || emailDetail === '') {
+      alert('이메일을 작성해주세요.');
       return;
     }
 
-    if (emailDetail === '') {
-      alert('이메일 뒷자리를 작성해주세요.');
+    if (onEmailCheck(emailDetail)) {
       return;
     }
 
