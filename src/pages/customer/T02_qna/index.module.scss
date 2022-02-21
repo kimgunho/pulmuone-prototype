@@ -37,13 +37,13 @@
         cursor: pointer;
 
         > .box {
-          width: 2.5rem;
-          height: 2.5rem;
+          @include flexCenterStyle;
+          width: 2.4rem;
+          height: 2.4rem;
           background-color: white;
-
-          &.agree {
-            background-color: $tint-color-1;
-          }
+          color: $tint-color-1;
+          font-size: 1.8rem;
+          border: 1px solid $tint-color-1;
         }
         > p {
           font-size: 1.4rem;
