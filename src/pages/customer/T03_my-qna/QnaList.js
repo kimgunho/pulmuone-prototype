@@ -11,12 +11,12 @@ const QnaList = ({ data }) => {
     switch (type) {
       case 'general':
         return '제품, 배송, 기타 문의';
+      case 'business':
+        return '가맹점 사업 신청';
       case 'order':
         return '가맹점 주문 문의';
       case 'cleaning':
         return '냉온수기 세척 신청';
-      case 'business':
-        return '가맹점 사업 신청, 문의';
       case 'report':
         return '부정 제보';
       default:

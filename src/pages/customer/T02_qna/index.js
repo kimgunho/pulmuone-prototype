@@ -37,9 +37,9 @@ const Qna = () => {
           <h3 className={cx('title')}>문의유형</h3>
           <select onChange={(e) => setFormType(e.target.value)}>
             <option value="general">1. 제품, 배송, 기타 문의</option>
-            <option value="order">2. 가맹점 주문 문의</option>
-            <option value="cleaning">3. 냉온수기 세척 신청</option>
-            <option value="business">4. 가맹점 사업 신청, 문의</option>
+            <option value="business">2. 가맹점 사업 신청</option>
+            <option value="order">3. 가맹점 주문 문의</option>
+            <option value="cleaning">4. 냉온수기 세척 신청</option>
             <option value="report">5. 부정 제보</option>
           </select>
         </div>
