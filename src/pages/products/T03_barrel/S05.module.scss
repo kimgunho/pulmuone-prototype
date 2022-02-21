@@ -1,0 +1,34 @@
+@import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  padding: 6rem 0;
+
+  > .limiter {
+    @include limiter;
+    @include flexCenterStyle;
+    flex-direction: column;
+
+    > .box {
+      margin-top: 6rem;
+    }
+    > .precautions {
+      display: flex;
+      padding: 2rem 4rem;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+      border-radius: 1rem;
+
+      > h3 {
+        font-size: 1.6rem;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      > p {
+        margin-left: 4rem;
+        font-size: 1.4rem;
+        line-height: 1.8;
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+$tint-color-1: #8dc63e;
+$tint-color-2: #bed730;
+$accent-color: #06542c;
+$face-color: #f5f3ef;
+
+// Font
+@mixin fontEn {
+  font-family: 'pulmuone-en', 'Noto Sans KR', sans-serif;
+}
+
+// Layout
+@mixin absoluteFill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+@mixin limiter {
+  width: 100%;
+  max-width: 1440px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  box-sizing: border-box;
+  transition: padding 0.2s ease;
+}
+
+@mixin backgroundDefaultStyle {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin flexCenterStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Design
+@mixin homeBtn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 1;
+  position: relative;
+  font-size: 1.75rem;
+  padding: 1.5rem 8rem 1.5rem 1.8rem;
+  width: fit-content;
+  transition: all 0.2s ease-in-out;
+
+  &::after {
+    content: '〉';
+    font-size: 1.75rem;
+    right: 1.8rem;
+    line-height: 1;
+    position: absolute;
+  }
+}
+
+@mixin btn {
+  @include flexCenterStyle;
+  padding: 1.625rem 6.25rem;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-weight: bold;
+  width: fit-content;
+  margin: 3rem 0;
+}
+
+@mixin sectionTitle {
+  font-size: 2.6rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+@mixin dropDownIcon {
+  appearance: none;
+  background: url('./assets/images/shared/select_down_icon.svg') no-repeat 97% 50%/15px auto;
+
+  &::-ms-expand {
+    display: none;
+  }
+}

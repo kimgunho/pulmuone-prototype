@@ -1,0 +1,47 @@
+@import '../../common.scss';
+
+.container {
+  background-color: white;
+  padding: 4rem;
+
+  > h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  > ul > li {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    font-weight: lighter;
+  }
+  > p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    font-weight: lighter;
+  }
+  span {
+    display: block;
+    margin-left: 1rem;
+  }
+  table {
+    margin-top: 1rem;
+    width: 100%;
+    border-top: 2px solid black;
+
+    > thead {
+      background-color: #eee;
+      font-weight: bold;
+    }
+    td {
+      font-size: 1.4rem;
+      font-weight: lighter;
+      border-bottom: 1px solid gray;
+      padding: 0.8rem;
+    }
+  }
+}

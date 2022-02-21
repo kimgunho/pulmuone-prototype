@@ -1,0 +1,137 @@
+@import '../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  @include backgroundDefaultStyle;
+  padding: 6rem 0;
+
+  > .limiter {
+    @include limiter;
+    @include flexCenterStyle;
+    flex-direction: column;
+    text-align: center;
+
+    > .title {
+      color: white;
+      font-size: 2.6rem;
+
+      > span {
+        display: block;
+        line-height: 1.5;
+      }
+    }
+    > .list {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 52rem;
+
+      > li {
+        @include flexCenterStyle;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        max-width: 24rem;
+
+        &:not(:first-child) {
+          margin-left: 1rem;
+        }
+        &.buy {
+          cursor: pointer;
+
+          &.green {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/buy_icon_green.svg');
+              }
+            }
+          }
+          &.blue {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/buy_icon_blue.svg');
+              }
+            }
+          }
+          &:hover {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/buy_icon_white.svg');
+              }
+            }
+          }
+        }
+        &.order {
+          &.green {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/order_icon_green.svg');
+              }
+            }
+          }
+          &.blue {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/order_icon_blue.svg');
+              }
+            }
+          }
+          &:hover {
+            > a {
+              > .icon {
+                background-image: url('../../assets/images/shared/order_icon_white.svg');
+              }
+            }
+          }
+        }
+        > a {
+          width: 100%;
+          display: block;
+          padding: 2.4rem 0;
+          transition: all 0.2s ease;
+
+          &.green {
+            &:hover {
+              background-color: $tint-color-1;
+
+              > p {
+                color: white;
+              }
+            }
+          }
+          &.blue {
+            &:hover {
+              background-color: #64bae8;
+
+              > p {
+                color: white;
+              }
+            }
+          }
+          > .icon {
+            @include backgroundDefaultStyle;
+            background-size: contain;
+            width: 3rem;
+            height: 3rem;
+            margin: auto;
+            transition: all 0.2s ease;
+          }
+          > p {
+            padding-top: 0.5rem;
+            font-weight: bold;
+            font-size: 1.6rem;
+            transition: all 0.2s ease;
+
+            &.green {
+              color: $accent-color;
+            }
+            &.blue {
+              color: #005f9a;
+            }
+          }
+        }
+      }
+    }
+  }
+}

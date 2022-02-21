@@ -1,0 +1,53 @@
+@import '../../common.scss';
+
+.download {
+  @include flexCenterStyle;
+  flex-direction: column;
+
+  &.green {
+    > .text {
+      color: $accent-color;
+    }
+    > a {
+      border-color: $accent-color;
+
+      > span {
+        color: $accent-color;
+      }
+    }
+  }
+  &.blue {
+    > .text {
+      color: #005f9a;
+    }
+    > a {
+      border-color: #005f9a;
+
+      > span {
+        color: #005f9a;
+      }
+    }
+  }
+  > .text {
+    font-weight: bold;
+    font-size: 2rem;
+    padding-bottom: 2.5rem;
+  }
+  > a {
+    @include flexCenterStyle;
+    width: fit-content;
+    padding: 1.25rem 4rem;
+    border: 1px solid;
+    box-sizing: border-box;
+
+    > img {
+      width: 1.2rem;
+    }
+    > span {
+      font-size: 1.4rem;
+      font-weight: bold;
+      padding-left: 0.5rem;
+      line-height: 1;
+    }
+  }
+}

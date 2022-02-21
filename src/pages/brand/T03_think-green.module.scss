@@ -1,0 +1,166 @@
+@import '../../common.scss';
+
+.container {
+  > .section {
+    @include flexCenterStyle;
+    flex-direction: column;
+    padding: 6rem 0;
+
+    &.top {
+      background-color: $tint-color-2;
+
+      > .limiter {
+        @include limiter;
+        @include flexCenterStyle;
+        flex-direction: column;
+
+        > h3 {
+          color: white;
+          font-size: 2.6rem;
+          line-height: 1.5;
+          text-align: center;
+          margin-bottom: 3.5rem;
+        }
+        > .center {
+          width: 100%;
+          max-width: 60rem;
+          height: 48rem;
+          position: relative;
+
+          > .desc {
+            position: absolute;
+            z-index: 3;
+
+            &.fisrt {
+              left: 5%;
+              top: 33%;
+            }
+            &.second {
+              top: 2%;
+              right: 0;
+            }
+            &.third {
+              right: 0;
+              top: 51%;
+            }
+            > h4 {
+              display: flex;
+              justify-content: flex-start;
+              align-items: flex-end;
+              padding-bottom: 1rem;
+
+              > span {
+                &.number {
+                  display: inline-block;
+                  width: 2.5rem;
+                  height: 2.5rem;
+                  font-size: 1.6rem;
+                  border-radius: 50%;
+                  line-height: 2.5rem;
+                  text-align: center;
+                  color: $tint-color-2;
+                  background-color: white;
+                }
+                &.title {
+                  padding-left: 1rem;
+                  color: white;
+                  font-size: 2rem;
+                }
+              }
+            }
+            > p {
+              font-size: 1.5rem;
+              line-height: 1.6;
+            }
+          }
+          > img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            width: auto;
+          }
+        }
+        > .text {
+          width: 100%;
+          border-right: 4px solid $accent-color;
+          border-left: 4px solid $accent-color;
+          background-color: white;
+          padding: 5rem 0;
+          text-align: center;
+          margin-top: -5rem;
+
+          > p {
+            font-size: 1.4rem;
+            line-height: 2;
+            padding-bottom: 1rem;
+          }
+        }
+      }
+    }
+    &.center {
+      > .limiter {
+        @include limiter;
+        text-align: center;
+
+        > h3 {
+          @include sectionTitle;
+        }
+        > .list {
+          margin-top: 4rem;
+          display: flex;
+          justify-content: space-evenly;
+
+          > li {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+
+            > img {
+              height: 18.125rem;
+              width: auto;
+              margin: auto;
+            }
+            > .info {
+              margin-top: 1rem;
+
+              > h4 {
+                font-size: 1.4rem;
+                font-weight: bold;
+                padding-bottom: 1rem;
+              }
+              > p {
+                font-size: 1.2rem;
+                font-weight: lighter;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.bottom {
+      background-color: #edf5f9;
+      text-align: center;
+
+      > .limiter {
+        @include limiter;
+
+        > h3 {
+          @include sectionTitle;
+        }
+        > img {
+          margin-top: 3rem;
+          width: 100%;
+          max-width: 20rem;
+        }
+        > p {
+          margin-top: 3rem;
+          font-size: 1.6rem;
+          line-height: 1.8;
+        }
+      }
+    }
+  }
+}

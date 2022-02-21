@@ -1,0 +1,62 @@
+@import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  @include backgroundDefaultStyle;
+  box-sizing: border-box;
+  height: 61.62rem;
+  overflow: hidden;
+  position: relative;
+
+  > .limiter {
+    @include limiter;
+    @include flexCenterStyle;
+    flex-direction: column;
+    position: relative;
+
+    > img {
+      position: absolute;
+      width: 100%;
+
+      &.left {
+        left: 0;
+        top: 0;
+        max-width: 7.5rem;
+      }
+      &.right {
+        right: 0;
+        top: 20%;
+        max-width: 12.5rem;
+      }
+    }
+    > .grid {
+      @include flexCenterStyle;
+      background-color: $accent-color;
+      width: 100%;
+      max-width: 68.75rem;
+      height: 41.65rem;
+
+      > .bottle {
+        height: 120%;
+        margin-left: -13rem;
+      }
+      > .text {
+        padding-right: 5rem;
+        box-sizing: border-box;
+
+        > h3 {
+          color: white;
+          font-size: 2rem;
+          line-height: 1.5;
+        }
+        > p {
+          margin-top: 2.4rem;
+          color: white;
+          font-size: 1.4rem;
+          font-weight: lighter;
+          line-height: 1.8;
+        }
+      }
+    }
+  }
+}

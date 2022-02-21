@@ -1,0 +1,53 @@
+@import '../../common.scss';
+
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+
+  > div {
+    width: 50%;
+
+    &.background {
+      @include backgroundDefaultStyle;
+      background-position: left center;
+      background-image: url('../../assets/images/home/s05/background.jpg');
+    }
+
+    &.detail {
+      @include flexCenterStyle;
+      background-color: $accent-color;
+
+      > .info {
+        padding: 10rem 2rem;
+        box-sizing: border-box;
+
+        > h2 {
+          color: white;
+          font-size: 3.25rem;
+          line-height: 1.5;
+          letter-spacing: 1px;
+        }
+
+        > p {
+          font-size: 2rem;
+          line-height: 1.5;
+          color: white;
+          padding-top: 3rem;
+        }
+
+        > a {
+          @include homeBtn;
+          color: $accent-color;
+          background-color: white;
+          margin-top: 10rem;
+
+          &:hover {
+            background-color: #bfd62f;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

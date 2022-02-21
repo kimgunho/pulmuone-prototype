@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'pulmuone';
+  font-weight: 300;
+  font-style: lighter;
+  src: url('./fonts/PulmuoneLOHASOTFLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'pulmuone';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/PulmuoneLOHASOTFMedium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'pulmuone';
+  font-weight: 600;
+  font-style: bold;
+  src: url('./fonts/PulmuoneLOHASOTFBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'pulmuone-en';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/PulmuoneOTF.woff') format('woff');
+}
+
+* {
+  font-family: 'pulmuone', 'Noto Sans KR', sans-serif;
+}

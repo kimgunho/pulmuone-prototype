@@ -1,0 +1,25 @@
+@import '../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  flex-direction: column;
+  padding: 4rem 0;
+  background-color: $face-color;
+
+  > p {
+    font-size: 2.2rem;
+    line-height: 1.5;
+    font-weight: lighter;
+    text-align: center;
+
+    &.reverse {
+      order: 2;
+      font-size: 1.6rem;
+    }
+  }
+  > h2 {
+    font-size: 3.6rem;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+}
