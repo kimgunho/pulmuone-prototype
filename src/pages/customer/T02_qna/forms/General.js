@@ -208,15 +208,14 @@ function General({ agree }) {
               <div className={cx('box')}>
                 <input name="file" onChange={onChangeFile} id="general_file" className={cx('file')} type="file" />
                 <p ref={fileNameRef} className={cx('fileName')}>
-                  파일을 선택해 주세요
+                  파일을 선택해 주세요.
                 </p>
                 <label className={cx('btn')} htmlFor="general_file">
-                  업로드하기
+                  파일 첨부
                 </label>
               </div>
             </li>
           </ul>
-
           <ul className={cx('right')}>
             <li>
               <h4 className={cx(['title', 'required'])}>주소</h4>
