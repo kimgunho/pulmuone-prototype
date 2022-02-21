@@ -23,21 +23,25 @@ const QnaView = () => {
   const [qnaData, setQnaData] = useState();
   const { type, id } = useParams();
 
-  useEffect(() => {
-    axios
-      .get(`https://pulmuone.console.flyground.co.kr/api/qna/${type}/${id}`)
-      .then((res) => {
-        if (res.data.success) {
-          setQnaData(res.data.data);
-          return;
-        }
+  useEffect(
+    () => {
+      axios
+        .get(`https://pulmuone.console.flyground.co.kr/api/qna/${type}/${id}`)
+        .then((res) => {
+          if (res.data.success) {
+            setQnaData(res.data.data);
+            return;
+          }
 
-        navigate('/');
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
+          navigate('/');
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  );
 
   const getTitle = (type) => {
     switch (type) {
