@@ -1,0 +1,75 @@
+@import '../../../common.scss';
+
+.container {
+  width: 100%;
+
+  > .form {
+    @include flexCenterStyle;
+    flex-direction: column;
+
+    > .inner {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      > ul {
+        width: 48%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        > li {
+          > .title {
+            font-size: 1.5rem;
+            color: #212121;
+            font-weight: bold;
+            line-height: 3;
+          }
+
+          > .box {
+            @include flexCenterStyle;
+            margin-bottom: 1rem;
+
+            &.background {
+              background-color: #f0ede7;
+            }
+
+            > input {
+              width: 100%;
+
+              &.text {
+                height: 3.75rem;
+                background-color: #f0ede7;
+                padding: 1.25rem;
+                box-sizing: border-box;
+                font-size: 1.25rem;
+                color: #aaa;
+                border: 0;
+              }
+            }
+
+            > .connect {
+              font-weight: bold;
+              padding: 0 1.25rem;
+              width: fit-content;
+              font-size: 1.25rem;
+              color: #212121;
+            }
+
+            > textarea {
+              width: 100%;
+              border: 0;
+              min-height: 21.25rem;
+              font-size: 1.25rem;
+              color: #aaa;
+              padding: 1.25rem;
+              box-sizing: border-box;
+              background-color: #f0ede7;
+            }
+          }
+        }
+      }
+    }
+  }
+}

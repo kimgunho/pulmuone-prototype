@@ -1,0 +1,255 @@
+@import '../../../../common.scss';
+
+.container {
+  > .form {
+    @include flexCenterStyle;
+    flex-direction: column;
+
+    > .inner {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      > ul {
+        width: 48%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        > li {
+          > .title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 3;
+
+            &.required {
+              &:after {
+                content: '*';
+                color: $tint-color;
+                padding-left: 0.5rem;
+              }
+            }
+          }
+
+          > .box {
+            @include flexCenterStyle;
+            margin-bottom: 1rem;
+
+            &.background {
+              background-color: white;
+            }
+
+            > input {
+              width: 100%;
+
+              &.text {
+                height: 3.75rem;
+                background-color: white;
+                padding: 1.25rem;
+                box-sizing: border-box;
+                font-size: 1.25rem;
+                color: #aaa;
+                border: 0;
+
+                &:focus {
+                  color: $tint-color;
+                }
+              }
+
+              &.file {
+                display: none;
+              }
+
+              &.center {
+                text-align: center;
+              }
+            }
+
+            > .connect {
+              font-weight: bold;
+              padding: 0 1.25rem;
+              width: fit-content;
+              font-size: 1.25rem;
+            }
+
+            > select {
+              @include dropDownIcon;
+              width: 100%;
+              height: 3.75rem;
+              background-color: white;
+              padding: 1.25rem;
+              box-sizing: border-box;
+              font-size: 1.25rem;
+              color: #aaa;
+              border: 0;
+            }
+
+            > textarea {
+              width: 100%;
+              border: 0;
+              min-height: 21.25rem;
+              font-size: 1.25rem;
+              padding: 1.25rem;
+              box-sizing: border-box;
+
+              &:focus {
+                color: $tint-color;
+              }
+            }
+
+            > .btn {
+              @include flexCenterStyle;
+              font-size: 1.25rem;
+              background-color: $tint-color;
+              color: white;
+              border: 0;
+              width: fit-content;
+              height: 3.75rem;
+              white-space: nowrap;
+              padding: 0 3rem;
+              cursor: pointer;
+              margin-left: 1rem;
+            }
+
+            > .fileName {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              height: 3.75rem;
+              background-color: white;
+              padding: 1.25rem;
+              box-sizing: border-box;
+              font-size: 1.25rem;
+              color: #aaa;
+              width: 100%;
+              text-align: left;
+            }
+
+            > .side {
+              @include flexCenterStyle;
+              background-color: $face-color;
+
+              > li {
+                @include flexCenterStyle;
+                font-size: 1.25rem;
+                padding: 1.25rem;
+                min-height: 3.75rem;
+                box-sizing: border-box;
+
+                > input {
+                  &.radio {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+
+                    background: url('../../../../assets/images/shared/radio_background.svg') no-repeat;
+                    background-size: cover;
+
+                    &:checked {
+                      background: url('../../../../assets/images/shared/radio_checked_background.svg') no-repeat;
+                      background-size: cover;
+                    }
+                  }
+                }
+
+                > label {
+                  padding-left: 1rem;
+                }
+              }
+            }
+
+            > .anonymous {
+              @include flexCenterStyle;
+              margin-left: 2rem;
+
+              > input {
+                display: none;
+              }
+
+              > .anonymousLabel {
+                @include flexCenterStyle;
+                cursor: pointer;
+
+                &.active {
+                  > span {
+                    background-color: $tint-color;
+                  }
+                }
+
+                > span {
+                  width: 2.5rem;
+                  height: 2.5rem;
+                  background-color: white;
+                }
+
+                > p {
+                  font-size: 1.25rem;
+                  white-space: nowrap;
+                  padding-left: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > .btn {
+      @include flexCenterStyle;
+      font-size: 1.5rem;
+      background-color: $accent-color;
+      color: white;
+      border: 0;
+      white-space: nowrap;
+      cursor: pointer;
+      min-height: 5rem;
+      width: 100%;
+      max-width: 25rem;
+      margin-top: 4.375rem;
+    }
+  }
+
+  > .section {
+    @include flexCenterStyle;
+    flex-direction: column;
+    margin-top: 10rem;
+    border-top: 4px solid $tint-color;
+    background-color: white;
+    padding: 3.75rem 0;
+
+    > .title {
+      font-size: 2.5rem;
+      color: $tint-color;
+      padding-bottom: 3.75rem;
+    }
+
+    > p {
+      font-size: 1.5rem;
+      padding-bottom: 3.75rem;
+    }
+
+    > .inner {
+      @include flexCenterStyle;
+      width: 100%;
+      flex-direction: column;
+      background-color: rgba(175, 212, 122, 0.2);
+      text-align: center;
+      padding: 3.75rem;
+      box-sizing: border-box;
+
+      > h4 {
+        font-size: 2rem;
+        line-height: 2;
+        margin-bottom: 3.75rem;
+      }
+
+      > p {
+        font-size: 1.5rem;
+        line-height: 2;
+      }
+    }
+  }
+}

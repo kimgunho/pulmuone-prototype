@@ -12,7 +12,7 @@
     text-align: center;
 
     > .title {
-      color: #fff;
+      color: white;
       font-size: 2.5rem;
 
       > span {
@@ -20,7 +20,6 @@
         line-height: 1.5;
       }
     }
-
     > .list {
       margin-top: 3.75rem;
       display: flex;
@@ -31,14 +30,13 @@
       > li {
         @include flexCenterStyle;
         flex-direction: column;
-        background-color: #fff;
+        background-color: white;
         width: 100%;
         max-width: 25rem;
 
         &:not(:first-child) {
           margin-left: 1rem;
         }
-
         &.buy {
           &.green {
             > a {
@@ -47,7 +45,6 @@
               }
             }
           }
-
           &.blue {
             > a {
               > .icon {
@@ -55,7 +52,6 @@
               }
             }
           }
-
           &:hover {
             > a {
               > .icon {
@@ -64,7 +60,6 @@
             }
           }
         }
-
         &.order {
           &.green {
             > a {
@@ -73,7 +68,6 @@
               }
             }
           }
-
           &.blue {
             > a {
               > .icon {
@@ -81,7 +75,6 @@
               }
             }
           }
-
           &:hover {
             > a {
               > .icon {
@@ -90,7 +83,6 @@
             }
           }
         }
-
         > a {
           width: 100%;
           display: block;
@@ -102,21 +94,19 @@
               background-color: #99c454;
 
               > p {
-                color: #fff;
+                color: white;
               }
             }
           }
-
           &.blue {
             &:hover {
               background-color: #64bae8;
 
               > p {
-                color: #fff;
+                color: white;
               }
             }
           }
-
           > .icon {
             @include backgroundDefaultStyle;
             background-size: contain;
@@ -125,7 +115,6 @@
             margin: auto;
             transition: all 0.5s ease;
           }
-
           > p {
             padding-top: 0.5rem;
             font-weight: bold;
@@ -135,7 +124,6 @@
             &.green {
               color: #004d1c;
             }
-
             &.blue {
               color: #005f9a;
             }

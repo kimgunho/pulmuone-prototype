@@ -56,7 +56,6 @@
         }
         > h2 {
           font-size: 2.625rem;
-          color: #000;
 
           > img {
             display: block;
@@ -72,12 +71,12 @@
         > a {
           @include homeBtn;
           color: #004d1c;
-          background-color: #fff;
+          background-color: white;
           margin-top: 4rem;
 
           &:hover {
             background-color: #004d1c;
-            color: #fff;
+            color: white;
           }
         }
       }
@@ -130,7 +129,7 @@
 
             > span {
               background-color: #99ba10;
-              color: #fff;
+              color: white;
               width: 2.5rem;
               height: 2.5rem;
               font-size: 1.5rem;
@@ -142,7 +141,6 @@
             }
           }
           > p {
-            color: #000;
             font-size: 1.75rem;
             line-height: 1.5;
             padding-top: 1rem;

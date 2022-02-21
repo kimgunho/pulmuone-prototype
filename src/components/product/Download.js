@@ -7,7 +7,7 @@ import download_icon_blue from '../../assets/images/shared/download_icon_blue.sv
 
 const cx = classNames.bind(styles);
 
-function Download({ color = 'green', file, text, title }) {
+const Download = ({ color = 'green', file, text, title }) => {
   return (
     <div className={cx(['download', color === 'green' ? 'green' : 'blue'])}>
       <p className={cx('text')}>{title}</p>
@@ -17,6 +17,6 @@ function Download({ color = 'green', file, text, title }) {
       </a>
     </div>
   );
-}
+};
 
 export default Download;

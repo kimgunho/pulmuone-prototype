@@ -1,67 +1,42 @@
 import classNames from 'classnames/bind';
-import { useParams } from 'react-router-dom';
-import { links } from '../../assets/data/links';
 
 import styles from './index.module.scss';
-
 import Jumbotron from '../../components/shared/Jumbotron';
-import Nav from '../../components/shared/Nav';
-import Granite from './granite';
-import Quality from './quality';
-import Think from './think';
-import NotPage from '../../components/shared/NotPage';
-
-import background from '../../assets/images/brand/background.jpg';
+import TabBar from '../../components/shared/TabBar';
+import TabGranite from './T01_granite';
+import TabQuality from './T02_quality';
+import TabThinkGreen from './T03_think-green';
+import jumbotron from '../../assets/images/brand/jumbotron.jpg';
 
 const cx = classNames.bind(styles);
 
-const navItems = [
+const tabItems = [
   {
     title: '대보 화강암',
-    link: links.brand_granite,
+    link: '/브랜드-스토리/대보-화강암',
   },
   {
     title: '품질관리',
-    link: links.brand_quality,
+    link: '/브랜드-스토리/품질관리',
   },
   {
     title: 'Think Green',
-    link: links.brand_think,
+    link: '/브랜드-스토리/Think-Green',
   },
 ];
 
 const Brand = () => {
-  const { sub } = useParams();
-  let navIndex;
-
-  switch (sub) {
-    case 'granite':
-      navIndex = 0;
-      break;
-
-    case 'quality':
-      navIndex = 1;
-      break;
-
-    case 'think-green':
-      navIndex = 2;
-      break;
-
-    default:
-      navIndex = 3;
-      break;
-  }
+  const tabIndex = tabItems.findIndex((navItem) => navItem.link === decodeURI(window.location.pathname));
 
   return (
     <div>
-      <div className={cx('wrapper_contents')}>
-        <Jumbotron title="브랜드 스토리" sub="Brand Story" background={background} />
-        <Nav items={navItems} activeIndex={navIndex} />
+      <div className={cx('wrapper')}>
+        <Jumbotron title="브랜드 스토리" subtitle="Brand Story" background={jumbotron} />
+        <TabBar items={tabItems} activeIndex={tabIndex} />
       </div>
-      {navIndex === 0 && <Granite />}
-      {navIndex === 1 && <Quality />}
-      {navIndex === 2 && <Think />}
-      {navIndex === 3 && <NotPage />}
+      {tabIndex === 0 && <TabGranite />}
+      {tabIndex === 1 && <TabQuality />}
+      {tabIndex === 2 && <TabThinkGreen />}
     </div>
   );
 };

@@ -1,0 +1,91 @@
+@import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  padding: 6.25rem 0;
+  background-color: #edf5f9;
+
+  > .limiter {
+    @include limiter;
+    @include flexCenterStyle;
+    flex-direction: column;
+
+    > .title {
+      font-size: 2.75rem;
+    }
+    > .row {
+      width: 100%;
+      border-radius: 1rem;
+      background-color: white;
+      padding: 2rem;
+      box-sizing: border-box;
+      margin: 3.75rem 0;
+
+      > ul {
+        @include flexCenterStyle;
+
+        > li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            transform: translate(-50%, -50%);
+            right: -12px;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-left-color: #00a8da;
+          }
+          &:last-child {
+            &::after {
+              display: none;
+            }
+          }
+          > .time {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #00a8da;
+            opacity: 0.3;
+            padding-bottom: 1rem;
+          }
+          > img {
+            width: auto;
+            height: 100%;
+          }
+          > .text {
+            font-size: 1.25rem;
+            padding-top: 1rem;
+          }
+        }
+      }
+    }
+    > .text {
+      font-size: 1.5rem;
+      line-height: 1.8;
+      text-align: center;
+      padding-bottom: 0.5rem;
+
+      > .point {
+        display: block;
+        font-size: 2rem;
+        color: #005f9a;
+        font-weight: bold;
+        padding-top: 1rem;
+        padding-bottom: 4.75rem;
+      }
+    }
+    > .from {
+      text-align: center;
+      font-weight: lighter;
+      font-size: 1.25rem;
+      line-height: 1.8;
+    }
+  }
+}
