@@ -6,7 +6,7 @@ import styles from './CheckMyEmail.module.scss';
 
 const cx = classNames.bind(styles);
 
-const CheckMyEmail = ({ setData }) => {
+function CheckMyEmail({ setData, setEmail }) {
   const [mail, setMail] = useState({
     mailId: '',
     mailDetail: '',
@@ -44,6 +44,7 @@ const CheckMyEmail = ({ setData }) => {
           return;
         } else {
           sessionStorage.setItem('email', `${mail.mailId}@${mail.mailDetail}`);
+          setEmail(sessionStorage.getItem('email'));
           setData(res.data.data);
         }
       })
@@ -64,6 +65,6 @@ const CheckMyEmail = ({ setData }) => {
       <input onClick={onClick} type={'submit'} value={'확인'} className={cx('btn')} />
     </div>
   );
-};
+}
 
 export default CheckMyEmail;
