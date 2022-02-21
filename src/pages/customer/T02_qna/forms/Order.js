@@ -15,8 +15,7 @@ function Order({ agree }) {
     emailId: '',
     emailDetail: '',
     address: '',
-    addressDetail1: '',
-    addressDetail2: '',
+    addressDetail: '',
     product: '',
     funnel: '',
     mobile1: '',
@@ -25,7 +24,7 @@ function Order({ agree }) {
   });
 
   const onClick = () => {
-    const { name, emailId, emailDetail, mobile1, mobile2, mobile3, product, address, addressDetail1, addressDetail2 } = raw;
+    const { name, emailId, emailDetail, mobile1, mobile2, mobile3, product, address, addressDetail } = raw;
 
     if (!agree) {
       alert('개인정보 처리방침에 동의해주세요.');
@@ -61,7 +60,7 @@ function Order({ agree }) {
       return;
     }
 
-    if (addressDetail1 === '' && addressDetail2 === '') {
+    if (addressDetail === '') {
       alert('상세주소를 작성해주세요.');
       return;
     }
@@ -78,7 +77,7 @@ function Order({ agree }) {
           email: `${raw.emailId}@${raw.emailDetail}`,
           mobile: raw.mobile1 + raw.mobile2 + raw.mobile3,
           address: raw.address,
-          addressDetail: raw.addressDetail1 + raw.addressDetail2,
+          addressDetail: raw.addressDetail,
           product: raw.product,
           funnel: raw.funnel,
         }),
@@ -103,6 +102,17 @@ function Order({ agree }) {
       ...prev,
       [name]: value,
     }));
+  };
+
+  const findAddress = () => {
+    new window.daum.Postcode({
+      oncomplete: (data) => {
+        setRaw({
+          ...raw,
+          address: data.address,
+        });
+      },
+    }).open();
   };
 
   return (
@@ -177,26 +187,13 @@ function Order({ agree }) {
             <li>
               <h4 className={cx(['title', 'required'])}>주소</h4>
               <div className={cx('box')}>
-                <input name="address" onChange={onChange} className={cx('text')} type="text" placeholder="주소를 입력해 주세요" />
-                <button className={cx('btn')}>우편번호 찾기</button>
+                <input name="address" value={raw.address} readOnly className={cx('text')} type="text" placeholder="주소를 검색해주세요" />
+                <button className={cx('btn')} onClick={findAddress}>
+                  주소 검색
+                </button>
               </div>
               <div className={cx('box')}>
-                <input
-                  name="addressDetail1"
-                  onChange={onChange}
-                  className={cx('text')}
-                  type="text"
-                  placeholder="상세주소를 입력해 주세요"
-                />
-              </div>
-              <div className={cx('box')}>
-                <input
-                  name="addressDetail2"
-                  onChange={onChange}
-                  className={cx('text')}
-                  type="text"
-                  placeholder="상세주소를 입력해 주세요"
-                />
+                <input name="addressDetail" onChange={onChange} className={cx('text')} type="text" placeholder="상세주소를 입력해주세요" />
               </div>
             </li>
             <li>

@@ -11,13 +11,12 @@ const cx = classNames.bind(styles);
 function General({ agree }) {
   const navigate = useNavigate();
   const fileNameRef = useRef();
-  const [formData, setFormdata] = useState({
+  const [formData, setFormData] = useState({
     name: '',
     emailId: '',
     emailDetail: '',
     address: '',
-    addressDetail1: '',
-    addressDetail2: '',
+    addressDetail: '',
     product: '',
     store: '',
     content: '',
@@ -28,8 +27,7 @@ function General({ agree }) {
   });
 
   const onClick = () => {
-    const { name, emailId, emailDetail, product, store, content, mobile1, mobile2, mobile3, address, addressDetail1, addressDetail2 } =
-      formData;
+    const { name, emailId, emailDetail, product, store, content, mobile1, mobile2, mobile3, address, addressDetail } = formData;
 
     if (!agree) {
       alert('개인정보 처리방침에 동의해주세요.');
@@ -70,7 +68,7 @@ function General({ agree }) {
       return;
     }
 
-    if (addressDetail1 === '' && addressDetail2 === '') {
+    if (addressDetail === '') {
       alert('상세주소를 작성해주세요.');
       return;
     }
@@ -89,7 +87,7 @@ function General({ agree }) {
     data.append('email', `${formData.emailId}@${formData.emailDetail}`);
     data.append('mobile', formData.mobile1 + formData.mobile2 + formData.mobile3);
     data.append('address', formData.address);
-    data.append('addressDetail', formData.addressDetail1 + formData.addressDetail2);
+    data.append('addressDetail', formData.addressDetail);
     data.append('product', formData.product);
     data.append('store', formData.store);
     data.append('content', formData.content);
@@ -114,7 +112,7 @@ function General({ agree }) {
   const onChange = (event) => {
     const { value, name } = event.target;
 
-    setFormdata((prev) => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -125,10 +123,21 @@ function General({ agree }) {
 
     fileNameRef.current.innerText = files[0].name;
 
-    setFormdata((prev) => ({
+    setFormData((prev) => ({
       ...prev,
       file: files[0],
     }));
+  };
+
+  const findAddress = () => {
+    new window.daum.Postcode({
+      oncomplete: (data) => {
+        setFormData({
+          ...formData,
+          address: data.address,
+        });
+      },
+    }).open();
   };
 
   return (
@@ -220,26 +229,20 @@ function General({ agree }) {
             <li>
               <h4 className={cx(['title', 'required'])}>주소</h4>
               <div className={cx('box')}>
-                <input name="address" onChange={onChange} className={cx('text')} type="text" placeholder="주소를 입력해 주세요" />
-                <button className={cx('btn')}>우편번호 찾기</button>
-              </div>
-              <div className={cx('box')}>
                 <input
-                  name="addressDetail1"
-                  onChange={onChange}
+                  name="address"
+                  value={formData.address}
+                  readOnly
                   className={cx('text')}
                   type="text"
-                  placeholder="상세주소를 입력해 주세요"
+                  placeholder="주소를 검색해주세요"
                 />
+                <button className={cx('btn')} onClick={findAddress}>
+                  주소 검색
+                </button>
               </div>
               <div className={cx('box')}>
-                <input
-                  name="addressDetail2"
-                  onChange={onChange}
-                  className={cx('text')}
-                  type="text"
-                  placeholder="상세주소를 입력해 주세요"
-                />
+                <input name="addressDetail" onChange={onChange} className={cx('text')} type="text" placeholder="상세주소를 입력해주세요" />
               </div>
             </li>
             <li>
