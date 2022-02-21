@@ -4,11 +4,11 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
-import { onEmailCheck, onlyNumberKeyPress } from '../../../../util/regular';
+import { onEmailCheck } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
-const Business = ({ agree }) => {
+function Business({ agree }) {
   const navigate = useNavigate();
   const [raw, setRaw] = useState({
     name: '',
@@ -29,7 +29,7 @@ const Business = ({ agree }) => {
     const { name, emailId, emailDetail, location, title, content, mobile1, mobile2, mobile3 } = raw;
 
     if (!agree) {
-      alert('개인정보처리방침에 동의해주세요.');
+      alert('개인정보 처리방침에 동의해주세요.');
       return;
     }
 
@@ -168,7 +168,6 @@ const Business = ({ agree }) => {
                   type="text"
                   placeholder="010"
                   maxLength={3}
-                  onKeyPress={onlyNumberKeyPress}
                 />
                 <p className={cx('connect')}>-</p>
                 <input
@@ -178,7 +177,6 @@ const Business = ({ agree }) => {
                   type="text"
                   placeholder="0000"
                   maxLength={4}
-                  onKeyPress={onlyNumberKeyPress}
                 />
                 <p className={cx('connect')}>-</p>
                 <input
@@ -188,22 +186,13 @@ const Business = ({ agree }) => {
                   type="text"
                   placeholder="0000"
                   maxLength={4}
-                  onKeyPress={onlyNumberKeyPress}
                 />
               </div>
             </li>
             <li>
               <h4 className={cx('title')}>일반전화</h4>
               <div className={cx(['box', 'background'])}>
-                <input
-                  name={'phone1'}
-                  onChange={onChange}
-                  className={cx(['text', 'center'])}
-                  type="text"
-                  placeholder="010"
-                  maxLength={3}
-                  onKeyPress={onlyNumberKeyPress}
-                />
+                <input name={'phone1'} onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="010" maxLength={3} />
                 <p className={cx('connect')}>-</p>
                 <input
                   name={'phone2'}
@@ -212,7 +201,6 @@ const Business = ({ agree }) => {
                   type="text"
                   placeholder="0000"
                   maxLength={4}
-                  onKeyPress={onlyNumberKeyPress}
                 />
                 <p className={cx('connect')}>-</p>
                 <input
@@ -222,7 +210,6 @@ const Business = ({ agree }) => {
                   type="text"
                   placeholder="0000"
                   maxLength={4}
-                  onKeyPress={onlyNumberKeyPress}
                 />
               </div>
             </li>
@@ -265,6 +252,6 @@ const Business = ({ agree }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Business;

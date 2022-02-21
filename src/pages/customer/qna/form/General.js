@@ -4,11 +4,11 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
-import { onEmailCheck, onlyNumberKeyPress } from '../../../../util/regular';
+import { onEmailCheck } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
-const General = ({ agree }) => {
+function General({ agree }) {
   const navigate = useNavigate();
   const fileNameRef = useRef();
   const [formData, setFormdata] = useState({
@@ -32,7 +32,7 @@ const General = ({ agree }) => {
       formData;
 
     if (!agree) {
-      alert('개인정보처리방침에 동의해주세요.');
+      alert('개인정보 처리방침에 동의해주세요.');
       return;
     }
 
@@ -153,35 +153,11 @@ const General = ({ agree }) => {
             <li>
               <h4 className={cx(['title', 'required'])}>휴대전화</h4>
               <div className={cx(['box', 'background'])}>
-                <input
-                  name="mobile1"
-                  onChange={onChange}
-                  className={cx(['text', 'center'])}
-                  type="text"
-                  placeholder="010"
-                  maxLength={3}
-                  onKeyPress={onlyNumberKeyPress}
-                />
+                <input name="mobile1" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="010" maxLength={3} />
                 <p className={cx('connect')}>-</p>
-                <input
-                  name="mobile2"
-                  onChange={onChange}
-                  className={cx(['text', 'center'])}
-                  type="text"
-                  placeholder="0000"
-                  maxLength={4}
-                  onKeyPress={onlyNumberKeyPress}
-                />
+                <input name="mobile2" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
                 <p className={cx('connect')}>-</p>
-                <input
-                  name="mobile3"
-                  onChange={onChange}
-                  className={cx(['text', 'center'])}
-                  type="text"
-                  placeholder="0000"
-                  maxLength={4}
-                  onKeyPress={onlyNumberKeyPress}
-                />
+                <input name="mobile3" onChange={onChange} className={cx(['text', 'center'])} type="text" placeholder="0000" maxLength={4} />
               </div>
             </li>
             <li>
@@ -255,6 +231,6 @@ const General = ({ agree }) => {
       </div>
     </div>
   );
-};
+}
 
 export default General;

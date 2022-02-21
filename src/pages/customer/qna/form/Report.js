@@ -8,7 +8,7 @@ import { onEmailCheck } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
-const Report = ({ agree }) => {
+function Report({ agree }) {
   const navigate = useNavigate();
   const [raw, setRaw] = useState({
     name: '',
@@ -22,7 +22,7 @@ const Report = ({ agree }) => {
     const { name, emailId, emailDetail, title, content } = raw;
 
     if (!agree) {
-      alert('개인정보처리방침에 동의해주세요.');
+      alert('개인정보 처리방침에 동의해주세요.');
       return;
     }
 
@@ -95,6 +95,14 @@ const Report = ({ agree }) => {
               <h4 className={cx(['title', 'required'])}>이름</h4>
               <div className={cx('box')}>
                 <input name="name" onChange={onChange} className={cx('text')} type="text" placeholder="이름을 작성해주세요" />
+                {/* 사용성이 애매해서 혹시몰라 주석처리 */}
+                {/* <div className={cx('anonymous')}>
+                  <input type="checkbox" id="anonymous" />
+                  <label onClick={onClick} htmlFor="anonymous" className={cx(['anonymousLabel', { active: anonymous }])}>
+                    <span></span>
+                    <p>익명 제보</p>
+                  </label>
+                </div> */}
               </div>
             </li>
             <li>
@@ -126,6 +134,6 @@ const Report = ({ agree }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Report;
