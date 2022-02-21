@@ -4,7 +4,7 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
-import { onEmailCheck, onlyNumberKeyPress } from '../../../../util/regular';
+import { onEmailCheck, onlyNumberKeyPress } from '../../../../utils/regular';
 
 const cx = classNames.bind(styles);
 
@@ -16,8 +16,7 @@ function Cleaning({ agree }) {
     emailDetail: '',
     product: '',
     address: '',
-    addressDetail1: '',
-    addressDetail2: '',
+    addressDetail: '',
     content: '',
     mobile1: '',
     mobile2: '',
@@ -28,7 +27,7 @@ function Cleaning({ agree }) {
   });
 
   const onClick = () => {
-    const { name, emailId, emailDetail, content, mobile1, mobile2, mobile3, address, addressDetail1, addressDetail2, product } = raw;
+    const { name, emailId, emailDetail, content, mobile1, mobile2, mobile3, address, addressDetail, product } = raw;
 
     if (!agree) {
       alert('개인정보 처리방침에 동의해주세요.');
@@ -64,7 +63,7 @@ function Cleaning({ agree }) {
       return;
     }
 
-    if (addressDetail1 === '' && addressDetail2 === '') {
+    if (addressDetail === '') {
       alert('상세주소를 작성해주세요.');
       return;
     }
@@ -87,7 +86,7 @@ function Cleaning({ agree }) {
           mobile: raw.mobile1 + raw.mobile2 + raw.mobile3,
           phone: raw.phone1 + raw.phone2 + raw.phone3,
           address: raw.address,
-          addressDetail: raw.addressDetail1 + raw.addressDetail2,
+          addressDetail: raw.addressDetail,
           product: raw.product,
           content: raw.content,
         }),
@@ -112,6 +111,17 @@ function Cleaning({ agree }) {
       ...prev,
       [name]: value,
     }));
+  };
+
+  const findAddress = () => {
+    new window.daum.Postcode({
+      oncomplete: (data) => {
+        setRaw({
+          ...raw,
+          address: data.address,
+        });
+      },
+    }).open();
   };
 
   return (
@@ -218,26 +228,13 @@ function Cleaning({ agree }) {
             <li>
               <h4 className={cx(['title', 'required'])}>주소</h4>
               <div className={cx('box')}>
-                <input name="address" onChange={onChange} className={cx('text')} type="text" placeholder="주소를 입력해 주세요" />
-                <button className={cx('btn')}>우편번호 찾기</button>
+                <input name="address" value={raw.address} readOnly className={cx('text')} type="text" placeholder="주소를 검색해주세요" />
+                <button className={cx('btn')} onClick={findAddress}>
+                  주소 검색
+                </button>
               </div>
               <div className={cx('box')}>
-                <input
-                  name="addressDetail1"
-                  onChange={onChange}
-                  className={cx('text')}
-                  type="text"
-                  placeholder="상세주소를 입력해 주세요"
-                />
-              </div>
-              <div className={cx('box')}>
-                <input
-                  name="addressDetail2"
-                  onChange={onChange}
-                  className={cx('text')}
-                  type="text"
-                  placeholder="상세주소를 입력해 주세요"
-                />
+                <input name="addressDetail" onChange={onChange} className={cx('text')} type="text" placeholder="상세주소를 입력해주세요" />
               </div>
             </li>
             <li>
