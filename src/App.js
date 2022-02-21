@@ -5,7 +5,7 @@ import Brand from './pages/brand';
 import Products from './pages/products';
 import CSR from './pages/csr';
 import Customer from './pages/customer';
-import CustomerMyQnaDetail from './pages/customer/myQna/View';
+import MyQna from './pages/qna';
 import Company from './pages/company';
 import Policies from './pages/policies';
 import Header from './components/shared/Header';
@@ -32,7 +32,7 @@ const App = () => {
         <Route path={`${encodeURI('/고객센터/자주묻는질문')}`} element={<Customer />} />
         <Route path={`${encodeURI('/고객센터/문의하기')}`} element={<Customer />} />
         <Route path={`${encodeURI('/고객센터/내-문의사항')}`} element={<Customer />} />
-        <Route path={`${encodeURI('/고객센터/내-문의사항/:type/:id')}`} element={<CustomerMyQnaDetail />} />
+        <Route path={`${encodeURI('/고객센터/내-문의사항/:type/:id')}`} element={<MyQna />} />
         <Route path={`${encodeURI('/회사소개/풀무원샘물')}`} element={<Company />} />
         <Route path={`${encodeURI('/회사소개/전자공시')}`} element={<Company />} />
         <Route path={`${encodeURI('/회사소개/오시는-길')}`} element={<Company />} />

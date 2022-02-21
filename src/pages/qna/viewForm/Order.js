@@ -2,11 +2,11 @@ import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
 
-import { telHyphen } from '../../../../util/regular';
+import { telHyphen } from '../../../util/regular';
 
 const cx = classNames.bind(styles);
 
-function Cleaning({ data }) {
+function Order({ data }) {
   if (data !== null) {
     return (
       <div className={cx('container')}>
@@ -32,7 +32,7 @@ function Cleaning({ data }) {
                 </div>
               </li>
               <li>
-                <h4 className={cx(['title', 'required'])}>냉온수기 종류</h4>
+                <h4 className={cx(['title', 'required'])}>주문제품</h4>
                 <div className={cx('box')}>
                   <input readOnly={true} value={data.product} className={cx('text')} type="text" />
                 </div>
@@ -40,12 +40,6 @@ function Cleaning({ data }) {
             </ul>
 
             <ul className={cx('right')}>
-              <li>
-                <h4 className={cx('title')}>일반전화</h4>
-                <div className={cx(['box', 'background'])}>
-                  <input readOnly={true} value={data.phone} className={cx(['text', 'center'])} type="text" />
-                </div>
-              </li>
               <li>
                 <h4 className={cx(['title', 'required'])}>주소</h4>
                 <div className={cx('box')}>
@@ -56,9 +50,9 @@ function Cleaning({ data }) {
                 </div>
               </li>
               <li>
-                <h4 className={cx(['title', 'required'])}>상세내용</h4>
+                <h4 className={cx('title')}>방문경로</h4>
                 <div className={cx('box')}>
-                  <textarea readOnly={true} value={data.content}></textarea>
+                  <input readOnly={true} value={data.funnel} className={cx('text')} type="text" />
                 </div>
               </li>
             </ul>
@@ -71,4 +65,4 @@ function Cleaning({ data }) {
   }
 }
 
-export default Cleaning;
+export default Order;

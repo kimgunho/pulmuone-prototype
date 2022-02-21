@@ -1,4 +1,4 @@
-@import '../../../common.scss';
+@import '../../common.scss';
 
 .container {
   @include flexCenterStyle;
@@ -6,7 +6,7 @@
   background-color: #f5f3ef;
   padding-bottom: 6.25rem;
 
-  > .wrapper_contents {
+  > .wrapper {
     width: 100%;
     position: relative;
   }

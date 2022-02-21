@@ -2,11 +2,11 @@ import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
 
-import { telHyphen } from '../../../../util/regular';
+import { telHyphen } from '../../../util/regular';
 
 const cx = classNames.bind(styles);
 
-function Cleaning({ data }) {
+function General({ data }) {
   if (data !== null) {
     return (
       <div className={cx('container')}>
@@ -32,33 +32,33 @@ function Cleaning({ data }) {
                 </div>
               </li>
               <li>
-                <h4 className={cx(['title', 'required'])}>냉온수기 종류</h4>
+                <h4 className={cx(['title', 'required'])}>주문제품</h4>
                 <div className={cx('box')}>
                   <input readOnly={true} value={data.product} className={cx('text')} type="text" />
+                </div>
+              </li>
+              <li>
+                <h4 className={cx(['title', 'required'])}>구매처</h4>
+                <div className={cx('box')}>
+                  <input readOnly={true} value={data.store} className={cx('text')} type="text" />
                 </div>
               </li>
             </ul>
 
             <ul className={cx('right')}>
               <li>
-                <h4 className={cx('title')}>일반전화</h4>
-                <div className={cx(['box', 'background'])}>
-                  <input readOnly={true} value={data.phone} className={cx(['text', 'center'])} type="text" />
-                </div>
-              </li>
-              <li>
                 <h4 className={cx(['title', 'required'])}>주소</h4>
                 <div className={cx('box')}>
-                  <input readOnly={true} value={data.address} className={cx('text')} type="text" />
+                  <input value={data.address} readOnly={true} className={cx('text')} type="text" />
                 </div>
                 <div className={cx('box')}>
-                  <input readOnly={true} value={data.addressDetail} className={cx('text')} type="text" />
+                  <input value={data.addressDetail} readOnly={true} className={cx('text')} type="text" />
                 </div>
               </li>
               <li>
                 <h4 className={cx(['title', 'required'])}>상세내용</h4>
                 <div className={cx('box')}>
-                  <textarea readOnly={true} value={data.content}></textarea>
+                  <textarea value={data.content} readOnly={true}></textarea>
                 </div>
               </li>
             </ul>
@@ -67,8 +67,8 @@ function Cleaning({ data }) {
       </div>
     );
   } else {
-    return <div>loading...</div>;
+    return <div>loading</div>;
   }
 }
 
-export default Cleaning;
+export default General;

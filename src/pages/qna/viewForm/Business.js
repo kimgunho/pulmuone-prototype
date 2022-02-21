@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
 
-import { telHyphen } from '../../../../util/regular';
+import { telHyphen } from '../../../util/regular';
 
 const cx = classNames.bind(styles);
 

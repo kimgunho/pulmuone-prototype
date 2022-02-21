@@ -7,7 +7,7 @@ import styles from './List.module.scss';
 
 const cx = classNames.bind(styles);
 
-function List({ data }) {
+const List = ({ data }) => {
   const [navIndex, setNavIndex] = useState(0);
   const [filterData, setFilterData] = useState(data);
   let number = 0;
@@ -121,7 +121,7 @@ function List({ data }) {
                     <ul>
                       <li>{number}</li>
                       <li>
-                        <Link to={`/service/myqna/${list.type}/${item.id}`}>{title}</Link>
+                        <Link to={`/고객센터/내-문의사항/${list.type}/${item.id}`}>{title}</Link>
                       </li>
                       <li>{moment(item.createdAt).format('YYYY.MM.DD')}</li>
                     </ul>
@@ -133,6 +133,6 @@ function List({ data }) {
       </div>
     </div>
   );
-}
+};
 
 export default List;

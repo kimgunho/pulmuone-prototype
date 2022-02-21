@@ -3,14 +3,13 @@ import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './index.module.scss';
-
 import PageTitle from '../../../components/shared/PageTitle';
 import CheckMyEmail from './CheckMyEmail';
 import List from './List';
 
 const cx = classNames.bind(styles);
 
-function MyQna() {
+const MyQna = () => {
   const [email, setEmail] = useState(sessionStorage.getItem('email'));
   const [data, setData] = useState(null);
 
@@ -29,13 +28,13 @@ function MyQna() {
 
   return (
     <div className={cx('container')}>
-      <PageTitle title="내 문의사항" sub="문의사항 확인시 문의시에 입력한 이메일로 조회 해 주세요." subReverse={true} />
+      <PageTitle title="내 문의사항" sub="문의사항 확인 시 문의 시에 입력한 이메일로 조회해 주세요." subReverse={true} />
       <div className={cx('limiter')}>
         {email === null && <CheckMyEmail setEmail={setEmail} setData={setData} />}
         {data !== null && <List data={data} />}
       </div>
     </div>
   );
-}
+};
 
 export default MyQna;

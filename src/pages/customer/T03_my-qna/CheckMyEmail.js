@@ -6,7 +6,7 @@ import styles from './CheckMyEmail.module.scss';
 
 const cx = classNames.bind(styles);
 
-function CheckMyEmail({ setData, setEmail }) {
+const CheckMyEmail = ({ setData, setEmail }) => {
   const [mail, setMail] = useState({
     mailId: '',
     mailDetail: '',
@@ -65,6 +65,6 @@ function CheckMyEmail({ setData, setEmail }) {
       <input onClick={onClick} type={'submit'} value={'확인'} className={cx('btn')} />
     </div>
   );
-}
+};
 
 export default CheckMyEmail;
