@@ -2,32 +2,27 @@
 
 .container {
   @include backgroundDefaultStyle;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  height: 61.25rem;
+  @include flexCenterStyle;
+  height: 64rem;
   position: relative;
   overflow: hidden;
 
   > .limiter {
     @include limiter;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     position: relative;
     height: 100%;
 
     > .title {
+      @include sectionTitle;
       color: white;
-      font-size: 2.75rem;
-      padding-top: 6.25rem;
-      font-weight: bold;
+      padding-top: 6rem;
     }
     > .text {
-      padding-top: 1.25rem;
-      font-size: 1.5rem;
+      padding-top: 1.4rem;
+      font-size: 1.6rem;
       color: white;
       text-align: center;
       line-height: 1.8;
@@ -65,7 +60,7 @@
       }
     }
   }
-  > .bigbottle {
+  > .barrel {
     position: absolute;
     bottom: 0;
     left: 50%;

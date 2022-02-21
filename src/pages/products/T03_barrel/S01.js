@@ -22,15 +22,13 @@ const S01 = () => {
           프리미엄 대용량 생수를 가볍게, 신선하게, 편리하게 즐길 수 있습니다!
         </p>
       </div>
-
       <div className={cx('objects')}>
         <img className={cx('left')} src={leaf_left} alt="" />
         <img className={cx('right')} src={leaf_right} alt="" />
         <img className={cx('bubleeLeft')} src={bubble_left} alt="" />
         <img className={cx('bubbleRight')} src={bubble_right} alt="" />
       </div>
-
-      <img className={cx('bigbottle')} src={bigbottle} alt="" />
+      <img className={cx('barrel')} src={bigbottle} alt="풀무원샘물 15L" />
     </div>
   );
 };

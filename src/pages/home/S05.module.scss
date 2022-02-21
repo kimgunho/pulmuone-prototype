@@ -16,7 +16,7 @@
 
     &.detail {
       @include flexCenterStyle;
-      background-color: #004d1c;
+      background-color: $accent-color;
 
       > .info {
         padding: 10rem 2rem;
@@ -38,7 +38,7 @@
 
         > a {
           @include homeBtn;
-          color: #004d1c;
+          color: $accent-color;
           background-color: white;
           margin-top: 10rem;
 

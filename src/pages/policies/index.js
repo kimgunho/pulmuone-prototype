@@ -1,13 +1,8 @@
-import classNames from 'classnames/bind';
-
-import styles from './index.module.scss';
 import Jumbotron from '../../components/shared/Jumbotron';
 import TabBar from '../../components/shared/TabBar';
 import TabPrivacy from './T01_privacy';
 import TabEmail from './T02_email';
 import jumbotron from '../../assets/images/policies/jumbotron.jpg';
-
-const cx = classNames.bind(styles);
 
 const tabItems = [
   {
@@ -25,10 +20,8 @@ const Policies = () => {
 
   return (
     <div>
-      <div className={cx('wrapper')}>
-        <Jumbotron background={jumbotron} />
-        <TabBar items={tabItems} activeIndex={tabIndex} />
-      </div>
+      <Jumbotron background={jumbotron} />
+      <TabBar items={tabItems} activeIndex={tabIndex} />
       {tabIndex === 0 && <TabPrivacy />}
       {tabIndex === 1 && <TabEmail />}
     </div>

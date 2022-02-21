@@ -3,7 +3,7 @@
 .container {
   @include flexCenterStyle;
   flex-direction: column;
-  padding-bottom: 9.375rem;
+  padding-bottom: 8rem;
   background-color: $face-color;
 
   > .limiter {

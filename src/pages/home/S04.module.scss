@@ -70,12 +70,12 @@
         }
         > a {
           @include homeBtn;
-          color: #004d1c;
+          color: $accent-color;
           background-color: white;
           margin-top: 4rem;
 
           &:hover {
-            background-color: #004d1c;
+            background-color: $accent-color;
             color: white;
           }
         }

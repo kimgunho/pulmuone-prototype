@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 const Table = ({ table }) => {
   return (
-    <div className={cx(['table', table.color === 'green' ? 'green' : 'blue'])}>
+    <div className={cx(['container', table.color === 'green' ? 'green' : 'blue'])}>
       <h3 className={cx('title')}>{table.title}</h3>
       <ul className={cx('head')}>
         {table.point ? <li className={cx('side')}>null</li> : null}

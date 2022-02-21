@@ -23,10 +23,12 @@ const S03 = () => {
           </li>
           <li>
             <img src={icon02} alt="" />
-            <p>기존 냉온수기 대비 20% 전기료 절감 및 소음 개선</p>
+            <p>
+              기존 냉온수기 대비 20%
+              <br /> 전기료 절감 및 소음 개선
+            </p>
           </li>
         </ul>
-
         <div className={cx('inner')}>
           <div className={cx('image')}>
             <div className={cx('box')}>
@@ -34,7 +36,6 @@ const S03 = () => {
             </div>
             <p className={cx('name')}>*헤파필터 (신선지킴이)</p>
           </div>
-
           <p className={cx('text')}>
             냉온수기 물을 컵에 따를 때 외부 공기가 병속으로 유입되지 않으면 병 내부가 진공상태가 되어 물을 따를 수 없게 되므로 모든
             냉온수기에는 진공상태를 방지하기 위한 아주 조그만 외부 공기 유입 구멍이 설치되어 있습니다. 풀무원샘물 냉온수기는 국내 업계

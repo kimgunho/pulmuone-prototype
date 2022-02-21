@@ -14,7 +14,7 @@
 
       > select {
         @include dropDownIcon;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: bold;
         background-color: white;
         padding: 1rem;
@@ -27,7 +27,7 @@
   }
   > .section {
     @include flexCenterStyle;
-    padding: 6.25rem 0;
+    padding: 6rem 0;
     width: 100%;
 
     > .limiter {
@@ -53,7 +53,7 @@
         > .date {
           font-weight: lighter;
           text-align: right;
-          font-size: 1.25rem;
+          font-size: 1.4rem;
         }
         > .head {
           border-top: 4px solid $accent-color;
@@ -64,7 +64,7 @@
 
             > li {
               width: 20%;
-              font-size: 1.5rem;
+              font-size: 1.6rem;
               color: $accent-color;
               padding: 1rem 0;
               font-weight: bold;
@@ -89,7 +89,7 @@
                 > li {
                   width: 100%;
                   padding: 1rem 0;
-                  font-size: 1.25rem;
+                  font-size: 1.4rem;
                   border-right: 10px solid white;
                   box-sizing: border-box;
                   background-color: #f4faef;
@@ -125,11 +125,11 @@
           justify-content: space-between;
 
           > p {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
           }
           > ul {
             > li {
-              font-size: 1.25rem;
+              font-size: 1.4rem;
               padding-bottom: 0.5rem;
               text-align: right;
 
@@ -146,8 +146,8 @@
           > p {
             padding-top: 2rem;
             text-align: center;
-            font-size: 1.25rem;
-            line-height: 2;
+            font-size: 1.4rem;
+            line-height: 1.8;
 
             > span {
               display: block;

@@ -31,16 +31,19 @@ const Finance = () => {
           <select onChange={onChange}>
             <option value={2020}>2020 전자공시</option>
             <option value={2019}>2019 전자공시</option>
+            <option value={2018}>2018 전자공시</option>
+            <option value={2017}>2017 전자공시</option>
+            <option value={2016}>2016 전자공시</option>
+            <option value={2015}>2015 전자공시</option>
+            <option value={2014}>2014 전자공시</option>
           </select>
         </div>
       </div>
-
       <div className={cx('section')}>
         <div className={cx('limiter')}>
           <div className={cx('table')}>
             <p className={cx('sub')}>전자공시 - {data[0].finance}기 결산 공고</p>
             <h3 className={cx('title')}>재무상태표</h3>
-
             <p className={cx('date')}>{data[0].date} 현재(단위 :원)</p>
             <div className={cx('head')}>
               <ul>
@@ -49,7 +52,6 @@ const Finance = () => {
                 <li>제 {data[0].finance - 1}(전) 기</li>
               </ul>
             </div>
-
             <div className={cx('body')}>
               <ul>
                 {data[0].data.map((item, index) => (
@@ -68,7 +70,6 @@ const Finance = () => {
               </ul>
             </div>
           </div>
-
           <div className={cx('inner')}>
             <div className={cx('ann')}>
               <p>위와 같이 공고함</p>

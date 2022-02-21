@@ -21,12 +21,12 @@
           background-color: white;
           padding: 1.25rem;
           box-sizing: border-box;
-          font-size: 1.25rem;
+          font-size: 1.4rem;
           color: #aaa;
           border: 0;
 
           &:focus {
-            color: $tint-color;
+            color: $tint-color-1;
           }
         }
         &.center {
@@ -37,7 +37,7 @@
         font-weight: bold;
         padding: 0 1.25rem;
         width: fit-content;
-        font-size: 1.25rem;
+        font-size: 1.4rem;
       }
     }
   }

@@ -20,7 +20,7 @@
         }
         > p {
           margin-top: 2rem;
-          font-size: 1.5rem;
+          font-size: 1.6rem;
           color: white;
           line-height: 1.8;
         }
@@ -75,7 +75,7 @@
               width: auto;
             }
             > p {
-              font-size: 1.1rem;
+              font-size: 1.2rem;
               font-weight: bold;
               line-height: 1.5;
               padding-top: 2rem;
@@ -94,11 +94,11 @@
           @include sectionTitle;
         }
         > p {
-          margin-top: 2rem;
-          font-size: 1.5rem;
+          margin-top: 1rem;
+          font-size: 1.6rem;
         }
         > .list {
-          margin-top: 2rem;
+          margin-top: 3rem;
           display: flex;
           justify-content: space-between;
 
@@ -106,7 +106,7 @@
             @include flexCenterStyle;
             flex-direction: column;
             border-radius: 1rem;
-            background-image: linear-gradient(to bottom, $tint-color 0% 30%, white 30% 70%);
+            background-image: linear-gradient(to bottom, $tint-color-1 0% 30%, white 30% 70%);
             padding: 1rem 2rem;
             box-sizing: border-box;
             width: 100%;
@@ -125,7 +125,7 @@
               height: 20rem;
             }
             > p {
-              font-size: 1rem;
+              font-size: 1.2rem;
               line-height: 1.5;
               font-weight: lighter;
               padding: 0.5rem 0;

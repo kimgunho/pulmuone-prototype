@@ -3,7 +3,7 @@
 .container {
   > .section {
     @include flexCenterStyle;
-    padding: 6.25rem 0;
+    padding: 6rem 0;
 
     > .limiter {
       @include flexCenterStyle;
@@ -23,7 +23,7 @@
       > .info {
         width: 100%;
         display: flex;
-        padding-top: 3.125rem;
+        padding-top: 3rem;
 
         > div {
           box-sizing: border-box;
@@ -53,26 +53,24 @@
           }
           > .title {
             color: $accent-color;
-            font-size: 2.625rem;
+            font-size: 2.6rem;
             font-weight: bold;
             padding-bottom: 2rem;
           }
-          > ul {
-            > li {
-              padding-bottom: 1rem;
+          > ul > li {
+            padding-bottom: 1rem;
 
-              > .title {
-                color: #7db72c;
-                font-size: 1.5rem;
-                padding-bottom: 0.5rem;
-              }
-              p {
-                font-size: 1.5rem;
-                line-height: 2;
+            > .title {
+              color: $tint-color-1;
+              font-size: 1.6rem;
+              padding-bottom: 0.5rem;
+            }
+            p {
+              font-size: 1.4rem;
+              line-height: 2;
 
-                > span {
-                  font-weight: bold;
-                }
+              > span {
+                font-weight: bold;
               }
             }
           }

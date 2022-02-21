@@ -19,17 +19,16 @@ const S01 = () => {
         <p className={cx('text')}>
           2억년 동안 어떠한 지질학적 변화도 겪지 않은 촘촘하고 단단한 화강암이 미네랄을 꽉 잡아,
           <br /> 화강암반의 풍부한 미네랄을 오롯이 물에 담았습니다.
-          <span>자연이 만들고 거른 깨끗한 물을 풀무원의 바른 먹거리 철학으로 담아 나와 내 가족이 믿고 마실 수 있습니다.</span>
+          <br /> 자연이 만들고 거른 깨끗한 물을 풀무원의 바른 먹거리 철학으로 담아 나와 내 가족이 믿고 마실 수 있습니다.
         </p>
       </div>
-
+      <img className={cx('bottle')} src={bottle} alt="" />
       <div className={cx('objects')}>
         <img className={cx('left')} src={leaf_left} alt="" />
         <img className={cx('right')} src={leaf_right} alt="" />
         <img className={cx('bubble_left')} src={bubble_left} alt="" />
         <img className={cx('bubble_right')} src={bubble_right} alt="" />
       </div>
-      <img className={cx('bottle')} src={bottle} alt="" />
     </div>
   );
 };

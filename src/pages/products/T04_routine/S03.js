@@ -70,7 +70,7 @@ const S03 = () => {
         </p>
         <p className={cx('text')}>
           우리의 몸이 제 기능을 하기 위한 수분 밸런스를 유지하기 위해 하루 2L의 수분 섭취가 필요합니다.
-          <span className={cx('point')}> 충분한 수분 섭취를 통해 건강한 라이프 스타일을 가꿔보세요!</span>
+          <span className={cx('accent')}>충분한 수분 섭취를 통해 건강한 라이프 스타일을 가꿔보세요!</span>
         </p>
 
         <p className={cx('from')}>

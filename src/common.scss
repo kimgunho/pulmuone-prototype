@@ -1,4 +1,5 @@
-$tint-color: #8dc63e;
+$tint-color-1: #8dc63e;
+$tint-color-2: #bed730;
 $accent-color: #06542c;
 $face-color: #f5f3ef;
 
@@ -45,14 +46,14 @@ $face-color: #f5f3ef;
   line-height: 1;
   position: relative;
   font-size: 1.75rem;
-  padding: 1.5rem 8rem 1.5rem 1.875rem;
+  padding: 1.5rem 8rem 1.5rem 1.8rem;
   width: fit-content;
   transition: all 0.2s ease-in-out;
 
   &::after {
     content: '〉';
     font-size: 1.75rem;
-    right: 1.875rem;
+    right: 1.8rem;
     line-height: 1;
     position: absolute;
   }
@@ -62,10 +63,10 @@ $face-color: #f5f3ef;
   @include flexCenterStyle;
   padding: 1.625rem 6.25rem;
   box-sizing: border-box;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   width: fit-content;
-  margin: 3.125rem 0;
+  margin: 3rem 0;
 }
 
 @mixin sectionTitle {

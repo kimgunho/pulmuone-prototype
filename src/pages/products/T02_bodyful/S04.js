@@ -42,7 +42,7 @@ const S04 = () => {
             <div className={cx('product')}>
               <h3 className={cx('title')}>칼슘으로 운동 준비 완료!</h3>
               <p className={cx('desc')}>
-                바디풀20은 칼슘의 함량을 조절해 국내 생수 중<br /> 칼슘 함량이 <span className={cx('point')}>가장 높은</span> 제품입니다.
+                바디풀20은 칼슘의 함량을 조절해 국내 생수 중<br /> 칼슘 함량이 <span className={cx('accent')}>가장 높은</span> 제품입니다.
               </p>
               <h4 className={cx('name')}>풀무원샘물 바디풀 20</h4>
               <div className={cx('image')} style={{ backgroundImage: `url(${product_ca})` }}>
@@ -60,7 +60,7 @@ const S04 = () => {
               <h3 className={cx('title')}>마그네슘으로 운동 후 휴식 시작!</h3>
               <p className={cx('desc')}>
                 바디풀12는 일반 생수 대비 높은 마그네슘 함량에도
-                <br /> 편하게 음용할 수 있도록 <span className={cx('point')}>최적의 양</span>을 반영했습니다.
+                <br /> 편하게 음용할 수 있도록 <span className={cx('accent')}>최적의 양</span>을 반영했습니다.
               </p>
               <h4 className={cx('name')}>풀무원샘물 바디풀 20</h4>
               <div className={cx('image')} style={{ backgroundImage: `url(${product_ma})` }}>

@@ -236,11 +236,13 @@ function Business({ agree }) {
         </div>
         <input onClick={onClick} type={'submit'} value={'접수하기'} className={cx('btn')} />
       </div>
-
       <div className={cx('section')}>
         <h3 className={cx('title')}>풀무원샘물은 여러분의 든든한 파트너가 되겠습니다.</h3>
-        <p>풀무원샘물 가맹점 개설 온라인으로 편리하게 문의하세요. 기타 문의는 아래 연락처를 이용 바랍니다.</p>
-
+        <p>
+          풀무원샘물 가맹점 개설 온라인으로 편리하게 문의하세요.
+          <br />
+          기타 문의는 아래 연락처를 이용 바랍니다.
+        </p>
         <div className={cx('inner')}>
           <h4>
             풀무원샘물과 함께 성장할 파트너를 모십니다.
@@ -249,7 +251,6 @@ function Business({ agree }) {
             <br />
             예비 가맹점주 여러분의 참여를 기다립니다.
           </h4>
-
           <p>
             전국의 약 260명의 가맹점 사장님들이 사업의 안정성을 증명해 주시고 계십니다. (국내 최고 가맹점 수)
             <br />
