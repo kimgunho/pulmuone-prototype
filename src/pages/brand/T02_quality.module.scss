@@ -106,7 +106,7 @@
             @include flexCenterStyle;
             flex-direction: column;
             border-radius: 1rem;
-            background-image: linear-gradient(to bottom, $tint-color 0% 30%, white 30% 70%);
+            background-image: linear-gradient(to bottom, $tint-color-1 0% 30%, white 30% 70%);
             padding: 1rem 2rem;
             box-sizing: border-box;
             width: 100%;

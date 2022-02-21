@@ -4,10 +4,10 @@
   > .section {
     @include flexCenterStyle;
     flex-direction: column;
-    padding: 6.25rem 0;
+    padding: 6rem 0;
 
     &.top {
-      background-color: #bed730;
+      background-color: $tint-color-2;
 
       > .limiter {
         @include limiter;
@@ -58,7 +58,7 @@
                   border-radius: 50%;
                   line-height: 2.5rem;
                   text-align: center;
-                  color: #bed730;
+                  color: $tint-color-2;
                   background-color: white;
                 }
                 &.title {
@@ -84,8 +84,8 @@
         }
         > .text {
           width: 100%;
-          border-right: 4px solid #004d1c;
-          border-left: 4px solid #004d1c;
+          border-right: 4px solid $accent-color;
+          border-left: 4px solid $accent-color;
           background-color: white;
           padding: 5rem 0;
           text-align: center;

@@ -1,20 +1,20 @@
 @import '../../common.scss';
 
-.table {
+.container {
   text-align: center;
   margin-bottom: 3.5rem;
   width: 100%;
-  max-width: 72.5rem;
+  max-width: 72rem;
 
   &.green {
     > .head {
       > li {
-        background-color: #bed730;
+        background-color: $tint-color-2;
       }
     }
     > .body {
       .point {
-        background-color: #bed730;
+        background-color: $tint-color-2;
       }
     }
   }
@@ -31,17 +31,18 @@
     }
   }
   > .title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: bold;
     padding-bottom: 1rem;
   }
   > .head {
     @include flexCenterStyle;
+    margin-top: 0.5rem;
     border-bottom: 2px solid white;
 
     > li {
       border-right: 2px solid white;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       font-weight: bold;
       padding: 0.75rem 0;
       width: 100%;
@@ -54,31 +55,29 @@
       }
     }
   }
-  > .body {
-    > li {
-      border-bottom: 2px solid white;
-      box-sizing: border-box;
+  > .body > li {
+    border-bottom: 2px solid white;
+    box-sizing: border-box;
 
-      &:last-child {
-        border-bottom: 0;
-      }
-      > ul {
-        @include flexCenterStyle;
+    &:last-child {
+      border-bottom: 0;
+    }
+    > ul {
+      @include flexCenterStyle;
+      width: 100%;
+
+      > li {
+        border-right: 2px solid white;
+        background-color: #f4f4f4;
+        line-height: 1;
+        box-sizing: border-box;
+        font-size: 1.4rem;
         width: 100%;
+        font-weight: bold;
+        padding: 1rem 0;
 
-        > li {
-          border-right: 2px solid white;
-          background-color: #f4f4f4;
-          line-height: 1;
-          box-sizing: border-box;
-          font-size: 1.25rem;
-          width: 100%;
-          font-weight: bold;
-          padding: 1rem 0;
-
-          &:last-child {
-            border-right: 0;
-          }
+        &:last-child {
+          border-right: 0;
         }
       }
     }

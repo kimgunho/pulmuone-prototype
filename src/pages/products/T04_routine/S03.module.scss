@@ -2,7 +2,7 @@
 
 .container {
   @include flexCenterStyle;
-  padding: 6.25rem 0;
+  padding: 6rem 0;
   background-color: #edf5f9;
 
   > .limiter {
@@ -11,7 +11,7 @@
     flex-direction: column;
 
     > .title {
-      font-size: 2.75rem;
+      font-size: 2.6rem;
     }
     > .row {
       width: 100%;
@@ -50,7 +50,7 @@
           }
           > .time {
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: #00a8da;
             opacity: 0.3;
             padding-bottom: 1rem;
@@ -60,31 +60,31 @@
             height: 100%;
           }
           > .text {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             padding-top: 1rem;
           }
         }
       }
     }
     > .text {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       line-height: 1.8;
       text-align: center;
       padding-bottom: 0.5rem;
 
-      > .point {
+      > .accent {
         display: block;
-        font-size: 2rem;
+        font-size: 2.2rem;
         color: #005f9a;
         font-weight: bold;
-        padding-top: 1rem;
-        padding-bottom: 4.75rem;
+        padding-top: 2rem;
       }
     }
     > .from {
+      margin-top: 4rem;
       text-align: center;
       font-weight: lighter;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       line-height: 1.8;
     }
   }

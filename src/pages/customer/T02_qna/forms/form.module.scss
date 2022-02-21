@@ -26,7 +26,7 @@
             &.required {
               &:after {
                 content: '*';
-                color: $tint-color;
+                color: $tint-color-1;
                 padding-left: 0.5rem;
               }
             }
@@ -51,7 +51,7 @@
                 border: 0;
 
                 &:focus {
-                  color: $tint-color;
+                  color: $tint-color-1;
                 }
               }
               &.file {
@@ -86,13 +86,13 @@
               box-sizing: border-box;
 
               &:focus {
-                color: $tint-color;
+                color: $tint-color-1;
               }
             }
             > .btn {
               @include flexCenterStyle;
               font-size: 1.4rem;
-              background-color: $tint-color;
+              background-color: $tint-color-1;
               color: white;
               border: 0;
               width: fit-content;
@@ -138,13 +138,13 @@
     @include flexCenterStyle;
     flex-direction: column;
     margin-top: 10rem;
-    border-top: 4px solid $tint-color;
+    border-top: 4px solid $tint-color-1;
     background-color: white;
     padding-top: 3rem;
 
     > .title {
       font-size: 2.6rem;
-      color: $tint-color;
+      color: $tint-color-1;
     }
     > p {
       margin-top: 2rem;

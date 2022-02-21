@@ -2,7 +2,7 @@
 
 .container {
   @include flexCenterStyle;
-  padding: 6.25rem 0;
+  padding: 6rem 0;
 
   > .limiter {
     @include limiter;
@@ -40,7 +40,7 @@
               }
             }
             > .desc {
-              > .point {
+              > .accent {
                 color: #6eb92a;
                 border-bottom: 5px solid rgba(110, 185, 42, 0.3);
               }
@@ -59,7 +59,7 @@
               }
             }
             > .desc {
-              > .point {
+              > .accent {
                 color: #00a7f0;
                 border-bottom: 5px solid rgba(0, 167, 240, 0.3);
               }
@@ -71,28 +71,28 @@
           flex-direction: column;
           width: 100%;
           padding: 3.4rem 0;
-          margin-bottom: 3.125rem;
+          margin-bottom: 3rem;
 
           > .title {
-            font-size: 2.25rem;
+            font-size: 2rem;
             font-weight: bold;
-            padding-bottom: 1rem;
           }
           > .desc {
+            margin-top: 1rem;
             text-align: center;
-            font-size: 1.5rem;
-            line-height: 1.5;
+            font-size: 1.4rem;
+            line-height: 1.8;
 
-            > .point {
+            > .accent {
               font-weight: bold;
               padding-bottom: 5px;
             }
           }
           > .name {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #003665;
             font-weight: bold;
-            padding: 3.75rem 0 1.75rem 0;
+            padding: 3rem 0 2rem;
           }
           > .image {
             @include backgroundDefaultStyle;
@@ -110,28 +110,29 @@
               top: -15%;
               width: 6.25rem;
               height: 6.25rem;
-              font-size: 1.25rem;
+              font-size: 1.2rem;
               color: white;
 
               > span {
                 display: block;
-                font-size: 2.25rem;
+                font-size: 2rem;
                 font-weight: bold;
               }
             }
           }
           > .price {
             @include flexCenterStyle;
-            font-size: 1.5rem;
             color: white;
-            background-color: #003665;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
             font-weight: bold;
-            margin: 2.125rem 0 1.25rem 0;
+            padding: 0.5rem 1rem;
+            margin: 2.125rem 0 0;
+            border-radius: 2rem;
+            font-size: 1.4rem;
+            background-color: #003665;
           }
           > .text {
-            font-size: 1.25rem;
+            margin-top: 1rem;
+            font-size: 1.2rem;
           }
         }
       }

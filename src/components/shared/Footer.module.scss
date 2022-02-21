@@ -22,7 +22,7 @@
           margin-right: 4rem;
 
           > .title {
-            color: $tint-color;
+            color: $tint-color-1;
             font-weight: bold;
             font-size: 1.4rem;
           }
@@ -31,7 +31,7 @@
             font-size: 2.6rem;
             font-weight: bold;
             line-height: 1.5;
-            color: #004d1c;
+            color: $accent-color;
           }
           > .time {
             font-weight: bold;

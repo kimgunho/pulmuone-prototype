@@ -21,7 +21,6 @@ const S01 = () => {
             소중한 내 몸 밸런스, 운동만으론 다 채울 수 없으니까
             <br />내 몸에 꼭 필요한 미네랄을 마시면서 채워 보세요
           </p>
-
           <div className={cx('objects')}>
             <img className={cx('left')} src={bubble_left} alt="" />
             <img className={cx('right')} src={bubble_right} alt="" />
@@ -29,7 +28,6 @@ const S01 = () => {
             <img className={cx('mg')} src={mg} alt="" />
           </div>
         </div>
-
         <img className={cx('bottle')} src={bottle} alt="" />
       </div>
       <div className={cx('inner')}>

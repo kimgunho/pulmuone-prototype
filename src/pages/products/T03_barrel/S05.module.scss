@@ -2,7 +2,7 @@
 
 .container {
   @include flexCenterStyle;
-  padding: 6.25rem 0;
+  padding: 6rem 0;
 
   > .limiter {
     @include limiter;
@@ -10,25 +10,23 @@
     flex-direction: column;
 
     > .box {
-      margin-top: 6.25rem;
+      margin-top: 6rem;
     }
     > .precautions {
-      width: 100%;
       display: flex;
-      justify-content: space-between;
-      padding: 2rem;
+      padding: 2rem 4rem;
       box-sizing: border-box;
       background-color: #f4f4f4;
       border-radius: 1rem;
 
       > h3 {
-        font-size: 1.5rem;
-        padding-right: 2rem;
+        font-size: 1.6rem;
         font-weight: bold;
         white-space: nowrap;
       }
       > p {
-        font-size: 1.25rem;
+        margin-left: 4rem;
+        font-size: 1.4rem;
         line-height: 1.8;
       }
     }

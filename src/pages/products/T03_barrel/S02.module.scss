@@ -2,7 +2,7 @@
 
 .container {
   @include flexCenterStyle;
-  padding: 6.25rem 0;
+  padding: 6rem 0;
 
   > .limiter {
     @include limiter;
@@ -12,15 +12,15 @@
     > .detail {
       @include flexCenterStyle;
       flex-direction: column;
-      padding: 6.25rem;
+      padding: 6rem;
       width: 100%;
-      max-width: 72.5rem;
+      max-width: 72rem;
 
       > .title {
         @include sectionTitle;
-        padding-bottom: 4.75rem;
       }
       > .info {
+        margin-top: 4rem;
         display: flex;
         justify-content: space-between;
         width: 100%;
@@ -39,7 +39,7 @@
             > li {
               display: flex;
               align-items: center;
-              margin-bottom: 1.875rem;
+              margin-bottom: 1.8rem;
 
               > img {
                 width: 100%;
@@ -48,12 +48,12 @@
               }
               > .content {
                 > h3 {
-                  font-size: 1.875rem;
+                  font-size: 1.8rem;
                   font-weight: bold;
                   padding-bottom: 1rem;
                 }
                 > p {
-                  font-size: 1.5rem;
+                  font-size: 1.4rem;
                   line-height: 1.5;
                 }
               }
@@ -63,22 +63,20 @@
       }
     }
     > .precautions {
-      width: 100%;
       display: flex;
-      justify-content: space-between;
-      padding: 2rem;
+      padding: 2rem 4rem;
       box-sizing: border-box;
       background-color: #f4f4f4;
       border-radius: 1rem;
 
       > h3 {
-        font-size: 1.5rem;
-        padding-right: 2rem;
+        font-size: 1.6rem;
         font-weight: bold;
         white-space: nowrap;
       }
       > p {
-        font-size: 1.25rem;
+        margin-left: 4rem;
+        font-size: 1.4rem;
         line-height: 1.8;
       }
     }

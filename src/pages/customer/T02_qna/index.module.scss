@@ -21,7 +21,7 @@
         width: 8px;
       }
       &::-webkit-scrollbar-thumb {
-        background-color: $tint-color;
+        background-color: $tint-color-1;
         border-radius: 5px;
       }
       &::-webkit-scrollbar-track {
@@ -42,7 +42,7 @@
           background-color: white;
 
           &.agree {
-            background-color: $tint-color;
+            background-color: $tint-color-1;
           }
         }
         > p {
@@ -63,7 +63,7 @@
 
         &:after {
           content: '*';
-          color: $tint-color;
+          color: $tint-color-1;
           padding-left: 0.5rem;
         }
       }

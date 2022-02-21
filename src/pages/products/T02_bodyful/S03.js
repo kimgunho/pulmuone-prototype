@@ -17,7 +17,6 @@ const S03 = () => {
           <span className={cx('from')}>- 한국국제소믈리에협회, 매경이코노미 주최 -</span>
         </h2>
         <p className={cx('sector')}>국내 해양심층수 부문</p>
-
         <ul className={cx('prize')}>
           <li>
             <p className={cx('rank')}>3위</p>

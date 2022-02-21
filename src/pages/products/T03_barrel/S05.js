@@ -78,16 +78,15 @@ const S05 = () => {
         <Products title="제품소개" products={productsWater} />
         <Table table={table} />
         <Download file={file} text="수질 성적 검사서" title="맛있는샘물은 안심하고 드실 수 있습니다!" />
-
         <div className={cx('box')}>
           <Products title="맛있는샘물 18.9L 전용 냉온수기" products={productsWaterHeater} />
         </div>
-
         <div className={cx('precautions')}>
           <h3>※ 임대 시 주의사항</h3>
           <p>
-            약정 기간 만료 전 임대 해약시 위약금 발생 가능할 수 있습니다. 단, 제주도와 울릉도 및 일부 도서 산간 지역은 제품 가격이 상이할 수
-            있으며, 냉온수기 조건은 지역에 따라 상이할 수 있습니다.
+            약정 기간 만료 전 임대 해약시 위약금 발생 가능할 수 있습니다.
+            <br /> 단, 제주도와 울릉도 및 일부 도서 산간 지역은 제품 가격이 상이할 수 있으며,
+            <br /> 냉온수기 조건은 지역에 따라 상이할 수 있습니다.
           </p>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 .container {
   @include flexCenterStyle;
-  padding: 6.25rem 0;
+  padding: 6rem 0;
   background-color: $face-color;
 
   > .limiter {
@@ -21,16 +21,16 @@
       justify-content: space-between;
       align-items: center;
       background-color: white;
-      padding: 3.125rem 5rem;
+      padding: 3rem 5rem;
       box-sizing: border-box;
 
       &.pulmuone {
-        border-top-color: $tint-color;
+        border-top-color: $tint-color-1;
         margin-bottom: 4rem;
 
         > .text {
           > .title {
-            color: $tint-color;
+            color: $tint-color-1;
           }
         }
       }

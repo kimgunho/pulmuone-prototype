@@ -3,7 +3,7 @@
 .container {
   > .section {
     @include flexCenterStyle;
-    padding: 6.25rem 0;
+    padding: 6rem 0;
 
     > .limiter {
       @include flexCenterStyle;
@@ -23,7 +23,7 @@
       > .info {
         width: 100%;
         display: flex;
-        padding-top: 3.125rem;
+        padding-top: 3rem;
 
         > div {
           box-sizing: border-box;
@@ -61,7 +61,7 @@
             padding-bottom: 1rem;
 
             > .title {
-              color: $tint-color;
+              color: $tint-color-1;
               font-size: 1.6rem;
               padding-bottom: 0.5rem;
             }

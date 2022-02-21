@@ -31,7 +31,7 @@
     }
     > .grid {
       @include flexCenterStyle;
-      background-color: #004d1c;
+      background-color: $accent-color;
       width: 100%;
       max-width: 68.75rem;
       height: 41.65rem;

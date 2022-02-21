@@ -13,7 +13,7 @@ const Water = () => {
       <S03 />
       <Outro
         title={'내추럴 미네랄 워터, 풀무원샘물\n건강한 수분 섭취를 시작해 보세요!'}
-        productLink={'https://smartstore.naver.com/pulmuonebynature/category/4da64aebbec24c34b8b7963e83ef2757?cp=1'}
+        productLink="https://smartstore.naver.com/pulmuonebynature/category/4da64aebbec24c34b8b7963e83ef2757?cp=1"
       />
     </div>
   );

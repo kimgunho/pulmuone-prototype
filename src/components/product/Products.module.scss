@@ -6,11 +6,10 @@
   flex-direction: column;
 
   > .title {
-    font-size: 2.75rem;
+    font-size: 2.6rem;
     padding-bottom: 4.75rem;
     font-weight: bold;
   }
-
   > .products {
     width: 100%;
     display: flex;
@@ -20,14 +19,13 @@
     &.green {
       > li {
         > .title {
-          color: #03542c;
+          color: $accent-color;
         }
         > .price {
-          background-color: #03542c;
+          background-color: $accent-color;
         }
       }
     }
-
     &.blue {
       > li {
         > .title {
@@ -58,9 +56,8 @@
         white-space: nowrap;
 
         > .sub {
-          font-size: 1.25rem;
+          font-size: 1.2rem;
           display: block;
-          padding-bottom: 0.8rem;
           font-weight: normal;
         }
       }
@@ -76,13 +73,14 @@
         width: fit-content;
         color: white;
         font-weight: bold;
-        padding: 0.375rem 1.875rem;
-        margin: 2rem 0 1.3rem 0;
+        padding: 0.375rem 1.8rem;
+        margin: 2rem 0 0;
         border-radius: 30px;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
       > .info {
-        font-size: 1.25rem;
+        margin-top: 1rem;
+        font-size: 1.2rem;
 
         > span {
           line-height: 1.5;
