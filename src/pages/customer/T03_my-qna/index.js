@@ -1,37 +1,22 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './index.module.scss';
 import PageTitle from '../../../components/shared/PageTitle';
-import CheckMyEmail from './CheckMyEmail';
-import List from './List';
+import EnterEmail from './EnterEmail';
+import QnaList from './QnaList';
 
 const cx = classNames.bind(styles);
 
 const MyQna = () => {
-  const [email, setEmail] = useState(sessionStorage.getItem('email'));
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    if (email !== null) {
-      axios
-        .get(`https://pulmuone.console.flyground.co.kr/api/qna/query?email=${email}`)
-        .then((res) => {
-          setData(res.data.data);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    }
-  }, []);
+  const [email, setEmail] = useState();
 
   return (
     <div className={cx('container')}>
-      <PageTitle title="내 문의사항" sub="문의사항 확인 시 문의 시에 입력한 이메일로 조회해 주세요." subReverse={true} />
+      <PageTitle title="내 문의사항" subtitle="문의사항 작성 시 입력한 이메일을 입력해주세요." reverse={true} />
       <div className={cx('limiter')}>
-        {email === null && <CheckMyEmail setEmail={setEmail} setData={setData} />}
-        {data !== null && <List data={data} />}
+        {email === undefined && <EnterEmail onSetEmail={setEmail} />}
+        {email && <QnaList email={email} />}
       </div>
     </div>
   );
