@@ -15,7 +15,11 @@ const Bodyful = () => {
       <S03 />
       <S04 />
       <S05 />
-      <Outro color="blue" title={'프리미엄 해양심층수, 바디풀\n건강한 수분 섭취를 시작해 보세요!'} />
+      <Outro
+        color="blue"
+        title={'프리미엄 해양심층수, 바디풀\n건강한 수분 섭취를 시작해 보세요!'}
+        productLink={'https://smartstore.naver.com/pulmuonebynature/category/ed44c9fdf9984c4cade3bad9ea66b00d?cp=1'}
+      />
     </div>
   );
 };

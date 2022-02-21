@@ -7,7 +7,7 @@ import background_green from '../../assets/images/shared/outro_background_green.
 
 const cx = classNames.bind(styles);
 
-const Outro = ({ color = 'green', title, buy = true }) => {
+const Outro = ({ color = 'green', title, buy = true, productLink }) => {
   return (
     <div
       className={cx('container')}
@@ -20,17 +20,17 @@ const Outro = ({ color = 'green', title, buy = true }) => {
         </h2>
         <ul className={cx(['list'])}>
           <li className={cx(['order', color])}>
-            <Link to="/" className={cx(color)}>
+            <Link to="/고객센터/문의하기" className={cx(color)}>
               <div className={cx('icon')} />
               <p className={cx(color)}>주문상담 신청하기</p>
             </Link>
           </li>
           {buy ? (
             <li className={cx(['buy', color])}>
-              <Link to="/" className={cx(color)}>
+              <a href={productLink} className={cx(color)} target={'_blank'} rel="noreferrer">
                 <div className={cx('icon')} />
                 <p className={cx(color)}>바로 구매하기</p>
-              </Link>
+              </a>
             </li>
           ) : null}
         </ul>

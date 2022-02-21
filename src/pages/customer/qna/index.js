@@ -56,7 +56,7 @@ const QNA = () => {
     <div className={cx('container')}>
       <PageTitle title="문의하기" subtitle="문의하신 내용에 대해 신속한 답변을 드리겠습니다." reverse={true} />
       <div className={cx('limiter')}>
-        <Link className={cx('btn')} to="">
+        <Link className={cx('btn')} to="/고객센터/내-문의사항">
           내 문의사항 보기
         </Link>
 
