@@ -21,14 +21,15 @@
     @include limiter;
 
     > h3 {
-      font-size: 2.625rem;
+      margin-top: 4rem;
+      font-size: 2.6rem;
       color: $accent-color;
       font-weight: bold;
-      padding: 3.875rem;
       text-align: center;
     }
     > p {
-      font-size: 1.5rem;
+      margin-top: 4rem;
+      font-size: 1.6rem;
       line-height: 1.8;
       text-align: center;
     }
@@ -56,7 +57,7 @@
           justify-content: space-between;
 
           > h4 {
-            font-size: 1.875rem;
+            font-size: 1.8rem;
             font-weight: bold;
             line-height: 1.5;
             color: white;

@@ -29,24 +29,22 @@
 
           > span {
             &.label {
-              font-size: 1.5rem;
+              font-size: 1.6rem;
               color: #212121;
               font-weight: bold;
               border-left: 4px solid #05542b;
               padding-left: 1rem;
             }
-
             &.value {
               color: #aaa;
               font-weight: bold;
-              font-size: 1.25rem;
+              font-size: 1.4rem;
               padding-left: 2rem;
             }
           }
         }
       }
     }
-
     > .btn {
       @include btn;
       background-color: #06542c;

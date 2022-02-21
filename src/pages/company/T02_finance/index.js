@@ -34,13 +34,11 @@ const Finance = () => {
           </select>
         </div>
       </div>
-
       <div className={cx('section')}>
         <div className={cx('limiter')}>
           <div className={cx('table')}>
             <p className={cx('sub')}>전자공시 - {data[0].finance}기 결산 공고</p>
             <h3 className={cx('title')}>재무상태표</h3>
-
             <p className={cx('date')}>{data[0].date} 현재(단위 :원)</p>
             <div className={cx('head')}>
               <ul>
@@ -49,7 +47,6 @@ const Finance = () => {
                 <li>제 {data[0].finance - 1}(전) 기</li>
               </ul>
             </div>
-
             <div className={cx('body')}>
               <ul>
                 {data[0].data.map((item, index) => (
@@ -68,7 +65,6 @@ const Finance = () => {
               </ul>
             </div>
           </div>
-
           <div className={cx('inner')}>
             <div className={cx('ann')}>
               <p>위와 같이 공고함</p>

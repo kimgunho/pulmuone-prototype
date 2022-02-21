@@ -21,12 +21,11 @@
 
         > li {
           > .title {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #212121;
             font-weight: bold;
             line-height: 3;
           }
-
           > .box {
             @include flexCenterStyle;
             margin-bottom: 1rem;
@@ -34,7 +33,6 @@
             &.background {
               background-color: #f0ede7;
             }
-
             > input {
               width: 100%;
 
@@ -43,25 +41,16 @@
                 background-color: #f0ede7;
                 padding: 1.25rem;
                 box-sizing: border-box;
-                font-size: 1.25rem;
+                font-size: 1.4rem;
                 color: #aaa;
                 border: 0;
               }
             }
-
-            > .connect {
-              font-weight: bold;
-              padding: 0 1.25rem;
-              width: fit-content;
-              font-size: 1.25rem;
-              color: #212121;
-            }
-
             > textarea {
               width: 100%;
               border: 0;
               min-height: 21.25rem;
-              font-size: 1.25rem;
+              font-size: 1.4rem;
               color: #aaa;
               padding: 1.25rem;
               box-sizing: border-box;
