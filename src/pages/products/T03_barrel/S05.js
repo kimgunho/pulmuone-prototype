@@ -7,6 +7,7 @@ import waterHeater_product01 from '../../../assets/images/products/barrel/s05/he
 import waterHeater_product02 from '../../../assets/images/products/barrel/s05/heater_product02.png';
 import waterHeater_product03 from '../../../assets/images/products/barrel/s05/heater_product03.png';
 import waterHeater_product04 from '../../../assets/images/products/barrel/s05/heater_product04.png';
+import file from '../../../assets/files/product/t03_barrel/barrel18_quality_test.zip';
 
 import Products from '../../../components/product/Products';
 import Table from '../../../components/product/Table';
@@ -76,7 +77,7 @@ const S05 = () => {
       <div className={cx('limiter')}>
         <Products title="제품소개" products={productsWater} />
         <Table table={table} />
-        <Download file="/" text="수질 성적 검사서" title="맛있는샘물은 안심하고 드실 수 있습니다!" />
+        <Download file={file} text="수질 성적 검사서" title="맛있는샘물은 안심하고 드실 수 있습니다!" />
 
         <div className={cx('box')}>
           <Products title="맛있는샘물 18.9L 전용 냉온수기" products={productsWaterHeater} />

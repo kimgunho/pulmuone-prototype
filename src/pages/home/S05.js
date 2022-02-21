@@ -21,7 +21,7 @@ const S05 = () => {
             <br />
             풀무원의 바른 먹거리 철학으로 전합니다.
           </p>
-          <Link to="/products/spring-water">제품 보러가기</Link>
+          <Link to="/제품안내/풀무원샘물">제품 보러가기</Link>
         </div>
       </div>
     </div>

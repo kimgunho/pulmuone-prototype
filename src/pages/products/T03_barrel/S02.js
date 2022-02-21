@@ -10,6 +10,7 @@ import detail_img01 from '../../../assets/images/products/barrel/s02/detail_img0
 import detail_img02 from '../../../assets/images/products/barrel/s02/detail_img02.jpg';
 import detail_img03 from '../../../assets/images/products/barrel/s02/detail_img03.jpg';
 import detail_img04 from '../../../assets/images/products/barrel/s02/detail_img04.jpg';
+import file from '../../../assets/files/product/t03_barrel/barrel15_quality_test.zip';
 
 import Products from '../../../components/product/Products';
 import Table from '../../../components/product/Table';
@@ -65,7 +66,7 @@ const S02 = () => {
       <div className={cx('limiter')}>
         <Products products={productsWater} title="제품소개" />
         <Table title="무기물질 함량(mg/L)" table={table} />
-        <Download file="/" text="수질 성적 검사서" title="풀무원샘물은 안심하고 드실 수 있습니다!" />
+        <Download file={file} text="수질 성적 검사서" title="풀무원샘물은 안심하고 드실 수 있습니다!" />
         <div className={cx('detail')}>
           <h2 className={cx('title')}>‘신선하게, 편리하게’ 풀무원샘물 15L 만의 차별화</h2>
           <div className={cx('info')}>

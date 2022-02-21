@@ -51,7 +51,7 @@ const S06 = () => {
           <br />
           (제주, 도서산간 지역 제외)
         </p>
-        <Link className={cx('linkBtn')} to="/">
+        <Link className={cx('linkBtn')} to="/고객센터/문의하기">
           냉온수기 세척 온라인 신청
         </Link>
         <Carousel slides={slides} section={1} slidesPerView={5} />

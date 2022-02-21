@@ -9,6 +9,8 @@ import Download from '../../../components/product/Download';
 import Table from '../../../components/product/Table';
 import Products from '../../../components/product/Products';
 
+import file from '../../../assets/files/product/t01_water/water_quality_test.zip';
+
 const cx = classNames.bind(styles);
 
 const S02 = () => {
@@ -59,7 +61,7 @@ const S02 = () => {
       <div className={cx('limiter')}>
         <Products products={products} title="제품소개" />
         <Table table={table} />
-        <Download file="/" text="수질 성적 검사서" title="풀무원샘물은 안심하고 드실 수 있습니다!" />
+        <Download file={file} text="수질 성적 검사서" title="풀무원샘물은 안심하고 드실 수 있습니다!" />
       </div>
     </div>
   );
