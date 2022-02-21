@@ -4,7 +4,7 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 
 import styles from './form.module.scss';
-import { onEmailCheck, onlyNumberKeyPress } from '../../../../util/regular';
+import { onEmailCheck, onlyNumberKeyPress } from '../../../../utils/regular';
 
 const cx = classNames.bind(styles);
 
