@@ -10,9 +10,9 @@ import List from './List';
 
 const cx = classNames.bind(styles);
 
-const MyQna = () => {
+function MyQna() {
+  const [email, setEmail] = useState(sessionStorage.getItem('email'));
   const [data, setData] = useState(null);
-  const email = sessionStorage.getItem('email');
 
   useEffect(() => {
     if (email !== null) {
@@ -29,10 +29,13 @@ const MyQna = () => {
 
   return (
     <div className={cx('container')}>
-      <PageTitle title="내 문의사항" subtitle="문의사항 확인시 문의 시에 입력한 이메일로 조회해주세요." reverse={true} />
-      <div className={cx('limiter')}>{data === null ? <CheckMyEmail setData={setData} /> : <List data={data} />}</div>
+      <PageTitle title="내 문의사항" sub="문의사항 확인시 문의시에 입력한 이메일로 조회 해 주세요." subReverse={true} />
+      <div className={cx('limiter')}>
+        {email === null && <CheckMyEmail setEmail={setEmail} setData={setData} />}
+        {data !== null && <List data={data} />}
+      </div>
     </div>
   );
-};
+}
 
 export default MyQna;

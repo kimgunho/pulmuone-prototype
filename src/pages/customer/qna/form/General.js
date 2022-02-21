@@ -8,7 +8,7 @@ import { onEmailCheck, onlyNumberKeyPress } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
-const General = ({ agree }) => {
+function General({ agree }) {
   const navigate = useNavigate();
   const fileNameRef = useRef();
   const [formData, setFormdata] = useState({
@@ -32,7 +32,7 @@ const General = ({ agree }) => {
       formData;
 
     if (!agree) {
-      alert('개인정보처리방침에 동의해주세요.');
+      alert('개인정보 처리방침에 동의해주세요.');
       return;
     }
 
@@ -255,6 +255,6 @@ const General = ({ agree }) => {
       </div>
     </div>
   );
-};
+}
 
 export default General;

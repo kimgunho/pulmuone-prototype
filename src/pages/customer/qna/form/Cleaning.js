@@ -8,7 +8,7 @@ import { onEmailCheck, onlyNumberKeyPress } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
-const Cleaning = ({ agree }) => {
+function Cleaning({ agree }) {
   const navigate = useNavigate();
   const [raw, setRaw] = useState({
     name: '',
@@ -31,7 +31,7 @@ const Cleaning = ({ agree }) => {
     const { name, emailId, emailDetail, content, mobile1, mobile2, mobile3, address, addressDetail1, addressDetail2, product } = raw;
 
     if (!agree) {
-      alert('개인정보처리방침에 동의해주세요.');
+      alert('개인정보 처리방침에 동의해주세요.');
       return;
     }
 
@@ -252,6 +252,6 @@ const Cleaning = ({ agree }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Cleaning;

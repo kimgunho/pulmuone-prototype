@@ -8,7 +8,7 @@ import { onEmailCheck } from '../../../../util/regular';
 
 const cx = classNames.bind(styles);
 
-const Report = ({ agree }) => {
+function Report({ agree }) {
   const navigate = useNavigate();
   const [raw, setRaw] = useState({
     name: '',
@@ -22,7 +22,7 @@ const Report = ({ agree }) => {
     const { name, emailId, emailDetail, title, content } = raw;
 
     if (!agree) {
-      alert('개인정보처리방침에 동의해주세요.');
+      alert('개인정보 처리방침에 동의해주세요.');
       return;
     }
 
@@ -126,6 +126,6 @@ const Report = ({ agree }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Report;
