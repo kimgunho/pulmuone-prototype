@@ -17,10 +17,9 @@
     > .info {
       > h2 {
         color: white;
-        font-size: 3.25rem;
-        line-height: 1.5;
+        font-size: 3.2rem;
+        line-height: 1.6;
       }
-
       > .logo {
         @include flexCenterStyle;
         display: none;
@@ -29,10 +28,9 @@
           width: 70%;
         }
       }
-
       > p {
-        font-size: 1.625rem;
-        line-height: 2;
+        font-size: 1.6rem;
+        line-height: 1.8;
         color: white;
         padding-top: 2rem;
       }
@@ -40,7 +38,7 @@
         @include homeBtn;
         background-color: white;
         color: #133550;
-        margin-top: 3.75rem;
+        margin-top: 4rem;
 
         &:hover {
           background-color: #133550;
