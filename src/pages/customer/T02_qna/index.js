@@ -29,7 +29,7 @@ const Qna = () => {
         </div>
         <div className={cx('agree')}>
           <label onClick={doAgree} htmlFor="agree">
-            <span className={cx(['box', { agree }])}></span>
+            <span className={cx('box')}>{agree && <span>✓</span>}</span>
             <p>개인정보처리방침에 동의합니다.</p>
           </label>
         </div>
