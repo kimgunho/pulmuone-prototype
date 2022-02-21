@@ -1,14 +1,9 @@
-import classNames from 'classnames/bind';
-
-import styles from './index.module.scss';
 import Jumbotron from '../../components/shared/Jumbotron';
 import TabBar from '../../components/shared/TabBar';
 import TabFaq from './T01_faq';
 import TabQna from './T02_qna';
 import TabMyQna from './T03_my-qna';
 import jumbotron from '../../assets/images/customer/jumbotron.jpg';
-
-const cx = classNames.bind(styles);
 
 const tabItems = [
   {
@@ -30,10 +25,8 @@ const CSR = () => {
 
   return (
     <div>
-      <div className={cx('wrapper')}>
-        <Jumbotron title="고객센터" subtitle="Customer Center" background={jumbotron} />
-        <TabBar items={tabItems} activeIndex={tabIndex} />
-      </div>
+      <Jumbotron title="고객센터" subtitle="Customer Center" background={jumbotron} />
+      <TabBar items={tabItems} activeIndex={tabIndex} />
       {tabIndex === 0 && <TabFaq />}
       {tabIndex === 1 && <TabQna />}
       {tabIndex === 2 && <TabMyQna />}

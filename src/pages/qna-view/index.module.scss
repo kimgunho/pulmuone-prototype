@@ -6,11 +6,6 @@
   background-color: #f5f3ef;
   padding-bottom: 6.25rem;
 
-  > .wrapper {
-    width: 100%;
-    position: relative;
-  }
-
   > .limiter {
     @include limiter;
     @include flexCenterStyle;

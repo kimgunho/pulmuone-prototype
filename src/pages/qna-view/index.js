@@ -77,10 +77,8 @@ const QnaView = () => {
 
   return (
     <div className={cx('container')}>
-      <div className={cx('wrapper')}>
-        <Jumbotron title="고객센터" subtitle="Customer Center" background={jumbotron} />
-        <TabBar items={tabItems} activeIndex={2} />
-      </div>
+      <Jumbotron title="고객센터" subtitle="Customer Center" background={jumbotron} />
+      <TabBar items={tabItems} activeIndex={2} />
       <PageTitle title="내 문의사항" />
       <div className={cx('limiter')}>
         <ul className={cx('head')}>

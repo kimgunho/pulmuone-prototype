@@ -1,6 +1,3 @@
-import classNames from 'classnames/bind';
-
-import styles from './index.module.scss';
 import Jumbotron from '../../components/shared/Jumbotron';
 import TabBar from '../../components/shared/TabBar';
 import TabWater from './T01_water';
@@ -8,8 +5,6 @@ import TabBodyful from './T02_bodyful';
 import TabBarrel from './T03_barrel';
 import TabRoutine from './T04_routine';
 import jumbotron from '../../assets/images/products/jumbotron.jpg';
-
-const cx = classNames.bind(styles);
 
 const tabItems = [
   {
@@ -35,10 +30,8 @@ const Products = () => {
 
   return (
     <div>
-      <div className={cx('wrapper')}>
-        <Jumbotron title="제품안내" subtitle="Products" background={jumbotron} />
-        <TabBar items={tabItems} activeIndex={tabIndex} />
-      </div>
+      <Jumbotron title="제품안내" subtitle="Products" background={jumbotron} />
+      <TabBar items={tabItems} activeIndex={tabIndex} />
       {tabIndex === 0 && <TabWater />}
       {tabIndex === 1 && <TabBodyful />}
       {tabIndex === 2 && <TabBarrel />}
