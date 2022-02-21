@@ -31,6 +31,11 @@ const Finance = () => {
           <select onChange={onChange}>
             <option value={2020}>2020 전자공시</option>
             <option value={2019}>2019 전자공시</option>
+            <option value={2018}>2018 전자공시</option>
+            <option value={2017}>2017 전자공시</option>
+            <option value={2016}>2016 전자공시</option>
+            <option value={2015}>2015 전자공시</option>
+            <option value={2014}>2014 전자공시</option>
           </select>
         </div>
       </div>
