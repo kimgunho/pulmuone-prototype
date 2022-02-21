@@ -4,7 +4,7 @@ import styles from './Products.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Products({ products, title, color = 'green' }) {
+const Products = ({ products, title, color = 'green' }) => {
   return (
     <div className={cx('container')}>
       <h2 className={cx('title')}>{title}</h2>
@@ -18,7 +18,7 @@ function Products({ products, title, color = 'green' }) {
             <div className={cx('image')} style={{ backgroundImage: `url(${image})` }}></div>
             <p className={cx('price')}>{price}</p>
             <p className={cx('info')}>
-              {text.split('/n').map((line, index) => (
+              {text.split('\n').map((line, index) => (
                 <span key={index}>{line}</span>
               ))}
             </p>
@@ -27,6 +27,6 @@ function Products({ products, title, color = 'green' }) {
       </ul>
     </div>
   );
-}
+};
 
 export default Products;

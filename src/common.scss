@@ -1,33 +1,34 @@
-// break resize
-$breakpoint-mobile: 740px; // mobile
-$breakpoint-tablet: 1280px; // tablet
-$breakpoint-wide-desktop: 1480px; // wide desktop
+$tint-color: #8dc63e;
+$accent-color: #06542c;
+$face-color: #f5f3ef;
 
-// en font
+// Font
 @mixin fontEn {
   font-family: 'pulmuone-en', 'Noto Sans KR', sans-serif;
 }
 
-// layout mixin
-@mixin absoluteFull {
+// Layout
+@mixin absoluteFill {
   position: absolute;
   left: 0;
+  right: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-@mixin backgroundDefaultStyle {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  bottom: 0;
 }
 
 @mixin limiter {
   width: 100%;
   max-width: 1440px;
+  padding-right: 2rem;
+  padding-left: 2rem;
   box-sizing: border-box;
   transition: padding 0.2s ease;
+}
+
+@mixin backgroundDefaultStyle {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @mixin flexCenterStyle {
@@ -36,7 +37,7 @@ $breakpoint-wide-desktop: 1480px; // wide desktop
   justify-content: center;
 }
 
-// design mixin
+// Design
 @mixin homeBtn {
   display: flex;
   justify-content: flex-start;
@@ -67,50 +68,17 @@ $breakpoint-wide-desktop: 1480px; // wide desktop
   margin: 3.125rem 0;
 }
 
-@mixin subTitle {
-  font-size: 2.75rem;
+@mixin sectionTitle {
+  font-size: 2.6rem;
   font-weight: bold;
-  color: #212121;
   line-height: 1.5;
 }
 
-@mixin selectIcon {
-  appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, #999 50%), linear-gradient(135deg, #999 50%, transparent 50%),
-    linear-gradient(to right, #fff, #fff);
-  background-position: calc(100% - 20px) calc(1em + 8px), calc(100% - 15px) calc(1em + 8px), 100% 0;
-  background-size: 5px 5px, 5px 5px, 100% 100%;
-  background-repeat: no-repeat;
-
-  &::-ms-expand {
-    display: none;
-  }
-}
-
-@mixin selectIconDown {
+@mixin dropDownIcon {
   appearance: none;
   background: url('./assets/images/shared/select_down_icon.svg') no-repeat 97% 50%/15px auto;
 
   &::-ms-expand {
     display: none;
-  }
-}
-
-// responsive size
-@mixin desktop {
-  @media screen and (max-width: $breakpoint-wide-desktop) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media screen and (max-width: $breakpoint-tablet) {
-    @content;
-  }
-}
-
-@mixin mobile {
-  @media screen and (max-width: #{$breakpoint-mobile}) {
-    @content;
   }
 }

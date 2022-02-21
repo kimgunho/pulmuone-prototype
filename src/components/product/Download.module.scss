@@ -8,7 +8,6 @@
     > .text {
       color: #03542c;
     }
-
     > a {
       border-color: #024819;
 
@@ -17,12 +16,10 @@
       }
     }
   }
-
   &.blue {
     > .text {
       color: #005f9a;
     }
-
     > a {
       border-color: #005f9a;
 
@@ -31,13 +28,11 @@
       }
     }
   }
-
   > .text {
     font-weight: bold;
     font-size: 2rem;
     padding-bottom: 2.5rem;
   }
-
   > a {
     @include flexCenterStyle;
     width: fit-content;

@@ -6,7 +6,6 @@
   img {
     width: 100%;
   }
-
   > .controls {
     display: flex;
     justify-content: space-between;
@@ -21,7 +20,7 @@
         width: 12px;
         height: 12px;
         border-right: 50%;
-        background-color: #06542c;
+        background-color: $accent-color;
         opacity: 0.3;
 
         &.bulletsActive {
@@ -29,22 +28,16 @@
         }
       }
     }
-
     > .nav {
       @include flexCenterStyle;
+
       > button {
         @include flexCenterStyle;
         border: 0;
         width: 3.125rem;
         height: 3.125rem;
-        background-color: #06542c;
+        background-color: $accent-color;
         cursor: pointer;
-
-        &.prev {
-        }
-
-        &.next {
-        }
 
         > img {
           width: 100%;
