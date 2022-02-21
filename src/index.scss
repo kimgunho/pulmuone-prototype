@@ -8,7 +8,19 @@
 }
 html {
   overflow-x: hidden;
-  font-size: 16px;
+
+  // Desktop
+  @include desktop {
+    font-size: 16px;
+  }
+  // Tablet
+  @include tablet {
+    font-size: 14px;
+  }
+  // Mobile
+  @include mobile {
+    font-size: 12px;
+  }
 }
 h1,
 h2,

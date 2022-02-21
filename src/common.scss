@@ -38,6 +38,23 @@ $face-color: #f5f3ef;
   justify-content: center;
 }
 
+// Responsive
+@mixin desktop {
+  @media screen and (max-width: 1069px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: 735px) and (max-width: 1068px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: 734px) {
+    @content;
+  }
+}
+
 // Design
 @mixin homeBtn {
   display: flex;
