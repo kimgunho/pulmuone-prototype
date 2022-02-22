@@ -59,7 +59,7 @@ const Granite = () => {
               </p>
             </div>
             <div className={cx('text')}>
-              <h3>2억년 동안 어떠한 지질학적 변화도 겪지 않은 촘촘하고 단단한 화강암반의 풍부한 미네랄을 오롯이 물에 담았습니다.</h3>
+              <h4>2억년 동안 어떠한 지질학적 변화도 겪지 않은 촘촘하고 단단한 화강암반의 풍부한 미네랄을 오롯이 물에 담았습니다.</h4>
             </div>
           </div>
           <div ref={imageRef} className={cx('illust')}>

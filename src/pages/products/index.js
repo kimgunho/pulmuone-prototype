@@ -16,12 +16,12 @@ const tabItems = [
     link: '/제품안내/풀무원샘물-바디풀',
   },
   {
-    title: '대용량 먹는샘물',
-    link: '/제품안내/대용량-먹는샘물',
-  },
-  {
     title: '풀무원샘물 워터루틴',
     link: '/제품안내/풀무원샘물-워터루틴',
+  },
+  {
+    title: '대용량 먹는샘물',
+    link: '/제품안내/대용량-먹는샘물',
   },
 ];
 
@@ -34,8 +34,8 @@ const Products = () => {
       <TabBar items={tabItems} activeIndex={tabIndex} />
       {tabIndex === 0 && <TabWater />}
       {tabIndex === 1 && <TabBodyful />}
-      {tabIndex === 2 && <TabBarrel />}
-      {tabIndex === 3 && <TabRoutine />}
+      {tabIndex === 2 && <TabRoutine />}
+      {tabIndex === 3 && <TabBarrel />}
     </div>
   );
 };
