@@ -7,19 +7,42 @@
 
   > .limiter {
     @include limiter;
-    display: flex;
-    justify-content: space-between;
 
-    > .left {
-      width: 70%;
+    > .flex {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
 
-      > .inner {
+      > .customer {
         display: flex;
-        align-items: center;
         justify-content: flex-start;
+        align-items: flex-start;
+        width: calc(100% - 16rem);
+
+        @include tablet {
+          width: calc(100% - 13rem);
+        }
+
+        @include mobile {
+          order: 3;
+          width: 100%;
+          flex-direction: column;
+        }
 
         > li {
-          margin-right: 4rem;
+          &:first-child {
+            padding-right: 6rem;
+
+            @include tablet {
+              padding-right: 2rem;
+            }
+
+            @include mobile {
+              padding: 0;
+              margin-bottom: 2rem;
+            }
+          }
 
           > .title {
             color: $tint-color-1;
@@ -39,63 +62,8 @@
           }
         }
       }
-      > .info {
-        margin-top: 4rem;
-        display: flex;
-        align-items: flex-start;
 
-        > .title {
-          width: 12rem;
-
-          > img {
-            width: 100%;
-            max-width: 8rem;
-          }
-        }
-        > .inner {
-          width: calc(100% - 12rem);
-
-          > ul {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-
-            &.top {
-              > li {
-                &:first-child {
-                  > a {
-                    padding-left: 0;
-                  }
-                }
-                > a {
-                  display: block;
-                  padding: 0 1rem 1rem 1rem;
-                  color: #666;
-                  font-weight: bold;
-                  font-size: 1.2rem;
-                }
-              }
-            }
-            &.bottom {
-              flex-wrap: wrap;
-
-              > li {
-                margin: 0 0.5rem 0.5rem 0;
-                color: #666;
-                font-size: 1.1rem;
-              }
-            }
-          }
-        }
-      }
-    }
-    > .right {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-direction: column;
-
-      > select {
+      > .familySite {
         @include dropDownIcon;
         padding: 1rem;
         background-color: white;
@@ -105,11 +73,125 @@
         border: 1px solid #999;
         width: 100%;
         max-width: 16rem;
+
+        @include tablet {
+          max-width: 13rem;
+        }
+
+        @include mobile {
+          order: 2;
+          width: 100%;
+          max-width: 15rem;
+          margin-left: 3rem;
+        }
       }
+
+      > .logo {
+        margin-top: 5rem;
+        width: 12rem;
+
+        @include tablet {
+          width: 10rem;
+        }
+
+        @include mobile {
+          order: 1;
+          margin-top: 0;
+          width: calc(100% - 18rem);
+          margin-bottom: 3rem;
+        }
+
+        > img {
+          width: 100%;
+          max-width: 8rem;
+
+          @include tablet {
+            max-width: 6rem;
+          }
+
+          @include mobile {
+            max-width: 10rem;
+          }
+        }
+      }
+
+      > .info {
+        width: calc(100% - 28rem);
+        margin-top: 5rem;
+        padding-right: 5rem;
+        box-sizing: border-box;
+
+        @include tablet {
+          width: calc(100% - 23rem);
+        }
+
+        @include mobile {
+          order: 5;
+          width: 100%;
+          margin-top: 3rem;
+          padding: 0;
+        }
+
+        > ul {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          &.top {
+            @include mobile {
+              justify-content: center;
+            }
+
+            > li {
+              &:first-child {
+                > a {
+                  padding-left: 0;
+                }
+              }
+              > a {
+                display: block;
+                padding: 0 1rem 1rem 1rem;
+                color: #666;
+                font-weight: bold;
+                font-size: 1.2rem;
+              }
+            }
+          }
+          &.bottom {
+            flex-wrap: wrap;
+
+            @include mobile {
+              letter-spacing: -1px;
+              margin-top: 1rem;
+            }
+
+            > li {
+              margin: 0 0.5rem 0.5rem 0;
+              color: #666;
+              font-size: 1.1rem;
+            }
+          }
+        }
+      }
+
       > .sns {
+        width: 100%;
+        max-width: 16rem;
         display: flex;
         align-items: center;
-        margin-bottom: 2rem;
+        justify-content: space-between;
+        margin-top: 5rem;
+
+        @include tablet {
+          max-width: 13rem;
+        }
+
+        @include mobile {
+          order: 4;
+          max-width: 100%;
+          margin-top: 3rem;
+          justify-content: center;
+        }
 
         > li {
           &:not(:first-child) {
