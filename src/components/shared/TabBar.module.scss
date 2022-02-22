@@ -9,6 +9,10 @@
   justify-content: center;
   box-sizing: border-box;
 
+  @include mobile {
+    display: none;
+  }
+
   > .tabs {
     width: 100%;
     max-width: 72rem;
