@@ -12,18 +12,22 @@
   @include mobile {
     display: none;
   }
-
   > .tabs {
     width: 100%;
     max-width: 72rem;
     background-color: $face-color;
     display: flex;
     justify-content: center;
+    padding: 0 2rem;
+    box-sizing: border-box;
 
     > li {
       @include flexCenterStyle;
       width: 20%;
 
+      @include tablet {
+        width: 25%;
+      }
       > a {
         color: $accent-color;
         display: flex;

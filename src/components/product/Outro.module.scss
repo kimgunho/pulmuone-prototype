@@ -18,7 +18,6 @@
       @include mobile {
         font-size: 2rem;
       }
-
       > span {
         display: block;
         line-height: 1.5;
@@ -35,7 +34,6 @@
         flex-direction: column;
         align-items: center;
       }
-
       > li {
         @include flexCenterStyle;
         flex-direction: column;
@@ -44,9 +42,8 @@
         max-width: 24rem;
 
         @include mobile {
-          max-width: 80%;
+          width: 80%;
         }
-
         &:not(:first-child) {
           margin-left: 1rem;
 
@@ -112,7 +109,6 @@
           @include mobile {
             padding: 2rem 0;
           }
-
           &.green {
             &:hover {
               background-color: $tint-color-1;
@@ -152,7 +148,6 @@
             @include mobile {
               padding-top: 0;
             }
-
             &.green {
               color: $accent-color;
             }

@@ -26,11 +26,7 @@ const Carousel = ({ images, section }) => {
       <Swiper
         loop={true}
         slidesPerView={1}
-        breakpoints={{
-          734: {
-            slidesPerView: 2,
-          },
-        }}
+        breakpoints={{ 734: { slidesPerView: 2 } }}
         pagination={{
           el: `.${pager}`,
           clickable: true,

@@ -13,7 +13,6 @@
     padding: 2rem 0;
     background-color: rgba(0, 0, 0, 0.6);
   }
-
   > .wrapper {
     width: 100%;
     max-width: 60rem;
@@ -47,7 +46,6 @@
           }
         }
       }
-
       > div {
         width: 100%;
         height: 2px;
@@ -56,6 +54,7 @@
         left: 0;
         border-radius: 1rem;
         transition: all 0.2s ease;
+
         &.top {
           top: 0;
           transform-origin: 5px 6px;
@@ -106,7 +105,6 @@
           display: flex;
         }
       }
-
       > .menus {
         width: calc(50% - 4rem);
         display: flex;
@@ -118,7 +116,6 @@
           flex-direction: column;
           align-items: center;
         }
-
         > li {
           position: relative;
 

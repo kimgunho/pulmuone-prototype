@@ -227,7 +227,6 @@ const PrivacyPolicy = () => {
           </tbody>
         </table>
       </div>
-
       <h3>이용자의 권리와 의무</h3>
       <ul>
         <li>
