@@ -89,7 +89,7 @@ const Quality = () => {
               <h4>안전</h4>
               <img src={cert02} alt="식품 안전" />
               <p>
-                Safety &amp; Health <span className={cx('point')}>OHSAS 45001</span>
+                Safety &amp; Health <span className={cx('point')}>ISO 45001</span>
               </p>
             </li>
             <li>

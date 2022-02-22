@@ -25,7 +25,7 @@ const App = () => {
         <Route path={`${encodeURI('/제품안내/풀무원샘물')}`} element={<Products />} />
         <Route path={`${encodeURI('/제품안내/풀무원샘물-바디풀')}`} element={<Products />} />
         <Route path={`${encodeURI('/제품안내/대용량-먹는샘물')}`} element={<Products />} />
-        <Route path={`${encodeURI('/제품안내/풀무원-워터루틴')}`} element={<Products />} />
+        <Route path={`${encodeURI('/제품안내/풀무원샘물-워터루틴')}`} element={<Products />} />
         <Route path={`${encodeURI('/CSR/수자원-보호')}`} element={<CSR />} />
         <Route path={`${encodeURI('/CSR/나눔-캠페인')}`} element={<CSR />} />
         <Route path={`${encodeURI('/CSR/친환경-캠페인')}`} element={<CSR />} />
