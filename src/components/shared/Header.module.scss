@@ -11,6 +11,7 @@
 
   @include mobile {
     padding: 2rem 0;
+    background-color: rgba(0, 0, 0, 0.6);
   }
 
   > .wrapper {
@@ -64,7 +65,7 @@
         }
         &.bottom {
           top: 100%;
-          width: 50%;
+          width: 60%;
           background-color: $tint-color-1;
         }
       }
@@ -95,7 +96,7 @@
       @include mobile {
         @include absoluteFill;
         position: fixed;
-        background-color: rgba(41, 41, 41, 0.4);
+        background-color: rgba(0, 0, 0, 0.6);
         flex-direction: column;
         justify-content: center;
         top: 66px;
