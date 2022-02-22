@@ -60,7 +60,6 @@
       background-color: $face-color;
       border-radius: 5px;
     }
-
     > .head {
       @include flexCenterStyle;
       align-items: inherit;
@@ -90,7 +89,6 @@
       @include mobile {
         min-width: 700px;
       }
-
       > li {
         border-bottom: 2px solid white;
         box-sizing: border-box;
