@@ -4,6 +4,9 @@
   background-color: white;
   padding: 4rem;
 
+  @include mobile {
+    padding: 2rem;
+  }
   > h3 {
     font-size: 1.6rem;
     font-weight: bold;
@@ -18,6 +21,7 @@
     font-size: 1.4rem;
     line-height: 1.8;
     font-weight: lighter;
+    word-break: break-all;
   }
   > p {
     font-size: 1.4rem;
@@ -28,20 +32,26 @@
     display: block;
     margin-left: 1rem;
   }
-  table {
-    margin-top: 1rem;
-    width: 100%;
-    border-top: 2px solid black;
+  > .scroll {
+    overflow: hidden;
+    overflow-x: scroll;
 
-    > thead {
-      background-color: #eee;
-      font-weight: bold;
-    }
-    td {
-      font-size: 1.4rem;
-      font-weight: lighter;
-      border-bottom: 1px solid gray;
-      padding: 0.8rem;
+    table {
+      min-width: 600px;
+      margin-top: 1rem;
+      width: 100%;
+      border-top: 2px solid black;
+
+      > thead {
+        background-color: #eee;
+        font-weight: bold;
+      }
+      td {
+        font-size: 1.4rem;
+        font-weight: lighter;
+        border-bottom: 1px solid gray;
+        padding: 0.8rem;
+      }
     }
   }
 }

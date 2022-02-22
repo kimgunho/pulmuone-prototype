@@ -1,5 +1,7 @@
 $tint-color-1: #8dc63e;
 $tint-color-2: #bed730;
+$tint-color-3: #64bae8;
+$tint-color-4: #005f9a;
 $accent-color: #06542c;
 $face-color: #f5f3ef;
 
@@ -36,6 +38,23 @@ $face-color: #f5f3ef;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+// Responsive
+@mixin desktop {
+  @media screen and (max-width: 1069px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: 735px) and (max-width: 1068px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: 734px) {
+    @content;
+  }
 }
 
 // Design

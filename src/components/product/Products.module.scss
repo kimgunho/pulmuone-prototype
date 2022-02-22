@@ -9,6 +9,7 @@
     font-size: 2.6rem;
     padding-bottom: 4.75rem;
     font-weight: bold;
+    text-align: center;
   }
   > .products {
     width: 100%;
@@ -16,6 +17,12 @@
     justify-content: center;
     margin-bottom: 6.25rem;
 
+    @media screen and (max-width: 1440px) {
+      flex-wrap: wrap;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
     &.green {
       > li {
         > .title {
@@ -46,6 +53,20 @@
       padding: 0 4rem;
       box-sizing: border-box;
 
+      @media screen and (max-width: 1440px) {
+        width: 50%;
+        margin-bottom: 3rem;
+        border: 0;
+      }
+      @include mobile {
+        width: 100%;
+        margin-bottom: 5rem;
+        border: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
       &:last-child {
         border-right: 0;
       }

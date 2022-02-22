@@ -7,26 +7,36 @@
   max-width: 72rem;
 
   &.green {
-    > .head {
-      > li {
-        background-color: $tint-color-2;
+    > .table {
+      &::-webkit-scrollbar-thumb {
+        background-color: $tint-color-1;
       }
-    }
-    > .body {
-      .point {
-        background-color: $tint-color-2;
+      > .head {
+        > li {
+          background-color: $tint-color-2;
+        }
+      }
+      > .body {
+        .point {
+          background-color: $tint-color-2;
+        }
       }
     }
   }
   &.blue {
-    > .head {
-      > li {
-        background-color: #64bae8;
+    > .table {
+      &::-webkit-scrollbar-thumb {
+        background-color: $tint-color-3;
       }
-    }
-    > .body {
-      .point {
-        background-color: #64bae8;
+      > .head {
+        > li {
+          background-color: $tint-color-3;
+        }
+      }
+      > .body {
+        .point {
+          background-color: $tint-color-3;
+        }
       }
     }
   }
@@ -34,50 +44,78 @@
     font-size: 1.6rem;
     font-weight: bold;
     padding-bottom: 1rem;
+    text-align: center;
   }
-  > .head {
-    @include flexCenterStyle;
-    margin-top: 0.5rem;
-    border-bottom: 2px solid white;
+  > .table {
+    overflow: hidden;
+    overflow-x: scroll;
 
-    > li {
-      border-right: 2px solid white;
-      font-size: 1.4rem;
-      font-weight: bold;
-      padding: 0.75rem 0;
-      width: 100%;
-
-      &.side {
-        text-indent: -9999px;
-      }
-      &:last-child {
-        border-right: 0;
-      }
+    &::-webkit-scrollbar {
+      height: 8px;
     }
-  }
-  > .body > li {
-    border-bottom: 2px solid white;
-    box-sizing: border-box;
-
-    &:last-child {
-      border-bottom: 0;
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
     }
-    > ul {
+    &::-webkit-scrollbar-track {
+      background-color: $face-color;
+      border-radius: 5px;
+    }
+    > .head {
       @include flexCenterStyle;
-      width: 100%;
+      align-items: inherit;
+      margin-top: 0.5rem;
+      border-bottom: 2px solid white;
 
+      @include mobile {
+        min-width: 700px;
+      }
       > li {
+        @include flexCenterStyle;
         border-right: 2px solid white;
-        background-color: #f4f4f4;
-        line-height: 1;
-        box-sizing: border-box;
         font-size: 1.4rem;
-        width: 100%;
         font-weight: bold;
-        padding: 1rem 0;
+        padding: 0.75rem;
+        width: 100%;
 
+        &.side {
+          text-indent: -9999px;
+        }
         &:last-child {
           border-right: 0;
+        }
+      }
+    }
+    > .body {
+      @include mobile {
+        min-width: 700px;
+      }
+      > li {
+        border-bottom: 2px solid white;
+        box-sizing: border-box;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+        > ul {
+          @include flexCenterStyle;
+          align-items: inherit;
+          width: 100%;
+
+          > li {
+            @include flexCenterStyle;
+            border-right: 2px solid white;
+            background-color: #f4f4f4;
+            line-height: 1;
+            box-sizing: border-box;
+            font-size: 1.4rem;
+            width: 100%;
+            font-weight: bold;
+            padding: 1rem 0;
+
+            &:last-child {
+              border-right: 0;
+            }
+          }
         }
       }
     }
