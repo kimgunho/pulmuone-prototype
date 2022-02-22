@@ -201,30 +201,33 @@ const PrivacyPolicy = () => {
         개인정보가 안전하게 관리될 수 있도록 필요한 사항을 규정하고 있습니다. 회사의 개인정보 위탁처리 기관 및 위탁업무 내용은 아래와
         같습니다.
       </p>
-      <table cellSpacing={0}>
-        <thead>
-          <tr>
-            <td>위탁사</td>
-            <td>위탁형태</td>
-            <td>위탁내용</td>
-            <td>보유기간</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>풀무원 홀딩스</td>
-            <td>계약체결위탁</td>
-            <td>In/out-bound(회원/비회원) 텔레마케팅</td>
-            <td>3년 또는 위탁계약</td>
-          </tr>
-          <tr>
-            <td>풀무원샘물 가맹점 및 대리점 </td>
-            <td>계약이행위탁</td>
-            <td>상품배송, 입금/미납 안내, 고객불만 처리업무, 기타 담당 업무 등</td>
-            <td>종료시까지</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className={cx('scroll')}>
+        <table cellSpacing={0}>
+          <thead>
+            <tr>
+              <td>위탁사</td>
+              <td>위탁형태</td>
+              <td>위탁내용</td>
+              <td>보유기간</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>풀무원 홀딩스</td>
+              <td>계약체결위탁</td>
+              <td>In/out-bound(회원/비회원) 텔레마케팅</td>
+              <td>3년 또는 위탁계약</td>
+            </tr>
+            <tr>
+              <td>풀무원샘물 가맹점 및 대리점 </td>
+              <td>계약이행위탁</td>
+              <td>상품배송, 입금/미납 안내, 고객불만 처리업무, 기타 담당 업무 등</td>
+              <td>종료시까지</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <h3>이용자의 권리와 의무</h3>
       <ul>
         <li>
