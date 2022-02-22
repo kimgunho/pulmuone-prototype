@@ -17,9 +17,8 @@ const S04 = () => {
       <div className={cx('limiter')}>
         <h2 className={cx('title')}>자연의 깨끗함을 담은 물</h2>
         <p className={cx('text')}>
-          풀무원샘물의 취수원은 누구의 손길도 닿지 않은 자연의 깨끗한 물입니다.
-          <br />
-          프리미엄 대용량 생수를 가볍게, 신선하게, 편리하게 즐길 수 있습니다!
+          150m 암반 대수층에서 용출되는 깨끗하고 맛있는 물을 합리적인 가격으로
+          <br /> 가정이나 소규모 회사에서 부담 없이 드실 수 있습니다.
         </p>
       </div>
       <div className={cx('objects')}>
