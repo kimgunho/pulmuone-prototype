@@ -15,6 +15,10 @@
       color: white;
       font-size: 2.6rem;
 
+      @include mobile {
+        font-size: 2rem;
+      }
+
       > span {
         display: block;
         line-height: 1.5;
@@ -27,6 +31,11 @@
       width: 100%;
       max-width: 52rem;
 
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+      }
+
       > li {
         @include flexCenterStyle;
         flex-direction: column;
@@ -34,8 +43,17 @@
         width: 100%;
         max-width: 24rem;
 
+        @include mobile {
+          max-width: 80%;
+        }
+
         &:not(:first-child) {
           margin-left: 1rem;
+
+          @include mobile {
+            margin-left: 0;
+            margin-top: 1rem;
+          }
         }
         &.buy {
           cursor: pointer;
@@ -91,6 +109,10 @@
           padding: 2.4rem 0;
           transition: all 0.2s ease;
 
+          @include mobile {
+            padding: 2rem 0;
+          }
+
           &.green {
             &:hover {
               background-color: $tint-color-1;
@@ -116,12 +138,20 @@
             height: 3rem;
             margin: auto;
             transition: all 0.2s ease;
+
+            @include mobile {
+              display: none;
+            }
           }
           > p {
             padding-top: 0.5rem;
             font-weight: bold;
             font-size: 1.6rem;
             transition: all 0.2s ease;
+
+            @include mobile {
+              padding-top: 0;
+            }
 
             &.green {
               color: $accent-color;
