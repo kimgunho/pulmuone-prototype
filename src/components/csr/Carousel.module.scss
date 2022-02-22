@@ -47,9 +47,8 @@
 
         @include mobile {
           z-index: 2;
-          transform: translate(0, -50%);
           position: absolute;
-          top: 50%;
+          top: 40%;
         }
         &.prev {
           @include mobile {
