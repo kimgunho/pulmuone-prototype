@@ -23,7 +23,6 @@
         @include tablet {
           width: calc(100% - 13rem);
         }
-
         @include mobile {
           order: 3;
           width: 100%;
@@ -37,7 +36,6 @@
             @include tablet {
               padding-right: 2rem;
             }
-
             @include mobile {
               padding: 0;
               margin-bottom: 2rem;
@@ -62,7 +60,6 @@
           }
         }
       }
-
       > .familySite {
         @include dropDownIcon;
         padding: 1rem;
@@ -77,7 +74,6 @@
         @include tablet {
           max-width: 13rem;
         }
-
         @include mobile {
           order: 2;
           width: 100%;
@@ -85,7 +81,6 @@
           margin-left: 3rem;
         }
       }
-
       > .logo {
         margin-top: 5rem;
         width: 12rem;
@@ -93,7 +88,6 @@
         @include tablet {
           width: 10rem;
         }
-
         @include mobile {
           order: 1;
           margin-top: 0;
@@ -108,13 +102,11 @@
           @include tablet {
             max-width: 6rem;
           }
-
           @include mobile {
             max-width: 10rem;
           }
         }
       }
-
       > .info {
         width: calc(100% - 28rem);
         margin-top: 5rem;
@@ -124,7 +116,6 @@
         @include tablet {
           width: calc(100% - 23rem);
         }
-
         @include mobile {
           order: 5;
           width: 100%;
@@ -141,7 +132,6 @@
             @include mobile {
               justify-content: center;
             }
-
             > li {
               &:first-child {
                 > a {
@@ -164,7 +154,6 @@
               letter-spacing: -1px;
               margin-top: 1rem;
             }
-
             > li {
               margin: 0 0.5rem 0.5rem 0;
               color: #666;
@@ -173,7 +162,6 @@
           }
         }
       }
-
       > .sns {
         width: 100%;
         max-width: 16rem;
@@ -185,14 +173,12 @@
         @include tablet {
           max-width: 13rem;
         }
-
         @include mobile {
           order: 4;
           max-width: 100%;
           margin-top: 3rem;
           justify-content: center;
         }
-
         > li {
           &:not(:first-child) {
             margin-left: 1.6rem;
