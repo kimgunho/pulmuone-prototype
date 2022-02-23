@@ -5,6 +5,9 @@
   padding: 6rem 0;
   background-color: $face-color;
 
+  @include mobile {
+    background-color: white;
+  }
   > .limiter {
     @include limiter;
     @include flexCenterStyle;
@@ -24,6 +27,12 @@
       padding: 3rem 5rem;
       box-sizing: border-box;
 
+      @include mobile {
+        border-top: 0;
+        flex-direction: column;
+        padding: 0;
+        text-align: center;
+      }
       &.pulmuone {
         border-top-color: $tint-color-1;
         margin-bottom: 4rem;
@@ -46,10 +55,18 @@
       > img {
         width: 100%;
         max-width: 14.375rem;
+
+        @include mobile {
+          max-width: 180px;
+          margin-bottom: 4rem;
+        }
       }
       > .text {
         padding-left: 5rem;
 
+        @include mobile {
+          padding: 0;
+        }
         > .title {
           font-size: 2.2rem;
           padding-bottom: 2rem;
