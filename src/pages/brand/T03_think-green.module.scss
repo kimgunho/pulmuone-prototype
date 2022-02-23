@@ -32,16 +32,16 @@
             z-index: 3;
 
             &.fisrt {
-              left: 5%;
-              top: 33%;
+              left: 3%;
+              top: 25%;
             }
             &.second {
               top: 2%;
-              right: 0;
+              right: -2rem;
             }
             &.third {
               right: 0;
-              top: 51%;
+              top: 44%;
             }
             > h4 {
               display: flex;
