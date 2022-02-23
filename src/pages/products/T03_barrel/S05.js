@@ -1,14 +1,12 @@
 import classNames from 'classnames/bind';
 
 import styles from './S05.module.scss';
-
 import product01 from '../../../assets/images/products/barrel/s05/product01.png';
 import waterHeater_product01 from '../../../assets/images/products/barrel/s05/heater_product01.png';
 import waterHeater_product02 from '../../../assets/images/products/barrel/s05/heater_product02.png';
 import waterHeater_product03 from '../../../assets/images/products/barrel/s05/heater_product03.png';
 import waterHeater_product04 from '../../../assets/images/products/barrel/s05/heater_product04.png';
-import file from '../../../assets/files/product/t03_barrel/barrel18_quality_test.zip';
-
+import file from '../../../assets/files/수질성적검사서-대용량_먹는샘물_18L.pdf';
 import Products from '../../../components/product/Products';
 import Table from '../../../components/product/Table';
 import Download from '../../../components/product/Download';
