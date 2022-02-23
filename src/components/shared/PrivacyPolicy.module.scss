@@ -46,11 +46,21 @@
         background-color: #eee;
         font-weight: bold;
       }
+
       td {
         font-size: 1.4rem;
         font-weight: lighter;
         border-bottom: 1px solid gray;
+        border-right: 1px solid gray;
         padding: 0.8rem;
+        text-align: center;
+
+        &:first-child {
+          border-left: 1px solid gray;
+        }
+        &.point {
+          background-color: $face-color;
+        }
       }
     }
   }
