@@ -11,7 +11,7 @@
     font-size: 1.6rem;
     font-weight: bold;
     margin-top: 3rem;
-    margin-bottom: 1.5rem;
+    line-height: 2;
 
     &:first-child {
       margin-top: 0;
@@ -32,13 +32,13 @@
     display: block;
     margin-left: 1rem;
   }
-  > .scroll {
+  > .scrollable {
     overflow: hidden;
     overflow-x: scroll;
 
     table {
-      min-width: 600px;
       margin-top: 1rem;
+      min-width: 600px;
       width: 100%;
       border-top: 2px solid black;
 
@@ -46,20 +46,16 @@
         background-color: #eee;
         font-weight: bold;
       }
-
       td {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: lighter;
         border-bottom: 1px solid gray;
         border-right: 1px solid gray;
-        padding: 0.8rem;
+        padding: 0.5rem 1rem;
         text-align: center;
 
         &:first-child {
           border-left: 1px solid gray;
-        }
-        &.point {
-          background-color: $face-color;
         }
       }
     }
@@ -68,75 +64,53 @@
     color: $tint-color-1;
     cursor: pointer;
     text-decoration: underline;
-    position: relative;
   }
 }
-
-.franchisee {
-  background-color: $face-color;
+.branches {
+  background-color: white;
   position: fixed;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 30rem;
-  height: 100%;
-  max-height: 30rem;
   top: 50%;
   left: 50%;
-  overflow: hidden;
-  overflow-y: scroll;
-  padding: 2rem;
-  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 24rem;
+  height: 100%;
+  max-height: 24rem;
   border: 4px solid $tint-color-1;
-  display: none;
 
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: $tint-color-1;
-    border-radius: 5px;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: $face-color;
-    border-radius: 5px;
-  }
-  &.active {
-    display: block;
-  }
   > .close {
+    @include flexCenterStyle;
     position: absolute;
-    right: 1rem;
-    top: 1rem;
+    right: 8px;
+    top: 0;
     width: 3rem;
-    height: 3rem;
+    height: 2rem;
+    font-size: 1rem;
+    color: white;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    > div {
-      width: 100%;
-      height: 4px;
-      border-radius: 2rem;
-      background-color: $tint-color-1;
-
-      &:first-child {
-        transform: rotate(45deg);
-        transform-origin: -5px 15px;
-      }
-      &:last-child {
-        transform: rotate(-45deg);
-      }
-    }
+    background-color: $tint-color-1;
+    z-index: 10;
   }
   > ul {
+    @include absoluteFill;
     list-style: decimal;
-    padding-left: 1rem;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 1rem 1rem 1rem 3rem;
 
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $tint-color-1;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #ddd;
+    }
     > li {
-      font-size: 1.25rem;
+      font-size: 1rem;
       color: #212121;
-      line-height: 1.8;
+      line-height: 1.4;
     }
   }
 }
