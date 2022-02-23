@@ -103,23 +103,23 @@ const S04 = () => {
           <div className={cx(['feature', 'feat2'])}>
             <img src={mark2} alt="" />
             <h3>
-              <span>2</span> 상표띠 제거
-            </h3>
-            <p>
-              비닐 사용량 15% 저감
-              <br />
-              (기존 제품 1팩 기준)
-            </p>
-          </div>
-          <div className={cx(['feature', 'feat3'])}>
-            <img src={mark3} alt="" />
-            <h3>
-              <span>3</span> 초경량 용기
+              <span>2</span> 초경량 용기
             </h3>
             <p>
               2L-32.6g / 500mL-11.1g
               <br />
               (1병 기준)
+            </p>
+          </div>
+          <div className={cx(['feature', 'feat3'])}>
+            <img src={mark3} alt="" />
+            <h3>
+              <span>3</span> 상표띠 제거
+            </h3>
+            <p>
+              비닐 사용량 15% 저감
+              <br />
+              (기존 제품 1팩 기준)
             </p>
           </div>
         </div>

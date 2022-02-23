@@ -5,13 +5,12 @@
   flex-direction: column;
   padding: 4rem 0;
   background-color: $face-color;
-  text-align: center;
+  // text-align: center;
 
   > p {
     font-size: 2.2rem;
     line-height: 1.5;
     font-weight: lighter;
-    text-align: center;
 
     @include mobile {
       font-size: 1.6rem;

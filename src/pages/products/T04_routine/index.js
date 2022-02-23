@@ -11,7 +11,7 @@ const WaterRoutine = () => {
       <S01 />
       <S02 />
       <S03 />
-      <Outro color="blue" title={'나만의 수분 습관, 워터루틴\n건강한 수분 섭취를 시작해 보세요!'} />
+      <Outro color="blue" title={'나만의 수분 습관, 워터루틴\n건강한 수분 섭취를 시작해 보세요!'} buy={false} />
     </div>
   );
 };
