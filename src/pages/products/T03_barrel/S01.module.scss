@@ -1,0 +1,69 @@
+@import '../../../common.scss';
+
+.container {
+  @include backgroundDefaultStyle;
+  @include flexCenterStyle;
+  height: 64rem;
+  position: relative;
+  overflow: hidden;
+
+  > .limiter {
+    @include limiter;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+
+    > .title {
+      @include sectionTitle;
+      color: white;
+      padding-top: 6rem;
+    }
+    > .text {
+      padding-top: 1.4rem;
+      font-size: 1.6rem;
+      color: white;
+      text-align: center;
+      line-height: 1.8;
+    }
+  }
+  > .objects {
+    @include absoluteFill;
+
+    > img {
+      position: absolute;
+
+      &.left {
+        width: 100%;
+        max-width: 20rem;
+        left: 0;
+        top: 0;
+      }
+      &.right {
+        width: 100%;
+        max-width: 31.25rem;
+        right: -15rem;
+        top: 40%;
+      }
+      &.bubleeLeft {
+        width: 100%;
+        max-width: 10rem;
+        top: 60%;
+        left: 15%;
+      }
+      &.bubbleRight {
+        width: 100%;
+        max-width: 12.5rem;
+        top: 20%;
+        right: 15%;
+      }
+    }
+  }
+  > .barrel {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}

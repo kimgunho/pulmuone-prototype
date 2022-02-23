@@ -56,7 +56,7 @@ const S01 = () => {
             <br />
             Mineral Water
           </h2>
-          <img ref={bottleRef} className={cx('bottle')} src={pulmuoneWater} alt="풀무원 샘물" />
+          <img ref={bottleRef} className={cx('bottle')} src={pulmuoneWater} alt="풀무원샘물" />
         </div>
       </div>
     </div>

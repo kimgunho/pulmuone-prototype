@@ -1,0 +1,58 @@
+@import '../../common.scss';
+
+.container {
+  margin-top: -4.4rem;
+  width: 100%;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+
+  @include mobile {
+    display: none;
+  }
+  > .tabs {
+    width: 100%;
+    max-width: 72rem;
+    background-color: $face-color;
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+    box-sizing: border-box;
+
+    > li {
+      @include flexCenterStyle;
+      width: 20%;
+
+      @include tablet {
+        width: 25%;
+      }
+      > a {
+        color: $accent-color;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+        height: 4.4rem;
+        white-space: nowrap;
+      }
+      &.active {
+        > a {
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            right: 1rem;
+            left: 1rem;
+            bottom: 0;
+            height: 5px;
+            background-color: $accent-color;
+          }
+        }
+      }
+    }
+  }
+}

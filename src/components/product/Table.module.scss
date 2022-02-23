@@ -1,92 +1,120 @@
 @import '../../common.scss';
 
-.table {
+.container {
   text-align: center;
   margin-bottom: 3.5rem;
   width: 100%;
-  max-width: 72.5rem;
+  max-width: 72rem;
 
   &.green {
-    > .head {
-      > li {
-        background-color: #bed730;
+    > .table {
+      &::-webkit-scrollbar-thumb {
+        background-color: $tint-color-1;
       }
-    }
-    > .body {
-      .point {
-        background-color: #bed730;
+      > .head {
+        > li {
+          background-color: $tint-color-2;
+        }
+      }
+      > .body {
+        .point {
+          background-color: $tint-color-2;
+        }
       }
     }
   }
-
   &.blue {
-    > .head {
-      > li {
-        background-color: #64bae8;
+    > .table {
+      &::-webkit-scrollbar-thumb {
+        background-color: $tint-color-3;
       }
-    }
-    > .body {
-      .point {
-        background-color: #64bae8;
+      > .head {
+        > li {
+          background-color: $tint-color-3;
+        }
+      }
+      > .body {
+        .point {
+          background-color: $tint-color-3;
+        }
       }
     }
   }
-
   > .title {
-    font-size: 1.5rem;
-    color: #212121;
+    font-size: 1.6rem;
     font-weight: bold;
     padding-bottom: 1rem;
+    text-align: center;
   }
+  > .table {
+    overflow: hidden;
+    overflow-x: scroll;
 
-  > .head {
-    @include flexCenterStyle;
-    border-bottom: 2px solid #fff;
-
-    > li {
-      border-right: 2px solid #fff;
-      color: #212121;
-      font-size: 1.25rem;
-      font-weight: bold;
-      padding: 0.75rem 0;
-      width: 100%;
-
-      &.side {
-        text-indent: -9999px;
-      }
-
-      &:last-child {
-        border-right: 0;
-      }
+    &::-webkit-scrollbar {
+      height: 8px;
     }
-  }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: $face-color;
+      border-radius: 5px;
+    }
+    > .head {
+      @include flexCenterStyle;
+      align-items: inherit;
+      margin-top: 0.5rem;
+      border-bottom: 2px solid white;
 
-  > .body {
-    > li {
-      border-bottom: 2px solid #fff;
-      box-sizing: border-box;
-
-      &:last-child {
-        border-bottom: 0;
+      @include mobile {
+        min-width: 700px;
       }
-
-      > ul {
+      > li {
         @include flexCenterStyle;
+        border-right: 2px solid white;
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding: 0.75rem;
         width: 100%;
 
-        > li {
-          border-right: 2px solid #fff;
-          background-color: #f4f4f4;
-          color: #212121;
-          line-height: 1;
-          box-sizing: border-box;
-          font-size: 1.25rem;
-          width: 100%;
-          font-weight: bold;
-          padding: 1rem 0;
+        &.side {
+          text-indent: -9999px;
+        }
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+    > .body {
+      @include mobile {
+        min-width: 700px;
+      }
+      > li {
+        border-bottom: 2px solid white;
+        box-sizing: border-box;
 
-          &:last-child {
-            border-right: 0;
+        &:last-child {
+          border-bottom: 0;
+        }
+        > ul {
+          @include flexCenterStyle;
+          align-items: inherit;
+          width: 100%;
+
+          > li {
+            @include flexCenterStyle;
+            border-right: 2px solid white;
+            background-color: #f4f4f4;
+            line-height: 1;
+            box-sizing: border-box;
+            font-size: 1.4rem;
+            width: 100%;
+            font-weight: bold;
+            padding: 1rem 0;
+
+            &:last-child {
+              border-right: 0;
+            }
           }
         }
       }

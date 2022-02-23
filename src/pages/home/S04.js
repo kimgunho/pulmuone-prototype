@@ -4,10 +4,8 @@ import classNames from 'classnames/bind';
 import gsap from 'gsap';
 
 import styles from './S04.module.scss';
-import { links } from '../../assets/data/links';
-
 import background from '../../assets/images/home/s04/background.jpg';
-import title from '../../assets/images/shared/pulmuone_title.png';
+import logo from '../../assets/images/shared/logo.png';
 import bottleLabel from '../../assets/images/home/s04/pulmuoneWater_label.png';
 import bottleNoLabel from '../../assets/images/home/s04/pulmuoneWater.png';
 import shape1 from '../../assets/images/home/s04/labelMark01.png';
@@ -72,7 +70,7 @@ const S04 = () => {
         <div className={cx('left')} ref={leftRef}>
           <h2>
             환경까지 생각한
-            <img draggable="false" src={title} alt="풀무원 샘물" />
+            <img src={logo} alt="풀무원샘물" />
           </h2>
           <p>
             풀무원샘물은
@@ -81,18 +79,18 @@ const S04 = () => {
             <br />
             지속적으로 노력합니다.
           </p>
-          <Link to={links.brand_think}>자세히 보기</Link>
+          <Link to="/브랜드-스토리/Think-Green">자세히 보기</Link>
         </div>
         <div className={cx('bottleWrapper')}>
-          <img draggable="false" className={cx('bottle')} src={bottleNoLabel} alt="" />
-          <img ref={bottleRef} draggable="false" className={cx('bottle')} src={bottleLabel} alt="" />
-          <img draggable="false" className={cx(['shape', 'shape1'])} src={shape1} alt="" />
-          <img draggable="false" className={cx(['shape', 'shape2'])} src={shape2} alt="" />
-          <img draggable="false" className={cx(['shape', 'shape3'])} src={shape3} alt="" />
+          <img className={cx('bottle')} src={bottleNoLabel} alt="" />
+          <img ref={bottleRef} className={cx('bottle')} src={bottleLabel} alt="" />
+          <img className={cx(['shape', 'shape1'])} src={shape1} alt="" />
+          <img className={cx(['shape', 'shape2'])} src={shape2} alt="" />
+          <img className={cx(['shape', 'shape3'])} src={shape3} alt="" />
         </div>
         <div className={cx('right')}>
           <div className={cx(['feature', 'feat1'])}>
-            <img draggable="false" src={mark1} alt="" />
+            <img src={mark1} alt="" />
             <h3>
               <span>1</span> 초경량 뚜껑
             </h3>
@@ -103,20 +101,9 @@ const S04 = () => {
             </p>
           </div>
           <div className={cx(['feature', 'feat2'])}>
-            <img draggable="false" src={mark2} alt="" />
+            <img src={mark2} alt="" />
             <h3>
-              <span>2</span> 상표띠 제거
-            </h3>
-            <p>
-              비닐 사용량 15% 저감
-              <br />
-              (기존 제품 1팩 기준)
-            </p>
-          </div>
-          <div className={cx(['feature', 'feat3'])}>
-            <img draggable="false" src={mark3} alt="" />
-            <h3>
-              <span>3</span> 초경량 용기
+              <span>2</span> 초경량 용기
             </h3>
             <p>
               2L-32.6g / 500mL-11.1g
@@ -124,9 +111,20 @@ const S04 = () => {
               (1병 기준)
             </p>
           </div>
+          <div className={cx(['feature', 'feat3'])}>
+            <img src={mark3} alt="" />
+            <h3>
+              <span>3</span> 상표띠 제거
+            </h3>
+            <p>
+              비닐 사용량 15% 저감
+              <br />
+              (기존 제품 1팩 기준)
+            </p>
+          </div>
         </div>
       </div>
-      <img ref={backgroundRef} className={cx('background')} draggable="false" src={background} alt="" />
+      <img ref={backgroundRef} className={cx('background')} src={background} alt="" />
     </div>
   );
 };

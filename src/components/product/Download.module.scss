@@ -6,23 +6,20 @@
 
   &.green {
     > .text {
-      color: #03542c;
+      color: $accent-color;
     }
-
     > a {
-      border-color: #024819;
+      border-color: $accent-color;
 
       > span {
-        color: #024819;
+        color: $accent-color;
       }
     }
   }
-
   &.blue {
     > .text {
       color: #005f9a;
     }
-
     > a {
       border-color: #005f9a;
 
@@ -31,13 +28,13 @@
       }
     }
   }
-
   > .text {
     font-weight: bold;
     font-size: 2rem;
     padding-bottom: 2.5rem;
+    text-align: center;
+    line-height: 1.5;
   }
-
   > a {
     @include flexCenterStyle;
     width: fit-content;
@@ -46,12 +43,13 @@
     box-sizing: border-box;
 
     > img {
-      width: 1rem;
+      width: 1.2rem;
     }
     > span {
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       font-weight: bold;
       padding-left: 0.5rem;
+      line-height: 1;
     }
   }
 }

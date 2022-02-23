@@ -4,16 +4,20 @@
   margin: 0;
   padding: 0;
   word-break: keep-all;
+  outline: none;
 }
-
 html {
   overflow-x: hidden;
-  font-size: 16px;
 
+  // Desktop
+  @include desktop {
+    font-size: 16px;
+  }
+  // Tablet
   @include tablet {
     font-size: 14px;
   }
-
+  // Mobile
   @include mobile {
     font-size: 12px;
   }
@@ -28,36 +32,15 @@ h6 {
 }
 a {
   text-decoration: none;
-  color: #212121;
+  color: inherit;
 }
 ul,
 ol {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
-
-button {
-  border: 0;
-}
-
-input {
-  &:focus {
-    outline: 3px solid #8dc63e;
-  }
-}
-
+input,
+button,
+select,
 textarea {
   border: 0;
-
-  &:focus {
-    outline: 3px solid #8dc63e;
-  }
-}
-select {
-  border: 0;
-
-  &:focus {
-    outline: 3px solid #8dc63e;
-  }
 }

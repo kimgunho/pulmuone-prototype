@@ -3,7 +3,7 @@
 .container {
   @include flexCenterStyle;
   @include backgroundDefaultStyle;
-  padding: 6.25rem 0;
+  padding: 6rem 0;
 
   > .limiter {
     @include limiter;
@@ -12,34 +12,49 @@
     text-align: center;
 
     > .title {
-      color: #fff;
-      font-size: 2.5rem;
+      color: white;
+      font-size: 2.6rem;
 
+      @include mobile {
+        font-size: 2rem;
+      }
       > span {
         display: block;
         line-height: 1.5;
       }
     }
-
     > .list {
-      margin-top: 3.75rem;
+      margin-top: 3rem;
       display: flex;
       justify-content: center;
       width: 100%;
-      max-width: 51.25rem;
+      max-width: 52rem;
 
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+      }
       > li {
         @include flexCenterStyle;
         flex-direction: column;
-        background-color: #fff;
+        background-color: white;
         width: 100%;
-        max-width: 25rem;
+        max-width: 24rem;
 
+        @include mobile {
+          width: 80%;
+        }
         &:not(:first-child) {
           margin-left: 1rem;
-        }
 
+          @include mobile {
+            margin-left: 0;
+            margin-top: 1rem;
+          }
+        }
         &.buy {
+          cursor: pointer;
+
           &.green {
             > a {
               > .icon {
@@ -47,7 +62,6 @@
               }
             }
           }
-
           &.blue {
             > a {
               > .icon {
@@ -55,7 +69,6 @@
               }
             }
           }
-
           &:hover {
             > a {
               > .icon {
@@ -64,7 +77,6 @@
             }
           }
         }
-
         &.order {
           &.green {
             > a {
@@ -73,7 +85,6 @@
               }
             }
           }
-
           &.blue {
             > a {
               > .icon {
@@ -81,7 +92,6 @@
               }
             }
           }
-
           &:hover {
             > a {
               > .icon {
@@ -90,52 +100,57 @@
             }
           }
         }
-
         > a {
           width: 100%;
           display: block;
-          padding: 2.5rem 0;
-          transition: all 0.5s ease;
+          padding: 2.4rem 0;
+          transition: all 0.2s ease;
 
+          @include mobile {
+            padding: 2rem 0;
+          }
           &.green {
             &:hover {
-              background-color: #99c454;
+              background-color: $tint-color-1;
 
               > p {
-                color: #fff;
+                color: white;
               }
             }
           }
-
           &.blue {
             &:hover {
               background-color: #64bae8;
 
               > p {
-                color: #fff;
+                color: white;
               }
             }
           }
-
           > .icon {
             @include backgroundDefaultStyle;
             background-size: contain;
-            width: 3.125rem;
-            height: 3.125rem;
+            width: 3rem;
+            height: 3rem;
             margin: auto;
-            transition: all 0.5s ease;
-          }
+            transition: all 0.2s ease;
 
+            @include mobile {
+              display: none;
+            }
+          }
           > p {
             padding-top: 0.5rem;
             font-weight: bold;
-            font-size: 1.5rem;
-            transition: all 0.5s ease;
+            font-size: 1.6rem;
+            transition: all 0.2s ease;
 
-            &.green {
-              color: #004d1c;
+            @include mobile {
+              padding-top: 0;
             }
-
+            &.green {
+              color: $accent-color;
+            }
             &.blue {
               color: #005f9a;
             }

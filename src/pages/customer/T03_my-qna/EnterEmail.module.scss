@@ -1,0 +1,57 @@
+@import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  flex-direction: column;
+  width: 100%;
+  max-width: 40rem;
+
+  > .inner {
+    width: 100%;
+
+    > .box {
+      @include flexCenterStyle;
+      margin-bottom: 1rem;
+
+      > input {
+        width: 100%;
+
+        &.text {
+          min-height: 3.75rem;
+          background-color: white;
+          padding: 1.25rem;
+          box-sizing: border-box;
+          font-size: 1.4rem;
+          color: #aaa;
+          border: 0;
+
+          &:focus {
+            color: $tint-color-1;
+          }
+        }
+        &.center {
+          text-align: center;
+        }
+      }
+      > .connect {
+        font-weight: bold;
+        padding: 0 1.25rem;
+        width: fit-content;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  > .btn {
+    @include flexCenterStyle;
+    font-size: 1.5rem;
+    background-color: $accent-color;
+    color: white;
+    border: 0;
+    min-height: 5rem;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 25rem;
+    cursor: pointer;
+    margin-top: 4.375rem;
+  }
+}

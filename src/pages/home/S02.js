@@ -62,7 +62,7 @@ const S02 = () => {
         <div className={cx('left')}>
           <p>
             풍부한 미네랄{' '}
-            <Link to="" className={cx('accent')}>
+            <Link to="/브랜드-스토리/대보-화강암" className={cx('accent')}>
               대보 화강암
             </Link>
           </p>
@@ -80,11 +80,11 @@ const S02 = () => {
         </div>
       </div>
       <div className={cx('objects')}>
-        <img ref={leafLeftRef} draggable="false" className={cx('leafLeft')} src={leafLeft} alt="" />
-        <img ref={leafRightRef} draggable="false" className={cx('leafRight')} src={leafRight} alt="" />
-        <img ref={stone1Ref} draggable="false" className={cx(['stone', 'first'])} src={stone1} alt="" />
-        <img ref={stone2Ref} draggable="false" className={cx(['stone', 'second'])} src={stone2} alt="" />
-        <img ref={stone3Ref} draggable="false" className={cx(['stone', 'third'])} src={stone3} alt="" />
+        <img ref={leafLeftRef} className={cx('leafLeft')} src={leafLeft} alt="" />
+        <img ref={leafRightRef} className={cx('leafRight')} src={leafRight} alt="" />
+        <img ref={stone1Ref} className={cx(['stone', 'first'])} src={stone1} alt="" />
+        <img ref={stone2Ref} className={cx(['stone', 'second'])} src={stone2} alt="" />
+        <img ref={stone3Ref} className={cx(['stone', 'third'])} src={stone3} alt="" />
       </div>
     </div>
   );

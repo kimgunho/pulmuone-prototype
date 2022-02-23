@@ -1,0 +1,97 @@
+@import '../../../common.scss';
+
+.container {
+  @include flexCenterStyle;
+  padding: 6rem 0;
+  background-color: #f0f8e9;
+
+  > .limiter {
+    @include limiter;
+    @include flexCenterStyle;
+    flex-direction: column;
+
+    > .title {
+      @include sectionTitle;
+      padding-bottom: 4rem;
+    }
+    > .list {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+
+      > li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 49%;
+        background-color: white;
+        padding: 4.875rem 8.125rem;
+        box-sizing: border-box;
+
+        > img {
+          height: 7.5rem;
+          width: auto;
+        }
+        > p {
+          font-size: 1.8rem;
+          font-weight: bolder;
+          line-height: 1.5;
+          text-align: center;
+          margin-top: 2rem;
+
+          > .point {
+            color: $accent-color;
+          }
+          > .sub {
+            display: block;
+            font-size: 1.4rem;
+            padding-top: 1rem;
+          }
+        }
+      }
+    }
+    > .inner {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      > .image {
+        @include flexCenterStyle;
+        flex-direction: column;
+        background-color: #dfebd0;
+        border-radius: 1rem;
+        width: 100%;
+        max-width: 16rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
+
+        > .box {
+          @include flexCenterStyle;
+          width: 100%;
+          border-radius: 1rem;
+          background-color: white;
+          padding: 2rem;
+          box-sizing: border-box;
+
+          > img {
+            width: 100%;
+            max-width: 6rem;
+          }
+        }
+        > .name {
+          font-size: 1.6rem;
+          font-weight: bold;
+          color: $accent-color;
+          padding: 1rem 0;
+        }
+      }
+      > .text {
+        font-size: 1.4rem;
+        line-height: 1.8;
+        padding-left: 2rem;
+      }
+    }
+  }
+}

@@ -55,8 +55,7 @@
           opacity: 1;
         }
         > h2 {
-          font-size: 2.625rem;
-          color: #000;
+          font-size: 2.6rem;
 
           > img {
             display: block;
@@ -67,17 +66,17 @@
         }
         > p {
           font-size: 2rem;
-          line-height: 1.5;
+          line-height: 1.6;
         }
         > a {
           @include homeBtn;
-          color: #004d1c;
-          background-color: #fff;
-          margin-top: 4rem;
+          color: $accent-color;
+          background-color: white;
+          margin-top: 3rem;
 
           &:hover {
-            background-color: #004d1c;
-            color: #fff;
+            background-color: $accent-color;
+            color: white;
           }
         }
       }
@@ -125,15 +124,16 @@
           > h3 {
             display: flex;
             align-items: center;
-            color: #99ba10;
-            font-size: 2.25rem;
+            color: $tint-color-2;
+            font-size: 2rem;
+            line-height: 1;
 
             > span {
-              background-color: #99ba10;
-              color: #fff;
+              background-color: $tint-color-2;
+              color: white;
               width: 2.5rem;
               height: 2.5rem;
-              font-size: 1.5rem;
+              font-size: 1.6rem;
               margin-right: 0.5rem;
               display: inline-block;
               border-radius: 50%;
@@ -142,9 +142,8 @@
             }
           }
           > p {
-            color: #000;
-            font-size: 1.75rem;
-            line-height: 1.5;
+            font-size: 1.6rem;
+            line-height: 1.6;
             padding-top: 1rem;
           }
         }

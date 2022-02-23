@@ -1,28 +1,71 @@
 @import '../../common.scss';
 
-.header {
+.container {
   @include flexCenterStyle;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(41, 41, 41, 0.4);
+  background-color: $accent-color;
   z-index: 100;
 
   @include mobile {
-    background-color: #fff;
-    padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
+    padding: 2rem 0;
   }
-
-  > .limiter {
+  > .wrapper {
     width: 100%;
-    max-width: 62.5rem;
-    padding: 0 20px;
+    max-width: 60rem;
+    padding: 0 2rem;
     box-sizing: border-box;
     display: flex;
     align-items: center;
 
+    > .hamberger {
+      width: 2.5rem;
+      height: 1.5rem;
+      position: relative;
+      cursor: pointer;
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+      &.close {
+        > div {
+          &.top {
+            transform: rotate(45deg);
+          }
+          &.center {
+            transform: rotate(-45deg);
+          }
+          &.bottom {
+            opacity: 0;
+          }
+        }
+      }
+      > div {
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        border-radius: 1rem;
+        transition: all 0.2s ease;
+
+        &.top {
+          top: 0;
+          transform-origin: 5px 6px;
+        }
+        &.center {
+          top: 50%;
+        }
+        &.bottom {
+          top: 100%;
+          width: 60%;
+          background-color: $tint-color-1;
+        }
+      }
+    }
     > .logo {
       position: absolute;
       left: 50%;
@@ -30,18 +73,19 @@
       transform: translate(-50%, -50%);
 
       > a {
-        > img {
-          width: 100%;
-          max-width: 4rem;
-          padding-top: 8px;
+        @include backgroundDefaultStyle;
+        background-size: contain;
+        background-image: url('../../assets/images/shared/desktop_logo.svg');
+        display: block;
+        width: 3.75rem;
+        height: 3.75rem;
 
-          @include mobile {
-            max-width: 7rem;
-          }
+        @include mobile {
+          background-image: url('../../assets/images/shared/mobile_logo.svg');
+          width: 7rem;
         }
       }
     }
-
     > .inner {
       width: 100%;
       display: flex;
@@ -49,57 +93,121 @@
       align-items: center;
 
       @include mobile {
+        @include absoluteFill;
         position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        background-color: $accent-color;
         flex-direction: column;
+        justify-content: center;
+        top: 66px;
         display: none;
 
         &.active {
           display: flex;
         }
       }
-
-      > .gnb {
+      > .menus {
         width: calc(50% - 4rem);
         display: flex;
         justify-content: space-evenly;
         align-items: flex-end;
 
         @include mobile {
+          width: 100%;
           flex-direction: column;
+          align-items: center;
         }
-
         > li {
-          position: relative;
-          padding: 0.5rem 0;
+          color: white;
+          display: flex;
+          align-items: center;
+          padding: 0 1rem;
+          font-size: 1.2rem;
+          height: 4.4rem;
+          cursor: pointer;
+          font-weight: bold;
+          box-sizing: border-box;
 
-          > a {
-            color: #fff;
-            display: block;
-            padding: 1rem 0;
-            font-size: 1.25rem;
+          @include mobile {
+            font-size: 1.5rem;
+            flex-direction: column;
+            height: 100%;
+            padding: 1rem;
+          }
+          &.active {
+            color: $tint-color-1;
 
             @include mobile {
-              font-size: 1.8rem;
+              color: $face-color;
             }
+            > p {
+              position: relative;
 
-            &::after {
-              content: '';
-              transition: all 0.3s ease-in-out;
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              opacity: 0;
-              width: 100%;
-              height: 5px;
-              background-color: #fff;
-            }
-
-            &:hover {
               &::after {
-                opacity: 1;
+                content: '';
+                width: 100%;
+                height: 5px;
+                left: 0;
+                bottom: -23px;
+                background-color: $tint-color-1;
+                position: absolute;
+
+                @include mobile {
+                  height: 3px;
+                  bottom: -10px;
+                }
+              }
+            }
+            > ul {
+              display: flex;
+            }
+          }
+
+          > ul {
+            @include flexCenterStyle;
+            position: absolute;
+            left: 0;
+            top: 70px;
+            width: 100%;
+            background-color: $accent-color;
+            border-top: 1px solid rgba(141, 198, 62, 0.3);
+            display: none;
+
+            @include tablet {
+              top: 62px;
+            }
+            @include mobile {
+              border-top: 0;
+              position: unset;
+              flex-direction: column;
+              padding-top: 2rem;
+            }
+            > li {
+              text-align: center;
+              width: 10%;
+
+              @media screen and (max-width: 1440px) {
+                width: 15%;
+              }
+              @include tablet {
+                width: 25%;
+              }
+              @include mobile {
+                width: 100%;
+              }
+              > a {
+                display: block;
+                font-size: 1.5rem;
+                padding: 2rem 2rem;
+                color: $face-color;
+                white-space: nowrap;
+
+                @include mobile {
+                  color: $tint-color-1;
+                  padding: 1rem;
+                }
+                &:hover {
+                  color: $tint-color-1;
+                }
               }
             }
           }

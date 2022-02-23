@@ -12,7 +12,7 @@ import arrow_right_icon from '../../assets/images/shared/arrow-next.svg';
 
 const cx = classNames.bind(styles);
 
-function Carousel({ images, slidesPerView, section }) {
+const Carousel = ({ images, section }) => {
   const [pager, setPager] = useState(null);
   const paginationRef = useRef();
 
@@ -25,7 +25,8 @@ function Carousel({ images, slidesPerView, section }) {
     <div className={cx('carousel')}>
       <Swiper
         loop={true}
-        slidesPerView={slidesPerView}
+        slidesPerView={1}
+        breakpoints={{ 734: { slidesPerView: 2 } }}
         pagination={{
           el: `.${pager}`,
           clickable: true,
@@ -56,6 +57,6 @@ function Carousel({ images, slidesPerView, section }) {
       </div>
     </div>
   );
-}
+};
 
 export default Carousel;

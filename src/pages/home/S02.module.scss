@@ -1,6 +1,7 @@
 @import '../../common.scss';
 
 .container {
+  @include backgroundDefaultStyle;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,12 +12,12 @@
 
   > .title {
     position: absolute;
-    color: #fff;
-    font-size: 3.125rem;
+    color: white;
+    font-size: 3rem;
     text-align: center;
     white-space: nowrap;
     margin-bottom: 24rem;
-    text-shadow: 0 0 24px black;
+    text-shadow: 0 0 24px rgba(0, 0, 0, 0.8);
     transition: all 1s ease;
 
     &:global.active {
@@ -30,8 +31,8 @@
     }
   }
   > .stoneBg {
+    @include absoluteFill;
     @include backgroundDefaultStyle;
-    @include absoluteFull;
     background-image: url('../../assets/images/home/s02/background_stone.jpg');
     mask-image: url('../../assets/images/home/s02/shape.svg');
     mask-repeat: no-repeat;
@@ -64,19 +65,19 @@
 
       &.left {
         > p {
-          color: #fff;
-          font-size: 2.625rem;
-          text-shadow: 0 0 16px black;
+          color: white;
+          font-size: 2.6rem;
+          text-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
 
           > .accent {
             display: block;
-            font-size: 3.5rem;
-            color: #fff;
+            font-size: 3.6rem;
+            color: white;
             transition: all 0.1s ease;
 
             &:hover {
-              color: #bfd62f;
-              border-bottom: 1px solid #bfd62f;
+              color: $tint-color-1;
+              border-bottom: 1px solid $tint-color-1;
             }
           }
         }
@@ -88,10 +89,10 @@
           position: absolute;
           bottom: 0;
           right: 0;
-          color: #fff;
-          font-size: 1.625rem;
-          line-height: 1.5;
-          text-shadow: 0 0 16px black;
+          color: white;
+          font-size: 2rem;
+          line-height: 1.6;
+          text-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
         }
       }
     }

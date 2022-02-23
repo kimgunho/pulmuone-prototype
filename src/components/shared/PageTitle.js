@@ -4,22 +4,13 @@ import styles from './PageTitle.module.scss';
 
 const cx = classNames.bind(styles);
 
-function PageTitle({ title, sub, background = '#F5F3EF', subReverse = false }) {
+const PageTitle = ({ title, subtitle, reverse = false }) => {
   return (
-    <div className={cx('container')} style={{ backgroundColor: background }}>
-      {sub && (
-        <p className={cx({ reverse: subReverse })}>
-          {sub.split('/n').map((line, index) => (
-            <span key={index}>
-              {line}
-              <br />
-            </span>
-          ))}
-        </p>
-      )}
+    <div className={cx('container')}>
+      {subtitle && <p className={cx({ reverse })}>{subtitle}</p>}
       <h2>{title}</h2>
     </div>
   );
-}
+};
 
 export default PageTitle;
