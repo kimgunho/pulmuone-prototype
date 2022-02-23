@@ -42,7 +42,7 @@ $face-color: #f5f3ef;
 
 // Responsive
 @mixin desktop {
-  @media screen and (max-width: 1069px) {
+  @media screen and (max-width: 1440px) {
     @content;
   }
 }
