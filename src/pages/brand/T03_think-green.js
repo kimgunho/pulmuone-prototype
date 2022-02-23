@@ -2,7 +2,6 @@ import classNames from 'classnames/bind';
 
 import styles from './T03_think-green.module.scss';
 import PageTitle from '../../components/shared/PageTitle';
-import bottle from '../../assets/images/brand/think-green/bottle.png';
 import nolabel01 from '../../assets/images/brand/think-green/nolabel-01.png';
 import nolabel02 from '../../assets/images/brand/think-green/nolabel-02.png';
 import nolabel03 from '../../assets/images/brand/think-green/nolabel-03.png';
@@ -24,7 +23,7 @@ const ThinkGreen = () => {
           <div className={cx('center')}>
             <div className={cx(['desc', 'fisrt'])}>
               <h4>
-                <span className={cx('number')}>2</span> <span className={cx('title')}>초경량 용기</span>
+                <span className={cx('number')}></span> <span className={cx('title')}>초경량 용기</span>
               </h4>
               <p>
                 2L-32.6g / 500mL-11.1g
@@ -34,7 +33,7 @@ const ThinkGreen = () => {
             </div>
             <div className={cx(['desc', 'second'])}>
               <h4>
-                <span className={cx('number')}>1</span> <span className={cx('title')}>초경량 뚜껑</span>
+                <span className={cx('number')}></span> <span className={cx('title')}>초경량 뚜껑</span>
               </h4>
               <p>
                 플라스틱 사용량 40% 저감 <br />
@@ -43,7 +42,7 @@ const ThinkGreen = () => {
             </div>
             <div className={cx(['desc', 'third'])}>
               <h4>
-                <span className={cx('number')}>3</span> <span className={cx('title')}>상표띠 제거</span>
+                <span className={cx('number')}></span> <span className={cx('title')}>상표띠 제거</span>
               </h4>
               <p>
                 비닐 사용량 15% 저감
@@ -51,7 +50,7 @@ const ThinkGreen = () => {
                 (기존 제품 1팩 기준)
               </p>
             </div>
-            <img src={bottle} alt="" />
+            <div className={cx('bottle')}></div>
           </div>
           <div className={cx('text')}>
             <p>
