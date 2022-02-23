@@ -53,12 +53,8 @@
     &::-webkit-scrollbar {
       height: 8px;
     }
-    &::-webkit-scrollbar-thumb {
-      border-radius: 5px;
-    }
     &::-webkit-scrollbar-track {
-      background-color: $face-color;
-      border-radius: 5px;
+      background-color: #ddd;
     }
     > .head {
       @include flexCenterStyle;
