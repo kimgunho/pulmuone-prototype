@@ -9,11 +9,12 @@ const cx = classNames.bind(styles);
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState();
+  const [activeIndex, setActiveIndex] = useState(null);
   const { pathname } = useLocation();
 
   useEffect(() => {
     setOpen(false);
+    setActiveIndex(null);
   }, [pathname]);
 
   return (
