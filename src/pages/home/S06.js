@@ -26,7 +26,7 @@ const S06 = () => {
             <br />
             국내 먹는샘물 업계 최초로 AWS certification 인증을 획득했습니다.{' '}
           </p>
-          <Link to="/CSR/수자원-보호">CSR 보러가기</Link>
+          <Link to="/CSR/수자원-보호">CSR 바로가기</Link>
         </div>
         <div className={cx('logo')}>
           <img src={aws} alt="" />
