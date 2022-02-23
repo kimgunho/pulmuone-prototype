@@ -38,18 +38,18 @@ const S02 = () => {
         },
       })
       .fromTo(stoneBgRef.current, { opacity: 0 }, { opacity: 1 }, 0.1)
-      .to(titleRef.current, { className: `+=${cx('title')} active` }, 0.3)
-      .to(limiterRef.current, { className: `+=${cx('limiter')} active` }, 0.3)
-      .to(leafLeftRef.current, { className: `+=${cx('leafLeft')} active` }, 0.4)
-      .to(leafRightRef.current, { className: `+=${cx('leafRight')} active` }, 0.4)
-      .to(leafLeftRef.current, { bottom: '200%' }, 0.7)
-      .to(leafRightRef.current, { top: '-80%' }, 0.7)
-      .to(stoneBgRef.current, { className: `+=${cx('stoneBg')} active` }, 0.6)
-      .to(desc1Ref.current, { opacity: 0 }, 0.7)
-      .from(desc2Ref.current, { opacity: 0 }, 0.8)
-      .to(stone1Ref.current, { top: '64%' }, 0.8)
-      .to(stone2Ref.current, { top: '-40%' }, 0.9)
-      .to(stone3Ref.current, { top: '-40%' }, 0.7);
+      .to(titleRef.current, { className: `+=${cx('title')} active` }, 0.2)
+      .to(limiterRef.current, { className: `+=${cx('limiter')} active` }, 0.2)
+      .to(leafLeftRef.current, { className: `+=${cx('leafLeft')} active` }, 0.3)
+      .to(leafRightRef.current, { className: `+=${cx('leafRight')} active` }, 0.3)
+      .to(stoneBgRef.current, { className: `+=${cx('stoneBg')} active` }, 0.3)
+      .to(leafLeftRef.current, { bottom: '200%' }, 0.4)
+      .to(leafRightRef.current, { top: '-80%' }, 0.4)
+      .to(desc1Ref.current, { opacity: 0 }, 0.4)
+      .from(desc2Ref.current, { opacity: 0 }, 0.5)
+      .to(stone1Ref.current, { top: '64%' }, 0.5)
+      .to(stone2Ref.current, { top: '-40%' }, 0.6)
+      .to(stone3Ref.current, { top: '-40%' }, 0.4);
   }, []);
 
   return (
