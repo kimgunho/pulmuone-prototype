@@ -5,8 +5,7 @@ import product_ca from '../../../assets/images/products/bodyful/s04/product_ca.p
 import product_ma from '../../../assets/images/products/bodyful/s04/product_ma.png';
 import Download from '../../../components/product/Download';
 import Table from '../../../components/product/Table';
-
-import file from '../../../assets/files/product/t02_bodyful/bodyful_quality_test.zip';
+import file from '../../../assets/files/수질성적검사서-풀무원샘물_바디풀.pdf';
 
 const cx = classNames.bind(styles);
 

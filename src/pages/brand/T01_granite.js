@@ -29,6 +29,10 @@ const Granite = () => {
       <PageTitle title="2억년 화강암이 꽉 잡은 미네랄" subtitle="풀무원샘물" />
       <div className={cx('section')}>
         <div className={cx('limiter')}>
+          <div ref={imageRef} className={cx('illust')}>
+            <div ref={maskRef} className={cx('coloring')} />
+            <div className={cx('sketch')} />
+          </div>
           <div className={cx('info')}>
             <div className={cx('text')}>
               <h3>풍부한 미네랄, 대보 화강암</h3>
@@ -61,10 +65,6 @@ const Granite = () => {
             <div className={cx('text')}>
               <h4>2억년 동안 어떠한 지질학적 변화도 겪지 않은 촘촘하고 단단한 화강암반의 풍부한 미네랄을 오롯이 물에 담았습니다.</h4>
             </div>
-          </div>
-          <div ref={imageRef} className={cx('illust')}>
-            <div ref={maskRef} className={cx('coloring')} />
-            <div className={cx('sketch')} />
           </div>
         </div>
       </div>
