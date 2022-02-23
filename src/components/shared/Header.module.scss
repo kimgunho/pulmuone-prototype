@@ -6,12 +6,15 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(41, 41, 41, 0.4);
-  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  transition: background-color 0.2s ease;
 
+  &:hover {
+    background-color: $accent-color;
+  }
   @include mobile {
     padding: 2rem 0;
-    background-color: rgba(0, 0, 0, 0.6);
   }
   > .wrapper {
     width: 100%;
@@ -21,7 +24,7 @@
     display: flex;
     align-items: center;
 
-    > .hamberger {
+    > .hamburger {
       width: 2.5rem;
       height: 1.5rem;
       position: relative;
@@ -35,11 +38,9 @@
         > div {
           &.top {
             transform: rotate(45deg);
-            background-color: $tint-color-1;
           }
           &.center {
             transform: rotate(-45deg);
-            background-color: $tint-color-1;
           }
           &.bottom {
             opacity: 0;
@@ -75,14 +76,17 @@
       top: 50%;
       transform: translate(-50%, -50%);
 
-      img {
-        width: 100%;
-        max-width: 3.6rem;
-        padding-top: 8px;
+      > a {
+        @include backgroundDefaultStyle;
+        background-size: contain;
+        background-image: url('../../assets/images/shared/desktop_logo.svg');
+        display: block;
+        width: 3.75rem;
+        height: 3.75rem;
 
         @include mobile {
-          max-width: 7rem;
-          padding-top: 10px;
+          background-image: url('../../assets/images/shared/mobile_logo.svg');
+          width: 7rem;
         }
       }
     }
@@ -95,13 +99,13 @@
       @include mobile {
         @include absoluteFill;
         position: fixed;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: $accent-color;
         flex-direction: column;
         justify-content: center;
         top: 66px;
         display: none;
 
-        &.active {
+        &.open {
           display: flex;
         }
       }
@@ -117,27 +121,116 @@
           align-items: center;
         }
         > li {
-          position: relative;
+          color: white;
+          display: flex;
+          align-items: center;
+          padding: 0 1rem;
+          font-size: 1.2rem;
+          height: 4.4rem;
+          cursor: pointer;
+          font-weight: bold;
+          box-sizing: border-box;
+          line-height: 1;
 
-          > a {
-            color: white;
-            display: flex;
-            align-items: center;
-            padding: 0 1rem;
-            font-size: 1.2rem;
-            height: 4.4rem;
+          @media screen and (min-width: 735px) {
+            &:hover {
+              color: $tint-color-1;
 
-            @include mobile {
-              font-size: 1.5rem;
+              > p {
+                position: relative;
+
+                &::after {
+                  content: '';
+                  width: 100%;
+                  height: 5px;
+                  left: 0;
+                  bottom: -23px;
+                  background-color: $tint-color-1;
+                  position: absolute;
+                }
+              }
+              > .limiter {
+                display: flex;
+              }
             }
-            &:hover::after {
-              content: '';
-              position: absolute;
-              right: 1rem;
-              left: 1rem;
-              bottom: 0;
-              height: 5px;
-              background-color: white;
+          }
+          @include mobile {
+            font-size: 1.5rem;
+            flex-direction: column;
+            height: 100%;
+            padding: 1rem;
+
+            &.active {
+              color: $face-color;
+
+              > p {
+                position: relative;
+
+                &::after {
+                  content: '';
+                  width: 100%;
+                  height: 3px;
+                  left: 0;
+                  bottom: -10px;
+                  background-color: $tint-color-1;
+                  position: absolute;
+                }
+              }
+              > .limiter {
+                display: flex;
+              }
+            }
+          }
+          > .limiter {
+            background-color: $accent-color;
+            border-top: 1px solid rgba(141, 198, 62, 0.3);
+            position: absolute;
+            left: 0;
+            top: 70px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            display: none;
+
+            @include tablet {
+              top: 62px;
+            }
+            @include mobile {
+              border-top: 0;
+              position: unset;
+              flex-direction: column;
+              padding-top: 2rem;
+            }
+            > ul {
+              @include flexCenterStyle;
+              align-items: flex-end;
+              width: 100%;
+              max-width: 940px;
+
+              @include mobile {
+                flex-direction: column;
+              }
+              > li {
+                text-align: center;
+                width: 100%;
+
+                > a {
+                  @include flexCenterStyle;
+                  font-weight: normal;
+                  font-size: 1.5rem;
+                  padding: 2rem 2rem;
+                  color: $face-color;
+                  white-space: nowrap;
+
+                  @include mobile {
+                    color: $tint-color-1;
+                    padding: 1rem;
+                  }
+                  &:hover {
+                    color: $tint-color-1;
+                  }
+                }
+              }
             }
           }
         }
