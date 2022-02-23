@@ -8,8 +8,7 @@ import product04 from '../../../assets/images/products/water/product04.jpg';
 import Download from '../../../components/product/Download';
 import Table from '../../../components/product/Table';
 import Products from '../../../components/product/Products';
-
-import file from '../../../assets/files/product/t01_water/water_quality_test.zip';
+import file from '../../../assets/files/수질성적검사서-풀무원샘물.pdf';
 
 const cx = classNames.bind(styles);
 
