@@ -16,12 +16,6 @@ const Header = () => {
     setOpen(false);
   }, [pathname]);
 
-  const onClick = (index) => {
-    setGnbActive((prev) => ({
-      [index]: !prev[index],
-    }));
-  };
-
   return (
     <header className={cx('container')}>
       <div className={cx('wrapper')}>
