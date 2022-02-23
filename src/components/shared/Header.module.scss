@@ -8,7 +8,7 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 200;
-  transition: background 0.2s ease;
+  transition: background-color 0.2s ease;
 
   &:hover {
     background-color: $accent-color;
@@ -105,7 +105,7 @@
         top: 66px;
         display: none;
 
-        &.active {
+        &.open {
           display: flex;
         }
       }
@@ -130,8 +130,9 @@
           cursor: pointer;
           font-weight: bold;
           box-sizing: border-box;
+          line-height: 1;
 
-          @media screen and (min-width: 734px) {
+          @media screen and (min-width: 735px) {
             &:hover {
               color: $tint-color-1;
 
@@ -180,7 +181,6 @@
               }
             }
           }
-
           > .limiter {
             background-color: $accent-color;
             border-top: 1px solid rgba(141, 198, 62, 0.3);
