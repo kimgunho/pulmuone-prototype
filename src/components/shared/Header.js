@@ -18,7 +18,7 @@ const Header = () => {
   }, [pathname]);
 
   return (
-    <header className={cx('container')}>
+    <header className={cx(['container', { background: open }])}>
       <div className={cx('wrapper')}>
         <div className={cx(['hamburger', { close: open }])} onClick={() => setOpen(!open)}>
           <div className={cx('top')} />
