@@ -13,7 +13,8 @@ import section_03_03 from '../../assets/images/csr/share/section_03_03.jpg';
 const cx = classNames.bind(styles);
 
 const Share = () => {
-  const images = [section_03_01, section_03_02, section_03_03];
+  const section01_images = [section_01_01, section_01_02];
+  const section02_images = [section_03_01, section_03_02, section_03_03];
 
   return (
     <div className={cx('container')}>
@@ -28,10 +29,7 @@ const Share = () => {
               확대하여 현재 연간 약 6만 8천병을 제공하고 있으며, 지역 사회 주민들의 수분 건강에 도움을 드리고자 노력하고 있습니다.
             </p>
           </div>
-          <div className={cx('images')}>
-            <img src={section_01_01} alt="" />
-            <img src={section_01_02} alt="" />
-          </div>
+          <Carousel images={section01_images} section={1} />
         </div>
       </div>
       <div className={cx('section')}>
@@ -62,7 +60,7 @@ const Share = () => {
               활용하고 교육 대상을 확대하는 등 물 교육 활성화를 통해 국내 수자원을 보호하기 위한 인식을 개선하기 위한 노력을 해왔습니다.
             </p>
           </div>
-          <Carousel images={images} slidesPerView={2} section={3} />
+          <Carousel images={section02_images} section={3} />
         </div>
       </div>
     </div>
