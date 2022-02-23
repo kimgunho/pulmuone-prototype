@@ -32,12 +32,25 @@
       font-size: 1.6rem;
       line-height: 1.8;
       text-align: center;
+
+      @include mobile {
+        > br {
+          display: none;
+        }
+      }
     }
     > .list {
       margin-top: 5rem;
       display: flex;
       justify-content: center;
 
+      @include tablet {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      @include mobile {
+        flex-direction: column;
+      }
       > li {
         width: 100%;
         min-height: 25rem;
@@ -46,6 +59,16 @@
 
         &:last-child {
           margin-right: 0;
+        }
+        @include tablet {
+          width: 48%;
+          margin-right: 0;
+          margin-bottom: 4%;
+        }
+        @include mobile {
+          margin-right: 0;
+          margin-bottom: 2rem;
+          min-height: auto;
         }
         > a {
           width: 100%;
@@ -56,6 +79,9 @@
           flex-direction: column;
           justify-content: space-between;
 
+          @include mobile {
+            flex-direction: row;
+          }
           > h4 {
             font-size: 1.8rem;
             font-weight: bold;
@@ -66,6 +92,21 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
+
+            @include mobile {
+              flex-direction: column;
+
+              > img {
+                &:first-child {
+                  height: 5rem;
+                  width: auto;
+                  margin-bottom: 2rem;
+                }
+                &:last-child {
+                  width: 2.5rem;
+                }
+              }
+            }
           }
         }
       }
