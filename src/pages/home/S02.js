@@ -62,7 +62,7 @@ const S02 = () => {
         <div className={cx('left')}>
           <p>
             풍부한 미네랄{' '}
-            <Link to="" className={cx('accent')}>
+            <Link to="/브랜드-스토리/대보-화강암" className={cx('accent')}>
               대보 화강암
             </Link>
           </p>
