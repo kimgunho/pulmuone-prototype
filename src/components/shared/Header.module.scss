@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
 
-    > .hamberger {
+    > .hamburger {
       width: 2.5rem;
       height: 1.5rem;
       position: relative;
@@ -127,49 +127,65 @@
           font-weight: bold;
           box-sizing: border-box;
 
+          @media screen and (min-width: 734px) {
+            &:hover {
+              color: $tint-color-1;
+
+              > p {
+                position: relative;
+
+                &::after {
+                  content: '';
+                  width: 100%;
+                  height: 5px;
+                  left: 0;
+                  bottom: -23px;
+                  background-color: $tint-color-1;
+                  position: absolute;
+                }
+              }
+              > .limiter {
+                display: flex;
+              }
+            }
+          }
           @include mobile {
             font-size: 1.5rem;
             flex-direction: column;
             height: 100%;
             padding: 1rem;
-          }
-          &.active {
-            color: $tint-color-1;
 
-            @include mobile {
+            &.active {
               color: $face-color;
-            }
-            > p {
-              position: relative;
 
-              &::after {
-                content: '';
-                width: 100%;
-                height: 5px;
-                left: 0;
-                bottom: -23px;
-                background-color: $tint-color-1;
-                position: absolute;
+              > p {
+                position: relative;
 
-                @include mobile {
+                &::after {
+                  content: '';
+                  width: 100%;
                   height: 3px;
+                  left: 0;
                   bottom: -10px;
+                  background-color: $tint-color-1;
+                  position: absolute;
                 }
               }
-            }
-            > ul {
-              display: flex;
+              > .limiter {
+                display: flex;
+              }
             }
           }
 
-          > ul {
-            @include flexCenterStyle;
+          > .limiter {
+            background-color: $accent-color;
+            border-top: 1px solid rgba(141, 198, 62, 0.3);
             position: absolute;
             left: 0;
             top: 70px;
             width: 100%;
-            background-color: $accent-color;
-            border-top: 1px solid rgba(141, 198, 62, 0.3);
+            justify-content: center;
+            align-items: center;
             display: none;
 
             @include tablet {
@@ -181,32 +197,34 @@
               flex-direction: column;
               padding-top: 2rem;
             }
-            > li {
-              text-align: center;
-              width: 10%;
+            > ul {
+              @include flexCenterStyle;
+              align-items: flex-end;
+              width: 100%;
+              max-width: 940px;
 
-              @media screen and (max-width: 1440px) {
-                width: 15%;
-              }
-              @include tablet {
-                width: 25%;
-              }
               @include mobile {
-                width: 100%;
+                flex-direction: column;
               }
-              > a {
-                display: block;
-                font-size: 1.5rem;
-                padding: 2rem 2rem;
-                color: $face-color;
-                white-space: nowrap;
+              > li {
+                text-align: center;
+                width: 100%;
 
-                @include mobile {
-                  color: $tint-color-1;
-                  padding: 1rem;
-                }
-                &:hover {
-                  color: $tint-color-1;
+                > a {
+                  @include flexCenterStyle;
+                  font-weight: normal;
+                  font-size: 1.5rem;
+                  padding: 2rem 2rem;
+                  color: $face-color;
+                  white-space: nowrap;
+
+                  @include mobile {
+                    color: $tint-color-1;
+                    padding: 1rem;
+                  }
+                  &:hover {
+                    color: $tint-color-1;
+                  }
                 }
               }
             }
