@@ -45,7 +45,10 @@ const FAQ = () => {
         <ul className={cx('body')}>
           {faqList.map((item, index) => (
             <li className={cx({ active: activeRows[index] })} onClick={() => onClickRow(index)} key={index}>
-              <h3 className={cx('title')}>Q. {item.title}</h3>
+              <h3 className={cx('title')}>
+                <span>Q. </span>
+                <span> {item.title}</span>
+              </h3>
               <div className={cx('content')}>
                 <p>
                   {item.answer.split('\n').map((line, index) => (
