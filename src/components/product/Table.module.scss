@@ -53,9 +53,6 @@
     &::-webkit-scrollbar {
       height: 8px;
     }
-    &::-webkit-scrollbar-track {
-      background-color: #ddd;
-    }
     > .head {
       @include flexCenterStyle;
       align-items: inherit;
