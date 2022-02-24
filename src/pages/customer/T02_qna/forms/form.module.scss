@@ -11,12 +11,18 @@
       justify-content: space-between;
       align-items: flex-start;
 
+      @include mobile {
+        flex-direction: column;
+      }
       > ul {
         width: 48%;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
 
+        @include mobile {
+          width: 100%;
+        }
         > li {
           > .title {
             font-size: 1.6rem;
@@ -87,6 +93,10 @@
 
               &:focus {
                 color: $tint-color-1;
+              }
+
+              @include mobile {
+                min-height: 15rem;
               }
             }
             > .btn {

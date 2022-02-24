@@ -14,6 +14,10 @@
       border-top: 4px solid $accent-color;
       background-color: white;
 
+      @include mobile {
+        flex-wrap: wrap;
+        margin-bottom: 4rem;
+      }
       > li {
         width: 100%;
         font-size: 1.4rem;
@@ -26,6 +30,9 @@
           font-weight: bold;
           color: $accent-color;
           background-color: #f0ede7;
+        }
+        @include mobile {
+          width: 33.33334%;
         }
       }
     }
@@ -48,9 +55,9 @@
         }
         > .title {
           cursor: pointer;
-          white-space: nowrap;
           font-size: 1.6rem;
           font-weight: bold;
+          line-height: 1.5;
           padding: 1.25rem 1rem;
           border-bottom: 1px solid rgba(65, 54, 40, 0.3);
 
