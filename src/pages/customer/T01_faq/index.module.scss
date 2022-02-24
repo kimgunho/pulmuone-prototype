@@ -16,6 +16,7 @@
 
       @include mobile {
         flex-wrap: wrap;
+        margin-bottom: 4rem;
       }
       > li {
         width: 100%;
