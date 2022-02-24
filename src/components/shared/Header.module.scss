@@ -10,11 +10,17 @@
   z-index: 200;
   transition: background-color 0.2s ease;
 
-  &:hover {
-    background-color: $accent-color;
+  @media screen and (min-width: 735px) {
+    &:hover {
+      background-color: $accent-color;
+    }
   }
   @include mobile {
     padding: 2rem 0;
+
+    &.background {
+      background-color: $accent-color;
+    }
   }
   > .wrapper {
     width: 100%;

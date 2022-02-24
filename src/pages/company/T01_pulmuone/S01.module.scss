@@ -3,11 +3,17 @@
 .container {
   @include flexCenterStyle;
   @include backgroundDefaultStyle;
+  background-image: url('../../../assets/images/company/pulmuone/s01/background.jpg');
   box-sizing: border-box;
   height: 61.62rem;
   overflow: hidden;
   position: relative;
 
+  @include mobile {
+    background-color: $accent-color;
+    background-image: none;
+    height: auto;
+  }
   > .limiter {
     @include limiter;
     @include flexCenterStyle;
@@ -22,11 +28,24 @@
         left: 0;
         top: 0;
         max-width: 7.5rem;
+
+        @include mobile {
+          top: auto;
+          bottom: 18rem;
+          left: 1rem;
+        }
       }
       &.right {
         right: 0;
         top: 20%;
         max-width: 12.5rem;
+
+        @include mobile {
+          top: auto;
+          bottom: 10rem;
+          right: 1rem;
+          max-width: 10rem;
+        }
       }
     }
     > .grid {
@@ -36,14 +55,37 @@
       max-width: 68.75rem;
       height: 41.65rem;
 
+      @include tablet {
+        height: 100%;
+      }
+      @include mobile {
+        flex-direction: column;
+        height: auto;
+        padding: 4rem 0;
+      }
       > .bottle {
         height: 120%;
         margin-left: -13rem;
+
+        @include tablet {
+          width: 70%;
+        }
+        @include mobile {
+          order: 2;
+          margin-left: -40%;
+          width: 80%;
+        }
       }
       > .text {
         padding-right: 5rem;
         box-sizing: border-box;
 
+        @include mobile {
+          width: 100%;
+          padding: 0;
+          margin-bottom: 4rem;
+          text-align: center;
+        }
         > h3 {
           color: white;
           font-size: 2rem;
@@ -55,6 +97,17 @@
           font-size: 1.4rem;
           font-weight: lighter;
           line-height: 1.8;
+
+          @include tablet {
+            > br {
+              display: none;
+            }
+          }
+          @include mobile {
+            > br {
+              display: none;
+            }
+          }
         }
       }
     }
