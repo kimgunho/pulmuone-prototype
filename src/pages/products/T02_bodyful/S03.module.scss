@@ -12,13 +12,21 @@
     background-size: contain;
     flex-direction: column;
 
+    @include mobile {
+      background-position: center top;
+      background-size: 90%;
+    }
     > .title {
       padding-top: 2rem;
       text-align: center;
       color: white;
       font-size: 2.6rem;
       font-weight: bold;
+      line-height: 1.5;
 
+      @include mobile {
+        font-size: 2.25rem;
+      }
       > span {
         display: block;
         font-weight: normal;
@@ -26,10 +34,18 @@
         &.sub {
           font-size: 2rem;
           padding-bottom: 0.5rem;
+
+          @include mobile {
+            font-size: 1.65rem;
+          }
         }
         &.from {
           font-size: 1.4rem;
           padding-top: 1rem;
+
+          @include mobile {
+            font-size: 1.25rem;
+          }
         }
       }
     }
@@ -44,6 +60,10 @@
       margin: 4.375rem 0 3.75rem 0;
       font-weight: bold;
       line-height: 1;
+
+      @include mobile {
+        padding: 1rem 3rem;
+      }
     }
     > .prize {
       @include flexCenterStyle;
@@ -51,10 +71,18 @@
       max-width: 48.75rem;
       margin-bottom: 2rem;
 
+      @include mobile {
+        flex-direction: column;
+      }
       > li {
         @include flexCenterStyle;
         flex-direction: column;
 
+        &:first-child {
+          @include mobile {
+            margin-bottom: 4rem;
+          }
+        }
         > .rank {
           @include backgroundDefaultStyle;
           background-image: url('../../../assets/images/products/bodyful/s03/prize_background.png');
@@ -76,6 +104,10 @@
         > img {
           width: 100%;
           transform: translate(8%, 0);
+
+          @include mobile {
+            width: 80%;
+          }
         }
       }
     }
