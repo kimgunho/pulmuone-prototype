@@ -45,29 +45,31 @@ const Finance = () => {
             <p className={cx('sub')}>전자공시 - {data[0].finance}기 결산 공고</p>
             <h3 className={cx('title')}>재무상태표</h3>
             <p className={cx('date')}>{data[0].date} 현재(단위 :원)</p>
-            <div className={cx('head')}>
-              <ul>
-                <li>과목</li>
-                <li>제 {data[0].finance}(당) 기</li>
-                <li>제 {data[0].finance - 1}(전) 기</li>
-              </ul>
-            </div>
-            <div className={cx('body')}>
-              <ul>
-                {data[0].data.map((item, index) => (
-                  <li key={index}>
-                    <ul>
-                      <li className={cx({ point: item.point })}>{item.subject}</li>
-                      {item.cardinalAfter.map((cardinal, index) => (
-                        <li key={index}>{cardinal}</li>
-                      ))}
-                      {item.cardinalBefore.map((cardinal, index) => (
-                        <li key={index}>{cardinal}</li>
-                      ))}
-                    </ul>
-                  </li>
-                ))}
-              </ul>
+            <div className={cx('scrollable')}>
+              <div className={cx('head')}>
+                <ul>
+                  <li>과목</li>
+                  <li>제 {data[0].finance}(당) 기</li>
+                  <li>제 {data[0].finance - 1}(전) 기</li>
+                </ul>
+              </div>
+              <div className={cx('body')}>
+                <ul>
+                  {data[0].data.map((item, index) => (
+                    <li key={index}>
+                      <ul>
+                        <li className={cx({ point: item.point })}>{item.subject}</li>
+                        {item.cardinalAfter.map((cardinal, index) => (
+                          <li key={index}>{cardinal}</li>
+                        ))}
+                        {item.cardinalBefore.map((cardinal, index) => (
+                          <li key={index}>{cardinal}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
           <div className={cx('inner')}>

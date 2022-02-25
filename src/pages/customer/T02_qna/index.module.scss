@@ -22,11 +22,9 @@
       }
       &::-webkit-scrollbar-thumb {
         background-color: $tint-color-1;
-        border-radius: 5px;
       }
       &::-webkit-scrollbar-track {
-        background-color: $face-color;
-        border-radius: 5px;
+        background-color: #ddd;
       }
     }
     > .agree {

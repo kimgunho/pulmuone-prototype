@@ -19,6 +19,7 @@
       @include sectionTitle;
       color: white;
       padding-top: 6rem;
+      text-align: center;
     }
     > .text {
       padding-top: 1rem;
@@ -26,6 +27,12 @@
       color: white;
       text-align: center;
       line-height: 1.8;
+
+      @include mobile {
+        > br {
+          display: none;
+        }
+      }
     }
   }
   > .objects {
@@ -34,30 +41,50 @@
     > img {
       position: absolute;
       transform: translate(0, -50%);
+      width: 100%;
 
       &.left {
-        width: 100%;
         max-width: 40rem;
         left: -3rem;
         top: 60%;
+
+        @include tablet {
+          max-width: 30rem;
+        }
+        @include mobile {
+          max-width: 20rem;
+        }
       }
       &.right {
-        width: 100%;
         max-width: 27.5rem;
         right: -5rem;
         top: 90%;
+
+        @include mobile {
+          right: -10rem;
+        }
       }
       &.bubleeLeft {
-        width: 100%;
         max-width: 11.25rem;
         top: 60%;
         left: 35%;
+
+        @include mobile {
+          left: 0;
+          max-width: 8rem;
+          top: 80%;
+        }
       }
       &.bubbleRight {
-        width: 100%;
         max-width: 6.25rem;
         top: 50%;
         right: 35%;
+
+        @include mobile {
+          right: 0;
+          top: 70%;
+          max-width: 5rem;
+        }
       }
     }
   }
@@ -66,19 +93,43 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
+
+    @include tablet {
+      height: 90%;
+    }
+    @include mobile {
+      height: 80%;
+    }
   }
 }
 .inner {
   @include flexCenterStyle;
   flex-direction: column;
   background-color: #005f9a;
-  padding: 4.68rem 0;
+  padding: 5rem 0;
 
+  @include tablet {
+    padding: 3rem 2rem;
+  }
+  @include mobile {
+    padding: 3rem 2rem;
+  }
   > p {
     padding-bottom: 0.5rem;
     text-align: center;
     color: white;
     font-size: 1.6rem;
     line-height: 1.8;
+
+    @include tablet {
+      > br {
+        display: none;
+      }
+    }
+    @include mobile {
+      > br {
+        display: none;
+      }
+    }
   }
 }

@@ -10,7 +10,7 @@ const Download = ({ color = 'green', file, text, title }) => {
   return (
     <div className={cx(['download', color])}>
       <p className={cx('text')}>{title}</p>
-      <a href={file} download>
+      <a href={file} target="_blank" rel="noreferrer">
         <img src={color === 'green' ? iconGreen : iconBlue} alt="" />
         <span>{text}</span>
       </a>

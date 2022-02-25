@@ -15,10 +15,18 @@
     text-align: center;
     box-sizing: border-box;
 
+    @include mobile {
+      padding: 3rem 2rem;
+    }
     > h3 {
       color: white;
       font-size: 2.6rem;
       font-weight: bold;
+      line-height: 1.5;
+
+      @include mobile {
+        font-size: 2.25rem;
+      }
     }
     > p {
       margin-top: 2.4rem;

@@ -6,11 +6,21 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: $accent-color;
-  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  transition: background-color 0.2s ease;
 
+  @media screen and (min-width: 735px) {
+    &:hover {
+      background-color: $accent-color;
+    }
+  }
   @include mobile {
     padding: 2rem 0;
+
+    &.background {
+      background-color: $accent-color;
+    }
   }
   > .wrapper {
     width: 100%;
@@ -101,7 +111,7 @@
         top: 66px;
         display: none;
 
-        &.active {
+        &.open {
           display: flex;
         }
       }
@@ -126,8 +136,9 @@
           cursor: pointer;
           font-weight: bold;
           box-sizing: border-box;
+          line-height: 1;
 
-          @media screen and (min-width: 734px) {
+          @media screen and (min-width: 735px) {
             &:hover {
               color: $tint-color-1;
 
@@ -176,7 +187,6 @@
               }
             }
           }
-
           > .limiter {
             background-color: $accent-color;
             border-top: 1px solid rgba(141, 198, 62, 0.3);

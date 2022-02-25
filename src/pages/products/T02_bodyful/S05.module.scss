@@ -2,9 +2,11 @@
 
 .container {
   @include flexCenterStyle;
-  padding: 6.25rem;
+  padding: 6.25rem 0;
   background-color: $face-color;
 
+  @include mobile {
+  }
   > .limiter {
     @include limiter;
     @include flexCenterStyle;
@@ -19,17 +21,28 @@
       display: flex;
       justify-content: space-evenly;
 
+      @include mobile {
+        flex-direction: column;
+      }
       > li {
         @include flexCenterStyle;
         flex-direction: column;
         width: 30%;
 
+        @include mobile {
+          width: 100%;
+          margin-bottom: 4rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
         > .image {
           background-position: center center;
           background-repeat: no-repeat;
           background-size: contain;
           width: 100%;
-          min-height: 15.625rem;
+          min-height: 15rem;
         }
         > h3 {
           font-size: 1.4rem;
@@ -38,6 +51,13 @@
         }
         > p {
           font-size: 1.2rem;
+          text-align: center;
+          line-height: 1.8;
+          white-space: nowrap;
+
+          @include mobile {
+            white-space: normal;
+          }
         }
       }
     }

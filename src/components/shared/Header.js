@@ -8,34 +8,29 @@ import styles from './Header.module.scss';
 const cx = classNames.bind(styles);
 
 const Header = () => {
-  const [hamburgerClicked, setHamburgerClicked] = useState(false);
-  const [gnbActive, setGnbActive] = useState({});
+  const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
   const { pathname } = useLocation();
 
   useEffect(() => {
-    setHamburgerClicked(false);
+    setOpen(false);
+    setActiveIndex(null);
   }, [pathname]);
 
-  const onClick = (index) => {
-    setGnbActive((prev) => ({
-      [index]: !prev[index],
-    }));
-  };
-
   return (
-    <header className={cx('container')}>
+    <header className={cx(['container', { background: open }])}>
       <div className={cx('wrapper')}>
-        <div className={cx(['hamburger', { close: hamburgerClicked }])} onClick={() => setHamburgerClicked(!hamburgerClicked)}>
+        <div className={cx(['hamburger', { close: open }])} onClick={() => setOpen(!open)}>
           <div className={cx('top')} />
           <div className={cx('center')} />
           <div className={cx('bottom')} />
         </div>
-        <h1 className={cx('logo')} onClick={() => setHamburgerClicked(false)}>
+        <h1 className={cx('logo')} onClick={() => setOpen(false)}>
           <Link to="/"></Link>
         </h1>
-        <div className={cx(['inner', { active: hamburgerClicked }])}>
+        <div className={cx(['inner', { open }])}>
           <ul className={cx('menus')}>
-            <li onClick={() => onClick(1)} className={cx({ active: gnbActive[1] })}>
+            <li onClick={() => setActiveIndex(0)} className={cx({ active: activeIndex === 0 })}>
               <p>브랜드 스토리</p>
               <div className={cx('limiter')}>
                 <ul>
@@ -51,7 +46,7 @@ const Header = () => {
                 </ul>
               </div>
             </li>
-            <li onClick={() => onClick(2)} className={cx({ active: gnbActive[2] })}>
+            <li onClick={() => setActiveIndex(1)} className={cx({ active: activeIndex === 1 })}>
               <p>제품 안내</p>
               <div className={cx('limiter')}>
                 <ul>
@@ -72,7 +67,7 @@ const Header = () => {
             </li>
           </ul>
           <ul className={cx('menus')}>
-            <li onClick={() => onClick(3)} className={cx({ active: gnbActive[3] })}>
+            <li onClick={() => setActiveIndex(2)} className={cx({ active: activeIndex === 2 })}>
               <p>CSR</p>
               <div className={cx('limiter')}>
                 <ul>
@@ -88,7 +83,7 @@ const Header = () => {
                 </ul>
               </div>
             </li>
-            <li onClick={() => onClick(4)} className={cx({ active: gnbActive[4] })}>
+            <li onClick={() => setActiveIndex(3)} className={cx({ active: activeIndex === 3 })}>
               <p>고객센터</p>
               <div className={cx('limiter')}>
                 <ul>
@@ -104,7 +99,7 @@ const Header = () => {
                 </ul>
               </div>
             </li>
-            <li onClick={() => onClick(5)} className={cx({ active: gnbActive[5] })}>
+            <li onClick={() => setActiveIndex(4)} className={cx({ active: activeIndex === 4 })}>
               <p>회사소개</p>
               <div className={cx('limiter')}>
                 <ul>

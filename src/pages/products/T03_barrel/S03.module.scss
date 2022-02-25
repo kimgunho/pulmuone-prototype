@@ -19,6 +19,14 @@
       justify-content: space-between;
       margin-bottom: 4rem;
 
+      @include tablet {
+        flex-direction: column;
+        width: 100%;
+      }
+      @include mobile {
+        flex-direction: column;
+        width: 100%;
+      }
       > li {
         display: flex;
         flex-direction: column;
@@ -29,6 +37,22 @@
         padding: 4.875rem 8.125rem;
         box-sizing: border-box;
 
+        @include tablet {
+          width: 100%;
+          padding: 3rem 2rem;
+
+          &:first-child {
+            margin-bottom: 2rem;
+          }
+        }
+        @include mobile {
+          width: 100%;
+          padding: 3rem 2rem;
+
+          &:first-child {
+            margin-bottom: 2rem;
+          }
+        }
         > img {
           height: 7.5rem;
           width: auto;
@@ -57,6 +81,9 @@
       justify-content: space-between;
       align-items: center;
 
+      @include mobile {
+        flex-direction: column;
+      }
       > .image {
         @include flexCenterStyle;
         flex-direction: column;
@@ -85,12 +112,18 @@
           font-weight: bold;
           color: $accent-color;
           padding: 1rem 0;
+          text-align: center;
         }
       }
       > .text {
         font-size: 1.4rem;
         line-height: 1.8;
         padding-left: 2rem;
+
+        @include mobile {
+          padding-left: 0;
+          margin-top: 2rem;
+        }
       }
     }
   }

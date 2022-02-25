@@ -12,9 +12,10 @@
     > .detail {
       @include flexCenterStyle;
       flex-direction: column;
-      padding: 6rem;
+      padding: 6rem 0;
       width: 100%;
       max-width: 72rem;
+      box-sizing: border-box;
 
       > .title {
         @include sectionTitle;
@@ -25,32 +26,92 @@
         justify-content: space-between;
         width: 100%;
 
+        @include tablet {
+          flex-direction: column;
+        }
+        @include mobile {
+          flex-direction: column;
+        }
+
         > .image {
           width: 20%;
 
+          @include tablet {
+            @include flexCenterStyle;
+            width: 100%;
+          }
+          @include mobile {
+            @include flexCenterStyle;
+            width: 100%;
+            margin-bottom: 4rem;
+          }
           > img {
             height: 100%;
+
+            @include tablet {
+              height: auto;
+              width: 100%;
+              max-width: 23rem;
+            }
+            @include mobile {
+              height: auto;
+              width: 100%;
+              max-width: 23rem;
+            }
           }
         }
         > .inner {
           width: 50%;
 
+          @include tablet {
+            width: 100%;
+          }
+          @include mobile {
+            width: 100%;
+          }
           > ul {
+            @include tablet {
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+            }
+            @include mobile {
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+            }
             > li {
               display: flex;
               align-items: center;
               margin-bottom: 1.8rem;
 
+              @include tablet {
+                width: 48%;
+              }
+              @include mobile {
+                width: 48%;
+                flex-direction: column;
+              }
+
               > img {
                 width: 100%;
                 max-width: 11.25rem;
                 margin-right: 2.125rem;
+
+                @include mobile {
+                  max-width: 100%;
+                  margin-right: 0;
+                }
               }
               > .content {
                 > h3 {
                   font-size: 1.8rem;
                   font-weight: bold;
                   padding-bottom: 1rem;
+
+                  @include mobile {
+                    padding-top: 1rem;
+                  }
                 }
                 > p {
                   font-size: 1.4rem;
@@ -69,15 +130,36 @@
       background-color: #f4f4f4;
       border-radius: 1rem;
 
+      @include mobile {
+        flex-direction: column;
+        padding: 2rem;
+        width: 100%;
+      }
       > h3 {
         font-size: 1.6rem;
         font-weight: bold;
         white-space: nowrap;
+
+        @include mobile {
+          padding-bottom: 2rem;
+        }
       }
       > p {
         margin-left: 4rem;
         font-size: 1.4rem;
         line-height: 1.8;
+
+        @include tablet {
+          > br {
+            display: none;
+          }
+        }
+        @include mobile {
+          margin-left: 0;
+          > br {
+            display: none;
+          }
+        }
       }
     }
   }
