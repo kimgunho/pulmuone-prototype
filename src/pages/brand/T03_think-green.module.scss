@@ -57,7 +57,7 @@
               }
               @include mobile {
                 right: 0;
-                top: 74%;
+                top: 69%;
                 left: auto;
               }
             }
@@ -71,7 +71,7 @@
                 }
               }
               @include mobile {
-                top: 4rem;
+                top: 8rem;
                 right: 0;
                 left: auto;
               }
@@ -115,17 +115,33 @@
                   text-align: center;
                   color: $tint-color-2;
                   background-color: white;
+
+                  @include mobile {
+                    font-size: 1.5rem;
+                    width: 2rem;
+                    height: 2rem;
+                    line-height: 2rem;
+                  }
                 }
                 &.title {
                   padding-left: 1rem;
                   color: white;
                   font-size: 2rem;
+
+                  @include mobile {
+                    padding-left: 0.5rem;
+                    font-size: 1.5rem;
+                  }
                 }
               }
             }
             > p {
               font-size: 1.5rem;
               line-height: 1.6;
+
+              @include mobile {
+                font-size: 1.25rem;
+              }
             }
           }
           > .bottle {
@@ -141,7 +157,7 @@
 
             @include mobile {
               background-image: url('../../assets/images/brand/think-green/bottle_mobile.png');
-              background-size: auto 100%;
+              background-size: auto 80%;
               background-position: left;
               max-width: 100%;
               margin-left: -2rem;
@@ -159,7 +175,7 @@
           margin-top: -5rem;
 
           @include mobile {
-            margin-top: 5rem;
+            margin-top: 0rem;
             padding: 2rem;
           }
           > p {
