@@ -125,9 +125,6 @@
           justify-content: flex-start;
 
           &.top {
-            @include mobile {
-              justify-content: center;
-            }
             > li {
               &:first-child {
                 > a {

@@ -12,9 +12,10 @@
     > .detail {
       @include flexCenterStyle;
       flex-direction: column;
-      padding: 6rem;
+      padding: 6rem 0;
       width: 100%;
       max-width: 72rem;
+      box-sizing: border-box;
 
       > .title {
         @include sectionTitle;

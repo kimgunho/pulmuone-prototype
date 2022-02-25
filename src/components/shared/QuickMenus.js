@@ -18,7 +18,7 @@ const QuickMenus = () => {
     <div className={cx('container')}>
       <ul>
         <li className={cx('shop')}>
-          <a href="https://naver.com" target={'_blank'} rel="noreferrer">
+          <a href="https://smartstore.naver.com/pulmuonebynature" target={'_blank'} rel="noreferrer">
             <span className={cx('icon')}></span>
             <span className={cx('title')}>SHOP</span>
           </a>
