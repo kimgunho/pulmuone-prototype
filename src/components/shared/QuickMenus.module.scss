@@ -7,8 +7,8 @@
   z-index: 100;
 
   @include mobile {
-    right: 3rem;
-    bottom: 3rem;
+    right: 1rem;
+    bottom: 2rem;
   }
   > ul {
     > li {
@@ -22,8 +22,8 @@
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 
       @include mobile {
-        width: 3rem;
-        height: 3rem;
+        width: 50px;
+        height: 50px;
       }
       &.shop {
         background-color: $tint-color-1;
@@ -40,7 +40,7 @@
         }
       }
       &.top {
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         background-color: $accent-color;
 
         &.close {

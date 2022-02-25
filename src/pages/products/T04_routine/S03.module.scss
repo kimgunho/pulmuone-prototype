@@ -29,9 +29,6 @@
         @include flexCenterStyle;
         flex-wrap: wrap;
 
-        @include mobile {
-          justify-content: space-between;
-        }
         > li {
           display: flex;
           justify-content: space-between;
@@ -51,10 +48,10 @@
             }
           }
           @include mobile {
-            width: 48%;
+            width: 32%;
             margin-bottom: 2rem;
 
-            &:nth-child(2n) {
+            &:nth-child(3n) {
               &::after {
                 display: none;
               }
@@ -72,7 +69,8 @@
             border-left-color: #00a8da;
 
             @include mobile {
-              right: calc(-4% - 16px);
+              right: calc(-1% - 16px);
+              bottom: -3px;
             }
           }
           &:last-child {
@@ -97,6 +95,11 @@
           > img {
             width: auto;
             height: 100%;
+
+            @include mobile {
+              width: 70%;
+              height: auto;
+            }
           }
           > .text {
             font-size: 1.2rem;
