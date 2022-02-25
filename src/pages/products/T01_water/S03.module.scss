@@ -14,23 +14,27 @@
     > .title {
       @include sectionTitle;
       padding-bottom: 2.8rem;
+      text-align: center;
     }
     > p {
       font-size: 1.6rem;
       line-height: 1.8;
       text-align: center;
       margin-bottom: 5.5rem;
+
+      @include mobile {
+        > br {
+          display: none;
+        }
+      }
     }
     > .list {
-      display: flex;
-      justify-content: space-between;
       width: 100%;
       max-width: 80rem;
 
-      > li {
+      .item {
         @include flexCenterStyle;
         flex-direction: column;
-        width: 32%;
         height: 100%;
 
         > .image {
@@ -48,6 +52,7 @@
           @include flexCenterStyle;
           background-color: white;
           height: 12rem;
+          width: 100%;
 
           > p {
             font-size: 1.4rem;
@@ -55,6 +60,30 @@
             line-height: 1.8;
             padding: 0 2rem;
             box-sizing: border-box;
+          }
+        }
+      }
+    }
+    > .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3rem;
+
+      > div {
+        display: flex;
+        align-items: center;
+
+        > span {
+          display: block;
+          width: 12px;
+          height: 12px;
+          border-right: 50%;
+          background-color: $accent-color;
+          opacity: 0.3;
+
+          &.bulletsActive {
+            opacity: 1;
           }
         }
       }

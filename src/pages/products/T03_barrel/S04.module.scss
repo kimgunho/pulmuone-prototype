@@ -26,6 +26,12 @@
       color: white;
       text-align: center;
       line-height: 1.8;
+
+      @include mobile {
+        > br {
+          display: none;
+        }
+      }
     }
   }
   > .objects {
@@ -33,30 +39,41 @@
 
     > img {
       position: absolute;
+      width: 100%;
 
       &.left {
-        width: 100%;
         max-width: 26.25rem;
         left: -2rem;
         top: 40%;
       }
       &.right {
-        width: 100%;
         max-width: 18rem;
         right: 0;
         top: 0;
+
+        @include mobile {
+          max-width: 10rem;
+        }
       }
       &.bubleeLeft {
-        width: 100%;
         max-width: 18.75rem;
         top: 30%;
         left: 15%;
+
+        @include mobile {
+          max-width: 10rem;
+          top: 50%;
+        }
       }
       &.bubbleRight {
-        width: 100%;
         max-width: 18.75rem;
         top: 40%;
         right: 15%;
+
+        @include mobile {
+          max-width: 13rem;
+          top: 60%;
+        }
       }
     }
   }
@@ -65,5 +82,12 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
+
+    @include tablet {
+      height: 90%;
+    }
+    @include mobile {
+      height: 70%;
+    }
   }
 }

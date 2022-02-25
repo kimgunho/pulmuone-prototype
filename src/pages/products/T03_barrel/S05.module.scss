@@ -19,15 +19,36 @@
       background-color: #f4f4f4;
       border-radius: 1rem;
 
+      @include mobile {
+        flex-direction: column;
+        padding: 2rem;
+        width: 100%;
+      }
       > h3 {
         font-size: 1.6rem;
         font-weight: bold;
         white-space: nowrap;
+
+        @include mobile {
+          padding-bottom: 2rem;
+        }
       }
       > p {
         margin-left: 4rem;
         font-size: 1.4rem;
         line-height: 1.8;
+
+        @include tablet {
+          > br {
+            display: none;
+          }
+        }
+        @include mobile {
+          margin-left: 0;
+          > br {
+            display: none;
+          }
+        }
       }
     }
   }

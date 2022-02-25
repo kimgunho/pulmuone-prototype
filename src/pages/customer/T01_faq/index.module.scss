@@ -54,17 +54,24 @@
           }
         }
         > .title {
+          display: flex;
           cursor: pointer;
           font-size: 1.6rem;
           font-weight: bold;
           line-height: 1.5;
-          padding: 1.25rem 1rem;
+          padding: 1.25rem 1.5rem 1.25rem 1rem;
           border-bottom: 1px solid rgba(65, 54, 40, 0.3);
+          position: relative;
 
+          @include mobile {
+            font-size: 1.25rem;
+          }
           &::after {
             content: '+';
             color: $accent-color;
-            float: right;
+            position: absolute;
+            right: 0;
+            top: 1.25rem;
           }
         }
         > .content {
