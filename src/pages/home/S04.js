@@ -60,8 +60,8 @@ const S04 = () => {
       .to(bottleRef.current, { className: `+=${cx('bottle')} hide` }, 0.4)
       .to(leftRef.current, { className: `+=${cx('left')} show` }, 0.4)
       .to(wrapperRef.current, { className: `+=${cx('wrapper')} featureA` }, 0.6)
-      .to(wrapperRef.current, { className: `+=${cx('wrapper')} featureB` }, 0.8)
-      .to(wrapperRef.current, { className: `+=${cx('wrapper')} featureC` }, 1.0);
+      .to(wrapperRef.current, { className: `+=${cx('wrapper')} featureB` }, 1.2)
+      .to(wrapperRef.current, { className: `+=${cx('wrapper')} featureC` }, 1.8);
   }, []);
 
   return (
