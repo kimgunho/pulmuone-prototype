@@ -29,6 +29,10 @@
         @include mobile {
           font-size: 2.6rem;
           padding-bottom: 2rem;
+
+          > br {
+            display: none;
+          }
         }
       }
       > .logo {
