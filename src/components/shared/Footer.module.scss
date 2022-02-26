@@ -27,6 +27,8 @@
           order: 3;
           width: 100%;
           flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
         > li {
           &:first-child {
@@ -124,6 +126,9 @@
           align-items: center;
           justify-content: flex-start;
 
+          @include mobile {
+            justify-content: center;
+          }
           &.top {
             > li {
               &:first-child {
@@ -133,10 +138,15 @@
               }
               > a {
                 display: block;
-                padding: 0 1rem 1rem 1rem;
+                padding: 0 1rem 1rem;
                 color: #666;
                 font-weight: bold;
                 font-size: 1.2rem;
+
+                @include mobile {
+                  padding-right: 0.5rem;
+                  padding-left: 0.5rem;
+                }
               }
             }
           }

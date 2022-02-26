@@ -34,8 +34,9 @@
         > div {
           box-sizing: border-box;
 
-          &.addr {
-            padding-right: 7.5rem;
+          &.address {
+            flex: 1;
+            padding-right: 4rem;
 
             @include mobile {
               padding: 0;
@@ -43,31 +44,42 @@
             }
           }
           &.transport {
+            flex: 2;
+
             .flex {
               display: flex;
-              justify-content: space-between;
 
+              @include tablet {
+                flex-direction: column;
+              }
               @include mobile {
                 flex-direction: column;
               }
               > div {
-                @include mobile {
-                  margin: 1rem 0;
-                }
-                &.left {
-                  padding-right: 7.5rem;
+                margin-bottom: 1rem;
 
-                  @include mobile {
-                    padding: 0;
+                &.left {
+                  flex: 2;
+                  padding-right: 2rem;
+
+                  @include tablet {
+                    padding-right: 0;
                   }
+                  @include mobile {
+                    padding-right: 0;
+                  }
+                }
+                &.right {
+                  flex: 1;
                 }
                 > h5 {
                   color: $accent-color;
                   font-size: 1.5rem;
                   border-bottom: 1px solid $accent-color;
                   font-weight: bold;
-                  margin-bottom: 0.5rem;
+                  padding-top: 0.5rem;
                   padding-bottom: 0.5rem;
+                  margin-bottom: 0.5rem;
                 }
               }
             }
