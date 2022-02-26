@@ -7,23 +7,44 @@
   width: 100%;
   padding: 8rem 0;
 
+  @include mobile {
+    padding: 5rem 0;
+  }
+
   > .limiter {
     @include limiter;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50%;
 
     > .info {
       > h2 {
         color: white;
         font-size: 3.2rem;
         line-height: 1.6;
+
+        @include tablet {
+          padding-bottom: 2rem;
+        }
+        @include mobile {
+          font-size: 2.6rem;
+          padding-bottom: 2rem;
+        }
       }
       > .logo {
         @include flexCenterStyle;
+        background-color: white;
+        width: 15rem;
+        height: 15rem;
+        border-radius: 50%;
         display: none;
 
+        @include tablet {
+          display: flex;
+        }
+        @include mobile {
+          display: flex;
+        }
         > img {
           width: 70%;
         }
@@ -33,6 +54,12 @@
         line-height: 1.8;
         color: white;
         padding-top: 2rem;
+
+        @include mobile {
+          > br {
+            display: none;
+          }
+        }
       }
       > a {
         @include homeBtn;
@@ -53,6 +80,12 @@
       height: 18rem;
       border-radius: 50%;
 
+      @include tablet {
+        display: none;
+      }
+      @include mobile {
+        display: none;
+      }
       > img {
         width: 100%;
         max-width: 12rem;
