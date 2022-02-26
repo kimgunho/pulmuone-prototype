@@ -8,13 +8,18 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 200;
-  transition: background-color 0.2s ease;
 
-  &:hover {
-    background-color: $accent-color;
+  @media screen and (min-width: 735px) {
+    &:hover {
+      background-color: $accent-color;
+    }
   }
   @include mobile {
     padding: 2rem 0;
+
+    &.background {
+      background-color: $accent-color;
+    }
   }
   > .wrapper {
     width: 100%;
@@ -217,12 +222,14 @@
                 > a {
                   @include flexCenterStyle;
                   font-weight: normal;
-                  font-size: 1.5rem;
-                  padding: 2rem 2rem;
+                  font-size: 1.4rem;
+                  padding: 0 2rem;
+                  height: 4.4rem;
                   color: $face-color;
                   white-space: nowrap;
 
                   @include mobile {
+                    height: initial;
                     color: $tint-color-1;
                     padding: 1rem;
                   }

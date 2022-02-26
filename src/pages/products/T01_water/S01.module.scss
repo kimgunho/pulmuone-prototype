@@ -19,6 +19,7 @@
       @include sectionTitle;
       color: white;
       padding-top: 6rem;
+      text-align: center;
     }
     > .text {
       padding-top: 1.4rem;
@@ -26,6 +27,17 @@
       color: white;
       text-align: center;
       line-height: 1.8;
+
+      @include tablet {
+        > br {
+          display: none;
+        }
+      }
+      @include mobile {
+        > br {
+          display: none;
+        }
+      }
     }
   }
   > .bottle {
@@ -33,6 +45,11 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
+    height: 100%;
+
+    @include mobile {
+      height: 65%;
+    }
   }
   > .objects {
     @include absoluteFill;
@@ -46,21 +63,45 @@
         left: -12.5rem;
         top: 20%;
         max-width: 25rem;
+
+        @include tablet {
+          top: auto;
+          bottom: 0;
+        }
+        @include mobile {
+          top: auto;
+          bottom: 0;
+        }
       }
       &.right {
         right: -30rem;
         top: 50%;
         max-width: 50rem;
+
+        @include mobile {
+          top: auto;
+          bottom: -30%;
+          max-width: 30rem;
+          right: -15rem;
+        }
       }
       &.bubble_left {
         max-width: 6.25rem;
         left: 20%;
         top: 50%;
+
+        @include mobile {
+          display: none;
+        }
       }
       &.bubble_right {
         right: 20%;
         top: 60%;
         max-width: 9rem;
+
+        @include mobile {
+          display: none;
+        }
       }
     }
   }

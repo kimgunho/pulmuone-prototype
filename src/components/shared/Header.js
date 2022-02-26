@@ -9,15 +9,16 @@ const cx = classNames.bind(styles);
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState();
+  const [activeIndex, setActiveIndex] = useState(null);
   const { pathname } = useLocation();
 
   useEffect(() => {
     setOpen(false);
+    setActiveIndex(null);
   }, [pathname]);
 
   return (
-    <header className={cx('container')}>
+    <header className={cx(['container', { background: open }])}>
       <div className={cx('wrapper')}>
         <div className={cx(['hamburger', { close: open }])} onClick={() => setOpen(!open)}>
           <div className={cx('top')} />

@@ -4,6 +4,9 @@
   background-color: white;
   padding: 4rem;
 
+  @include tablet {
+    padding: 3rem;
+  }
   @include mobile {
     padding: 2rem;
   }

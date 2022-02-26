@@ -4,6 +4,11 @@ import { gsap } from 'gsap';
 
 import styles from './T01_granite.module.scss';
 import PageTitle from '../../components/shared/PageTitle';
+import mobile_illust_s01 from '../../assets/images/brand/granite/illust_s01.jpg';
+import mobile_illust_s02 from '../../assets/images/brand/granite/illust_s02.jpg';
+import mobile_illust_s03 from '../../assets/images/brand/granite/illust_s03.jpg';
+import mobile_illust_s04 from '../../assets/images/brand/granite/illust_s04.jpg';
+import mobile_illust_s05 from '../../assets/images/brand/granite/illust_s05.jpg';
 
 const cx = classNames.bind(styles);
 
@@ -44,15 +49,18 @@ const Granite = () => {
                 풀무원샘물은 2억년 전 중생대 쥬라기에 생성되어 한반도의 화강암 중 가장 넓은 범위를 차지하는 대보 화강암을 기반암으로 하며,
                 대보 화강암은 다른 기반암보다 미네랄 함량이 높은 것이 특징입니다.
               </p>
+              <img src={mobile_illust_s01} alt="" />
               <p className={cx('light')}>
                 이는 대보 화강암이 비다공질 화강암으로, 기공이 적은 만큼 강수가 지층을 통과하는 시간이 길어 물과 암석과의 반응 시간 또한
                 길어져 주요 미네랄 함량이 높기 때문입니다.
               </p>
+              <img src={mobile_illust_s02} alt="" />
               <p className={cx('light')}>
                 또한 깊은 땅속에서 마그마가 서서히 식으면서 만들어져 조밀하고 균질한 알갱이로 이루어진 화강암은 오래전부터 건축 자재에
                 사용되고 최근에는 컬링 스톤에도 활용될 만큼 단단하고 강하며, 그만큼 미네랄을 잡는 힘이 셉니다.
               </p>
               <p>이렇게 촘촘하고 단단한 대보 화강암에서 응집된 2억년 미네랄 물방울을 빠져나갈 틈 없이 꽉 잡아 풀무원샘물을 만듭니다.</p>
+              <img src={mobile_illust_s03} alt="" />
             </div>
             <div className={cx('text')}>
               <h3>40m 천연 모래필터</h3>
@@ -61,9 +69,11 @@ const Granite = () => {
                 바다에 쌓인 모래의 2배에 달하는 40m 모래층이 천연 정화 필터로 작용하여 중금속과 미생물을 흡착함으로써 더욱 귀한 물로
                 정화시킵니다.
               </p>
+              <img src={mobile_illust_s04} alt="" />
             </div>
             <div className={cx('text')}>
               <h4>2억년 동안 어떠한 지질학적 변화도 겪지 않은 촘촘하고 단단한 화강암반의 풍부한 미네랄을 오롯이 물에 담았습니다.</h4>
+              <img src={mobile_illust_s05} alt="" />
             </div>
           </div>
         </div>

@@ -5,6 +5,12 @@
   background-color: $face-color;
   padding: 6.25rem;
 
+  @include tablet {
+    padding: 4rem 0;
+  }
+  @include mobile {
+    padding: 3rem 0;
+  }
   > .limiter {
     @include limiter;
     @include flexCenterStyle;

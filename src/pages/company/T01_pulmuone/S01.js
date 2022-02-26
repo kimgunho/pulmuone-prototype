@@ -2,7 +2,6 @@ import classNames from 'classnames/bind';
 
 import styles from './S01.module.scss';
 
-import background from '../../../assets/images/company/pulmuone/s01/background.jpg';
 import bottle from '../../../assets/images/company/pulmuone/s01/bottle.png';
 import bubble_left from '../../../assets/images/company/pulmuone/s01/bubble_left.png';
 import bubble_right from '../../../assets/images/company/pulmuone/s01/bubble_right.png';
@@ -11,7 +10,7 @@ const cx = classNames.bind(styles);
 
 const S01 = () => {
   return (
-    <div className={cx('container')} style={{ backgroundImage: `url(${background})` }}>
+    <div className={cx('container')}>
       <div className={cx('limiter')}>
         <img className={cx('left')} src={bubble_left} alt="" />
         <img className={cx('right')} src={bubble_right} alt="" />

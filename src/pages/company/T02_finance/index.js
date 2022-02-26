@@ -45,29 +45,31 @@ const Finance = () => {
             <p className={cx('sub')}>전자공시 - {data[0].finance}기 결산 공고</p>
             <h3 className={cx('title')}>재무상태표</h3>
             <p className={cx('date')}>{data[0].date} 현재(단위 :원)</p>
-            <div className={cx('head')}>
-              <ul>
-                <li>과목</li>
-                <li>제 {data[0].finance}(당) 기</li>
-                <li>제 {data[0].finance - 1}(전) 기</li>
-              </ul>
-            </div>
-            <div className={cx('body')}>
-              <ul>
-                {data[0].data.map((item, index) => (
-                  <li key={index}>
-                    <ul>
-                      <li className={cx({ point: item.point })}>{item.subject}</li>
-                      {item.cardinalAfter.map((cardinal, index) => (
-                        <li key={index}>{cardinal}</li>
-                      ))}
-                      {item.cardinalBefore.map((cardinal, index) => (
-                        <li key={index}>{cardinal}</li>
-                      ))}
-                    </ul>
-                  </li>
-                ))}
-              </ul>
+            <div className={cx('scrollable')}>
+              <div className={cx('head')}>
+                <ul>
+                  <li>과목</li>
+                  <li>제 {data[0].finance}(당) 기</li>
+                  <li>제 {data[0].finance - 1}(전) 기</li>
+                </ul>
+              </div>
+              <div className={cx('body')}>
+                <ul>
+                  {data[0].data.map((item, index) => (
+                    <li key={index}>
+                      <ul>
+                        <li className={cx({ point: item.point })}>{item.subject}</li>
+                        {item.cardinalAfter.map((cardinal, index) => (
+                          <li key={index}>{cardinal}</li>
+                        ))}
+                        {item.cardinalBefore.map((cardinal, index) => (
+                          <li key={index}>{cardinal}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
           <div className={cx('inner')}>
@@ -82,8 +84,8 @@ const Finance = () => {
             <div className={cx('text')}>
               <p>
                 감사의견 : 우리의 의견으로는 별첨된 회사의 재무제표는 회사의 2020년 12월 31일 현재의 재무상태,
-                <br />
-                동일로 종료되는 보고기간의 재무성과 및 현금흐름을 일반기업회계기준에 따라, 중요성의 관점에서 공정하게 표시하고 있습니다.
+                <br /> 동일로 종료되는 보고기간의 재무성과 및 현금흐름을 일반기업회계기준에 따라, 중요성의 관점에서 공정하게 표시하고
+                있습니다.
                 <span>한영회계법인 대표이사 박용근</span>
               </p>
             </div>
