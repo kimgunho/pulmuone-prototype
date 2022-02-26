@@ -17,7 +17,7 @@ const Location = () => {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1582.8017195833354!2d127.11732180438528!3d37.49368346192678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca58ef19c4819%3A0x62880328a7a1e90e!2z7ISc7Jq47Yq567OE7IucIOyGoe2MjOq1rCDqsIDrnb3rj5kgOTgtNA!5e0!3m2!1sko!2skr!4v1644901372334!5m2!1sko!2skr"></iframe>
           </div>
           <div className={cx('info')}>
-            <div className={cx('addr')}>
+            <div className={cx('address')}>
               <h3 className={cx('title')}>주소</h3>
               <ul>
                 <li>
