@@ -87,11 +87,9 @@
         > div {
           @include absoluteFill;
           @include backgroundDefaultStyle;
+          background-position: center top;
+          background-size: contain;
 
-          @include desktop {
-            background-position: center top;
-            background-size: contain;
-          }
           &.coloring {
             z-index: 20;
             mask-image: url('../../assets/images/brand/granite/mask.jpg');

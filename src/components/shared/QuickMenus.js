@@ -14,16 +14,22 @@ const QuickMenus = () => {
     });
   }, []);
 
+  const moveToSmartStore = () => {
+    window.open('https://smartstore.naver.com/pulmuonebynature');
+  };
+
+  const moveToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className={cx('container')}>
       <ul>
-        <li className={cx('shop')}>
-          <a href="https://smartstore.naver.com/pulmuonebynature" target={'_blank'} rel="noreferrer">
-            <span className={cx('icon')}></span>
-            <span className={cx('title')}>SHOP</span>
-          </a>
+        <li className={cx('shop')} onClick={moveToSmartStore}>
+          <span className={cx('icon')}></span>
+          <span className={cx('title')}>SHOP</span>
         </li>
-        <li className={cx(['top', { close: scrollY === 0 }])} onClick={() => window.scrollTo(0, 0)}>
+        <li className={cx(['top', { hide: scrollY === 0 }])} onClick={moveToTop}>
           <span className={cx('icon')}></span>
           <span className={cx('title')}>TOP</span>
         </li>

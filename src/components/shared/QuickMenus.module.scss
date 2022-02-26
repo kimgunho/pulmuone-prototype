@@ -10,65 +10,55 @@
     right: 1rem;
     bottom: 2rem;
   }
-  > ul {
-    > li {
-      @include flexCenterStyle;
-      flex-direction: column;
-      width: 5rem;
-      height: 5rem;
-      border-radius: 50%;
-      text-align: center;
-      cursor: pointer;
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  > ul > li {
+    @include flexCenterStyle;
+    flex-direction: column;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 
-      @include mobile {
-        width: 50px;
-        height: 50px;
+    @include mobile {
+      width: 50px;
+      height: 50px;
+    }
+    &.shop {
+      background-color: $tint-color-1;
+
+      > .icon {
+        background-image: url('../../assets/images/shared/shop_icon.svg');
+        background-position: left;
+        width: 2rem;
       }
-      &.shop {
-        background-color: $tint-color-1;
+    }
+    &.top {
+      margin-top: 1.5rem;
+      background-color: $accent-color;
 
-        > a {
-          @include flexCenterStyle;
-          flex-direction: column;
-
-          > .icon {
-            background-image: url('../../assets/images/shared/shop_icon.svg');
-            background-position: left;
-            width: 2rem;
-          }
-        }
+      &.hide {
+        display: none;
       }
-      &.top {
-        margin-top: 1.5rem;
-        background-color: $accent-color;
+      > .icon {
+        background-image: url('../../assets/images/shared/top_icon.svg');
+      }
+    }
+    > span {
+      color: white;
+      font-size: 1;
 
-        &.close {
+      &.icon {
+        @include backgroundDefaultStyle;
+        background-size: contain;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+      &.title {
+        margin-top: 0.5rem;
+
+        @include mobile {
           display: none;
-        }
-        > .icon {
-          background-image: url('../../assets/images/shared/top_icon.svg');
-        }
-      }
-      span {
-        color: #fff;
-        font-size: 1.125rem;
-
-        &.title {
-          @include mobile {
-            display: none;
-          }
-        }
-        &.icon {
-          @include backgroundDefaultStyle;
-          background-size: contain;
-          width: 1.5rem;
-          height: 1.5rem;
-          margin-bottom: 0.5rem;
-
-          @include mobile {
-            margin-bottom: 0;
-          }
         }
       }
     }

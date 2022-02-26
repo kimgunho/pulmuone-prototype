@@ -35,6 +35,9 @@
           height: 48rem;
           position: relative;
 
+          @include mobile {
+            max-width: 30rem;
+          }
           > .desc {
             position: absolute;
             z-index: 3;

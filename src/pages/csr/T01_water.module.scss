@@ -53,22 +53,26 @@
       }
       > li {
         width: 100%;
-        min-height: 25rem;
+        min-height: 24rem;
         background-color: $accent-color;
         margin-right: 1rem;
+        margin-bottom: 1rem;
 
-        &:last-child {
-          margin-right: 0;
+        @include desktop {
+          &:last-child {
+            margin-right: 0;
+          }
         }
         @include tablet {
-          width: 48%;
-          margin-right: 0;
-          margin-bottom: 4%;
+          width: calc(50% - 0.5rem);
+
+          &:nth-child(even) {
+            margin-right: 0;
+          }
         }
         @include mobile {
           margin-right: 0;
-          margin-bottom: 2rem;
-          min-height: auto;
+          min-height: initial;
         }
         > a {
           width: 100%;
