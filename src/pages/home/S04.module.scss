@@ -8,14 +8,22 @@
   position: relative;
   overflow: hidden;
 
-  > .wrapper {
+  > .desktopWrapper {
     @include limiter;
     margin-top: 72px;
     display: flex;
     justify-content: space-between;
     position: relative;
     z-index: 3;
+    transform: translateY(0);
+    transition: all 0.5s ease-in;
 
+    &.translateY {
+      transform: translateY(-50%);
+    }
+    @include mobile {
+      display: none;
+    }
     &:global {
       &.featureA {
         .shape1 {
@@ -150,6 +158,9 @@
         }
       }
     }
+  }
+  > .mobileWrapper {
+    display: none;
   }
   > .background {
     position: absolute;

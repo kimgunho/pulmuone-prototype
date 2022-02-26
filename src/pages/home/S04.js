@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import styles from './S04.module.scss';
 import background from '../../assets/images/home/s04/background.jpg';
@@ -20,53 +21,49 @@ const cx = classNames.bind(styles);
 const S04 = () => {
   const containerRef = useRef();
   const backgroundRef = useRef();
-  const wrapperRef = useRef();
+  const desktopWrapperRef = useRef();
   const bottleRef = useRef();
   const leftRef = useRef();
 
   useEffect(() => {
-    gsap.from(wrapperRef.current, {
-      yPercent: -32,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        scrub: true,
-        start: 'top center',
-        end: 'bottom bottom',
+    ScrollTrigger.matchMedia({
+      '(min-width:734px)': () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: containerRef.current,
+              scrub: true,
+              pin: true,
+              start: 'top top',
+              end: '400% bottom',
+            },
+          })
+          .to(desktopWrapperRef.current, { className: `-=${cx('desktopWrapper')} translateY` })
+          .to(backgroundRef.current, { top: '-100%' })
+          .to(bottleRef.current, { className: `+=${cx('bottle')} hide` }, 0.4)
+          .to(leftRef.current, { className: `+=${cx('left')} show` }, 0.4)
+          .to(desktopWrapperRef.current, { className: `+=${cx('desktopWrapper')} featureA` }, 0.6)
+          .to(desktopWrapperRef.current, { className: `+=${cx('desktopWrapper')} featureB` }, 1.2)
+          .to(desktopWrapperRef.current, { className: `+=${cx('desktopWrapper')} featureC` }, 1.8);
+      },
+      all: () => {
+        gsap.to('.dew', {
+          opacity: 0,
+          scale: 0,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            scrub: true,
+            start: 'top 56%',
+            end: 'bottom bottom',
+          },
+        });
       },
     });
-
-    gsap.to('.dew', {
-      opacity: 0,
-      scale: 0,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        scrub: true,
-        start: 'top 56%',
-        end: 'bottom bottom',
-      },
-    });
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          scrub: true,
-          pin: true,
-          start: 'top top',
-          end: '400% bottom',
-        },
-      })
-      .to(backgroundRef.current, { top: '-100%' })
-      .to(bottleRef.current, { className: `+=${cx('bottle')} hide` }, 0.4)
-      .to(leftRef.current, { className: `+=${cx('left')} show` }, 0.4)
-      .to(wrapperRef.current, { className: `+=${cx('wrapper')} featureA` }, 0.6)
-      .to(wrapperRef.current, { className: `+=${cx('wrapper')} featureB` }, 1.2)
-      .to(wrapperRef.current, { className: `+=${cx('wrapper')} featureC` }, 1.8);
   }, []);
 
   return (
     <div ref={containerRef} className={cx('container')}>
-      <div ref={wrapperRef} className={cx('wrapper')}>
+      <div ref={desktopWrapperRef} className={cx(['desktopWrapper', 'translateY'])}>
         <div className={cx('left')} ref={leftRef}>
           <h2>
             환경까지 생각한
@@ -124,6 +121,7 @@ const S04 = () => {
           </div>
         </div>
       </div>
+      <div className={cx('mobileWrapper')}></div>
       <img ref={backgroundRef} className={cx('background')} src={background} alt="" />
     </div>
   );
