@@ -1,6 +1,6 @@
 @import '../../common.scss';
 
-$dew-size: 6.875rem * 0.5;
+$dew-size: 3.4rem;
 
 .dew {
   @include backgroundDefaultStyle;
@@ -10,9 +10,6 @@ $dew-size: 6.875rem * 0.5;
   height: $dew-size;
   left: calc(50% - ($dew-size / 2));
   top: calc(50% + ($dew-size / 3));
-  // left: 50%;
-  // top: 50%;
   display: none;
   background-image: url('../../assets/images/home/water.png');
-  // transform: translate(-50%, -50%);
 }
