@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper';
 
+import 'swiper/css';
+import 'swiper/css/pagination';
 import styles from './S04.module.scss';
 import background from '../../assets/images/home/s04/background.jpg';
 import logo from '../../assets/images/shared/logo.png';
@@ -24,9 +28,26 @@ const S04 = () => {
   const desktopWrapperRef = useRef();
   const bottleRef = useRef();
   const leftRef = useRef();
+  const mobileIntroRef = useRef();
+  const mobileSwiperRef = useRef();
 
   useEffect(() => {
     ScrollTrigger.matchMedia({
+      '(max-width:734px)': () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: containerRef.current,
+              scrub: true,
+              pin: true,
+              start: 'top top',
+              end: '200% bottom',
+            },
+          })
+          .to(backgroundRef.current, { top: '-100%', duration: 5 })
+          .to(mobileIntroRef.current, { opacity: 0 }, 1)
+          .to(mobileSwiperRef.current, { opacity: 1 }, 1.2);
+      },
       '(min-width:734px)': () => {
         gsap
           .timeline({
@@ -121,7 +142,91 @@ const S04 = () => {
           </div>
         </div>
       </div>
-      <div className={cx('mobileWrapper')}></div>
+      <div className={cx('mobileWrapper')}>
+        <div className={cx('intro')} ref={mobileIntroRef}>
+          <img src={bottleLabel} alt="" />
+          <div className={cx('info')}>
+            <h2>
+              환경까지 생각한
+              <img src={logo} alt="풀무원샘물" />
+            </h2>
+            <p>풀무원샘물은 탄소 배출량을 줄이기 위해 지속적으로 노력합니다.</p>
+          </div>
+        </div>
+        <div className={cx('swiperWrapper')} ref={mobileSwiperRef}>
+          <Swiper
+            className={cx('swiper')}
+            loop={true}
+            modules={[Navigation, Pagination]}
+            pagination={{
+              el: '.pager',
+              clickable: true,
+              bulletActiveClass: cx('bulletsActive'),
+            }}
+            navigation={{
+              nextEl: '.nextBtn',
+              prevEl: '.prevBtn',
+            }}>
+            <SwiperSlide className={cx('slide')}>
+              <div className={cx('image')}>
+                <img src={shape1} alt="" />
+                <img src={bottleNoLabel} alt="" />
+              </div>
+              <div className={cx('info')}>
+                <p className={cx('title')}>
+                  <span className={cx('number')}>1</span>
+                  <span className={cx('text')}>초경량 뚜껑</span>
+                </p>
+                <p className={cx('text')}>
+                  플라스틱 사용량 40% 저감
+                  <br />
+                  (기존 자사 제품 대비)
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className={cx('slide')}>
+              <div className={cx('image')}>
+                <img src={shape2} alt="" />
+                <img src={bottleNoLabel} alt="" />
+              </div>
+              <div className={cx('info')}>
+                <p className={cx('title')}>
+                  <span className={cx('number')}>2</span>
+                  <span className={cx('text')}>초경량 용기</span>
+                </p>
+                <p className={cx('text')}>
+                  2L-32.6g / 500mL-11.1g
+                  <br />
+                  (1병 기준)
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className={cx('slide')}>
+              <div className={cx('image')}>
+                <img src={shape3} alt="" />
+                <img src={bottleNoLabel} alt="" />
+              </div>
+              <div className={cx('info')}>
+                <p className={cx('title')}>
+                  <span className={cx('number')}>3</span>
+                  <span className={cx('text')}>상표띠 제거</span>
+                </p>
+                <p className={cx('text')}>
+                  비닐 사용량 15% 저감
+                  <br />
+                  (기존 제품 1팩 기준)
+                </p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+          <div className={cx('controls')}>
+            <div className={'pager'}></div>
+          </div>
+          <button className={cx(['prev', 'prevBtn'])}></button>
+          <button className={cx(['next', 'nextBtn'])}></button>
+        </div>
+        <Link to={'/브랜드-스토리/Think-Green'}>자세히 보기</Link>
+      </div>
       <img ref={backgroundRef} className={cx('background')} src={background} alt="" />
     </div>
   );
