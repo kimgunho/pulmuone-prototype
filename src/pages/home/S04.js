@@ -39,14 +39,13 @@ const S04 = () => {
             scrollTrigger: {
               trigger: containerRef.current,
               scrub: true,
-              pin: true,
-              start: 'top top',
-              end: 'bottom top',
+              start: 'center center',
+              end: 'center center',
             },
           })
           .to(backgroundRef.current, { className: `-=${cx('background')} active` })
-          .to(mobileIntroRef.current, { opacity: 0 })
-          .to(mobileSwiperRef.current, { opacity: 1 });
+          .to(mobileIntroRef.current, { className: `-=${cx('intro')} active` }, 0.1)
+          .to(mobileSwiperRef.current, { className: `+=${cx('swiperWrapper')} active` }, 0.1);
       },
       '(min-width:734px)': () => {
         gsap
@@ -141,7 +140,7 @@ const S04 = () => {
         </div>
       </div>
       <div className={cx('mobileWrapper')}>
-        <div className={cx('intro')} ref={mobileIntroRef}>
+        <div className={cx(['intro', 'active'])} ref={mobileIntroRef}>
           <img src={bottleLabel} alt="" />
           <div className={cx('info')}>
             <h2>
@@ -151,7 +150,7 @@ const S04 = () => {
             <p>풀무원샘물은 탄소 배출량을 줄이기 위해 지속적으로 노력합니다.</p>
           </div>
         </div>
-        <div className={cx('swiperWrapper')} ref={mobileSwiperRef}>
+        <div className={cx(['swiperWrapper', 'active'])} ref={mobileSwiperRef}>
           <Swiper
             className={cx('swiper')}
             loop={true}

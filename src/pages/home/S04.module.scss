@@ -180,6 +180,7 @@
       position: relative;
       padding-top: 66px;
       width: 100%;
+      min-height: 100vh;
       height: 100%;
       z-index: 3;
 
@@ -192,7 +193,12 @@
           top: 50%;
           transform: translate(-50%, -50%);
           width: 100%;
+          opacity: 0;
+          transition: opacity 1s linear;
 
+          &.active {
+            opacity: 1;
+          }
           > img {
             width: 35%;
           }
@@ -227,8 +233,12 @@
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
-          opacity: 0;
+          opacity: 1;
+          transition: opacity 1s linear;
 
+          &.active {
+            opacity: 0;
+          }
           > .swiper {
             width: 100%;
 
