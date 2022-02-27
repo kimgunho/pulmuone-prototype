@@ -10,7 +10,8 @@
 
   > .desktopWrapper {
     @include limiter;
-    margin-top: 72px;
+    max-width: 1280px;
+    margin-top: 160px;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -370,7 +371,7 @@
     left: 0;
     top: -100%;
     width: 100%;
-    transition: top 2s linear;
+    transition: top 1.2s linear;
 
     &.active {
       top: 100%;
