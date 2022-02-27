@@ -7,7 +7,6 @@
   justify-content: center;
   width: 100%;
   height: 100vh;
-  min-height: 880px;
   background-image: url('../../assets/images/home/s02/background_sand.jpg');
 
   > .title {
@@ -20,6 +19,9 @@
     text-shadow: 0 0 24px rgba(0, 0, 0, 0.8);
     transition: all 1s ease;
 
+    @include mobile {
+      font-size: 2rem;
+    }
     &:global.active {
       filter: blur(24px);
       opacity: 0;
@@ -28,6 +30,10 @@
       font-weight: bold;
       display: block;
       font-size: 5rem;
+
+      @include mobile {
+        font-size: 3.5rem;
+      }
     }
   }
   > .stoneBg {
@@ -55,7 +61,14 @@
     z-index: 50;
     opacity: 0;
     transition: opacity 1s ease;
+    padding: 0 2rem;
+    box-sizing: border-box;
 
+    @include mobile {
+      flex-direction: column;
+      margin-top: 66px;
+      height: 60vh;
+    }
     &:global.active {
       opacity: 1;
     }
@@ -66,15 +79,21 @@
       &.left {
         > p {
           color: white;
-          font-size: 2.6rem;
+          font-size: 3rem;
           text-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
 
+          @include mobile {
+            font-size: 2rem;
+          }
           > .accent {
             display: block;
-            font-size: 3.6rem;
+            font-size: 4rem;
             color: white;
             transition: all 0.1s ease;
 
+            @include mobile {
+              font-size: 3rem;
+            }
             &:hover {
               color: $tint-color-1;
               border-bottom: 1px solid $tint-color-1;
@@ -91,8 +110,23 @@
           right: 0;
           color: white;
           font-size: 2rem;
-          line-height: 1.6;
+          line-height: 1.8;
           text-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
+
+          @include tablet {
+            > br {
+              display: none;
+            }
+          }
+          @include mobile {
+            right: auto;
+            left: 0;
+            font-size: 1.5rem;
+            padding-right: 2rem;
+            > br {
+              display: none;
+            }
+          }
         }
       }
     }
@@ -106,6 +140,12 @@
       bottom: 4%;
       transition: left 1s ease;
 
+      @include tablet {
+        width: 30rem;
+      }
+      @include mobile {
+        width: 20rem;
+      }
       &:global.active {
         left: -1rem;
       }
@@ -118,18 +158,34 @@
       right: -80rem;
       transition: right 0.5s ease;
 
+      @include tablet {
+        width: 30rem;
+      }
+      @include mobile {
+        width: 15rem;
+      }
       &:global.active {
         right: -1rem;
       }
     }
     > .stone {
       position: absolute;
+      transition: all 0.2s ease;
 
       &.first {
         z-index: 20;
         top: 100vh;
         left: -12rem;
         width: 48rem;
+
+        @include tablet {
+          width: 40rem;
+          left: -6rem;
+        }
+        @include mobile {
+          width: 20rem;
+          left: -3rem;
+        }
       }
       &.second {
         z-index: 10;
@@ -137,12 +193,36 @@
         left: -4rem;
         width: 64rem;
         filter: blur(2px);
+
+        @include desktop {
+          width: 50rem;
+        }
+        @include tablet {
+          width: 40rem;
+          left: -4rem;
+        }
+        @include mobile {
+          width: 20rem;
+        }
       }
       &.third {
         z-index: 10;
         top: 100vh;
         right: -32rem;
         width: 64rem;
+
+        @include desktop {
+          width: 58rem;
+          right: -28rem;
+        }
+        @include tablet {
+          width: 50rem;
+          right: -22rem;
+        }
+        @include mobile {
+          right: -10rem;
+          width: 20rem;
+        }
       }
     }
   }
