@@ -33,7 +33,11 @@
           color: $accent-color;
           width: 25%;
 
+          @include tablet {
+            white-space: initial;
+          }
           @include mobile {
+            white-space: initial;
             width: 100%;
             padding-bottom: 2rem;
           }

@@ -12,9 +12,7 @@ const S06 = () => {
       <div className={cx('limiter')}>
         <div className={cx('info')}>
           <h2>
-            국내 먹는샘물 업계 최초
-            <br />
-            AWS 인증
+            국내 먹는샘물 업계 최초 <br /> AWS 인증
           </h2>
 
           <div className={cx('logo')}>

@@ -29,6 +29,9 @@
         @include flexCenterStyle;
         flex-wrap: wrap;
 
+        @include mobile {
+          margin-top: 2rem;
+        }
         > li {
           display: flex;
           justify-content: space-between;
