@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './QuickMenus.module.scss';
@@ -6,20 +6,15 @@ import styles from './QuickMenus.module.scss';
 const cx = classNames.bind(styles);
 
 const QuickMenus = () => {
-  const [scrollY, setScrollY] = useState(window.scrollY);
-
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setScrollY(window.scrollY);
-    });
-  }, []);
-
   const moveToSmartStore = () => {
     window.open('https://smartstore.naver.com/pulmuonebynature');
   };
 
   const moveToTop = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   return (
@@ -29,7 +24,7 @@ const QuickMenus = () => {
           <span className={cx('icon')}></span>
           <span className={cx('title')}>SHOP</span>
         </li>
-        <li className={cx(['top', { hide: scrollY === 0 }])} onClick={moveToTop}>
+        <li className={cx('top')} onClick={moveToTop}>
           <span className={cx('icon')}></span>
           <span className={cx('title')}>TOP</span>
         </li>
