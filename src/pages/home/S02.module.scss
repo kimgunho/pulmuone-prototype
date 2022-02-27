@@ -113,6 +113,11 @@
           line-height: 1.8;
           text-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
 
+          @include tablet {
+            > br {
+              display: none;
+            }
+          }
           @include mobile {
             right: auto;
             left: 0;

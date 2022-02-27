@@ -41,12 +41,12 @@ const S04 = () => {
               scrub: true,
               pin: true,
               start: 'top top',
-              end: '200% bottom',
+              end: 'bottom top',
             },
           })
-          .to(backgroundRef.current, { top: '-100%', duration: 5 })
-          .to(mobileIntroRef.current, { opacity: 0 }, 1)
-          .to(mobileSwiperRef.current, { opacity: 1 }, 1.2);
+          .to(backgroundRef.current, { className: `-=${cx('background')} active` })
+          .to(mobileIntroRef.current, { opacity: 0 })
+          .to(mobileSwiperRef.current, { opacity: 1 });
       },
       '(min-width:734px)': () => {
         gsap
@@ -60,7 +60,7 @@ const S04 = () => {
             },
           })
           .to(desktopWrapperRef.current, { className: `-=${cx('desktopWrapper')} translateY` })
-          .to(backgroundRef.current, { top: '-100%' })
+          .to(backgroundRef.current, { className: `-=${cx('background')} active` })
           .to(bottleRef.current, { className: `+=${cx('bottle')} hide` }, 0.4)
           .to(leftRef.current, { className: `+=${cx('left')} show` }, 0.4)
           .to(desktopWrapperRef.current, { className: `+=${cx('desktopWrapper')} featureA` }, 0.6)
@@ -92,10 +92,8 @@ const S04 = () => {
           </h2>
           <p>
             풀무원샘물은
-            <br />
-            탄소 배출량을 줄이기 위해
-            <br />
-            지속적으로 노력합니다.
+            <br /> 탄소 배출량을 줄이기 위해
+            <br /> 지속적으로 노력합니다.
           </p>
           <Link to="/브랜드-스토리/Think-Green">자세히 보기</Link>
         </div>
@@ -227,7 +225,7 @@ const S04 = () => {
         </div>
         <Link to={'/브랜드-스토리/Think-Green'}>자세히 보기</Link>
       </div>
-      <img ref={backgroundRef} className={cx('background')} src={background} alt="" />
+      <img ref={backgroundRef} className={cx(['background', 'active'])} src={background} alt="" />
     </div>
   );
 };

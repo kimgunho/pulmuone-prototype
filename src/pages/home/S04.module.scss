@@ -75,6 +75,12 @@
         > p {
           font-size: 2rem;
           line-height: 1.6;
+
+          @include tablet {
+            > br {
+              display: none;
+            }
+          }
         }
         > a {
           @include homeBtn;
@@ -154,6 +160,12 @@
             font-size: 1.6rem;
             line-height: 1.6;
             padding-top: 1rem;
+
+            @include tablet {
+              > br {
+                display: none;
+              }
+            }
           }
         }
       }
@@ -346,7 +358,12 @@
   > .background {
     position: absolute;
     left: 0;
-    top: 100%;
+    top: -100%;
     width: 100%;
+    transition: top 2s linear;
+
+    &.active {
+      top: 100%;
+    }
   }
 }
