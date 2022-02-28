@@ -33,6 +33,25 @@ const S04 = () => {
 
   useEffect(() => {
     ScrollTrigger.matchMedia({
+      '(min-width:735px)': () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: containerRef.current,
+              scrub: true,
+              pin: true,
+              start: 'top top',
+              end: '400% bottom',
+            },
+          })
+          .to(desktopWrapperRef.current, { className: `-=${cx('desktopWrapper')} translateY` })
+          .to(backgroundRef.current, { className: `-=${cx('background')} active` }, 0.1)
+          .to(bottleRef.current, { className: `+=${cx('bottle')} hide` }, 0.3)
+          .to(leftRef.current, { className: `+=${cx('left')} show` }, 0.3)
+          .to(desktopWrapperRef.current, { className: `+=${cx('desktopWrapper')} featureA` }, 0.5)
+          .to(desktopWrapperRef.current, { className: `+=${cx('desktopWrapper')} featureB` }, 1.0)
+          .to(desktopWrapperRef.current, { className: `+=${cx('desktopWrapper')} featureC` }, 1.5);
+      },
       '(max-width:734px)': () => {
         gsap
           .timeline({
@@ -46,25 +65,6 @@ const S04 = () => {
           .to(backgroundRef.current, { className: `-=${cx('background')} active` })
           .to(mobileIntroRef.current, { className: `-=${cx('intro')} active` }, 0.1)
           .to(mobileSwiperRef.current, { className: `+=${cx('swiperWrapper')} active` }, 0.1);
-      },
-      '(min-width:734px)': () => {
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: containerRef.current,
-              scrub: true,
-              pin: true,
-              start: 'top top',
-              end: '400% bottom',
-            },
-          })
-          .to(desktopWrapperRef.current, { className: `-=${cx('desktopWrapper')} translateY` })
-          .to(backgroundRef.current, { className: `-=${cx('background')} active` })
-          .to(bottleRef.current, { className: `+=${cx('bottle')} hide` }, 0.4)
-          .to(leftRef.current, { className: `+=${cx('left')} show` }, 0.4)
-          .to(desktopWrapperRef.current, { className: `+=${cx('desktopWrapper')} featureA` }, 0.6)
-          .to(desktopWrapperRef.current, { className: `+=${cx('desktopWrapper')} featureB` }, 1.2)
-          .to(desktopWrapperRef.current, { className: `+=${cx('desktopWrapper')} featureC` }, 1.8);
       },
       all: () => {
         gsap.to('.dew', {
@@ -111,8 +111,7 @@ const S04 = () => {
             </h3>
             <p>
               플라스틱 사용량 40% 저감
-              <br />
-              (기존 자사 제품 대비)
+              <br /> (기존 자사 제품 대비)
             </p>
           </div>
           <div className={cx(['feature', 'feat2'])}>
@@ -122,8 +121,7 @@ const S04 = () => {
             </h3>
             <p>
               2L-32.6g / 500mL-11.1g
-              <br />
-              (1병 기준)
+              <br /> (1병 기준)
             </p>
           </div>
           <div className={cx(['feature', 'feat3'])}>
@@ -133,8 +131,7 @@ const S04 = () => {
             </h3>
             <p>
               비닐 사용량 15% 저감
-              <br />
-              (기존 제품 1팩 기준)
+              <br /> (기존 제품 1팩 기준)
             </p>
           </div>
         </div>

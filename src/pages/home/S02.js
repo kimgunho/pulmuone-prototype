@@ -9,7 +9,7 @@ import leafLeft from '../../assets/images/home/s02/leaf_left.png';
 import leafRight from '../../assets/images/home/s02/leaf_right.png';
 import stone1 from '../../assets/images/home/s02/stone01.png';
 import stone2 from '../../assets/images/home/s02/stone02.png';
-import stone3 from '../../assets/images/home/s02/stone03_2.png';
+import stone3 from '../../assets/images/home/s02/stone03.png';
 
 const cx = classNames.bind(styles);
 
@@ -70,8 +70,7 @@ const S02 = () => {
         <div className={cx('right')}>
           <p ref={desc1Ref}>
             빈틈없이 촘촘한 대보 화강암이
-            <br />
-            2억년 동안 골라 모은 미네랄 물방울
+            <br /> 2억년 동안 골라 모은 미네랄 물방울
           </p>
           <p ref={desc2Ref}>
             마지막 한 방울까지 빠져나갈 틈 없이

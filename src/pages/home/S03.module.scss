@@ -61,14 +61,14 @@
 
       &.left {
         > p {
-          font-size: 2.6rem;
+          font-size: 3rem;
 
           @include mobile {
             font-size: 2rem;
           }
           > .accent {
             display: block;
-            font-size: 3.6rem;
+            font-size: 4rem;
 
             @include mobile {
               font-size: 3rem;
