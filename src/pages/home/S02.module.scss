@@ -16,12 +16,13 @@
     font-size: 3rem;
     text-align: center;
     white-space: nowrap;
-    margin-bottom: 24rem;
+    padding-bottom: 24rem;
     text-shadow: 0 0 24px rgba(0, 0, 0, 0.8);
     transition: all 1s ease;
 
     @include mobile {
       font-size: 2rem;
+      padding-bottom: calc(100% - 120px);
     }
     &:global.active {
       filter: blur(24px);
