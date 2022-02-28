@@ -58,11 +58,10 @@ const S04 = () => {
             scrollTrigger: {
               trigger: containerRef.current,
               scrub: true,
-              start: 'center center',
-              end: 'center center',
+              start: '95% bottom',
+              end: '95% bottom',
             },
           })
-          .to(backgroundRef.current, { className: `-=${cx('background')} active` })
           .to(mobileIntroRef.current, { className: `-=${cx('intro')} active` }, 0.1)
           .to(mobileSwiperRef.current, { className: `+=${cx('swiperWrapper')} active` }, 0.1);
       },

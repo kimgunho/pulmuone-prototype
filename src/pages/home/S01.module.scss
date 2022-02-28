@@ -10,6 +10,7 @@
   max-height: 100vh;
   min-height: 100vh;
   background-image: url('../../assets/images/home/s01/background.jpg');
+  overflow: hidden;
 
   > .circle {
     margin-top: 72px;
@@ -19,6 +20,7 @@
     height: 72vh;
     border-radius: 50%;
     box-shadow: inset 5px 5px 10px #000000ad;
+    transform: translateZ(0);
 
     @include tablet {
       margin-top: 60px;
