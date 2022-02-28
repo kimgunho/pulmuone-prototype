@@ -27,7 +27,13 @@
       background-position: left center;
       background-image: url('../../assets/images/home/s05/background.jpg');
 
+      @include tablet {
+        background-position: center;
+        background-image: url('../../assets/images/home/s05/mobile_background.jpg');
+      }
       @include mobile {
+        background-position: center;
+        background-image: url('../../assets/images/home/s05/mobile_background.jpg');
         min-height: 50vh;
       }
     }

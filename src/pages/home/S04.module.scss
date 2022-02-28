@@ -373,6 +373,9 @@
     width: 100%;
     transition: top 1.2s linear;
 
+    @include mobile {
+      display: none;
+    }
     &.active {
       top: 100%;
     }
