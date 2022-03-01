@@ -15,7 +15,7 @@ const Footer = () => {
   const onChange = (event) => {
     const { value } = event.target;
     if (value) {
-      window.open(value, '_blank');
+      window.location.href = value;
     }
   };
 
