@@ -11,7 +11,7 @@
 
   @media screen and (min-width: 735px) {
     &:hover {
-      background-color: $accent-color;
+      background-color: darken($accent-color, 7%);
     }
   }
   @include mobile {
@@ -129,6 +129,7 @@
           color: white;
           display: flex;
           align-items: center;
+          justify-content: center;
           padding: 0 1rem;
           font-size: 1.2rem;
           height: 4.4rem;
@@ -136,6 +137,7 @@
           font-weight: bold;
           box-sizing: border-box;
           line-height: 1;
+          flex: 1;
 
           @media screen and (min-width: 735px) {
             &:hover {
@@ -166,8 +168,6 @@
             padding: 1rem;
 
             &.active {
-              color: $face-color;
-
               > p {
                 position: relative;
 
@@ -187,7 +187,6 @@
             }
           }
           > .limiter {
-            background-color: $accent-color;
             border-top: 1px solid rgba(141, 198, 62, 0.3);
             position: absolute;
             left: 0;
@@ -196,6 +195,7 @@
             justify-content: center;
             align-items: center;
             display: none;
+            background-color: $accent-color;
 
             @include tablet {
               top: 62px;
@@ -222,13 +222,14 @@
                 > a {
                   @include flexCenterStyle;
                   font-weight: normal;
-                  font-size: 1.4rem;
+                  font-size: 1.2rem;
                   padding: 0 2rem;
                   height: 4.4rem;
                   color: $face-color;
                   white-space: nowrap;
 
                   @include mobile {
+                    font-size: 1.4rem;
                     height: initial;
                     color: $tint-color-1;
                     padding: 1rem;
