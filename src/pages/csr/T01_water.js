@@ -8,10 +8,6 @@ import icon01 from '../../assets/images/csr/water/icon01.png';
 import icon02 from '../../assets/images/csr/water/icon02.png';
 import icon03 from '../../assets/images/csr/water/icon03.png';
 import icon04 from '../../assets/images/csr/water/icon04.png';
-import pdf1 from '../../assets/files/AWS_Committee.pdf';
-import pdf2 from '../../assets/files/AWS_Plan.pdf';
-import pdf3 from '../../assets/files/AWS_Analysis.pdf';
-import pdf4 from '../../assets/files/AWS_Certification.pdf';
 
 const cx = classNames.bind(styles);
 
@@ -37,7 +33,7 @@ const Water = () => {
         </p>
         <ul className={cx('list')}>
           <li>
-            <a href={pdf1} target="_blank" rel="noreferrer">
+            <a href="/static/aws/AWS_Committee.pdf" target="_blank" rel="noreferrer">
               <h4>AWS 조직도</h4>
               <div className={cx('icon')}>
                 <img src={icon01} alt="" />
@@ -46,7 +42,7 @@ const Water = () => {
             </a>
           </li>
           <li>
-            <a href={pdf2} target="_blank" rel="noreferrer">
+            <a href="/static/aws/AWS_Plan.pdf" target="_blank" rel="noreferrer">
               <h4>
                 AWS 목표 및 단계
                 <br />
@@ -59,7 +55,7 @@ const Water = () => {
             </a>
           </li>
           <li>
-            <a href={pdf3} target="_blank" rel="noreferrer">
+            <a href="/static/aws/AWS_Analysis.pdf" target="_blank" rel="noreferrer">
               <h4>
                 수자원 현황 및<br />
                 잠재적인 이슈
@@ -71,7 +67,7 @@ const Water = () => {
             </a>
           </li>
           <li>
-            <a href={pdf4} target="_blank" rel="noreferrer">
+            <a href="/static/aws/AWS_Certification.pdf" target="_blank" rel="noreferrer">
               <h4>AWS 인증서</h4>
               <div className={cx('icon')}>
                 <img src={icon04} alt="" />
