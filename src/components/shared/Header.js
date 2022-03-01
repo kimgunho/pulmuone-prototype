@@ -54,7 +54,7 @@ const Header = () => {
                     <Link to="/제품안내/풀무원샘물">풀무원샘물</Link>
                   </li>
                   <li>
-                    <Link to="/제품안내/풀무원샘물-바디풀">풀무원 바디풀</Link>
+                    <Link to="/제품안내/풀무원샘물-바디풀">풀무원샘물 바디풀</Link>
                   </li>
                   <li>
                     <Link to="/제품안내/풀무원샘물-워터루틴">풀무원샘물 워터루틴</Link>
@@ -72,7 +72,7 @@ const Header = () => {
               <div className={cx('limiter')}>
                 <ul>
                   <li>
-                    <Link to="/CSR/수자원-보호">수차원 보호</Link>
+                    <Link to="/CSR/수자원-보호">수자원 보호</Link>
                   </li>
                   <li>
                     <Link to="/CSR/나눔-캠페인">나눔 캠페인</Link>

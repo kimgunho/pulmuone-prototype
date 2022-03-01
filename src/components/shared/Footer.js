@@ -15,7 +15,11 @@ const Footer = () => {
   const onChange = (event) => {
     const { value } = event.target;
     if (value) {
-      window.open(value, '_blank');
+      if (navigator.userAgent.match(/iPhone|Android/i) !== null) {
+        window.location.href = value;
+      } else {
+        window.open(value, new Date().getTime());
+      }
     }
   };
 
