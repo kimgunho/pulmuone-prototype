@@ -74,7 +74,7 @@ const S04 = () => {
         </ul>
         <Download
           color="blue"
-          file="/static/report/수질성적검사서-풀무원샘물_바디풀.pdf"
+          file="/static/report/Water_Report-Pulmuone_Bodyful.pdf"
           text="수질 적성 검사서"
           title="바디풀은 안심하고 드실 수 있습니다!"
         />

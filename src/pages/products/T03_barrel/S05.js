@@ -75,7 +75,7 @@ const S05 = () => {
         <Products title="제품소개" products={productsWater} />
         <Table table={table} />
         <Download
-          file="/static/report/수질성적검사서-대용량_먹는샘물_18L.pdf"
+          file="/static/report/Water_Report-Barrel_18L.pdf"
           text="수질 성적 검사서"
           title="맛있는샘물은 안심하고 드실 수 있습니다!"
         />

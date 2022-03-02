@@ -59,11 +59,7 @@ const S02 = () => {
       <div className={cx('limiter')}>
         <Products products={products} title="제품소개" />
         <Table table={table} />
-        <Download
-          file="/static/report/수질성적검사서-풀무원샘물.pdf"
-          text="수질 성적 검사서"
-          title="풀무원샘물은 안심하고 드실 수 있습니다!"
-        />
+        <Download file="/static/report/Water_Report-Pulmuone.pdf" text="수질 성적 검사서" title="풀무원샘물은 안심하고 드실 수 있습니다!" />
       </div>
     </div>
   );
