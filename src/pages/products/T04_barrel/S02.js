@@ -64,7 +64,7 @@ const S02 = () => {
         <Products products={productsWater} title="제품소개" />
         <Table title="무기물질 함량(mg/L)" table={table} />
         <Download
-          file="/static/report/Water_Report-Barrel_15L.pdf"
+          files={['/static/report/Water_Report-Barrel_15L.pdf', '/static/report/Water_Report-Barrel_18L.pdf']}
           text="수질 성적 검사서"
           title="풀무원샘물은 안심하고 드실 수 있습니다!"
         />

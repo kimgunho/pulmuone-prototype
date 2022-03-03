@@ -2,8 +2,8 @@ import Jumbotron from '../../components/shared/Jumbotron';
 import TabBar from '../../components/shared/TabBar';
 import TabWater from './T01_water';
 import TabBodyful from './T02_bodyful';
-import TabBarrel from './T03_barrel';
-import TabRoutine from './T04_routine';
+import TabRoutine from './T03_routine';
+import TabBarrel from './T04_barrel';
 import jumbotron from '../../assets/images/products/jumbotron.jpg';
 
 const tabItems = [

@@ -8,7 +8,7 @@
     > .text {
       color: $accent-color;
     }
-    > a {
+    > .buttons > a {
       border-color: $accent-color;
 
       > span {
@@ -20,7 +20,7 @@
     > .text {
       color: #005f9a;
     }
-    > a {
+    > .buttons > a {
       border-color: #005f9a;
 
       > span {
@@ -35,21 +35,30 @@
     text-align: center;
     line-height: 1.5;
   }
-  > a {
-    @include flexCenterStyle;
-    width: fit-content;
-    padding: 1.25rem 4rem;
-    border: 1px solid;
-    box-sizing: border-box;
+  > .buttons {
+    display: flex;
+    flex-direction: row;
 
-    > img {
-      width: 1.2rem;
+    @include mobile {
+      flex-direction: column;
     }
-    > span {
-      font-size: 1.4rem;
-      font-weight: bold;
-      padding-left: 0.5rem;
-      line-height: 1;
+    > a {
+      @include flexCenterStyle;
+      width: fit-content;
+      padding: 1.25rem 4rem;
+      border: 1px solid;
+      box-sizing: border-box;
+      margin: 1rem;
+
+      > img {
+        width: 1.2rem;
+      }
+      > span {
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding-left: 0.5rem;
+        line-height: 1;
+      }
     }
   }
 }

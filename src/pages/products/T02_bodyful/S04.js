@@ -54,7 +54,7 @@ const S04 = () => {
             <Table table={table_ca} />
             <Download
               color="blue"
-              file="/static/report/Water_Report-Pulmuone_Bodyful_20.pdf"
+              files={['/static/report/Water_Report-Pulmuone_Bodyful_20.pdf']}
               text="수질 적성 검사서"
               title="바디풀20은 안심하고 드실 수 있습니다!"
             />
@@ -78,7 +78,7 @@ const S04 = () => {
             <Table table={table_ma} />
             <Download
               color="blue"
-              file="/static/report/Water_Report-Pulmuone_Bodyful_12.pdf"
+              files={['/static/report/Water_Report-Pulmuone_Bodyful_12.pdf']}
               text="수질 적성 검사서"
               title="바디풀12는 안심하고 드실 수 있습니다!"
             />
