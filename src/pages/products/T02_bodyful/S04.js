@@ -52,6 +52,12 @@ const S04 = () => {
               <p className={cx('text')}>500mL X 20개입</p>
             </div>
             <Table table={table_ca} />
+            <Download
+              color="blue"
+              file="/static/report/Water_Report-Pulmuone_Bodyful_20.pdf"
+              text="수질 적성 검사서"
+              title="바디풀20은 안심하고 드실 수 있습니다!"
+            />
           </li>
           <li className={cx('ma')}>
             <div className={cx('product')}>
@@ -60,7 +66,7 @@ const S04 = () => {
                 바디풀12는 일반 생수 대비 높은 마그네슘 함량에도
                 <br /> 편하게 음용할 수 있도록 <span className={cx('accent')}>최적의 양</span>을 반영했습니다.
               </p>
-              <h4 className={cx('name')}>풀무원샘물 바디풀 20</h4>
+              <h4 className={cx('name')}>풀무원샘물 바디풀 12</h4>
               <div className={cx('image')} style={{ backgroundImage: `url(${product_ma})` }}>
                 <p>
                   경도<span>200</span>
@@ -70,14 +76,14 @@ const S04 = () => {
               <p className={cx('text')}>500mL X 20개입</p>
             </div>
             <Table table={table_ma} />
+            <Download
+              color="blue"
+              file="/static/report/Water_Report-Pulmuone_Bodyful_12.pdf"
+              text="수질 적성 검사서"
+              title="바디풀12는 안심하고 드실 수 있습니다!"
+            />
           </li>
         </ul>
-        <Download
-          color="blue"
-          file="/static/report/Water_Report-Pulmuone_Bodyful.pdf"
-          text="수질 적성 검사서"
-          title="바디풀은 안심하고 드실 수 있습니다!"
-        />
       </div>
     </div>
   );
