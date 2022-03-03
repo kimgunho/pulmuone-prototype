@@ -43,27 +43,6 @@
       transform: translate(0, -50%);
       width: 100%;
 
-      &.left {
-        max-width: 40rem;
-        left: -3rem;
-        top: 60%;
-
-        @include tablet {
-          max-width: 30rem;
-        }
-        @include mobile {
-          max-width: 20rem;
-        }
-      }
-      &.right {
-        max-width: 27.5rem;
-        right: -5rem;
-        top: 90%;
-
-        @include mobile {
-          right: -10rem;
-        }
-      }
       &.bubleeLeft {
         max-width: 11.25rem;
         top: 60%;
