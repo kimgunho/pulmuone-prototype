@@ -7,6 +7,9 @@
   position: relative;
   overflow: hidden;
 
+  @include mobile {
+    background-position: -24rem center;
+  }
   > .limiter {
     @include limiter;
     display: flex;
