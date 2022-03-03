@@ -3,8 +3,6 @@ import classNames from 'classnames/bind';
 import styles from './S01.module.scss';
 
 import background from '../../../assets/images/products/routine/s01/background.jpg';
-import leaf_left from '../../../assets/images/products/routine/s01/leaf_left.png';
-import leaf_right from '../../../assets/images/products/routine/s01/leaf_right.png';
 import bubble_left from '../../../assets/images/products/routine/s01/bubble_left.png';
 import bubble_right from '../../../assets/images/products/routine/s01/bubble_right.png';
 import bottle from '../../../assets/images/products/routine/s01/bottle.png';
@@ -23,8 +21,6 @@ const S01 = () => {
           </p>
         </div>
         <div className={cx('objects')}>
-          <img className={cx('left')} src={leaf_left} alt="" />
-          <img className={cx('right')} src={leaf_right} alt="" />
           <img className={cx('bubleeLeft')} src={bubble_left} alt="" />
           <img className={cx('bubbleRight')} src={bubble_right} alt="" />
         </div>
