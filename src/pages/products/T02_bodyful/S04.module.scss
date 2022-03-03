@@ -44,11 +44,11 @@
         &.ca {
           border-color: #6eb92a;
 
-          @include tablet{
-            padding-bottom:6rem;
+          @include tablet {
+            padding-bottom: 6rem;
           }
-          @include mobile{
-            padding-bottom:6rem;
+          @include mobile {
+            padding-bottom: 6rem;
           }
           > .product {
             background-color: #f0f8e9;
