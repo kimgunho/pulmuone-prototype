@@ -52,7 +52,7 @@ const S02 = () => {
         <Products products={products} title="제품소개" color="blue" />
         <Table table={table} />
         {/* 웹사이트 오픈 후 수질 성적 검사서 확보 예정 */}
-        {/* <Download color="blue" files={['/']} text="수질 성적 검사서" title="워터루틴은 안심하고 드실 수 있습니다!" /> */}
+        {/* <Download color="blue" files={['/']} names={["수질 성적 검사서"]} title="워터루틴은 안심하고 드실 수 있습니다!" /> */}
       </div>
     </div>
   );

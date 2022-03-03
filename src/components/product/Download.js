@@ -6,15 +6,15 @@ import iconBlue from '../../assets/images/shared/download_icon_blue.svg';
 
 const cx = classNames.bind(styles);
 
-const Download = ({ color = 'green', files, text, title }) => {
+const Download = ({ color = 'green', files, names, title }) => {
   return (
     <div className={cx(['download', color])}>
       <p className={cx('text')}>{title}</p>
       <div className={cx('buttons')}>
-        {files.map((file) => (
+        {files.map((file, index) => (
           <a href={file} target="_blank" rel="noreferrer">
             <img src={color === 'green' ? iconGreen : iconBlue} alt="" />
-            <span>{text}</span>
+            <span>{names[index]}</span>
           </a>
         ))}
       </div>

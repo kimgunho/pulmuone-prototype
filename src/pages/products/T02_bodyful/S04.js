@@ -55,7 +55,7 @@ const S04 = () => {
             <Download
               color="blue"
               files={['/static/report/Water_Report-Pulmuone_Bodyful_20.pdf']}
-              text="수질 적성 검사서"
+              names={['수질 적성 검사서']}
               title="바디풀20은 안심하고 드실 수 있습니다!"
             />
           </li>
@@ -79,7 +79,7 @@ const S04 = () => {
             <Download
               color="blue"
               files={['/static/report/Water_Report-Pulmuone_Bodyful_12.pdf']}
-              text="수질 적성 검사서"
+              names={['수질 적성 검사서']}
               title="바디풀12는 안심하고 드실 수 있습니다!"
             />
           </li>

@@ -65,7 +65,7 @@ const S02 = () => {
         <Table title="무기물질 함량(mg/L)" table={table} />
         <Download
           files={['/static/report/Water_Report-Barrel_15L.pdf', '/static/report/Water_Report-Barrel_18L.pdf']}
-          text="수질 성적 검사서"
+          names={['수질 성적 검사서(포천)', '수질 성적 검사서(하동)']}
           title="풀무원샘물은 안심하고 드실 수 있습니다!"
         />
         <div className={cx('detail')}>
