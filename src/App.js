@@ -12,6 +12,7 @@ import Header from './components/shared/Header';
 import NotFound from './components/shared/NotFound';
 import Footer from './components/shared/Footer';
 import ScrollTop from './components/misc/ScrollTop';
+import GoogleAnalytics from './components/misc/GoogleAnalytics';
 
 const App = () => {
   return (
@@ -42,6 +43,7 @@ const App = () => {
       </Routes>
       <Footer />
       <ScrollTop />
+      <GoogleAnalytics />
     </BrowserRouter>
   );
 };
