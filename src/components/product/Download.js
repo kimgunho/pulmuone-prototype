@@ -12,7 +12,7 @@ const Download = ({ color = 'green', files, names, title }) => {
       <p className={cx('text')}>{title}</p>
       <div className={cx('buttons')}>
         {files.map((file, index) => (
-          <a href={file} target="_blank" rel="noreferrer">
+          <a key={index} href={file} target="_blank" rel="noreferrer">
             <img src={color === 'green' ? iconGreen : iconBlue} alt="" />
             <span>{names[index]}</span>
           </a>
